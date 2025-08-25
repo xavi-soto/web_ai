@@ -1,0 +1,38 @@
+name: Deploy public folder to GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ]   # Se ejecuta cada push a main
+  workflow_dispatch:       # También se puede lanzar manualmente
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+
+      # 🔑 IMPORTANTE: publicar solo la carpeta public/
+      - name: Subir public como artefacto
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Desplegar en Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
