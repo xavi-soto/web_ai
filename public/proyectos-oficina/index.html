@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>proyectos de oficina</title>
+  <link rel="icon" href="https://res.cloudinary.com/dbwezmju6/image/upload/v1750391546/icono_wev-01_gllalq.png" type="image/png">
+  
+   <meta name="description" content="soto es el sitio donde ocurre todo">
+  
+  <meta property="og:title" content="proyectos de oficina">
+<meta property="og:description" content="proyectos dedicados al trabajo detrás de un ordenador">
+<meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
+<meta property="og:url" content="https://sotosotosoto.com../proyectos-oficina/">
+<meta property="og:type" content="website">
+  
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 60px;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      /* efecto de aparición */
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+    .logo-container {
+      position: fixed;
+      top: 60px;
+      left: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .logo-container img {
+      width: 90px;
+      height: auto;
+    }
+
+      footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f3f3f3;
+      text-align: center;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+
+    .footer-image {
+      width: 150px;
+      height: auto;
+      padding-top: 0px;
+      margin-top: 0px;
+      animation: mostrarImagenes 3s ease forwards;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .gallery a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 0px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    .gallery a:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+ @media (min-width: 481px) and (max-width: 768px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+
+
+
+/* Menú hamburguesa solo en móvil */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 49px;
+  left: 13px;
+  z-index: 1100;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.menu-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  top: 100px;
+  left: 20px;
+   background-color: #e2e2e2f0;
+   border: rgb(118 118, 118) 1px;
+  padding: 10px;
+  z-index: 1100;
+}
+
+.menu-mobile a img {
+  width: 90px;
+  height: auto;
+}
+
+
+
+/* En escritorio se muestra el menú clásico y se oculta el hamburguesa */
+@media (max-width: 768px) {
+  .logo-container {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-mobile {
+    display: none;
+  }
+
+  .menu-mobile.active {
+    display: flex;
+  }
+}
+
+
+
+
+
+
+a, button, .tus-elementos-clickeables {
+  -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4); /* rojo semitransparente */
+}
+
+
+
+
+/* Versión tablet */
+  @media (min-width: 481px) and (max-width: 768px) {
+
+.menu-toggle {
+      display: block; /* Asegurarse de que el botón hamburguesa se vea */
+      position: fixed;
+      top: 49px;
+      left: 11px;
+      z-index: 1100;
+      background-color: transparent;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
+      opacity: 0.7; /* Ajustar la opacidad como en la versión móvil */
+    }
+
+    .menu-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      position: fixed;
+      top: 85px;
+      left: 20px;
+      background-color: rgba(226, 226, 226, 0.95); /* Asegura que la opacidad se mantenga */
+      border: rgb(118, 118, 118) 1px;
+      padding: 10px;
+      z-index: 1100;
+    }
+
+    .menu-mobile.active {
+      display: flex; /* Mostrar el menú cuando esté activo */
+    }
+
+    /* Mostrar el menú hamburguesa en tablet */
+    .menu-toggle {
+      opacity: 0.8; /* Ajuste de opacidad */
+    }
+  }
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+
+
+  <!-- Botón hamburguesa solo visible en móvil -->
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<!-- Menú hamburguesa móvil -->
+<div class="menu-mobile" id="mobileMenu">
+  
+<a href="../">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751476758/soto_icono_ny0lp9.png" alt="Logo 5">
+  </a>
+  <a href="../acerca-de-oficina/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
+  </a>
+  <a href="../archivo-en-venta/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1744208092/ventaaaaa-01_qag3lr.png" alt="Logo 3">
+  </a>
+  <a href="../contacto/">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1744209347/CONSSS-01_aokd62.png" alt="Logo 4">
+  </a>
+  <a href="../patio-trasero/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751475659/patio_menu_m0399x.png" alt="Logo 5">
+  </a>
+
+
+
+
+</div>
+
+<!-- Menú clásico en escritorio -->
+<div class="logo-container">
+ 
+
+  <a href="../">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751476758/soto_icono_ny0lp9.png" alt="Logo 5">
+     </a>
+  
+  <a href="../acerca-de-oficina/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
+  </a>
+  <a href="../archivo-en-venta/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477916/tienda-01_ntkqad.png" alt="Logo 3">
+  </a>
+  <a href="../contacto/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 4">
+  </a>
+  <a href="../patio-trasero/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751475659/patio_menu_m0399x.png" alt="Logo 5">
+  </a>
+
+
+</div>
+
+
+
+
+
+  <div class="gallery">
+    <!-- Ejemplo con 3 imágenes, puedes extender con el resto -->
+    <a href="../el-hogar/">
+      <img 
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751488029/el_hogar_poster_final-01_kwyqaf.png" 
+        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751489335/el_hogar_web3-01_woz22r.png"
+        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751488029/el_hogar_poster_final-01_kwyqaf.png"
+        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751488295/el_hogar_movil_nuevo-01_ij7maj.png"
+        alt="Imagen 1">
+    </a>
+    <a href="../monaco/">
+      <img 
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751489048/pdmona-01_mcgwbz.png" 
+        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751489294/PD3-01_ckwulw.png"
+        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751489048/pdmona-01_mcgwbz.png"
+        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751489478/MONACO_MOVIL2-01_igzpih.png"
+        alt="Imagen 2">
+    </a>
+    <a href="../premios-deporte-y-ciudadania/">
+      <img 
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751490158/premio1-01_c4o3lj.png" 
+        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751490263/PD2-01_o75x5o.png"
+        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751490158/premio1-01_c4o3lj.png"
+        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751490367/premios_movil2-01_wbtino.png"
+        alt="Imagen 3">
+    </a>
+
+    <a href="../guardabosques-GDL/">
+      <img 
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751490917/guardabosques_web2-01_y3omg5.png" 
+        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751491073/PD4-01_xplapu.png"
+        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751490917/guardabosques_web2-01_y3omg5.png"
+        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751491154/guarda_movil2-01_roihng.png"
+        alt="Imagen 4">
+    </a>
+
+    <a href="../colectivo-habitantes/">
+      <img 
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751495562/tarjetas_habitantes3_myq8op.png" 
+        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751491722/PD5-01_hkcwv1.png"
+        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751495562/tarjetas_habitantes3_myq8op.png"
+        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751491819/HABITANTES_MOVIL2-01_ltvo82.png"
+        alt="Imagen 5">
+    </a> 
+
+    <a href="../addy/">
+      <img 
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751492824/addy_poster_final-01_ljfjcm.png" 
+        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751492900/PD6-01_mzh9xr.png"
+        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751492824/addy_poster_final-01_ljfjcm.png"
+        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751492991/addy_movil2-01_vtswvl.png"
+        alt="Imagen 6">
+    </a>
+
+
+    <a href="../perlata/">
+      <img 
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751493543/perlata_web2-01_agimuq.png" 
+        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751493973/PD7-01_ndkzja.png"
+        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751493543/perlata_web2-01_agimuq.png"
+        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751494048/perlata_movil2-01_z53mbn.png"
+        alt="Imagen 7">
+    </a>
+
+  
+    <a href="../alquimia/"> 
+      <img 
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751495035/alqumia_web4-01_l4vi9i.png" 
+        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751495061/PD9-01_rysgcy.png"
+        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751495035/alqumia_web4-01_l4vi9i.png"
+        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751495098/alqumia_movil_nuevo-01_qrwsvd.png"
+        alt="Imagen 8">
+    </a> 
+ 
+    <a href="../barra-100/">
+      <img 
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751495805/pdbarra100-01_jtp2dt.png" 
+        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751497428/PD8_zzlaka.png"
+        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751495805/pdbarra100-01_jtp2dt.png"
+        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751495890/barra100_movil-01_h60bns.png"
+        alt="Imagen 9">
+    </a> 
+ 
+    <a href="../valtina/"> 
+      <img 
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751496469/VALTINA_ORDENADOR_NUEVO-01_rgyz4o.png" 
+        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751496550/PD10-01_bll4uv.png"
+        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751496469/VALTINA_ORDENADOR_NUEVO-01_rgyz4o.png"
+        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751496600/VALTINA_MOVIL_FINAL_NUEVO-01_prs5u3.png"
+        alt="Imagen 10">
+    </a>
+  
+    <a href="../confin/">
+      <img 
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751497678/confin_web3-01_o8ecse.png" 
+        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751497738/PD11-01_xks3ci.png"
+        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751497678/confin_web3-01_o8ecse.png"
+        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751497778/CONFINULTIMO-01_btidtf.png"
+        alt="Imagen 11">
+    </a>
+
+    <a href="../hilachas/">
+      <img 
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751997215/hilachas_portada_web_nueva-01_yngczn.png" 
+        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751498088/PD12-01_os02w8.png"
+        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751997215/hilachas_portada_web_nueva-01_yngczn.png"
+        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751498095/hilachas_portada_nueva-01_hstwud.png"
+        alt="Imagen 12"> 
+    </a>
+
+     
+ 
+    
+
+
+    <!-- Continúa con el resto... -->
+  </div>
+
+  <footer>
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751476362/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
+  </footer>
+
+  <script>
+
+
+
+
+    
+      function esEscritorio() {
+    return window.innerWidth > 768;
+  }
+
+  // Solo aplicar el hover si es escritorio
+  if (esEscritorio()) {
+    document.querySelectorAll('.gallery img').forEach(img => {
+      const originalSrc = img.getAttribute('data-desktop'); // Asegura usar el src correcto
+      const hoverSrc = img.getAttribute('data-hover');
+
+      img.addEventListener('mouseenter', () => {
+        if (hoverSrc) img.src = hoverSrc;
+      });
+
+      img.addEventListener('mouseleave', () => {
+        if (originalSrc) img.src = originalSrc;
+      });
+    });
+  }
+
+
+
+
+    // Reemplazo de imágenes para móvil
+    function actualizarImagenesPorDispositivo() {
+      const esMovil = window.innerWidth <= 768;
+      document.querySelectorAll('.gallery img').forEach(img => {
+        const nuevaSrc = esMovil ? img.getAttribute('data-mobile') : img.getAttribute('data-desktop');
+        if (nuevaSrc) {
+          img.src = nuevaSrc;
+        }
+      });
+    }
+
+    // Ejecutar al cargar y al redimensionar
+    window.addEventListener('load', actualizarImagenesPorDispositivo);
+    window.addEventListener('resize', actualizarImagenesPorDispositivo);
+
+
+
+
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+  }
+
+   document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  }, false);
+
+
+  // (El resto de tu script permanece igual)
+</script>
+
+
+  </script>
+</body>
+</html>
