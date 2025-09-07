@@ -1,6 +1,13 @@
 // Variable para almacenar todo el historial del chat
 let chatHistory = [];
 
+// Crear o cargar user_id único por visitante
+let userId = localStorage.getItem("soto_user_id");
+if (!userId) {
+    userId = "user_" + Math.random().toString(36).substring(2, 10);
+    localStorage.setItem("soto_user_id", userId);
+}
+
 // Función para guardar el historial en localStorage
 function saveChatHistory() {
     localStorage.setItem('sotoChatHistory', JSON.stringify(chatHistory));
@@ -27,7 +34,6 @@ function renderChatHistory() {
     });
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
-
 
 // 👉 Mostrar u ocultar el chat cuando se hace clic en la burbuja
 document.getElementById("soto-launcher").addEventListener("click", function () {
@@ -88,12 +94,16 @@ document.getElementById("user-input").addEventListener("keypress", function (e) 
             sotoLoadingMessage.classList.remove("loading");
         }, 5000);
 
+        // Hacer fetch al backend con user_id único
         fetch("https://soto-ai.onrender.com/preguntar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ pregunta: message, user_id: "usuario_demo" }),
+            body: JSON.stringify({
+                pregunta: message,
+                user_id: userId
+            }),
         })
         .then((res) => res.json())
         .then((data) => {
