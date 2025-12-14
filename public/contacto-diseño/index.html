@@ -1,19 +1,39 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>acerca de patio</title>
-   <link rel="icon" href="https://res.cloudinary.com/dbwezmju6/image/upload/v1750391546/icono_wev-01_gllalq.png" type="image/png">
+
+  <title>contacto</title>
+
+   <link rel="icon" href="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759771502/icono_web-01_pcbhuw.png" type="image/png">
+
+
 
   <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-  <meta name="description" content="soto es el sitio donde ocurre todo">
-  
-  <meta property="og:title" content="acerca del patio trasero">
-<meta property="og:description" content="patio trasero, es el espacio donde se gestan las chingaderas desde lo artístico: experimentación visual, ilustración, pintura, instalaciones, objetos y cualquier otra forma que nazca de la necesidad de crear sin filtro.">
+
+ 
+
+  <meta name="description" content="¡hablemos! contacto con la oficina y el patio.">
+
+ 
+
+  <meta property="og:title" content="contacto">
+
+<meta property="og:description" content="contacto con soto.">
+
 <meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
-<meta property="og:url" content="https://sotosotosoto.com/../acerca-de-patio-trasero/">
+
+<meta property="og:url" content="https://sotosotosoto.com../contacto/">
+
 <meta property="og:type" content="website">
+
+ 
+
   <style>
     body {
        margin: 0;
@@ -24,6 +44,7 @@
       /* efecto de aparición */
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
+margin-top: 0px;
 }
 
 @keyframes fadeIn {
@@ -31,12 +52,11 @@
     opacity: 1;
   }
 }
-
     .logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0px 0px;
+  padding: 10px 0px;
   padding-top: 100px;
 }
 
@@ -57,49 +77,47 @@
 
 .descripcion {
         text-align: justify;
-      padding: 150px;
-      padding-top:0px;
+      padding: 130px;
+      padding-top:5px;
       font-size: 14px;
       color: #333;
       font-family: "Lexend", sans-serif;
-       margin-bottom: -120px;
+       margin-bottom: -210px;
     }
 
      .descripcion2 {
-      
-      padding: 140px;
-      padding-top: 60px;
-      font-size: 14px;
-      color: #333;
-      font-family: "Lexend", sans-serif;
-    }
-
-    .contenido-ajustado {
-  margin-top: -20px; /* ajusta el número según cuánto quieras subir */
+    
+    padding: 160px;
+    padding-top: 230px;
+     
+    font-size: 14px;
+    color: #333;
+    font-family: "Lexend", sans-serif;
+    
+    /* 💡 AÑADE ESTO: Margen negativo para compensar el espacio del .logo 💡 */
+    /* El .logo empuja 100px, así que necesitamos al menos -100px de compensación. */
+    margin-top: -200px; /* Usa -100px o un poco más, por ejemplo, -120px, para moverlo hacia arriba */
 }
 
 
-
     footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #f3f3f3; /* Asegura que tenga el mismo fondo */
-        text-align: center;
-        padding: 10px 0;
-        z-index: 1000; /* Se mantiene por encima de otros elementos */
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f3f3f3;
+      text-align: center;
+      padding: 5px 0;
+      z-index: 1000;
     }
 
-
-
-        .footer-image {
-            width: 150px; /* Ajusta el tamaño de la imagen */
-            height: auto;
-            padding-top: 0px;
-            margin-top: 0px;
-            animation: mostrarImagenes 3s ease forwards;
-        }
+    .footer-image {
+      width: 150px;
+      height: auto;
+      padding-top: 10px;
+      margin-top: -4px;
+      animation: mostrarImagenes 3s ease forwards;
+    }
 
 
     .galeria {
@@ -111,7 +129,7 @@
       padding-bottom: 70px;
       max-width: 1200px;
       margin: 0 auto;
-      margin-top: -80px;
+      margin-top: 0px;
       
       
     }
@@ -179,7 +197,6 @@
 .menu-mobile {
   display: none;
   flex-direction: column;
-  gap: 10px;
   position: fixed;
   top: 100px;
   left: 20px;
@@ -187,6 +204,16 @@
    border: rgb(118 118, 118) 1px;
   padding: 10px;
   z-index: 1100;
+
+}
+
+.menu-mobile a {
+  margin-bottom: 20px; /* espacio entre botones */
+}
+
+/* Opcional: último botón sin margen */
+.menu-mobile a:last-child {
+  margin-bottom: -21px;
 }
 
 .menu-mobile a img {
@@ -223,18 +250,16 @@
 @media (max-width: 480px) {
 
   .descripcion2 {
-    padding: 1px 25px;
-    margin-top: 13px;
+    padding: 200px 35px;
     font-size: 13px;
     text-align: center;
   }
 
    .descripcion{
-    padding: 5px 5px;
- 
+    padding: 22px 5px;
     font-size: 13px;
     text-align: justify;
-     margin-bottom: 80px;
+     margin-bottom: -200px;
   }
 
   .galeria {
@@ -312,27 +337,22 @@ a, button, .tus-elementos-clickeables {
 
 
 
+
 /* Estilo general (escritorio) */
 .logo-img-unica {
-  max-width: 170px;
+  max-width: 190px;
   height: auto;
 }
 
 /* Estilo específico para móvil */
 @media (max-width: 768px) {
   .logo-img-unica {
-    max-width: 160px !important; /* O el valor que desees */
+    max-width: 190px !important; /* O el valor que desees */
     height: auto !important;
       position: relative;
     top: -8px; /* Ajusta el valor según cuánto quieras subir */
   }
-
-  .contenido-ajustado {
-  margin-top: -16px; /* ajusta el número según cuánto quieras subir */
 }
-}
-
-
 
 
 /* Versión tablet */
@@ -343,22 +363,22 @@ a, button, .tus-elementos-clickeables {
       gap: 20px;
       padding: 10px 5px;
       margin-top: 0;
-      margin-bottom: 70px;
+      margin-bottom: 90px;
     }
 
     /* Descripción para tablet */
     .descripcion {
-      padding: 15px 20px;
+      padding: 30px 20px;
       font-size: 14px; /* Un tamaño más grande que en móvil */
       text-align: justify;
     }
 
      .descripcion2 {
       padding: 10px 10px;
-       margin-bottom: 160px;
+      margin-bottom: 140px;
       font-size: 14px; /* Un tamaño más grande que en móvil */
       text-align: center;
-      margin-bottom: 185px;
+      margin-bottom: 175px;
     }
 
 
@@ -411,197 +431,430 @@ a, button, .tus-elementos-clickeables {
   
   }
 
+/* 💻 Ajustes SÓLO para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .icono-regreso-menu {
+        display: none !important;
+    }
+    
+    .footer-image {
+        width: 260px !important; /* Añade !important aquí */
+} 
+
+
+.logo-container { 
+        top: 95px; /* Quizás ajustar la posición vertical */
+    }
+    .logo-container img {
+        width: 150px; /* Ajusta este valor para hacer los logos más grandes */
+        /* height: auto; ya está por defecto, no hace falta repetirlo */
+    }
+
+
+.descripcion {
+      padding: 15px 230px;
+      font-size: 24px; /* Un tamaño más grande que en móvil */
+      text-align: justify;
+    }
+
+     .descripcion2 {
+      padding: 300px 10px;
+       margin-bottom: 160px;
+      font-size: 24px; /* Un tamaño más grande que en móvil */
+      text-align: center;
+      margin-bottom: 205px;
+    }
+.logo-img-unica {
+    max-width: 350px !important; /* O el valor que desees */
+    height: auto !important;
+      position: relative;
+    top: 78px; /* Ajusta el valor según cuánto quieras subir */
+  }
+  .logo-container {
+  display: none !important; /* !important para anular la regla existente */
+}
+
+.menu-toggle {
+  display: block;
+  font-size: 70px; /* Hamburguesa MÁS GRANDE */
+  top: 49px;
+  left: 19px;
+  opacity: 0.8;
+  position: fixed;
+  z-index: 1100;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-mobile {
+  display: none;
+  top: 150px;
+  left: 30px;
+  position: fixed;
+  flex-direction: column; /* asegúrate de que esté */
+  gap: 0; /* aquí eliminas el espacio extra */
+  background-color: rgba(226, 226, 226, 0.95);
+  border: rgb(118, 118, 118) 1px;
+}
+.menu-mobile a {
+  margin-bottom: 30px; /* espacio entre botones */
+}
+
+/* Opcional: último botón sin margen */
+.menu-mobile a:last-child {
+  margin-bottom: -30px;
+}
+
+/* 4. Agranda los logos del menú */
+.menu-mobile a img {
+  width: 180px; 
+}
+.menu-mobile.active {
+  display: flex;
+}
+
+
+}
+
+/* 2. Estilos para la imagen del botón de regreso */
+.icono-regreso-menu {
+    /* Hereda el tamaño estándar del menú, pero puedes darle un tamaño específico si es diferente */
+    width: 70px !important; 
+     left: 0px;
+    height: auto;
+    margin-top: 0 !important; 
+     left: 0px;
+    
+    /* 🆕 AÑADE ESTO: Posicionamiento absoluto */
+    position: absolute; 
+    
+    /* ⬇️ AJUSTA ESTE VALOR para controlar la distancia desde la parte superior del .logo-container ⬇️ */
+    top: 600px; /* Ejemplo: 40px. Aumenta este valor para bajarlo más. */
+    /* Evita el resaltado azul al hacer clic en móvil/tablet */
+    -webkit-tap-highlight-color: transparent; 
+}
+
+.boton-regreso-al-final {
+    display: none; 
+}
+
+/* Ocultar botón regresar en móviles */
+@media (max-width: 480px) {
+    .icono-regreso-menu {
+        display: none !important;
+    }
+}
+
   </style>
+
 </head>
+
 <body>
 
- <!-- Aquí va el contenido de tu página web... -->
-
-  <!-- BURBUJA DEL CHAT DE SOTO -->
-  <div id="soto-launcher">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1755968841/soto_logo.0010_xh9icu.png" alt="soto" />
-  </div>
-
-  <div id="soto-chat" style="display: none;">
-    <div id="chat-window">
-         <button id="close-chat" class="close-chat-btn">X</button>
-      <div id="chat-messages"></div>
-      <input type="text" id="user-input" placeholder="Escribe tus dudas..." />
-    </div>
-  </div>  
-<div id="soto-notification">¿?</div>
-
-  <link rel="stylesheet" href="../chat.css">
-  <script src="../chat.js"></script>
 
 
 
 
- 
+
+
+
+
+
+
  <!-- Botón hamburguesa solo visible en móvil -->
+
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
+
+
 <!-- Menú hamburguesa móvil -->
+
 <div class="menu-mobile" id="mobileMenu">
+
+
+
   <a href="../">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751476758/soto_icono_ny0lp9.png" alt="Logo 5">
+
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
+
   </a>
-  <a href="../proyectos-patio-trasero/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 1">
+
+   <a href="../proyectos-oficina/">
+
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 2">
+
   </a>
-  <a href="../sobre-este-sitio-web/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751478380/lo_ultimo_web_xijtal.png" alt="Logo 3">
+
+  <a href="../acerca-de-oficina/">
+
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
+
   </a>
+
+
+
+  <a href="../patio/">
+
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751475659/patio_menu_m0399x.png" alt="Logo 5">
+
+  </a>
+
+<a href="#" onclick="window.history.back(); return false;" class="enlace-regreso">
+        <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-menu">
+    </a>
+
+
+
+
+
+
+
+</div>
+
+
+
+<!-- Menú clásico en escritorio -->
+
+<div class="logo-container">
+
+ 
+
+
+
+  <a href="../">
+
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
+
+     </a>
+
+   <a href="../proyectos-oficina/">
+
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 2">
+
+  </a>
+
+  <a href="../acerca-de-oficina/">
+
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
+
+  </a>
+
+ 
+
+  <a href="../patio/">
+
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759490897/patio_menu_m0399x.png" alt="Logo 5">
+
+  </a>
+
+<a href="#" onclick="window.history.back(); return false;" class="enlace-regreso">
+        <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-menu">
+    </a>
+
+   
+
+   </div>
+
+   <div class="contenido-ajustado">
+
+  <div class="logo">
+
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751559679/contactof_wyrqjz.png" alt="Logo" class="logo-img-unica">
+
+  </div>
+
+
+
+
+
+
+
+  <div class="descripcion2">
+
+    <p>
+
+   <h3>El espacio para encontrar respuestas.</h3>
+
+ 
+
+     
+
+        <div class="descripcion">  
+
+En la oficina y chiskey nos especializamos en construir soluciones robustas: desde el branding completo de tu marca, producciones audiovisuales y desarrollo de aplicaciones, hasta la automatización de procesos.
+
+Cuéntanos tu idea. Nos encantaría conocer tu proyecto.</p>
+
+   
+
+           <br><br>
+
+  <div style="text-align: center;">
+
+
+<p><a href="https://chiskey.es" target="_blank"><strong>chiskey.es</strong></a><br><br>
+   <p><a href="mailto:estudio@chiskey.es" target="_blank"><strong>estudio@chiskey.es</strong></a><br><br>
+
+ <p>Instagram <a href="https://www.instagram.com/chiskey.estudio/" target="_blank"><strong>chiskey.estudio</strong></a><br><br>
+
   
-  <a href="../oficina/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751475517/oficina1_xds5wg.png" alt="Logo 3">
-  </a>
-  
-  
+
 </div>
 
 
 
 
 
+  <strong> <h3 style="text-align: center;">Hablemos!</h3></strong>
+
+  <div style="text-align: center;">
+
+  <a href="/estudio-de-objetos-no-identificados/" target="_blank"><strong></strong></a><br><br>
 
 
 
-  <div class="logo-container">
-    <a href="../">   
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751476758/soto_icono_ny0lp9.png" alt="Logo 4">
-    </a>
+   
 
-    <a href="../proyectos-patio-trasero/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 1">
-</a>
-<a href="../sobre-este-sitio-web/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751478380/lo_ultimo_web_xijtal.png" alt="Logo 3">
-  </a>
-
-<a href="../oficina/">   
-<img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751475517/oficina1_xds5wg.png" alt="Logo 3">
-</a>
-
-
-
-    
-   </div>
-
-   <div class="contenido-ajustado">
-  <div class="logo">
-    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1751928486/patiof_aibzxg.png" alt="Logo" class="logo-img-unica">
-
-  </div>
-
-
-
-  <div class="descripcion2">
-    <p>
-  
- 
-    
-      
-        <div class="descripcion"> 
-
-
-
-
-      <p>El patio trasero es el espacio donde se gestan las chingaderas desde lo artístico: experimentación visual, ilustración, pintura, instalaciones, objetos y cualquier otra forma que nazca de la necesidad de crear sin filtro.</p>
-      <p>Es el rincón desordenado, caótico, a veces incomprensible, pero profundamente honesto del estudio.</p>
-      <p> <strong>¿Qué sucede aquí? </strong></p>
-        
-        <p>No hay una metodología fija.</p>
-         <p>Algunas cosas funcionan, otras no. Y eso también es parte del proceso.
-         <p>Aquí no se está frente a una pantalla todo el tiempo:<i> hay trabajo manual, pruebas fallidas, ideas que no llegan a nada y otras que toman forma.</i></p>
-   <p>Aunque el proceso puede parecer caótico, el resultado no lo es:<i> cada proyecto se trabaja con atención, detalle y una búsqueda constante por lo que tiene sentido.</i></p>
-
-<p><i>soto está detrás del patio.</i></p>
-      <a href="https://drive.google.com/file/d/1JYhZGcLMA1NzSyyoD_C98w8CfZXFzjCy/view?usp=sharing" target="_blank"><strong>Descarga su CV</strong></a><br><br>
-
-
- 
-
+</div>
 
   </div>
 
  </div>
 
+     
 
-  
-      
       <footer>
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751476362/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
+
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760111670/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
+
     </footer>
+
            
 
 
 
-
     <!-- Repetí esto hasta Imagen 16 -->
+
     <!-- Puedes reemplazar los links de ejemplo por los tuyos -->
+
   </div>
 
 
 
-   <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">
+
+
+ 
+
+    <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">
+
   <span id="cerrar-modal" style="position:absolute; top:20px; right:30px; color:rgb(0, 0, 0); font-size:40px; cursor:pointer;">&times;</span>
+
    <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="max-width:37%; max-height:auto; border: 5px solid rgba(255, 255, 255, 0); box-shadow: 0 0 20px rgba(0, 0, 0, 0);" />
+
 </div>
+
+
 
 <script>
 
 
 
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
+
   const modal = document.getElementById('modal');
+
   const modalImg = document.getElementById('modal-img');
+
   const cerrarModal = document.getElementById('cerrar-modal');
 
+
+
   // Solo permitir clic en escritorio
+
   if (window.innerWidth > 768) {
+
     document.querySelectorAll('.img-original[data-full]').forEach(img => {
+
       img.style.cursor = 'pointer';
+
       img.addEventListener('click', (e) => {
+
         e.stopPropagation();
+
         const imgGrande = img.getAttribute('data-full');
+
         modalImg.src = imgGrande;
+
         modal.style.display = 'flex';
+
       });
+
     });
+
   }
 
+
+
   cerrarModal.addEventListener('click', () => {
+
     modal.style.display = 'none';
+
     modalImg.src = '';
+
   });
 
+
+
   modal.addEventListener('click', (e) => {
+
     if (e.target === modal) {
+
       modal.style.display = 'none';
+
       modalImg.src = '';
+
     }
+
   });
+
 });
 
 
 
+
+
+
+
 function toggleMenu() {
+
     const menu = document.getElementById('mobileMenu');
+
     menu.classList.toggle('active');
+
   }
 
-
  document.addEventListener('contextmenu', function(e) {
+
     e.preventDefault();
+
   }, false);
+
+
 
 </script>
 
-
-
-
-
+<script>
+    function goBack() {
+        // La función history.back() regresa a la URL anterior en el historial del navegador.
+        window.history.back();
+    }
+</script>
 
 </body>
+
 </html>

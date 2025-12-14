@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>desoído</title>
-   <link rel="icon" href="https://res.cloudinary.com/dbwezmju6/image/upload/v1750391546/icono_wev-01_gllalq.png" type="image/png">
+   <link rel="icon" href="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759771502/icono_web-01_pcbhuw.png" type="image/png">
 
   <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
   <!-- Descripción del sitio (sí influye en SEO y vista previa en buscadores) -->
-  <meta name="description" content="soto es el sitio donde ocurre todo">
+  <meta name="description" content="app movil sobre sonidos en extinción.">
   
   <meta property="og:title" content="desoído">
 <meta property="og:description" content="desoído, es una app movil sobre sonidos en extinción.">
@@ -16,208 +16,174 @@
 <meta property="og:url" content="https://sotosotosoto.com//desoido/">
 <meta property="og:type" content="website">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f3f3f3;
-      text-align: center;
-      /* efecto de aparición */
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards;
-}
+<style>
+  /* Estilos generales (ESCRITORIO) */
+  body {
+    margin: 0;
+    font-family: "Lexend", sans-serif;
+    background-color: #f3f3f3;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
 
-@keyframes fadeIn {
-  to {
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+    padding-top: 100px;
+  }
+
+  .logo-container {
+    position: fixed;
+    top: 60px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  .logo-container img {
+    width: 90px;
+    height: auto;
+  }
+
+  .descripcion {
+    text-align: justify;
+    padding: 150px;
+    padding-top: 50px;
+    font-size: 14px;
+    color: #333;
+    font-family: "Lexend", sans-serif;
+  }
+
+  .descripcion2 {
+     text-align: center;
+    padding: 140px;
+    padding-top: 70px;
+    font-size: 14px;
+    color: #333;
+    font-family: "Lexend", sans-serif;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f3f3f3;
+    text-align: center;
+    padding: 5px 0;
+    z-index: 1000;
+  }
+
+  .footer-image {
+    width: 150px;
+    height: auto;
+    padding-top: 10px;
+    margin-top: -4px;
+    /* animation: mostrarImagenes 3s ease forwards; */
+  }
+
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 80px 25px;
+    padding: 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: -80px;
+    margin-bottom: -150px;
+  }
+
+  .video-galeria {
+    grid-column-start: 4;
+    grid-row: span 4;
+    position: relative;
+    width: 143%;
+    padding-top: 0%;
+    margin-top: -68.5%;
+    margin-left: -45%;
+    overflow: hidden;
+  }
+
+  .video-galeria iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .imagen-hover {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .imagen-hover img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.8s ease;
+  }
+
+  .imagen-hover img.img-hover {
+    position: absolute;
+    top: 0;
+    left:0PX;
+    opacity: 0;
+  }
+
+  .imagen-hover:hover img.img-hover {
     opacity: 1;
   }
-}
 
+  .imagen-hover:hover img.img-original {
+    opacity: 1; /* Corregido de 3 */
+  }
 
-.wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+  .mover-derecha {
+    transform: translateX(70px);
 
+  }
 
-    .logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 0px;
-  padding-top: 100px;
-}
+  .texto-solo-tablet {
+    display: none;
+  }
 
+  /* Menú hamburguesa (oculto por defecto) */
+  .menu-toggle {
+    display: none;
+    position: fixed;
+    top: 49px;
+    left: 13px;
+    z-index: 1100;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+  }
 
-.logo-container {
-  position: fixed;
-  top: 60px;
-  left: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
-}
-
- .logo-container img {
-      width: 90px;
-      height: auto;
-    }
-
-
-    .descripcion {
-        text-align: justify;
-      padding: 150px;
-      padding-top: 50px;
-      font-size: 14px;
-      color: #333;
-      font-family: "Lexend", sans-serif;
-    }
-
-     .descripcion2 {
-      
-      padding: 140px;
-      padding-top: 70px;
-      font-size: 14px;
-      color: #333;
-      font-family: "Lexend", sans-serif;
-    }
-
-
-
-    footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #f3f3f3; /* Asegura que tenga el mismo fondo */
-        text-align: center;
-        padding: 10px 0;
-        z-index: 1000; /* Se mantiene por encima de otros elementos */
-    }
-
-
-
-        .footer-image {
-            width: 150px; /* Ajusta el tamaño de la imagen */
-            height: auto;
-            padding-top: 0px;
-            margin-top: 0px;
-            animation: mostrarImagenes 3s ease forwards;
-        }
-
-
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 80px 25px; /* 10px entre filas, 25px entre columnas */
-
-      padding: 30px;
-      padding-top: 0px;
-      padding-bottom: 0px;
-      max-width: 1200px;
-      margin: 0 auto;
-      margin-top: -80px;
-      margin-bottom: -150px;
-    }
-
-
-    .video-galeria {
-  grid-column-start: 4;
-  grid-row: span 4;
-  position: relative;
-  width: 143%;
-  padding-top: 0%; /* relación vertical */
-  margin-top: -68.5%;
-  margin-left: -45%;
-
-  overflow: hidden;
-}
-
-.video-galeria iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-
-
-
-
-    .imagen-hover {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .imagen-hover img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: opacity 0.8s ease;
-    }
-
-    .imagen-hover img.img-hover {
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-    }
-
-    .imagen-hover:hover img.img-hover {
-      opacity: 1
-    }
-
-    .imagen-hover:hover img.img-original {
-      opacity: 3;
-    }
-
-
-    .mover-derecha {
-  transform: translateX(100px);
-}
-
-
-    @media (max-width: 768px) {
-      .galeria {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .galeria {
-        grid-template-columns: 1fr;
-      }
-    }
-
-
-
-
-
-/* NUEVO PARA MOVIL!!!!! APARTIR DE AQUI */
-
-
-    /* Menú hamburguesa solo en móvil */
-.menu-toggle {
-  display: none;
-  position: fixed;
-  top: 49px;
-  left: 13px;
-  z-index: 1100;
-  background-color: transparent;
-  border: none;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.menu-mobile {
+  .menu-mobile {
   display: none;
   flex-direction: column;
-  gap: 10px;
   position: fixed;
   top: 100px;
   left: 20px;
@@ -225,93 +191,28 @@
    border: rgb(118 118, 118) 1px;
   padding: 10px;
   z-index: 1100;
+
 }
 
-.menu-mobile a img {
-  width: 90px;
-  height: auto;
+.menu-mobile a {
+  margin-bottom: 20px; /* espacio entre botones */
 }
 
+/* Opcional: último botón sin margen */
+.menu-mobile a:last-child {
+  margin-bottom: -21px;
+}
 
-/* En escritorio se muestra el menú clásico y se oculta el hamburguesa */
-@media (max-width: 768px) {
-  .logo-container {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .menu-mobile {
-    display: none;
+  .menu-mobile a img {
+    width: 90px;
+    height: auto;
   }
 
   .menu-mobile.active {
     display: flex;
   }
-}
 
-
-
-
-/* Versión móvil: textos y galeria */
-
-
-@media (max-width: 480px) {
-
-  .descripcion2 {
-    padding: 30px 25px;
-    font-size: 13px;
-    text-align: center;
-  }
-
-   .descripcion{
-    padding: 30px 5px;
-    font-size: 13px;
-    text-align: justify;
-  }
-
-  .galeria {
-    grid-template-columns: 1fr;
-    
-    gap: 40px;
-    padding: 10px 1px;
-    margin-top: 0;
-    margin-bottom: 70px;
-  }
-
-
-
-  .video-galeria {
-    grid-column: auto;
-    width: 100%;
-    margin-top: -30px;
-    margin-left: 0;
-    padding-top: 226.25%; /* 16:9 ratio */
-  }
-
-  .video-galeria iframe {
-    width: 100%;
-    height: 100%;
-  }
-
-  .imagen-hover {
-    width: 100%;
-  }
-
-  .mover-derecha {
-    transform: none;
-  }
-}
-
-
-
-
-
-
-
-.modal-img {
+  .modal-img {
     max-width: 90%;
     max-height: 100%;
     border: 5px solid rgba(255, 255, 255, 0);
@@ -319,154 +220,450 @@
     transition: all 0.3s ease;
   }
 
-  /* Versión móvil: imagen más grande cancelada */
-  @media (max-width: 640px) {
-  #modal-img {
-    width: 130vw !important;
-    height: auto !important;
-    max-width: none !important;
-    max-height: none !important;
-  }
+  /* 1. Ocultación del Scrollbar (Reglas que evitan el desplazamiento del contenido) */
+html::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+body::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+body {
+    -ms-overflow-style: none !important;  /* IE and Edge */
+    scrollbar-width: none !important;  /* Firefox */
 }
 
+/* 2. BLOQUEO AGRESIVO DEL SCROLL CUANDO EL MODAL ESTÁ ABIERTO */
+/* Usamos el elemento <html> para anular el scroll de toda la página. */
 
-/* Versión móvil: hover fijo */
-
-@media (max-width: 768px) {
-  .imagen-hover img.img-hover {
-    opacity: 1 !important;
-    pointer-events: none;
-  }
-
-  .imagen-hover:hover img.img-hover {
-    opacity: 1 !important;
-  }
-
-  .imagen-hover:hover img.img-original {
-    opacity: 1 !important;
-  }
+html.modal-open {
+    /* Forzamos la eliminación del scroll. Si esto mueve el footer, es inevitable. */
+    overflow: hidden !important; 
+    overflow-y: hidden !important;
 }
 
-
-
-a, button, .tus-elementos-clickeables {
-  -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4); /* rojo semitransparente */
+/* Opcional: Si el scroll se mantiene en el body, también lo bloqueamos */
+body.modal-open {
+    overflow: hidden !important;
+    overflow-y: hidden !important;
 }
 
-/* Versión tablet */
-  @media (min-width: 481px) and (max-width: 768px) {
-    /* Galería de imágenes */
-     .galeria {
-    grid-template-columns: 1fr;
-    
-    gap: 40px;
-    padding: 30px 0px;
-    margin-top: 0;
-    margin-bottom: 0px;
+  a, button, .tus-elementos-clickeables {
+    -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4);
+  }
+  a:focus, img:focus {
+      outline: none;
+  }
+  img, a {
+      -webkit-tap-highlight-color: transparent;
+  }
+  .menu-toggle,
+  .menu-mobile a,
+  .menu-mobile a img {
+    -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4) !important;
   }
 
-.mover-derecha {
-    transform: none;
-  }
 
-  .video-galeria {
-    grid-column: auto;
-    width: 100%;
-    margin-top: -50px;
-    margin-left: 0;
-    padding-top: 226.25%; /* 16:9 ratio */
-  }
+  /* --- INICIO: Media Queries --- */
 
-  .video-galeria iframe {
-    width: 100%;
-    height: 100%;
-  }
+  /* --- INICIO: TABLET (769px a 1024px) --- */
+  /* (Usa el diseño móvil, pero con proporciones más grandes) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    /* 1. Oculta menú escritorio, muestra hamburguesa GRANDE */
+    .logo-container {
+      display: none;
+    }
+    .logo {
+  padding-top: 180px; /* <--- Ajusta este valor como quieras */
+}
+   .menu-toggle {
+      display: block;
+      font-size: 70px; /* Hamburguesa MÁS GRANDE */
+      top: 49px;
+      left: 19px;
+      opacity: 0.8;
+      position: fixed;
+      z-index: 1100;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+     .menu-mobile {
+      top: 150px; /* Ajusta posición de menú */
+      left: 30px;
+       gap: 30px;
+      background-color: rgba(226, 226, 226, 0.95);
+      border: rgb(118, 118, 118) 1px;
+    }
+    .menu-mobile a img {
+        width: 180px; /* Logos del menú MÁS GRANDES */
+    }
 
-    /* Descripción para tablet */
-    .descripcion {
-      padding: 30px 0px;
-      font-size: 14px; /* Un tamaño más grande que en móvil */
+    /* 2. Logo principal MÁS GRANDE */
+    .logo img {
+      max-width: 420px !important; /* Ajuste del logo */
+    }
+
+  .descripcion {
+      padding: 15px 0px; /* Padding de tableta */
+      font-size: 25px;     /* Texto MÁS GRANDE */
       text-align: justify;
     }
-
-     .descripcion2 {
-      padding: 30px 35px;
-      font-size: 14px; /* Un tamaño más grande que en móvil */
+    .descripcion2 {
+      padding: 90px 230px;
+      font-size: 25px; /* Mantiene 14px */
       text-align: center;
+      margin-bottom: 215px; /* Margen de tableta */
     }
 
-    /* Modificar las imágenes hover */
+    /* 4. Galería (1 columna, proporciones de tableta) */
+    .galeria {
+      grid-template-columns: 1fr;
+      gap: 65px;
+      padding: 0px;
+      padding-top: 110px;
+      padding-bottom: 70px;
+      max-width: 560px;
+      margin: 0 auto;
+      margin-top: -80px;
+      margin-bottom: -40px;
+    }
     .imagen-hover {
       width: 100%;
     }
-
-    /* Asegurar que el logo no se vea demasiado pequeño */
-    .logo img {
-      max-width: 120px; /* Ajuste del tamaño del logo */
+    .mover-derecha {
+      transform: none;
     }
 
+    /* 5. Video (proporciones de tableta) */
+    .video-galeria {
+      grid-column: auto;
+      width: 100%;
+      margin-top: -30px;
+      margin-left: 0;
+      padding-top: 226.25%; /* 16:9 ratio */
+    }
+    .video-galeria iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* 6. Hover fijo (igual que en móvil) */
+    .imagen-hover img.img-hover {
+      opacity: 1 !important;
+      pointer-events: none;
+    }
+    .imagen-hover:hover img.img-hover {
+      opacity: 1 !important;
+    }
+    .imagen-hover:hover img.img-original {
+      opacity: 1 !important;
+    }
+    
+    /* 7. Footer de tableta */
+    .footer-image {
+        width: 260px !important;
+    }
+    
+    /* 8. Texto solo tableta (si lo necesitas) */
+    .texto-solo-tablet {
+        display: block;
+        font-size: 18px;
+        color: #333;
+        padding: 20px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    /* 9. Estilos de Chat (si existen) */
+    #soto-launcher {
+        width: 100px !important; 
+        height: 80px !important;
+        bottom: 80px !important;
+    }
+    #soto-notification {
+        width: 45px !important; 
+        height: 35px !important;
+        font-size: 20px !important;
+        top: -38px !important;
+        right: 28px !important;
+        padding: 0 !important;
+        text-align: center !important;
+        line-height: 30px !important;
+    }
+    #soto-chat {
+      position: fixed;
+      bottom: 162px !important;
+      right: 33px;
+      width: 430px !important;
+      height: 520px !important;
+    }
+    .bot-message,
+    .user-message {
+      font-size: 24px !important;
+    }
+    #soto-chat #user-input,
+  #user-input {
+    border: none !important;
+    padding: 10px !important;
+    font-size: 24px !important;
+    background-color: white !important;
+  }
+  }
+  /* --- FIN: TABLET --- */
+
+
+  /* --- INICIO: MÓVIL (hasta 768px) --- */
+  /* (Este bloque contiene tus estilos originales para móvil y tablet pequeña) */
+  @media (max-width: 768px) {
+    .galeria {
+      grid-template-columns: 1fr; /* 1 columna */
+      gap: 40px;
+      padding: 30px 0px;
+      margin-top: 0;
+      margin-bottom: 0px;
+    }
+
+    .logo-container {
+      display: none;
+    }
 
     .menu-toggle {
-      display: block; /* Asegurarse de que el botón hamburguesa se vea */
-      position: fixed;
+      display: block;
+      opacity: 0.8;
       top: 49px;
-      left: 11px;
+      left: 13px;
+      position: fixed;
       z-index: 1100;
       background-color: transparent;
       border: none;
       font-size: 30px;
       cursor: pointer;
-      opacity: 0.7; /* Ajustar la opacidad como en la versión móvil */
     }
 
     .menu-mobile {
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-      position: fixed;
-      top: 85px;
+      top: 100px;
       left: 20px;
-      background-color: rgba(226, 226, 226, 0.95); /* Asegura que la opacidad se mantenga */
+      background-color: rgba(226, 226, 226, 0.95);
       border: rgb(118, 118, 118) 1px;
-      padding: 10px;
-      z-index: 1100;
     }
 
-    .menu-mobile.active {
-      display: flex; /* Mostrar el menú cuando esté activo */
+    /* Hover fijo */
+    .imagen-hover img.img-hover {
+      opacity: 1 !important;
+      pointer-events: none;
+    }
+    .imagen-hover:hover img.img-hover {
+      opacity: 1 !important;
+    }
+    .imagen-hover:hover img.img-original {
+      opacity: 1 !important;
     }
 
-    /* Mostrar el menú hamburguesa en tablet */
-    .menu-toggle {
-      opacity: 0.8; /* Ajuste de opacidad */
+    /* Logo principal */
+    .logo img {
+      max-width: 120px;
+    }
+
+    /* Descripciones */
+    .descripcion {
+      padding: 30px 0px;
+      font-size: 14px;
+      text-align: justify;
+    }
+    .descripcion2 {
+      padding: 30px 35px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .imagen-hover {
+      width: 100%;
+    }
+
+    .mover-derecha {
+      transform: none;
+    }
+
+    .video-galeria {
+      grid-column: auto;
+      width: 100%;
+      margin-top: -50px;
+      margin-left: 0;
+      padding-top: 226.25%; /* 16:9 ratio */
+    }
+    .video-galeria iframe {
+      width: 100%;
+      height: 100%;
     }
   }
+  /* --- FIN: MÓVIL --- */
 
 
+  /* --- INICIO: MÓVIL PEQUEÑO (hasta 480px) --- */
+  @media (max-width: 480px) {
+    .galeria {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 10px 1px;
+      margin-top: 0;
+      margin-bottom: 70px;
+    }
 
+    .video-galeria {
+      margin-top: -30px;
+    }
+
+    .descripcion2 {
+      padding: 55px 35px;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .descripcion {
+      padding: 30px 5px;
+      font-size: 13px;
+      text-align: justify;
+    }
     
-  </style>
+    .imagen-hover {
+        width: 100%; /* Asegura que la imagen ocupe el ancho */
+    }
+  }
+  /* --- FIN: MÓVIL PEQUEÑO --- */
+
+
+  /* --- INICIO: Modal (hasta 640px) --- */
+  @media (max-width: 640px) {
+    #modal-img {
+      width: 130vw !important;
+      height: auto !important;
+      max-width: none !important;
+      max-height: none !important;
+    }
+  }
+  /* --- FIN: Modal --- */
+/* 2. Estilos para la imagen del botón de regreso */
+.icono-regreso-menu {
+    /* Hereda el tamaño estándar del menú, pero puedes darle un tamaño específico si es diferente */
+    width: 70px !important; 
+     left: 0px;
+    height: auto;
+    margin-top: 0 !important; 
+     left: 0px;
+    
+    /* 🆕 AÑADE ESTO: Posicionamiento absoluto */
+    position: absolute; 
+    
+    /* ⬇️ AJUSTA ESTE VALOR para controlar la distancia desde la parte superior del .logo-container ⬇️ */
+    top: 600px; /* Ejemplo: 40px. Aumenta este valor para bajarlo más. */
+    /* Evita el resaltado azul al hacer clic en móvil/tablet */
+    -webkit-tap-highlight-color: transparent; 
+}
+
+/* --- regreso movil ---------------------------------------------------------------- */
+
+/* 1. Ocultar el botón por defecto (Escritorio y Tablet) */
+.boton-regreso-flotante {
+    display: none; 
+}
+
+/* 2. Asegurar que esté oculto en Tablet si ya lo habías mostrado */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .boton-regreso-flotante {
+        display: none !important;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    
+    /* Ocultar el botón si ya está visible en el menú o en otro lugar de escritorio */
+    .boton-regreso-flotante {
+        display: none !important; 
+    }
+    
+    /* 🆕 NUEVO ESTILO: Botón de Contenido (NO FLOTANTE) */
+    .boton-regreso-al-final {
+        display: block !important; /* Lo hacemos visible como un bloque */
+        
+        /* 🛑 CLAVE: ELIMINA CUALQUIER POSICIONAMIENTO FIJO 🛑 */
+        position: static; /* O simplemente quita esta línea si nunca le diste 'fixed' */
+        
+        /* Centrar el botón horizontalmente como si fuera una imagen más */
+        margin: 0px auto; /* ⬅️ 40px: Espacio arriba/abajo. 'auto': Centra horizontalmente. */
+        
+        padding: 0;
+        text-align: center; /* Asegura que la imagen dentro del enlace se centre */
+    }
+
+    /* Estilo de la imagen */
+    .icono-regreso-contenido {
+        width: 60px; /* Tamaño para el móvil */
+        height: auto;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+}
+
+.boton-regreso-al-final {
+    display: none; 
+}
+
+/* Hacer que el botón aparezca en TABLET igual que en MÓVIL */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .boton-regreso-al-final {
+        display: block !important;
+        position: static;        /* No flotante */
+        margin: 140px auto;       /* Centrado igual que móvil */
+        margin-bottom: -155px;
+        text-align: center;
+    }
+
+    .icono-regreso-contenido {
+        width: 100px;             /* Más grande que móvil */
+        height: auto;
+    }
+
+    /* Ocultar cualquier otro botón que no quieras en tablet */
+    .boton-regreso-flotante,
+    .icono-regreso-menu {
+        display: none !important;
+    }
+}
+</style>
 </head>
 <body>
  <!-- Aquí va el contenido de tu página web... -->
 
   <!-- BURBUJA DEL CHAT DE SOTO -->
   <div id="soto-launcher">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1755968841/soto_logo.0010_xh9icu.png" alt="soto" />
-  </div>
 
-  <div id="soto-chat" style="display: none;">
-    <div id="chat-window">
-         <button id="close-chat" class="close-chat-btn">X</button>
-      <div id="chat-messages"></div>
-      <input type="text" id="user-input" placeholder="Escribe tus dudas..." />
-    </div>
-  </div>  
-<div id="soto-notification">¿?</div>
+    <img
 
-  <link rel="stylesheet" href="../chat.css">
-  <script src="../chat.js"></script>
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_100,c_scale/v1755968841/soto_logo.0010_xh9icu.png"
 
+        srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_100,c_scale/v1755968841/soto_logo.0010_xh9icu.png 100w,
+
+                https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_200,c_scale/v1755968841/soto_logo.0010_xh9icu.png 200w"
+
+        alt="soto cara">
+ <div id="soto-notification">¿?</div>
+</div>
+
+        <div id="soto-chat" style="display: none;"><div id="chat-window"><button id="close-chat" class="close-chat-btn">X</button><div id="chat-messages"></div><input type="text" id="user-input" placeholder="Escribe tus dudas..." /></div></div>  
+
+       
+
+        <link rel="stylesheet" href="../chat.css">
+
+        <script src="../chat.js"></script>
 
 
 
@@ -477,22 +674,30 @@ a, button, .tus-elementos-clickeables {
 <div class="menu-mobile" id="mobileMenu">
   
   <a href="../">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751476758/soto_icono_ny0lp9.png" alt="Logo 5">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
   </a>
-  <a href="../proyectos-patio-trasero/">
+  <a href="../proyectos-patio/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 1">
   </a>
-  <a href="../acerca-de-patio-trasero/">
+  <a href="../acerca-de-patio/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
   </a>
-  <a href="../sobre-este-sitio-web/">
+  <a href="../soto-artista-virtual/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751478380/lo_ultimo_web_xijtal.png" alt="Logo 3">
   </a>
+  <a href="../archivo-en-venta/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477916/tienda-01_ntkqad.png" alt="Logo 3">
+  </a>
+  <a href="../contacto/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 3">
+  </a>
   <a href="../oficina/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751475517/oficina1_xds5wg.png" alt="Logo 3">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 3">
   </a>
   
-  
+  <a href="#" onclick="window.history.back(); return false;" class="enlace-regreso">
+        <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-menu">
+    </a>
 </div>
 
 
@@ -500,28 +705,36 @@ a, button, .tus-elementos-clickeables {
 
   <div class="logo-container">
     <a href="../">   
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751476758/soto_icono_ny0lp9.png" alt="Logo 4">
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 4">
     </a>
-    <a href="../proyectos-patio-trasero/">
+    <a href="../proyectos-patio/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 1">
 </a>
-<a href="../acerca-de-patio-trasero/">  
+<a href="../acerca-de-patio/">  
 <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
 </a>
-<a href="../sobre-este-sitio-web/">
+<a href="../soto-artista-virtual/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751478380/lo_ultimo_web_xijtal.png" alt="Logo 3">
   </a>
+  <a href="../archivo-en-venta/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477916/tienda-01_ntkqad.png" alt="Logo 3">
+  </a>
+  <a href="../contacto/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 3">
+  </a>
 <a href="../oficina/">   
-<img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751475517/oficina1_xds5wg.png" alt="Logo 3">
+<img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 3">
 </a>
 
-
+<a href="#" onclick="window.history.back(); return false;" class="enlace-regreso">
+        <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-menu">
+    </a>
 
 
     
    </div>
   <div class="logo">
-    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1751566855/desoido_logo-01_p7gdhr.png" alt="Logo" style="max-width: 250px; height: auto;">
+    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1751566855/desoido_logo-01_p7gdhr.png" alt="logo desoido, patio soto" style="max-width: 250px; height: auto;">
   </div>
 
 
@@ -570,13 +783,13 @@ Próximamente en Google Play Store<br></strong>
     sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751567133/DESOIDO1-02_p5nilx.png"
     class="img-original"
-    alt="Imagen 1"
+    alt="pantalla de la app desoido, sonidos en extinción, patio soto"
   >
 
   <img 
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751568533/pa1-01_cqt1kh.png"
     class="img-hover"
-    alt="Hover Imagen 1"
+    alt="Hover pantalla de la app desoido, sonidos en extinción, patio soto"
     data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751568809/des0-01_xyoeai.png"
   >
 </div>
@@ -596,13 +809,13 @@ Próximamente en Google Play Store<br></strong>
     sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751567137/DESOIDO2-01_fvn7tl.png"
     class="img-original"
-    alt="Imagen 2"
+    alt="pantalla de la app desoido, sonidos en extinción, patio soto"
   >
 
   <img 
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751568533/pa2-01_vdpxry.png"
     class="img-hover"
-    alt="Hover Imagen 1"
+    alt="Hover pantalla de la app desoido, sonidos en extinción, patio soto"
     data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751568808/des2-01_m1uvy7.png"
   >
 </div>
@@ -621,13 +834,13 @@ Próximamente en Google Play Store<br></strong>
     sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751567114/DESOIDO3-01_uqxo5q.png"
     class="img-original"
-    alt="Imagen 2"
+    alt="pantalla de la app desoido, sonidos en extinción, patio soto"
   >
 
   <img 
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751568533/pa3-01_kcswqr.png"
     class="img-hover"
-    alt="Hover Imagen 1"
+    alt="Hover pantalla de la app desoido, sonidos en extinción, patio soto"
     data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751568812/des1-01_mr91kn.png"
   >
 </div>
@@ -646,13 +859,13 @@ Próximamente en Google Play Store<br></strong>
     sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751567118/DESOIDO4-01_bmrnet.png"
     class="img-original"
-    alt="Imagen 2"
+    alt="pantalla de la app desoido, sonidos en extinción, patio soto"
   >
 
   <img 
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751568533/pa4-01_sdgzrv.png"
     class="img-hover"
-    alt="Hover Imagen 1"
+    alt="Hover pantalla de la app desoido, sonidos en extinción, patio soto"
     data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751568813/des3-01_raqe2b.png"
   >
 </div>
@@ -671,13 +884,13 @@ Próximamente en Google Play Store<br></strong>
     sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751567122/DESOIDO5-01_atbz8i.png"
     class="img-original"
-    alt="Imagen 2"
+    alt="pantalla de la app desoido, sonidos en extinción, patio soto"
   >
 
   <img 
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751568533/pa5-01_hwzpuv.png"
     class="img-hover"
-    alt="Hover Imagen 1"
+    alt="Hover pantalla de la app desoido, sonidos en extinción, patio soto"
     data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751568812/des4-01_qpgdmc.png"
   >
 </div>
@@ -696,13 +909,13 @@ Próximamente en Google Play Store<br></strong>
     sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751567126/DESOIDO6-01_gx14zf.png"
     class="img-original"
-    alt="Imagen 2"
+    alt="pantalla de la app desoido, sonidos en extinción, patio soto"
   >
 
   <img 
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751568533/pa6-01_qp4dfc.png"
     class="img-hover"
-    alt="Hover Imagen 1"
+    alt="Hover pantalla de la app desoido, sonidos en extinción, patio soto"
     data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751568806/des5-01_exakfb.png"
   >
 </div>
@@ -720,13 +933,13 @@ Próximamente en Google Play Store<br></strong>
     sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751567129/DESOIDO7-01_zwt0rm.png"
     class="img-original"
-    alt="Imagen 2"
+    alt="pantalla de la app desoido, sonidos en extinción, patio soto"
   >
 
   <img 
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751568533/pa7-01_hcebny.png"
     class="img-hover"
-    alt="Hover Imagen 1"
+    alt="Hover pantalla de la app desoido, sonidos en extinción, patio soto"
     data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751568812/des6-01_kuqvh5.png"
   >
 </div>
@@ -746,13 +959,13 @@ Próximamente en Google Play Store<br></strong>
     sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751567001/DESOIDO8-02_r1u1tt.png"
     class="img-original"
-    alt="Imagen 2"
+    alt="pantalla de la app desoido, sonidos en extinción, patio soto"
   >
 
   <img 
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751568534/pa8-01_qunkb2.png"
     class="img-hover"
-    alt="Hover Imagen 1"
+    alt="Hover pantalla de la app desoido, sonidos en extinción, patio soto"
     data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751568810/des7-01_tg7chg.png"
   >
 </div>
@@ -769,13 +982,13 @@ Próximamente en Google Play Store<br></strong>
     sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751567757/fin1-01_sgdhmj.png"
     class="img-original"
-    alt="Imagen 2"
+    alt="detalles del diseño de la app desoido, sonidos en extinción, patio soto"
   >
 
   <img 
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751568320/fin2-01_sejpnj.png"
     class="img-hover"
-    alt="Hover Imagen 2"
+    alt="Hover detalles del diseño de la app desoido, sonidos en extinción, patio soto"
   >
 </div>
 
@@ -790,15 +1003,20 @@ Próximamente en Google Play Store<br></strong>
     sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751567676/nuevo_desoido1_rw7ug3.png"
     class="img-original"
-    alt="Imagen 2"
+    alt="detalles del diseño de la app desoido, sonidos en extinción, patio soto"
   >
 
   <img 
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751568320/fin6-01_dwreim.png"
     class="img-hover"
-    alt="Hover Imagen 2"
+    alt="Hover detalles del diseño de la app desoido, sonidos en extinción, patio soto"
   >
 </div>
+
+
+
+
+
 
 
     <div class="video-galeria">
@@ -809,7 +1027,9 @@ Próximamente en Google Play Store<br></strong>
         </iframe>
       </div>
       
-    <div class="imagen-hover">
+
+
+ <div class="imagen-hover">
   <img 
     srcset="
       https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751567676/nuevo_desoido2_i9u331.png 600w,
@@ -819,15 +1039,18 @@ Próximamente en Google Play Store<br></strong>
     sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751567676/nuevo_desoido2_i9u331.png"
     class="img-original"
-    alt="Imagen 2"
+    alt="detalles del diseño de la app desoido, sonidos en extinción, patio soto"
   >
 
   <img 
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751568320/fin4-01_y2vjjl.png"
     class="img-hover"
-    alt="Hover Imagen 2"
+    alt="Hover detalles del diseño de la app desoido, sonidos en extinción, patio soto"
   >
 </div>
+
+
+
 
 
 
@@ -842,19 +1065,22 @@ Próximamente en Google Play Store<br></strong>
     sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751567757/fin7-01_mlpnqz.png"
     class="img-original"
-    alt="Imagen 2"
+    alt="detalles del diseño de la app desoido, sonidos en extinción, patio soto"
   >
 
   <img 
     src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751568320/fin8-01_iiqb7n.png"
     class="img-hover"
-    alt="Hover Imagen 2"
+    alt="Hover detalles del diseño de la app desoido, sonidos en extinción, patio soto"
   >
 </div>
 
+ <a href="#" onclick="window.history.back(); return false;" class="boton-regreso-al-final">
+    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-contenido">
+</a>
 
       <footer>
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751476362/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760111670/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
         
     </footer>
 
@@ -911,7 +1137,68 @@ function toggleMenu() {
 </script>
 
 
+<script>
+// 🛑 Variables necesarias para el bloqueo de scroll
+let scrollPosition = 0;
+const htmlElement = document.documentElement;
 
+// 🛑 FUNCIÓN PARA BLOQUEAR EL SCROLL (Llamar al abrir el modal)
+function lockScroll() {
+    scrollPosition = window.scrollY; // 1. Guarda la posición actual
+    document.body.style.position = 'fixed'; // 2. Fija el body
+    document.body.style.top = `-${scrollPosition}px`; // 3. Mantiene la posición visual
+    document.body.style.width = '100%'; // 4. Evita que el body se encoja
+    htmlElement.style.overflow = 'hidden'; // 5. Bloquea el scroll del HTML
+}
+
+// 🛑 FUNCIÓN PARA RESTAURAR EL SCROLL (Llamar al cerrar el modal)
+function unlockScroll() {
+    document.body.style.position = ''; 
+    document.body.style.top = ''; 
+    document.body.style.width = ''; 
+    htmlElement.style.overflow = '';
+    window.scrollTo(0, scrollPosition); // Restaura la posición guardada
+}
+
+window.addEventListener("load", function () {
+    
+    const launcher = document.getElementById("soto-launcher");
+    const notification = document.getElementById("soto-notification");
+    const launcherImage = launcher ? launcher.querySelector("img") : null;
+
+    if (launcherImage && notification) {
+        
+        notification.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Lista de eventos a simular
+            const eventsToFire = ['mousedown', 'mouseup', 'click'];
+            
+            eventsToFire.forEach(function(eventName) {
+                const clickEvent = new MouseEvent(eventName, {
+                    bubbles: true,
+                    cancelable: true,
+                    view: window
+                });
+                
+                // Dispara el evento en LA IMAGEN (lo más probable)
+                launcherImage.dispatchEvent(clickEvent);
+                
+                // Dispara el evento en EL DIV PADRE (por si acaso)
+                launcher.dispatchEvent(clickEvent);
+            });
+        });
+    }
+});
+</script>
+
+<script>
+    function goBack() {
+        // La función history.back() regresa a la URL anterior en el historial del navegador.
+        window.history.back();
+    }
+</script>
 
 </body>
 </html>

@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>acerca de soto</title>
-   <link rel="icon" href="https://res.cloudinary.com/dbwezmju6/image/upload/v1750391546/icono_wev-01_gllalq.png" type="image/png">
+   <link rel="icon" href="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759771502/icono_web-01_pcbhuw.png" type="image/png">
 
   <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
- <meta name="description" content="soto es el sitio donde ocurre todo">
+ <meta name="description" content="el espacio donde convergen las prácticas artísticas y los proyectos de oficina.">
   
   <meta property="og:title" content="acerca soto">
 <meta property="og:description" content="soto, el espacio donde convergen las prácticas artísticas y los proyectos de oficina.">
@@ -81,25 +81,23 @@
 }
 
     footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #f3f3f3; /* Asegura que tenga el mismo fondo */
-        text-align: center;
-        padding: 10px 0;
-        z-index: 1000; /* Se mantiene por encima de otros elementos */
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f3f3f3;
+      text-align: center;
+      padding: 5px 0;
+      z-index: 1000;
     }
 
-
-
-        .footer-image {
-            width: 150px; /* Ajusta el tamaño de la imagen */
-            height: auto;
-            padding-top: 0px;
-            margin-top: 0px;
-            animation: mostrarImagenes 3s ease forwards;
-        }
+    .footer-image {
+      width: 150px;
+      height: auto;
+      padding-top: 10px;
+      margin-top: -4px;
+      animation: mostrarImagenes 3s ease forwards;
+    }
 
 
     .galeria {
@@ -179,7 +177,7 @@
 .menu-mobile {
   display: none;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   position: fixed;
   top: 100px;
   left: 20px;
@@ -223,7 +221,7 @@
 @media (max-width: 480px) {
 
   .descripcion2 {
-    padding: 30px 25px;
+    padding: 55px 35px;
     font-size: 13px;
     text-align: center;
   }
@@ -232,7 +230,7 @@
     padding: 0px 5px;
     font-size: 13px;
     text-align: justify;
-     margin-bottom: 70px;
+     margin-bottom: 99px;
   }
 
   .galeria {
@@ -313,9 +311,9 @@ a, button, .tus-elementos-clickeables {
 
 /* Estilo general (escritorio) */
 .logo-img-unica {
-  max-width: 130px;
+  max-width: 112px;
   height: auto;
-     margin-top: -40px; /* Ajusta el valor según cuánto quieras subir */
+     margin-top: -10px; /* Ajusta el valor según cuánto quieras subir */
 }
 
 /* Estilo específico para móvil */
@@ -325,7 +323,7 @@ a, button, .tus-elementos-clickeables {
     height: auto !important;
       position: relative;
     top: -11px; /* Ajusta el valor según cuánto quieras subir */
-    margin-top: -37px;
+    margin-top: -33px;
   }
 
   .contenido-ajustado {
@@ -437,8 +435,116 @@ a, button, .tus-elementos-clickeables {
 .wave span:nth-child(11) { animation-delay: 1s; }
 
 
+/* 💻 Ajustes SÓLO para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .icono-regreso-menu {
+        display: none !important;
+    }
+    
+    .footer-image {
+        width: 260px !important; /* Añade !important aquí */
+} 
+
+ #soto-launcher {
+        width: 100px !important;  
+        height: 80px !important;
+        /* --- AÑADE ESTA LÍNEA PARA SUBIRLO --- */
+        bottom: 80px !important; /* Ajusta este valor (más alto = más arriba) */
+        /* right: 20px !important; */ /* No necesitas cambiar 'right' a menos que también quieras moverlo horizontalmente */
+    }
+
+    #soto-notification {
+        width: 45px !important;   
+        height: 35px !important;
+        font-size: 20px !important;
+        top: -38px !important;
+        right: 28px !important;
+        /* --- AÑADE ESTAS 3 LÍNEAS --- */
+        padding: 0 !important; /* 1. Quita el padding antiguo */
+        text-align: center !important; /* 2. Centra horizontalmente */
+        line-height: 30px !important; /* 3. Ajusta la altura de línea */
+    }
+
+     #soto-chat {
+  position: fixed;
+  bottom: 162px !important; /* Ajusta este valor (más alto = más arriba) */
+  right: 33px; 
+  width: 430px !important;
+  height:520px !important;
+
+}
+
+.bot-message,
+.user-message {
+  background: #e0e0e0; /* Fondo para ambos mensajes */
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 24px !important;
+  font-family: "Lexend", sans-serif;
+  line-height: 1.5;
+  width: fit-content; /* Ajusta el tamaño del mensaje */
+  max-width: 80%; /* Limita el ancho de los mensajes */
+  margin-bottom: 1px;
+  text-align:  left; /* Alinea ambos mensajes a la izquierda */
+}
+#soto-chat #user-input,
+  #user-input {
+    border: none !important;
+    padding: 10px !important;
+    font-size: 24px !important;
+    background-color: white !important;
+  }
+.logo-container { 
+        top: 95px; /* Quizás ajustar la posición vertical */
+    }
+    .logo-container img {
+        width: 150px; /* Ajusta este valor para hacer los logos más grandes */
+        /* height: auto; ya está por defecto, no hace falta repetirlo */
+    }
 
 
+.descripcion {
+      padding: 15px 230px;
+      font-size: 24px; /* Un tamaño más grande que en móvil */
+      text-align: justify;
+    }
+
+     .descripcion2 {
+      padding: 90px 10px;
+       margin-bottom: 160px;
+      font-size: 14px; /* Un tamaño más grande que en móvil */
+      text-align: center;
+      margin-bottom: 253px;
+    }
+.logo-img-unica {
+    max-width: 200px !important; /* O el valor que desees */
+    height: auto !important;
+      position: relative;
+    top: 68px; /* Ajusta el valor según cuánto quieras subir */
+  }
+
+}
+/* 2. Estilos para la imagen del botón de regreso */
+.icono-regreso-menu {
+    /* Hereda el tamaño estándar del menú, pero puedes darle un tamaño específico si es diferente */
+    width: 70px !important; 
+     left: 0px;
+    height: auto;
+    margin-top: 0 !important; 
+     left: 0px;
+    
+    /* 🆕 AÑADE ESTO: Posicionamiento absoluto */
+    position: absolute; 
+    
+    /* ⬇️ AJUSTA ESTE VALOR para controlar la distancia desde la parte superior del .logo-container ⬇️ */
+    top: 600px; /* Ejemplo: 40px. Aumenta este valor para bajarlo más. */
+    /* Evita el resaltado azul al hacer clic en móvil/tablet */
+    -webkit-tap-highlight-color: transparent; 
+}
+.boton-regreso-al-final {
+    display: none; 
+}
   </style>
 </head>
 <body>
@@ -447,21 +553,26 @@ a, button, .tus-elementos-clickeables {
 
   <!-- BURBUJA DEL CHAT DE SOTO -->
   <div id="soto-launcher">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1755968841/soto_logo.0010_xh9icu.png" alt="soto" />
-  </div>
 
-  <div id="soto-chat" style="display: none;">
-    <div id="chat-window">
-         <button id="close-chat" class="close-chat-btn">X</button>
-      <div id="chat-messages"></div>
-      <input type="text" id="user-input" placeholder="Escribe tus dudas..." />
-    </div>
-  </div>  
-<div id="soto-notification">¿?</div>
+    <img
 
-  <link rel="stylesheet" href="../chat.css">
-  <script src="../chat.js"></script>
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_100,c_scale/v1755968841/soto_logo.0010_xh9icu.png"
 
+        srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_100,c_scale/v1755968841/soto_logo.0010_xh9icu.png 100w,
+
+                https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_200,c_scale/v1755968841/soto_logo.0010_xh9icu.png 200w"
+
+        alt="soto cara">
+ <div id="soto-notification">¿?</div>
+</div>
+
+        <div id="soto-chat" style="display: none;"><div id="chat-window"><button id="close-chat" class="close-chat-btn">X</button><div id="chat-messages"></div><input type="text" id="user-input" placeholder="Escribe tus dudas..." /></div></div>  
+
+       
+
+        <link rel="stylesheet" href="../chat.css">
+
+        <script src="../chat.js"></script>
 
 
 
@@ -473,15 +584,18 @@ a, button, .tus-elementos-clickeables {
 <div class="menu-mobile" id="mobileMenu">
 
   <a href="../">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751476758/soto_icono_ny0lp9.png" alt="Logo 5">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
   </a>
 
   <a href="../oficina/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751475517/oficina1_xds5wg.png" alt="Logo 3">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 3">
   </a>
-  <a href="../patio-trasero/">
+  <a href="../patio/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751475659/patio_menu_m0399x.png" alt="Logo 5">
   </a>
+<a href="#" onclick="window.history.back(); return false;" class="enlace-regreso">
+        <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-menu">
+    </a>
 
 
 
@@ -493,23 +607,26 @@ a, button, .tus-elementos-clickeables {
  
 
   <a href="../">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751476758/soto_icono_ny0lp9.png" alt="Logo 5">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
      </a>
 
       <a href="../oficina/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751475517/oficina1_xds5wg.png" alt="Logo 3">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 3">
   </a>
-  <a href="../patio-trasero/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751475659/patio_menu_m0399x.png" alt="Logo 5">
+  <a href="../patio/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759490897/patio_menu_m0399x.png" alt="Logo 5">
   </a>
 
+<a href="#" onclick="window.history.back(); return false;" class="enlace-regreso">
+        <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-menu">
+    </a>
 
     
    </div>
 
    <div class="contenido-ajustado">
   <div class="logo">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1754305045/cara_soto_original-01_pz7chb.png" alt="Logo" class="logo-img-unica">
+    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759421183/icono_wev-01_a0aiqh.png" alt="Logo" class="logo-img-unica">
 
   </div>
 
@@ -525,48 +642,47 @@ a, button, .tus-elementos-clickeables {
 
 
 
-           <p><strong class="wave">
-  <span>s</span><span>o</span><span>t</span><span>o</span><span>s</span><span>o</span><span>t</span><span>o</span><span>s</span><span>o</span><span>t</span><span>o</span>
-</strong></p>
-</p>soto, es Xavier, es el estudio y es el artista. soto³.</p>
+           <p class="wave">
+  <h1>sotosotosoto</h1>
+</p>
+</p>soto, es Xavier, es el artista y es el estudio. soto³.</p>
+</p>soto3 es un estudio donde la estrategia de negocio y la experimentación artística colisionan para crear proyectos con profundidad y concepto.</p>
+
            
- <p><strong class="wave">
+ <p><h3 class="wave">
   <span>s</span><span>o</span><span>t</span><span>o</span> 
-  <span>X</span><span>a</span><span>v</span><span>i</span><span>e</span><span>r</span>
-</strong></p>
-</p>Xavier Soto es el rostro de todos los proyectos que verás aquí. Es el creador de soto estudio y la persona detrás de soto artista. </p>
-<p><strong class="wave">
+  <span>X</span><span>a</span><span>v</span><span>i</span><span>e</span><span>r¹</span>
+</h3></p>
+</p>Xavier Soto es la visión fundadora del estudio. Su dirección es la garantía de que el diseño y el arte converjan en una sola pieza coherente, transformando cada trabajo en una declaración de intenciones.</p>
+ <h4>Las Firmas: El Sello</h4>
+</p>El trabajo que nace en cada espacio es ejecutado y firmado por una de las dos facetas del estudio:</p>
+ <ul>
+<li><strong>Xavier Soto:</strong> Como estratega y diseñador principal, es la firma que lidera y ejecuta los proyectos de la oficina.</li>
+<li><strong>soto (artista):</strong> Es el alter ego creativo y la firma que protagoniza la obra que nace en el patio. Un personaje digital que explora los límites del arte y la comunicación visual.</li>
+</ul>
+
+
+<p><h3 class="wave">
   <span>s</span><span>o</span><span>t</span><span>o</span> 
-  <span>e</span><span>s</span><span>t</span><span>u</span><span>d</span><span>i</span><span>o</span>
-</strong></p>
-</p>El estudio es un espacio integral donde se fusionan proyectos de diseño comercial y de empresa la "oficina", con proyectos artísticos y experimentales el "patio trasero".</p>
+  <span>a</span><span>r</span><span>t</span><span>i</span><span>s</span><span>t</span><span>a²</span>
+</h3></p>
+</p><strong><a href="../soto-artista-virtual/">soto</a></strong> es un personaje digital autónomo, diseñado para representar una figura artística que responde y actúa de manera independiente dentro del mundo del arte, pero siempre bajo el control y dirección conceptual de su creador, Xavier Soto. Es la firma y el protagonista de la obra que nace en el patio.<br></p>
 
-
-<p><strong class="wave">
+</p>
+<p><h3 class="wave">
   <span>s</span><span>o</span><span>t</span><span>o</span> 
-  <span>a</span><span>r</span><span>t</span><span>i</span><span>s</span><span>t</span><span>a</span>
-</strong></p>
-</p>Es un personaje digital autónomo, diseñado para representar una figura artística que responde y actúa de manera independiente dentro del mundo del arte, pero siempre bajo el control y dirección conceptual de su creador, Xavier Soto. <p><strong><i>soto es un personaje en construcción continua. Necesita de la conversación constante para evolucionar. Cuanto más se le pregunta, más aprende; cuanto más dialoga, más afina su forma de responder. Es un sistema basado en retroalimentación: la interacción con otras personas no solo lo activa, sino que lo transforma.</i></strong><br></p>
-
-
-
-   <p> <strong>Propósito de soto</strong>
-      <p>Su propósito es democratizar la interacción con el arte, ofreciendo una experiencia inmersiva y accesible que mezcla la tecnología, el arte y la comunicación digital. A través de su figura virtual, soto se convierte en un canal de expresión y reflexión, interactuando con el público y los espacios de manera constante y fluida. El concepto es cuestionar los límites entre lo físico y lo digital, llevando la práctica artística a un plano interactivo, donde el arte se transforma en una experiencia personalizada y accesible para cada usuario.</p>
-
-      <p> <strong>Funcionamiento actual de soto</strong> </p>
-        
-        <p>La inteligencia de soto no reside en un modelo único, sino en un sistema de búsqueda y generación que utiliza el contenido proporcionado por Xavier Soto.</p>
-        <p>Indexación (Indexing): La información sobre los proyectos, el recorrido, las influencias y la filosofía de soto se organiza en archivos JSON. Un script de Python (build_index.py) procesa esta información y la almacena en un Vector Store, un tipo de base de datos optimizada para búsquedas semánticas. Este proceso permite que la IA entienda el contenido por su significado, en lugar de solo por las palabras clave.</p>
-        <p>Consulta (Query): Cuando un usuario escribe una pregunta, el frontend la envía a la API del backend. La pregunta se convierte en una consulta que el motor de IA puede entender.</p>
-       <p>Recuperación (Retrieval): El motor de IA (LlamaIndex) busca en el Vector Store para encontrar los fragmentos de información más relevantes que se relacionen con la pregunta del usuario.</p> 
-        <p>Uso de la API de OpenAI: Una vez que LlamaIndex ha recuperado la información relevante, el backend hace una petición HTTP a la API de OpenAI. La API de OpenAI utiliza su Modelo de Lenguaje Grande (LLM) para procesar toda esta información. A partir de ella, genera la respuesta final que el backend envía de vuelta al frontend para que sea mostrada al usuario.</p>
-
-        <p>Conexión con el autor real: Aunque soto interactúa de manera autónoma, Xavier Soto es el origen conceptual y creativo detrás de su existencia. La imagen digital de soto es una representación artística que refleja los valores, inquietudes y el trabajo del autor, pero sin perder su autonomía.</p>
-
-            <p> <strong>Futuras Expansiones y Herramientas</strong> </p>
-             <p>El futuro de soto está centrado en expandir su autonomía y su interactividad con el público a través de nuevas tecnologías y herramientas. Algunas de las líneas de trabajo futuras incluyen:</p>
-               <p>Realidad Aumentada (AR): Integrar a soto en experiencias de realidad aumentada o realidad virtual permitirá que los usuarios interactúen con su figura y obra de una manera completamente inmersiva.</p>
-
+  <span>e</span><span>s</span><span>t</span><span>u</span><span>d</span><span>i</span><span>o³</span>
+</h3></p>
+</p>soto3 es la entidad que lo engloba todo: un estudio de diseño y arte. Es la marca principal.</p>
+ <h4>La Metodología: Dos Espacios, un Propósito</h4>
+ <ul>
+<li><strong>La oficina</strong>
+es el espacio donde la creatividad se pone al servicio del crecimiento de los clientes. Para lograrlo, se analizan, investigan y construyen soluciones de branding y diseño que están siempre centradas en alcanzar sus objetivos de negocio.
+</li>
+<li><strong>El patio</strong>
+es el espacio de la experimentación, donde el arte y el concepto son la prioridad. Un lugar donde se concentra la prueba y el error, y se fomenta la creatividad sin restricciones.
+</li>
+</ul>
 
   <!--      
 <p><i>Xavier Soto está detrás de todo.</i></p>
@@ -584,7 +700,7 @@ a, button, .tus-elementos-clickeables {
   
       
       <footer>
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751476362/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760111670/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
     </footer>
            
 
@@ -652,9 +768,46 @@ function toggleMenu() {
 </script>
 
 
+<script>
+window.addEventListener("load", function () {
+    
+    const launcher = document.getElementById("soto-launcher");
+    const notification = document.getElementById("soto-notification");
+    const launcherImage = launcher ? launcher.querySelector("img") : null;
 
+    if (launcherImage && notification) {
+        
+        notification.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Lista de eventos a simular
+            const eventsToFire = ['mousedown', 'mouseup', 'click'];
+            
+            eventsToFire.forEach(function(eventName) {
+                const clickEvent = new MouseEvent(eventName, {
+                    bubbles: true,
+                    cancelable: true,
+                    view: window
+                });
+                
+                // Dispara el evento en LA IMAGEN (lo más probable)
+                launcherImage.dispatchEvent(clickEvent);
+                
+                // Dispara el evento en EL DIV PADRE (por si acaso)
+                launcher.dispatchEvent(clickEvent);
+            });
+        });
+    }
+});
+</script>
 
-
+<script>
+    function goBack() {
+        // La función history.back() regresa a la URL anterior en el historial del navegador.
+        window.history.back();
+    }
+</script>
 
 </body>
 </html>

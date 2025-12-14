@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>archivo en venta</title>
+  <title>sala de exhibición privada</title>
   <link rel="icon" href="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759771502/icono_web-01_pcbhuw.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-  <meta name="description" content="venta de reproducciones artísticas.">
+  <meta name="description" content="espacio dedicado a la exhibición y venta de obra original.">
   <meta property="og:title" content="de hoy para mañana">
   <meta property="og:description" content="de hoy para mañana, es una exposición que explora lo cotidiano y lo absurdo de la vida diaria, presentando obras que reflejan la complejidad de los actos simples y esenciales.">
   <meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
@@ -39,7 +39,6 @@
       z-index: 1000;
     }
 
-
     .footer-image {
       width: 150px;
       height: auto;
@@ -47,9 +46,9 @@
       margin-top: -4px;
       animation: mostrarImagenes 3s ease forwards;
     }
-    .galeria {
+      .galeria {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 15px;
       padding: 20px;
       padding-top: 0px;
@@ -64,30 +63,9 @@
     .imagen-hover:hover img.img-hover { opacity: 1; }
     .imagen-hover:hover img.img-original { opacity: 3; }
     .menu-toggle { display: none; position: fixed; top: 49px; left: 13px; z-index: 1100; background-color: transparent; border: none; font-size: 30px; cursor: pointer; }
-    .menu-mobile {
-  display: none;
-  flex-direction: column;
-  position: fixed;
-  top: 100px;
-  left: 20px;
-   background-color: #e2e2e2f0;
-   border: rgb(118 118, 118) 1px;
-  padding: 10px;
-  z-index: 1100;
-
-}
-
-.menu-mobile a {
-  margin-bottom: 20px; /* espacio entre botones */
-}
-
-/* Opcional: último botón sin margen */
-.menu-mobile a:last-child {
-  margin-bottom: -21px;
-}
+    .menu-mobile { display: none; flex-direction: column; gap: 20px; position: fixed; top: 100px; left: 20px; background-color: #e2e2e2f0; border: rgb(118 118, 118) 1px; padding: 10px; z-index: 1100; }
     .menu-mobile a img { width: 90px; height: auto; }
-
-/* 🛑 ANULA EL RESALTE SOLO PARA LAS IMÁGENES DE LA GALERÍA 🛑 */
+    /* 🛑 ANULA EL RESALTE SOLO PARA LAS IMÁGENES DE LA GALERÍA 🛑 */
 .imagen-hover {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
 }
@@ -110,17 +88,13 @@
   }
 }
 
-
-
-
-
   .menu-toggle,
   .menu-mobile a,
   .menu-mobile a img {
     -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4) !important;
   }
 
-
+    /* --- ESTILOS DEL MODAL Y FORMULARIO --- */
     #modal {
       position: fixed;
       top: 0;
@@ -132,9 +106,10 @@
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      z-index: 99; /* <-- CORRECCIÓN PARA EL MENÚ */
+      z-index: 999; /* <-- LA CORRECCIÓN ESTÁ AQUÍ */
     }
 
+ 
 
     /* 🛑 REGLA CLAVE: Forzar visibilidad cuando el modal está abierto */
 
@@ -219,7 +194,7 @@ body.modal-open {
     overflow: hidden !important; 
     touch-action: none !important; 
 }
-     #modal-content { display: grid; grid-template-columns: minmax(0, 600px) 320px; align-items: center; gap: 30px; max-width: 95%; max-height: 90%; }
+    #modal-content { display: grid; grid-template-columns: minmax(0, 600px) 320px; align-items: center; gap: 30px; max-width: 95%; max-height: 90%; }
     #modal-info-container { font-family: "Lexend", sans-serif; display: flex; flex-direction: column; max-width: 320px; width: 100%; min-width: 0; }
     #modal-text { font-family: "Lexend", sans-serif; font-size: 14px; color: #333; text-align: left; line-height: 1.5; margin-bottom: 20px; overflow-wrap: break-word; }
     .modal-form label { font-family: "Lexend", sans-serif; display: block; text-align: left; font-size: 13px; color: #555; margin-bottom: 5px; }
@@ -237,10 +212,8 @@ body.modal-open {
     .carousel-btn:hover { background-color: rgba(0, 0, 0, 0); }
     .carousel-btn.prev { left: 10px; }
     .carousel-btn.next { right: 10px; }
-
     
-    
-    @media (max-width: 768px) {
+     @media (max-width: 768px) {
     /* Galería, Logos, etc. (manteniendo tus estilos originales) */
     .galeria { grid-template-columns: repeat(2, 1fr); }
     .logo-container { display: none; }
@@ -285,18 +258,18 @@ body.modal-open {
     .imagen-hover img.img-hover {
       /* 1. 🛑 HACERLA FIJA RESPECTO AL CONTENEDOR (.imagen-hover) 🛑 */
         position: absolute;
-        max-width: 60%; 
-        width: 60%;     
+        max-width: 80%; 
+        width: 80%;     
         height: auto;
         
         /* 🛑 Mover Usando Posición Absoluta 🛑 */
         position: absolute; /* Desvincula la imagen del flujo normal */
         
         /* Mueve hacia abajo (desde el borde superior del contenedor) */
-        top: 165px; 
+        top: 80px; 
         
         /* Mueve hacia la derecha (desde el borde izquierdo del contenedor) */
-        left: 8px; 
+        left: 7px; 
     }
 
     .imagen-hover img.img-hover {
@@ -344,8 +317,8 @@ body.modal-open {
     }
       .descripcion2 { padding: 23px 55px; font-size: 13px; text-align: center; }
       .descripcion{ padding: 30px 5px; font-size: 13px; text-align: justify; }
-      .galeria { grid-template-columns: 1fr; gap: 40px; padding: 10px 1px; margin-top: 0px; margin-bottom: 125px; }
-     .imagen-hover {
+      .galeria { grid-template-columns: 1fr; gap: 40px; padding: 10px 1px; margin-top: -90px; margin-bottom: 125px; }
+      .imagen-hover {
         /* CLAVE 1: El contenedor debe tener el mismo ancho que la imagen interna */
         max-width: 82%; 
         width: 82%; /* Lo forzamos al 82% de la columna de la galería (como la imagen) */
@@ -364,7 +337,15 @@ body.modal-open {
     }
     }
     @media (min-width: 481px) and (max-width: 768px) {
-      .galeria { grid-template-columns: 1fr; }
+      .galeria { grid-template-columns: 1fr; gap: 20px; padding: 10px 0px; margin-top: 0; margin-bottom: 70px; }
+      .descripcion { padding: 30px 0px; font-size: 14px; text-align: justify; }
+      .descripcion2 { padding: 30px 35px; font-size: 14px; text-align: center; }
+      .imagen-hover { width: 100%; }
+      .logo img { max-width: 120px; }
+      .menu-toggle { display: block; position: fixed; top: 49px; left: 11px; z-index: 1100; background-color: transparent; border: none; font-size: 30px; cursor: pointer; opacity: 0.7; }
+      .menu-mobile { display: none; flex-direction: column; gap: 10px; position: fixed; top: 85px; left: 20px; background-color: rgba(226, 226, 226, 0.95); border: rgb(118, 118, 118) 1px; padding: 10px; z-index: 1100; }
+      .menu-mobile.active { display: flex; }
+      .menu-toggle { opacity: 0.8; }
     }
 
      /* 💻 Ajustes SÓLO para tablets */
@@ -392,25 +373,12 @@ body.modal-open {
       cursor: pointer;
     }
      .menu-mobile {
-  display: none;
-  top: 150px;
-  left: 30px;
-  position: fixed;
-  flex-direction: column; /* asegúrate de que esté */
-  gap: 0; /* aquí eliminas el espacio extra */
-  background-color: rgba(226, 226, 226, 0.95);
-  border: rgb(118, 118, 118) 1px;
-}
-.menu-mobile a {
-  margin-bottom: 0px; /* espacio entre botones */
-}
-
-/* Opcional: último botón sin margen */
-.menu-mobile a:last-child {
-  margin-bottom: -30px;
-}
-
-
+      top: 150px; /* Ajusta posición de menú */
+      left: 30px;
+       gap: 30px;
+      background-color: rgba(226, 226, 226, 0.95);
+      border: rgb(118, 118, 118) 1px;
+    }
     .menu-mobile a img {
         width: 180px; /* Logos del menú MÁS GRANDES */
     }
@@ -432,7 +400,7 @@ body.modal-open {
 
     /* 2. Logo principal MÁS GRANDE */
     .logo img {
-      max-width: 290px !important; /* Ajuste del logo (más grande que móvil) */
+      max-width: 250px !important; /* Ajuste del logo (más grande que móvil) */
     }
     .logo-img-unica { /* Si existe esta clase específica */
         max-width: 250px !important; 
@@ -458,16 +426,15 @@ body.modal-open {
       grid-template-columns: 1fr;
       gap: 65px;
       padding: 0px;
-      padding-top: 110px;
+      padding-top: 0px;
       padding-bottom: 340px;
       max-width: 560px;
       margin: 0 auto;
-      margin-top: 40px;
+      margin-top: -180px;
       margin-bottom: -40px;
     }
     .imagen-hover {
       width: 100%;
-      position: relative;
     }
     .mover-derecha {
       transform: none;
@@ -541,6 +508,7 @@ body.modal-open {
     .user-message {
       font-size: 24px !important;
     }
+
     #soto-chat #user-input,
   #user-input {
     border: none !important;
@@ -566,16 +534,17 @@ body.modal-open {
     .carousel-slide { 
         height: 700px !important; /* AUMENTAR la altura visible del carrusel */
     }
-    .carousel-btn.prev {
+
+     .carousel-btn.prev {
     /* Mueve la flecha "prev" más hacia el centro (más a la derecha) */
-    left: -5px !important; /* Ajusta este valor. 20px es el margen desde el borde izquierdo del carrusel. */
+    left: -15px !important; /* Ajusta este valor. 20px es el margen desde el borde izquierdo del carrusel. */
     top: 50%; /* Mantener centrado verticalmente (si es el estilo predeterminado) */
 }
 
 /* Flecha de Navegación Derecha (Siguiente) */
 .carousel-btn.next {
     /* Mueve la flecha "next" más hacia el centro (más a la izquierda) */
-    right: -5px !important; /* Ajusta este valor. 20px es el margen desde el borde derecho del carrusel. */
+    right: -15px !important; /* Ajusta este valor. 20px es el margen desde el borde derecho del carrusel. */
     top: 50%; /* Mantener centrado verticalmente */
 }
 
@@ -593,7 +562,8 @@ body.modal-open {
     /* El valor positivo empuja el contenedor y su contenido hacia la derecha. */
     margin-left: -50px !important; /* Ajusta 20px al valor que desees */
 }
-    .modal-close-btn {
+
+.modal-close-btn {
     /* ... Tus estilos existentes ... */
     
     /* CLAVE: Elimina el flash táctil en navegadores basados en WebKit (Chrome, Safari) */
@@ -604,6 +574,7 @@ body.modal-open {
 #modal {
     -webkit-tap-highlight-color: transparent !important;
 }
+    
     /* 4. Ajuste del Texto */
     #modal-text, 
     .modal-form label,
@@ -620,57 +591,16 @@ body.modal-open {
 
     /* Mantenemos tus estilos específicos de chat y otros de tablet grande si los necesitas */
     /* ... (Tus estilos de chat de 769px a 1024px) ... */
-    .imagen-hover img.img-hover {
-    /* Mantenemos la opacidad y el manejo de eventos que ya tienes */
-    opacity: 1 !important;
-    pointer-events: none;
-    
-    /* 🚨 CLAVE: REDUCIR EL TAMAÑO 🚨 */
-    width: 90% !important; /* Haz que ocupe el 60% del contenedor padre */
-    max-width: 420px !important; /* Opcional: Establece un límite de píxeles */
-    height: auto !important; /* Mantiene la proporción */
-    
-
-    top: 192px; /* Ejemplo: Mueve la imagen 250px desde arriba */
-    left: 5px; /* Ejemplo: Mueve la imagen 200px desde la izquierda */
-}
-
-}
-/* 2. Estilos para la imagen del botón de regreso */
-.icono-regreso-menu {
-    /* Hereda el tamaño estándar del menú, pero puedes darle un tamaño específico si es diferente */
-    width: 70px !important; 
-     left: 0px;
-    height: auto;
-    margin-top: 0 !important; 
-     left: 0px;
-    
-    /* 🆕 AÑADE ESTO: Posicionamiento absoluto */
-    position: absolute; 
-    
-    /* ⬇️ AJUSTA ESTE VALOR para controlar la distancia desde la parte superior del .logo-container ⬇️ */
-    top: 600px; /* Ejemplo: 40px. Aumenta este valor para bajarlo más. */
-    /* Evita el resaltado azul al hacer clic en móvil/tablet */
-    -webkit-tap-highlight-color: transparent; 
 }
 
 .boton-regreso-al-final {
     display: none; 
 }
-
-/* Ocultar botón regresar en móviles */
-@media (max-width: 480px) {
-    .icono-regreso-menu {
-        display: none !important;
-    }
-}
-
   </style>
 </head>
 <body>
 
-  <!-- Aquí va el contenido de tu página web... -->
-
+ 
   <!-- BURBUJA DEL CHAT DE SOTO -->
    <div id="soto-launcher">
 
@@ -694,145 +624,78 @@ body.modal-open {
 
         <script src="../chat.js"></script>
 
-
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   <div class="menu-mobile" id="mobileMenu"> 
-    <a href="../"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5"></a>
-    <a href="../proyectos-patio/"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 2"></a>
-    <a href="../acerca-de-patio/"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2"></a>
-     <a href="../soto-artista-virtual/"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751478380/lo_ultimo_web_xijtal.png" alt="Logo 3"></a>
-    <a href="../contacto/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 3">
+    <a href="../"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 4"></a>
+    <a href="../proyectos-patio/"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 1"></a>
+    <a href="../acerca-de-patio/"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2"></a>
+    <a href="../soto-artista-virtual/"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751478380/lo_ultimo_web_xijtal.png" alt="Logo 3"></a>
+     <a href="../archivo-en-venta/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477916/tienda-01_ntkqad.png" alt="Logo 3">
   </a>
-    <a href="../oficina/"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 5"></a>
-    <a href="#" onclick="window.history.back(); return false;" class="enlace-regreso">
-        <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-menu">
-    </a>
+    <a href="../contacto/"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 3"></a>
+    <a href="../oficina/"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 3"></a>
   </div>
   <div class="logo-container">
-    <a href="../"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5"></a>
-    <a href="../proyectos-patio/"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 2"></a>
+    <a href="../"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 4"></a>
+    <a href="../proyectos-patio/"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 1"></a>
     <a href="../acerca-de-patio/"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2"></a>
-     <a href="../soto-artista-virtual/"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751478380/lo_ultimo_web_xijtal.png" alt="Logo 3"></a>
+    <a href="../soto-artista-virtual/"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751478380/lo_ultimo_web_xijtal.png" alt="Logo 3"></a>
     <a href="../contacto/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 3">
   </a>
-    <a href="../oficina/"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 5"></a>
-    <a href="#" onclick="window.history.back(); return false;" class="enlace-regreso">
-        <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-menu">
-    </a>
+   <a href="../archivo-en-venta/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477916/tienda-01_ntkqad.png" alt="Logo 3">
+  </a>
+    <a href="../oficina/"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 3"></a>
   </div>
 
   <div class="logo">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751559734/archivof_mhwp74.png" alt="logo archivo en venta, oficina soto" style="max-width: 165px; height: auto;">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759142510/sala_de_icono_p8d5zy.png" alt="logo sala de exhibición privada" style="max-width: 180px; height: auto;">
   </div>
   <div class="descripcion2">
-    <p><h3>Reproducciones artísticas<br><br></h3>Solicita la información completa.<br>Una vez enviada, recibirás en breve una respuesta con todos los detalles.<br></p>
+    <p><h3>Obra original<br><br></h3>
+      
+      Las obras están sujetas a disponibilidad. Solicita la información completa.<br>Una vez enviada, recibirás en breve una respuesta con todas las especificaciones, así como imágenes detalladas.<br><br><i>Nota: No hay ninguna ruta de acceso a esta página en el sitio web, únicamente por esta URL.</i><br></p>
   </div>
   
   <div class="galeria">
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751894548/gd1-01_yl5i0f.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761258001/z2-01-01-01_b5fnv6.png" data-text="<p><strong>Color sol</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa).</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759241515/esapcios1-01_frvrkp.png" class="img-original" alt="color sol, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover color sol, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759254908/e2-01_fpejwg.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761255118/z23-01-01-01_trjdhh.png" data-text="<p><strong>Las escondidas n1</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa).</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240124/rayo222_arecvw.png" class="img-original" alt="las escondidas n1, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover las escondidas n1, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759254908/e1-01_qtskpm.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761255118/z22-01-01_k3b0ut.png" data-text="<p><strong>Las escondidas n2</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa).</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240108/rayo1111_dcxoyj.png" class="img-original" alt="las escondidas n2, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover las escondidas n2, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751731868/NUEVO1-01_ksc95h.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761306897/z21-01-01-01_ltf4cc.png" data-text="<p><strong>El techo se ve raro</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa). Disponible físico en <a href='https://www.instagram.com/p/DLtID6NMrvO/?utm_source=ig_web_copy_link&igsh=ZzlhY210c3pjdTNr' target='_blank'>Pasto verde </a>GDL, Mx.</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240010/21-01_rkkq3i.png" class="img-original" alt="El techo se ve raro, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover El techo se ve raro, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751731857/NUEVO2-01_uxgqni.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761306898/z17-01-01-01_muc1iu.png" data-text="<p><strong>Palomas</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa). Disponible físico en <a href='https://www.instagram.com/p/DLtID6NMrvO/?utm_source=ig_web_copy_link&igsh=ZzlhY210c3pjdTNr' target='_blank'>Pasto verde </a>GDL, Mx.</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240030/18-01_elughq.png" class="img-original" alt="Palomas, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover Palomas, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751731863/NUEVO4-01_np6wia.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761306898/z19-01_-_copia-01-01_wxygnw.png" data-text="<p><strong>Ojalá ser una mariposa</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa). Disponible físico en <a href='https://www.instagram.com/p/DLtID6NMrvO/?utm_source=ig_web_copy_link&igsh=ZzlhY210c3pjdTNr' target='_blank'>Pasto verde </a>GDL, Mx.</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240063/20-01_voxosb.png" class="img-original" alt="Ojalá ser una mariposa, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover Ojalá ser una mariposa, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751731853/NUEVO3-01_kpuv0n.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761306897/z18-01_-_copia-01-01_qgicuv.png" data-text="<p><strong>Chisme de vecinos</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa). Disponible físico en <a href='https://www.instagram.com/p/DLtID6NMrvO/?utm_source=ig_web_copy_link&igsh=ZzlhY210c3pjdTNr' target='_blank'>Pasto verde </a>GDL, Mx.</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240078/19-01_vft9ok.png" class="img-original" alt="Chisme de vecinos, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover Chisme de vecinos, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751897329/GF13-01_pimbpd.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761306898/z3-01-01-01_reasfj.png" data-text="<p><strong>Lantana y Luna</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa).</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240342/flor1_s96ujy.png" class="img-original" alt="Lantana y Luna, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover Lantana y Luna, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751897538/GF7-01_gwoe82.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761306915/z9-01-01-01_xnd18l.png" data-text="<p><strong>Nochebuena</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa).</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240399/flor6_rb3wfp.png" class="img-original" alt="Nochebuena, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover Nochebuena, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751897644/GF11-01_pw3jsh.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761306920/z5-01-01-01_dsbphz.png" data-text="<p><strong>Sin título</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa).</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759245048/w20-01_z4sk8m.png" class="img-original" alt="Sin título, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover Sin título, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751897769/GF6-01_aesv9l.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761306921/z20-01-01-01_slnqhv.png" data-text="<p><strong>Entre otras</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa).</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240378/flor9_zu6iud.png" class="img-original" alt="Entre otras, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover Entre otras, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751897967/GF12-01_b7gy4y.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761306928/z4-01-01-01_iplxcv.png" data-text="<p><strong>Sin título 2</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa).</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240452/flor5_vm1doz.png" class="img-original" alt="Sin título 2, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover Sin título 2, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751898164/GF2-01_habnza.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761305643/z13-01-01-01_ovz8hb.png" data-text="<p><strong>Sin título 3</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa).</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240287/flor11_bwfzcf.png" class="img-original" alt="Sin título 3, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover Sin título 3, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751898263/GF9-01_t8hw6z.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761306929/z7-01-01-01_phnmwk.png" data-text="<p><strong>Por los caídos</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa).</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240358/flor7_klrlv5.png" class="img-original" alt="por los caídos, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover por los caídos, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751898381/GF8-01_uxldkz.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761306929/z8-01-01-01_gi0axl.png" data-text="<p><strong>Geranio</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa).</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240323/flor2_nuqqkp.png" class="img-original" alt="geranio, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover geranio, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751898524/GF10-01_s5r7jt.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761306940/z6-01-01-01_s4id0u.png" data-text="<p><strong>Petunia y Sol azul</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa).</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240306/flor10_q5bcic.png" class="img-original" alt="pentunia y sol azul, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover pentunia y sol azul, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751898646/GF4-01_hwjdkp.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761306940/z11-01-01-01_ckrfr4.png" data-text="<p><strong>Petunia blanca</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa).</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240267/flor3_b79pg6.png" class="img-original" alt="petunia blanca, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover petunia blanca, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751898770/GF5-01_jwredv.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761306947/z10-01-01-01_z4v5hh.png" data-text="<p><strong>Noche vieja</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa).</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240433/flor4_v2rxqe.png" class="img-original" alt="noche vieja, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover noche vieja, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751898885/GF3-01_dd9wbq.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761306897/z12-01-01-01_sarhey.png" data-text="<p><strong>Corona de espinas</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa).</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759245468/flor12_tvnk2d.png" class="img-original" alt="corona de espinas, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover corona de espinas, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751926845/desc2-01_vzvaxj.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761305371/z14-01-01_iy9xww.png" data-text="<p><strong>Descripción de mi país n1</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa).</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240175/pais1_fxq6hl.png" class="img-original" alt="Descripción de mi país n1, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover Descripción de mi país n1, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751926861/desc3-01_fd8jl6.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761304457/z16-01-01-01_prexla.png" data-text="<p><strong>Descripción de mi país n2</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa).</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240159/pais2_jvoupd.png" class="img-original" alt="Descripción de mi país n2, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover Descripción de mi país n2, oficina soto">
-    </div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_550/v1751926899/desc1-01_fu3bex.png" data-img2="https://res.cloudinary.com/dqg78jtie/image/upload/v1761304981/z15-01-01-01_yn5nco.png" data-text="<p><strong>Descripción de mi país n3</strong></p><p>Impresión profesional sobre papel de algodón.<br><i>Nota: Las medidas de la obra incluyen un borde perimetral de 2 a 3 cm para su enmarcado con paspartú (marialuisa).</i></p>">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_550/v1759240143/pais3_uknqxq.png" class="img-original" alt="Descripción de mi país n3, oficina soto">
-      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759855285/info_venta-01_pis56e.png" class="img-hover" alt="Hover Descripción de mi país n3, oficina soto">
-    </div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751716959/dehoy1-01_doepqo.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760526302/dh1-01_w3nhg9.png"  data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760526328/dg2-01_ipvgid.png"  data-text="<p><strong>Esperé la primavera</strong></p><p>Carboncillo sobre papel artesanal<br>17cm x 17cm<br>2023</p>"><img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751715565/d16-0122_q3dxyz.png" class="img-original" alt="Espere la primavera"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover espere la primavera"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751717181/G19-01_z8ch2v.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760526498/dh43-01_wro1j3.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760526499/dh44-01_k9inib.png" data-text="<p><strong>Fingí una sonrisa</strong></p><p>Carboncillo y grafito sobre papel de algodón<br>20cm x 20cm<br>2023</p>"><img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751717083/d1-01_zejhc3.png" class="img-original" alt="Fingí una sonrisa"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Fingí una sonrisa"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751717757/G13-01_fdubxp.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760527499/dh3-01_tzddir.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760527599/dh4-01_jgy61g.png" data-text="<p><strong>No aguanto las piernas, ni ellas a mí</strong></p><p>Grafito sobre papel de algodón<br>50cm x 35cm<br>2023</p>"><img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751717565/d9-01_q30cqy.png" class="img-original" alt="No aguanto las piernas, ni ellas a mí"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover No aguanto las piernas, ni ellas a mí"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751717993/G1-01_nyhgre.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760542822/dh5-01_kt1hyq.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760542837/dh6-01_qpucip.png" data-text="<p><strong>Salí de casa, ya todos se fueron</strong></p><p>Grafito sobre papel de algodón<br>40cm x 30cm<br>2023</p>"><img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751717940/d14-01_oukuyc.png" class="img-original" alt="Salí de casa, ya todos se fueron"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Salí de casa, ya todos se fueron"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751718263/G17-01_neykp8.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760542939/n5-01_i4y1zl.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760542940/n6-01_o4mcls.png" data-text="<p><strong>El paisaje es el mismo</strong></p><p>Grafito sobre papel de algodón<br>50cm x 35cm<br>2023</p>"><img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751718204/d15-01_niw3ci.png" class="img-original" alt="El paisaje es el mismo"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover El paisaje es el mismo"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751718387/G23-01_v6tuui.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544166/dh46-01_o8klbb.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544179/dh45-01_ddlkux.png" data-text="<p><strong>Viajar en avión sigue siendo una mierda</strong></p><p>Grafito y carboncillo sobre papel de algodón<br>40cm x 35cm<br>2023</p>"><img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751718332/d12-01_s45zao.png" class="img-original" alt="Viajar en avión sigue siendo una mierda"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Viajar en avión sigue siendo una mierda"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751722323/G11-01_baqhrl.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544348/n9-01_ddezib.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544353/n10-01_ri1v4g.png" data-text="<p><strong>Una madrugada sin dormir</strong></p><p>Grafito sobre papel de algodón<br>50cm x 35cm<br>2023</p>"><img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751722185/d8-01_o6oxzp.png" class="img-original" alt="Una madrugada sin dormir"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Una madrugada sin dormir"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751722761/G22-01_voyvou.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544411/dh47-01_tdq6if.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544412/dh48-01_jb2bol.png" data-text="<p><strong>Terminé en un lugar lleno de gente</strong></p><p>Grafito sobre papel de algodón<br>40cm x 37cm<br>2023</p>"><img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751722572/d13-01_yf94vp.png" class="img-original" alt="Terminé en un lugar lleno de gente"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Terminé en un lugar lleno de gente"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751723231/G9-01_gmjngh.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544491/n11-01_vrfj7f.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544492/n12-01_wuoc9m.png" data-text="<p><strong>Imaginé cosas que no eran</strong></p><p>Hollín sobre papel de algodón<br>50cm x 35cm<br>2023</p>"><img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751722981/d11-01_gbzbjf.png" class="img-original" alt="Imaginé cosas que no eran"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Imaginé cosas que no eran"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751725996/G8-01_gzfj58.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544550/n13-01_dtbmx5.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544550/n14-01_wxnlo8.png" data-text="<p><strong>Desastre en casa</strong></p><p>Grafito sobre papel de algodón<br>50cm x 35cm<br>2023</p>"><img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751725854/d2-01_ahqyjd.png" class="img-original" alt="Desastre en casa"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Desastre en casa"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_600/v1758905528/G7-01_iimzxt.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544594/n16-01_yexvgk.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544600/n15-01_fxyphp.png" data-text="<p><strong>Tuve pesadillas, las olvidaré como siempre</strong></p><p>Grafito y carboncillo sobre papel de algodón<br>50cm x 35cm<br>2023</p>"><img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751723773/d10-01_lndmfe.png" class="img-original" alt="Tuve pesadillas, las olvidaré como siempre"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Tuve pesadillas, las olvidaré como siempre"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1760554072/G20-01_gr9iok.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760552638/dh39-01_qkflze.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760552750/dh40-01_fdzwwb.png" data-text="<p><strong>Salí a dar una vuelta a la manzana, una es suficiente</strong></p><p>Grafito sobre papel de algodón<br>50cm x 35cm<br>2023</p>"><img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751724121/d5-01_egvqxs.png" class="img-original" alt="Salí a dar una vuelta a la manzana, una es suficiente"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Salí a dar una vuelta a la manzana, una es suficiente"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751724452/G21-01_trvqzp.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760559368/dh37-01_hlmijz.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760559647/dh38-01_djxdnj.png" data-text="<p><strong>Es ansiedad</strong></p><p>Grafito sobre papel de algodón<br>50cm x 35cm<br>2023</p>"><img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751724310/d7-01_ck7eof.png" class="img-original" alt="Es ansiedad"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Es ansiedad"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751724999/G4-01_yqh5hp.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544761/n17-01_vlk2xz.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544762/n18-01_qdwnqz.png" data-text="<p><strong>Ahí hay un perro</strong></p><p>Grafito sobre papel de algodón<br>50cm x 35cm<br>2023</p>"><img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751724738/d4-01_fo9lyc.png" class="img-original" alt="Ahí hay un perro"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Ahí hay un perro"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751725395/G3-01_no7i2v.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544811/n19-01_nnwkwq.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544812/n20-01_f3raqg.png" data-text="<p><strong>Caminé varios minutos no encuentro el regreso... me perdí</strong></p><p>Grafito sobre papel de algodón<br>43cm x 28cm<br>2023</p>"><img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751725219/d6-01_zuitjm.png" class="img-original" alt="Caminé varios minutos no encuentro el regreso... me perdí"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Caminé varios minutos no encuentro el regreso... me perdí"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751725690/G2-01_cp3yqa.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544938/n21-01_gcrwha.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544941/n22-01_qegvcf.png" data-text="<p><strong>Se acabó la primavera</strong></p><p>Grafito sobre papel de algodón<br>50cm x 35cm<br>2023</p>"><img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751725562/d3-01_v1iihm.png" class="img-original" alt="Se acabó la primavera"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Se acabó la primavera"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_600/v1758895058/obra_original_grande2-01_khlexo.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760545014/n24-01_owpibf.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760545015/n23-01_aytb2s.png" data-text="<p><strong>Busca un ovni</strong></p><p>Grafito sobre papel de algodón<br>30cm x 21cm<br>2022</p>"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_600/v1758979131/DIBUJO_VENTA_NUEVO_heulch.png" class="img-original" alt="Busca un ovni"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Busca un ovni"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_600/v1758895114/obra_original_grande-01_i8bvre.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760563451/dh29-01_la3s0p.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760563466/dh30-01_ncamnh.png" data-text="<p><strong>Mira las flores hasta que te miren a ti</strong></p><p>Grafito sobre papel de algodón<br>43cm x 22cm<br>2023</p>"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_600/v1758979248/r7_itrvbc.png" class="img-original" alt="Mira las flores hasta que te miren a ti"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Mira las flores hasta que te miren a ti"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_600/v1758895386/orginal_obra_4-01_spvgyj.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760562115/dh31-01_c10hdb.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760562132/dh32-01_jq8th4.png" data-text="<p><strong>Suena a mi patio, pero más grande</strong></p><p>Grafito sobre papel<br>35cm x 28cm<br>2023</p>"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_600/v1758979300/obra_original_grande3-01_pr2py2.png" class="img-original" alt="Suena a mi patio, pero más grande"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Suena a mi patio, pero más grande"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751894554/gd11-01_cwlgxn.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760563826/n25-01_mdhwsb.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760563793/n26-01_fzj8j8.png" data-text="<p><strong>La escalera</strong></p><p>Grafito sobre cartón ilustración<br>23cm x 17cm<br>2022</p>"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_600/v1758979343/obra_orignal_3-01_zmhuyf.png" class="img-original" alt="La escalera"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover La escalera"></div>
+
   </div>
   
   <footer>
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760111670/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
   </footer>
   
-  <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgba(243, 243, 243, 1); justify-content:center; align-items:center; cursor:pointer; z-index: 999;">
-    <span id="cerrar-modal" style="position:absolute; top:20px; right:30px; color:rgb(0, 0, 0); font-size:40px; cursor:pointer; z-index: 1001;">&times;</span>
+  <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgba(243, 243, 243, 1); justify-content:center; align-items:center; cursor:pointer;">
+    <span id="cerrar-modal" style="position:absolute; top:20px; right:30px; color:rgb(0, 0, 0); font-size:40px; cursor:pointer;">&times;</span>
     <div id="modal-content" style="cursor: default;">
         <div class="carousel-container">
             <button class="carousel-btn prev">&#10094;</button>
             <div class="carousel-slide">
                 <img id="modal-img-1" src="" alt="Imagen 1 de la obra" class="carousel-img active">
                 <img id="modal-img-2" src="" alt="Imagen 2 de la obra" class="carousel-img">
+                <img id="modal-img-3" src="" alt="Imagen 3" class="carousel-img">
             </div>
             <button class="carousel-btn next">&#10095;</button>
         </div>
@@ -842,7 +705,7 @@ body.modal-open {
                 <p style="text-align: center; margin-top: 0; margin-bottom: 15px; font-size: 16px; font-weight: bold;">Solicitar información</p>
                 <div><label for="nombre">Nombre</label><input type="text" id="nombre" name="nombre" required></div>
                 <div><label for="correo">Correo electrónico</label><input type="email" id="correo" name="correo" required></div>
-                <div><label for="formato">Formato</label><select id="formato" name="formato" required><option value="">Selecciona una opción...</option><option value="particular">A3 - 40€</option><option value="asociacion">A4 - 30€</option><option value="galeria">A5 - 18€</option></select></div>
+                <div><label for="entidad">Entidad</label><select id="entidad" name="entidad" required><option value="">Selecciona una opción...</option><option value="particular">Particular</option><option value="asociacion">Asociación</option><option value="galeria">Galería</option></select></div>
                 <div><label for="ubicacion">Ubicación (Ciudad, País)</label><input type="text" id="ubicacion" name="ubicacion" required></div>
                 <button type="submit">Enviar</button>
             </form>
@@ -851,10 +714,8 @@ body.modal-open {
     </div>
   </div>
 
-
-<script>
+ <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // --- Referencias del Modal, Carrusel y Scroll ---
         const modal = document.getElementById('modal');
         const modalText = document.getElementById('modal-text');
         const cerrarModal = document.getElementById('cerrar-modal');
@@ -872,26 +733,10 @@ body.modal-open {
         let scrollPosition = 0;
         const htmlElement = document.documentElement; // <html>
 
-        // 🛑 REFERENCIAS CRÍTICAS DEL MENÚ HAMBURGUESA 🛑
-        const menuToggle = document.querySelector('.menu-toggle');
-        // Usamos document.getElementById('mobileMenu') ya que es el ID en tu HTML
-        const menuMobile = document.getElementById('mobileMenu'); 
-        // ------------------------------------------------------------------
-
         function isMobile() {
             return window.matchMedia('(max-width: 768px)').matches;
         }
-        
-        // 🎯 FUNCIÓN PARA ABRIR/CERRAR EL MENÚ 🎯
-        // Se define aquí para ser accesible globalmente (aunque el botón lo llama con onclick)
-        window.toggleMenu = function() { // Hacemos la función global para el onclick="" en el HTML
-            if (menuMobile) { 
-                menuMobile.classList.toggle('active');
-            }
-        }
-        
-        // --- Event Listeners para el Modal (Existente) ---
-        
+
         document.querySelectorAll('.imagen-hover').forEach(container => {
             container.style.cursor = 'pointer';
             container.addEventListener('click', (e) => {
@@ -899,8 +744,14 @@ body.modal-open {
                 
                 // 🚀 BLOQUEO DE SCROLL (APERTURA) 🚀
                 scrollPosition = window.scrollY; 
+                
+                // 1. Aplica la clase agresiva al <html>
                 htmlElement.classList.add('scroll-lock-touch');
+                
+                // 2. Aplica la clase agresiva al <body> (Bloqueo Total)
                 document.body.classList.add('scroll-lock-touch');
+                
+                // 3. Compensación para evitar el salto de scroll de escritorio
                 document.body.style.paddingRight = (window.innerWidth - htmlElement.clientWidth) + 'px';
                 
                 // --------------------------------------------------------
@@ -946,9 +797,17 @@ body.modal-open {
             modal.style.display = 'none';
             
             // 🚀 RESTAURACIÓN DE SCROLL (CIERRE) 🚀
+            
+            // 1. Quitar la clase agresiva del <html>
             htmlElement.classList.remove('scroll-lock-touch'); 
+            
+            // 2. Quitar la clase agresiva del <body>
             document.body.classList.remove('scroll-lock-touch'); 
+            
+            // 3. Quitar la compensación de paddingRight
             document.body.style.paddingRight = '';
+
+            // 4. Restaurar la posición del scroll
             window.scrollTo(0, scrollPosition); 
 
             // --- Restauración de Modal (Existente) ---
@@ -966,11 +825,6 @@ body.modal-open {
                 submitButton.disabled = false;
                 submitButton.textContent = 'Enviar';
             }, 300);
-            
-            // 🛑 CERRAR EL MENÚ MÓVIL AL CERRAR EL MODAL 🛑
-            if (menuMobile && menuMobile.classList.contains('active')) {
-                menuMobile.classList.remove('active');
-            }
         }
         
         cerrarModal.addEventListener('click', closeModal);
@@ -1014,24 +868,27 @@ body.modal-open {
         });
     });
 
-    // 🛑 BORRADO DE LA FUNCIÓN DUPLICADA Y/O INCORRECTA 🛑
-    // Hemos movido la función 'toggleMenu' arriba y la hicimos global. 
-    // Si esta función existe aquí, el navegador la ignora o causa conflictos.
-    // Solo dejamos la prevención del menú contextual, si la quieres:
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('active');
+    }
     document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
 </script>
 
 <script>
 window.addEventListener("load", function () {
+    
     const launcher = document.getElementById("soto-launcher");
     const notification = document.getElementById("soto-notification");
     const launcherImage = launcher ? launcher.querySelector("img") : null;
 
     if (launcherImage && notification) {
+        
         notification.addEventListener("click", function (e) {
             e.preventDefault();
             e.stopPropagation();
             
+            // Lista de eventos a simular
             const eventsToFire = ['mousedown', 'mouseup', 'click'];
             
             eventsToFire.forEach(function(eventName) {
@@ -1041,7 +898,10 @@ window.addEventListener("load", function () {
                     view: window
                 });
                 
+                // Dispara el evento en LA IMAGEN (lo más probable)
                 launcherImage.dispatchEvent(clickEvent);
+                
+                // Dispara el evento en EL DIV PADRE (por si acaso)
                 launcher.dispatchEvent(clickEvent);
             });
         });
@@ -1049,11 +909,5 @@ window.addEventListener("load", function () {
 });
 </script>
 
-<script>
-    function goBack() {
-        // La función history.back() regresa a la URL anterior en el historial del navegador.
-        window.history.back();
-    }
-</script>
 </body>
 </html>

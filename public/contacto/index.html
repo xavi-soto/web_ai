@@ -1,31 +1,50 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>contacto</title>
-   <link rel="icon" href="https://res.cloudinary.com/dbwezmju6/image/upload/v1750391546/icono_wev-01_gllalq.png" type="image/png">
+
+   <link rel="icon" href="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759771502/icono_web-01_pcbhuw.png" type="image/png">
+
+
 
   <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-  
-  <meta name="description" content="soto es el sitio donde ocurre todo">
-  
+
+ 
+
+  <meta name="description" content="¡hablemos! contacto con la oficina y el patio.">
+
+ 
+
   <meta property="og:title" content="contacto">
+
 <meta property="og:description" content="contacto con soto.">
+
 <meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
+
 <meta property="og:url" content="https://sotosotosoto.com../contacto/">
+
 <meta property="og:type" content="website">
-  
+
+ 
+
   <style>
     body {
-      margin: 0;
-       padding-top: 15px;
+       margin: 0;
+  padding: 0;
       font-family: Arial, sans-serif;
       background-color: #f3f3f3;
       text-align: center;
       /* efecto de aparición */
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
+margin-top: 0px;
 }
 
 @keyframes fadeIn {
@@ -33,12 +52,11 @@
     opacity: 1;
   }
 }
-
-   .logo {
+    .logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0px 0px;
+  padding: 10px 0px;
   padding-top: 100px;
 }
 
@@ -59,49 +77,49 @@
 
 .descripcion {
         text-align: justify;
-      padding: 150px;
-      padding-top: 40px;
+      padding: 130px;
+      padding-top:5px;
       font-size: 14px;
       color: #333;
       font-family: "Lexend", sans-serif;
-       margin-bottom: -140px;
+       margin-bottom: -210px;
     }
 
      .descripcion2 {
-      
-      padding: 140px;
-      padding-top: 60px;
-      font-size: 14px;
-      color: #333;
-      font-family: "Lexend", sans-serif;
-    }
-
+    
+    padding: 160px;
+    padding-top: 230px;
+     
+    font-size: 14px;
+    color: #333;
+    font-family: "Lexend", sans-serif;
+    
+    /* 💡 AÑADE ESTO: Margen negativo para compensar el espacio del .logo 💡 */
+    /* El .logo empuja 100px, así que necesitamos al menos -100px de compensación. */
+    margin-top: -200px; /* Usa -100px o un poco más, por ejemplo, -120px, para moverlo hacia arriba */
+}
 
 
     footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #f3f3f3; /* Asegura que tenga el mismo fondo */
-        text-align: center;
-        padding: 10px 0;
-        z-index: 1000; /* Se mantiene por encima de otros elementos */
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f3f3f3;
+      text-align: center;
+      padding: 5px 0;
+      z-index: 1000;
+    }
+
+    .footer-image {
+      width: 150px;
+      height: auto;
+      padding-top: 10px;
+      margin-top: -4px;
+      animation: mostrarImagenes 3s ease forwards;
     }
 
 
-
-        .footer-image {
-            width: 150px; /* Ajusta el tamaño de la imagen */
-            height: auto;
-            padding-top: 0px;
-            margin-top: 0px;
-            animation: mostrarImagenes 3s ease forwards;
-        }
-
-.contenido-ajustado {
-  margin-top: -4px; /* ajusta el número según cuánto quieras subir */
-}
     .galeria {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -111,7 +129,9 @@
       padding-bottom: 70px;
       max-width: 1200px;
       margin: 0 auto;
-      margin-top: -80px;
+      margin-top: 0px;
+      
+      
     }
 
     .imagen-hover {
@@ -155,6 +175,9 @@
     }
 
 
+
+
+
 /* NUEVO PARA MOVIL!!!!! APARTIR DE AQUI */
 
 
@@ -174,7 +197,6 @@
 .menu-mobile {
   display: none;
   flex-direction: column;
-  gap: 10px;
   position: fixed;
   top: 100px;
   left: 20px;
@@ -182,13 +204,22 @@
    border: rgb(118 118, 118) 1px;
   padding: 10px;
   z-index: 1100;
+
+}
+
+.menu-mobile a {
+  margin-bottom: 20px; /* espacio entre botones */
+}
+
+/* Opcional: último botón sin margen */
+.menu-mobile a:last-child {
+  margin-bottom: -21px;
 }
 
 .menu-mobile a img {
   width: 90px;
   height: auto;
 }
-
 
 
 /* En escritorio se muestra el menú clásico y se oculta el hamburguesa */
@@ -218,23 +249,18 @@
 
 @media (max-width: 480px) {
 
+
   .descripcion2 {
-    padding: 28px 25px;
-    font-size: 13px;
-    text-align: center;
-  }
-  
-  .descripcion3 {
-    padding: 30px 5px;
+    padding: 200px 35px;
     font-size: 13px;
     text-align: center;
   }
 
    .descripcion{
-    padding: 30px 5px;
+    padding: 22px 5px;
     font-size: 13px;
     text-align: justify;
-    margin-bottom: 3px;
+     margin-bottom: -200px;
   }
 
   .galeria {
@@ -242,7 +268,8 @@
     gap: 40px;
     padding: 10px 20px;
     margin-top: 0;
-    margin-bottom: 50px;
+    margin-bottom: 510px;
+    
   }
 
 
@@ -301,14 +328,9 @@
 
 @media (max-width: 768px) {
   .logo-img-unica {
-    max-width: 100px !important;
-  }
-
-  .logo-img-unica2 {
-    max-width: 90px !important;
+    max-width: 300px !important;
   }
 }
-
 
 
 a, button, .tus-elementos-clickeables {
@@ -317,27 +339,26 @@ a, button, .tus-elementos-clickeables {
 
 
 
+
 /* Estilo general (escritorio) */
 .logo-img-unica {
-  max-width: 250px;
+  max-width: 190px;
   height: auto;
 }
 
 /* Estilo específico para móvil */
 @media (max-width: 768px) {
   .logo-img-unica {
-    max-width: 180px !important; /* O el valor que desees */
+    max-width: 190px !important; /* O el valor que desees */
     height: auto !important;
       position: relative;
-    top: -11px; /* Ajusta el valor según cuánto quieras subir */
+    top: -8px; /* Ajusta el valor según cuánto quieras subir */
   }
-
-
-
-
-.contenido-ajustado {
-  margin-top: -2px; /* ajusta el número según cuánto quieras subir */
 }
+.menu-toggle,
+.menu-mobile a,
+.menu-mobile a img {
+    -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4) !important; /* Force this color */
 }
 
 /* Versión tablet */
@@ -348,20 +369,22 @@ a, button, .tus-elementos-clickeables {
       gap: 20px;
       padding: 10px 5px;
       margin-top: 0;
-      margin-bottom: 70px;
+      margin-bottom: 90px;
     }
 
     /* Descripción para tablet */
     .descripcion {
-      padding: 27px 20px;
+      padding: 30px 20px;
       font-size: 14px; /* Un tamaño más grande que en móvil */
       text-align: justify;
     }
 
      .descripcion2 {
-      padding: 40px 10px;
+      padding: 10px 10px;
+      margin-bottom: 140px;
       font-size: 14px; /* Un tamaño más grande que en móvil */
       text-align: center;
+      margin-bottom: 175px;
     }
 
 
@@ -414,163 +437,506 @@ a, button, .tus-elementos-clickeables {
   
   }
 
+/* 💻 Ajustes SÓLO para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
 
+    .icono-regreso-menu {
+        display: none !important;
+    }
+    
+    .footer-image {
+        width: 260px !important; /* Añade !important aquí */
+} 
+
+
+.logo-container { 
+        top: 95px; /* Quizás ajustar la posición vertical */
+    }
+    .logo-container img {
+        width: 150px; /* Ajusta este valor para hacer los logos más grandes */
+        /* height: auto; ya está por defecto, no hace falta repetirlo */
+    }
+
+
+.descripcion {
+      padding: 15px 230px;
+      font-size: 24px; /* Un tamaño más grande que en móvil */
+      text-align: justify;
+    }
+
+     .descripcion2 {
+      padding: 300px 10px;
+       margin-bottom: 160px;
+      font-size: 24px; /* Un tamaño más grande que en móvil */
+      text-align: center;
+      margin-bottom: 205px;
+    }
+.logo-img-unica {
+    max-width: 350px !important; /* O el valor que desees */
+    height: auto !important;
+      position: relative;
+    top: 78px; /* Ajusta el valor según cuánto quieras subir */
+  }
+  .logo-container {
+  display: none !important; /* !important para anular la regla existente */
+}
+
+.menu-toggle {
+  display: block;
+  font-size: 70px; /* Hamburguesa MÁS GRANDE */
+  top: 49px;
+  left: 19px;
+  opacity: 0.8;
+  position: fixed;
+  z-index: 1100;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* 3. Estiliza el menú desplegable */
+.menu-mobile {
+  display: none;
+  top: 150px;
+  left: 30px;
+  position: fixed;
+  flex-direction: column; /* asegúrate de que esté */
+  gap: 0; /* aquí eliminas el espacio extra */
+  background-color: rgba(226, 226, 226, 0.95);
+  border: rgb(118, 118, 118) 1px;
+}
+.menu-mobile a {
+  margin-bottom: 30px; /* espacio entre botones */
+}
+
+/* Opcional: último botón sin margen */
+.menu-mobile a:last-child {
+  margin-bottom: -30px;
+}
+
+/* 4. Agranda los logos del menú */
+.menu-mobile a img {
+  width: 180px; 
+}
+.menu-mobile.active {
+  display: flex;
+}
+
+
+    /* 9. Estilos de Chat (si existen) */
+    #soto-launcher {
+        width: 100px !important; 
+        height: 80px !important;
+        bottom: 80px !important;
+    }
+    #soto-notification {
+        width: 45px !important; 
+        height: 35px !important;
+        font-size: 20px !important;
+        top: -38px !important;
+        right: 28px !important;
+        padding: 0 !important;
+        text-align: center !important;
+        line-height: 30px !important;
+    }
+    #soto-chat {
+      position: fixed;
+      bottom: 162px !important;
+      right: 33px;
+      width: 430px !important;
+      height: 520px !important;
+    }
+    .bot-message,
+    .user-message {
+      font-size: 24px !important;
+    }
+#soto-chat #user-input,
+  #user-input {
+    border: none !important;
+    padding: 10px !important;
+    font-size: 24px !important;
+    background-color: white !important;
+  }
+
+
+}
+/* 2. Estilos para la imagen del botón de regreso */
+.icono-regreso-menu {
+    /* Hereda el tamaño estándar del menú, pero puedes darle un tamaño específico si es diferente */
+    width: 70px !important; 
+     left: 0px;
+    height: auto;
+    margin-top: 0 !important; 
+     left: 0px;
+    
+    /* 🆕 AÑADE ESTO: Posicionamiento absoluto */
+    position: absolute; 
+    
+    /* ⬇️ AJUSTA ESTE VALOR para controlar la distancia desde la parte superior del .logo-container ⬇️ */
+    top: 600px; /* Ejemplo: 40px. Aumenta este valor para bajarlo más. */
+    /* Evita el resaltado azul al hacer clic en móvil/tablet */
+    -webkit-tap-highlight-color: transparent; 
+}
+.boton-regreso-al-final {
+    display: none; 
+}
+
+/* Ocultar botón regresar en móviles */
+@media (max-width: 480px) {
+    .icono-regreso-menu {
+        display: none !important;
+    }
+}
 
   </style>
+
 </head>
+
 <body>
+ <!-- Aquí va el contenido de tu página web... -->
+
+  <!-- BURBUJA DEL CHAT DE SOTO -->
+  <div id="soto-launcher">
+
+    <img
+
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_100,c_scale/v1755968841/soto_logo.0010_xh9icu.png"
+
+        srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_100,c_scale/v1755968841/soto_logo.0010_xh9icu.png 100w,
+
+                https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_200,c_scale/v1755968841/soto_logo.0010_xh9icu.png 200w"
+
+        alt="soto cara">
+ <div id="soto-notification">¿?</div>
+</div>
+
+        <div id="soto-chat" style="display: none;"><div id="chat-window"><button id="close-chat" class="close-chat-btn">X</button><div id="chat-messages"></div><input type="text" id="user-input" placeholder="Escribe tus dudas..." /></div></div>  
+
+       
+
+        <link rel="stylesheet" href="../chat.css">
+
+        <script src="../chat.js"></script>
+
+
+
+
+
 
 
 
 
 
  <!-- Botón hamburguesa solo visible en móvil -->
+
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+
 
 <!-- Menú hamburguesa móvil -->
 <div class="menu-mobile" id="mobileMenu">
-
   <a href="../">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751476758/soto_icono_ny0lp9.png" alt="Logo 5">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
   </a>
-   <a href="../proyectos-oficina/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 2">
+  <a href="../proyectos-patio/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 1">
   </a>
-  <a href="/acerca-de-oficina/">
+  <a href="../acerca-de-patio/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
   </a>
-  <a href="../archivo-en-venta/">
-    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1744208092/ventaaaaa-01_qag3lr.png" alt="Logo 3">
-  </a>
-
-  <a href="../patio-trasero/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751475659/patio_menu_m0399x.png" alt="Logo 5">
-  </a>
-
-
-
-
-</div>
-
-<!-- Menú clásico en escritorio -->
-<div class="logo-container">
- 
-
-  <a href="../">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751476758/soto_icono_ny0lp9.png" alt="Logo 5">
-     </a>
-   <a href="../proyectos-oficina/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 2">
-  </a>
-  <a href="/acerca-de-oficina/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
+  <a href="../soto-artista-virtual/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751478380/lo_ultimo_web_xijtal.png" alt="Logo 3">
   </a>
   <a href="../archivo-en-venta/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477916/tienda-01_ntkqad.png" alt="Logo 3">
   </a>
-  
-  <a href="../patio-trasero/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751475659/patio_menu_m0399x.png" alt="Logo 5">
+  <a href="../oficina/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 3">
   </a>
 
-    
+<a href="#" onclick="window.history.back(); return false;" class="enlace-regreso">
+        <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-menu">
+    </a>
+
+
+
+
+
+
+</div>
+
+
+
+<!-- Menú clásico en escritorio -->
+
+<div class="logo-container">
+
+ 
+
+
+
+  <a href="../">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
+  </a>
+  <a href="../proyectos-patio/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 1">
+  </a>
+  <a href="../acerca-de-patio/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
+  </a>
+  <a href="../soto-artista-virtual/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751478380/lo_ultimo_web_xijtal.png" alt="Logo 3">
+  </a>
+  <a href="../archivo-en-venta/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477916/tienda-01_ntkqad.png" alt="Logo 3">
+  </a>
+  <a href="../oficina/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 3">
+  </a>
+<a href="#" onclick="window.history.back(); return false;" class="enlace-regreso">
+        <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-menu">
+    </a>
+ 
+
+
+
+
+   
+
    </div>
+
    <div class="contenido-ajustado">
+
   <div class="logo">
+
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751559679/contactof_wyrqjz.png" alt="Logo" class="logo-img-unica">
+
   </div>
+
+
+
+
 
 
 
   <div class="descripcion2">
+
     <p>
-   <strong><p>Todo pasa en el mismo lugar.</p></strong>
-  
-      
+
+   <h3>El espacio para plantear preguntas.</h3>
+
+ 
+
+     
+
         <div class="descripcion">  
-La oficina y el patio trasero (chingaderas) se gestionan en conjunto.
-Si tienes una idea en construcción, una colaboración en mente o cualquier propuesta que quieras compartir, puedes escribir directamente por correo o a través de redes sociales.</a>
+
+Si tienes una idea en construcción, una colaboración en mente o cualquier propuesta que quieras compartir, me encantaría escucharla.</a>
+La mejor forma de iniciar la conversación es escribiendo un correo. También puedes seguir el día a día del estudio en redes sociales.</p>
+
    
+
            <br><br>
+
   <div style="text-align: center;">
 
-   <p>Correo: <a href="mailto:sotoyestudio@gmail.com" target="_blank"><strong><i>sotoyestudio@gmail.com</i></strong></a><br><br>
- <p>Instagram: <a href="https://www.instagram.com/sotosolo_?igsh=MXJha3o2dmVpNHRodA==" target="_blank"><strong><i>sotosolo_</i></strong></a><br><br>
- <p>Behance: <a href="https://www.behance.net/xaviersoto" target="_blank"><strong><i>soto -</i></strong></a><br><br>
+
+
+   <p><a href="mailto:sotoyestudio@gmail.com" target="_blank"><strong>sotoyestudio@gmail.com</strong></a><br><br>
+
+ <p>Instagram <a href="https://www.instagram.com/sotosolo_?igsh=MXJha3o2dmVpNHRodA==" target="_blank"><strong>sotosolo_</strong></a><br><br>
+
+  <p>LinkedIn <a href="https://www.linkedin.com/in/xavier-sotoo/" target="_blank"><strong>sotosotosoto</strong></a><br><br>
+
+ <p>Behance <a href="https://www.behance.net/xaviersoto" target="_blank"><strong>soto -</strong></a><br><br>
+
 </div>
 
 
-  <strong><p style="text-align: center;">Hablemos!</p></strong>
+
+
+
+  <strong> <h3 style="text-align: center;">Hablemos!</h3></strong>
+
   <div style="text-align: center;">
+
   <a href="/estudio-de-objetos-no-identificados/" target="_blank"><strong></strong></a><br><br>
 
+
+
    
+
 </div>
+
   </div>
+
  </div>
-      
+
+     
+
       <footer>
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751476362/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
+
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760111670/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
+
     </footer>
+
            
 
+
+
     <!-- Repetí esto hasta Imagen 16 -->
+
     <!-- Puedes reemplazar los links de ejemplo por los tuyos -->
+
   </div>
 
 
-  
+
+
+
+ 
+
     <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">
+
   <span id="cerrar-modal" style="position:absolute; top:20px; right:30px; color:rgb(0, 0, 0); font-size:40px; cursor:pointer;">&times;</span>
+
    <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="max-width:37%; max-height:auto; border: 5px solid rgba(255, 255, 255, 0); box-shadow: 0 0 20px rgba(0, 0, 0, 0);" />
+
 </div>
+
+
 
 <script>
 
 
 
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
+
   const modal = document.getElementById('modal');
+
   const modalImg = document.getElementById('modal-img');
+
   const cerrarModal = document.getElementById('cerrar-modal');
 
+
+
   // Solo permitir clic en escritorio
+
   if (window.innerWidth > 768) {
+
     document.querySelectorAll('.img-original[data-full]').forEach(img => {
+
       img.style.cursor = 'pointer';
+
       img.addEventListener('click', (e) => {
+
         e.stopPropagation();
+
         const imgGrande = img.getAttribute('data-full');
+
         modalImg.src = imgGrande;
+
         modal.style.display = 'flex';
+
       });
+
     });
+
   }
 
+
+
   cerrarModal.addEventListener('click', () => {
+
     modal.style.display = 'none';
+
     modalImg.src = '';
+
   });
 
+
+
   modal.addEventListener('click', (e) => {
+
     if (e.target === modal) {
+
       modal.style.display = 'none';
+
       modalImg.src = '';
+
     }
+
   });
+
 });
 
 
 
+
+
+
+
 function toggleMenu() {
+
     const menu = document.getElementById('mobileMenu');
+
     menu.classList.toggle('active');
+
   }
+
  document.addEventListener('contextmenu', function(e) {
+
     e.preventDefault();
+
   }, false);
+
+
 
 </script>
 
+<script>
+window.addEventListener("load", function () {
+    
+    const launcher = document.getElementById("soto-launcher");
+    const notification = document.getElementById("soto-notification");
+    const launcherImage = launcher ? launcher.querySelector("img") : null;
+
+    if (launcherImage && notification) {
+        
+        notification.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Lista de eventos a simular
+            const eventsToFire = ['mousedown', 'mouseup', 'click'];
+            
+            eventsToFire.forEach(function(eventName) {
+                const clickEvent = new MouseEvent(eventName, {
+                    bubbles: true,
+                    cancelable: true,
+                    view: window
+                });
+                
+                // Dispara el evento en LA IMAGEN (lo más probable)
+                launcherImage.dispatchEvent(clickEvent);
+                
+                // Dispara el evento en EL DIV PADRE (por si acaso)
+                launcher.dispatchEvent(clickEvent);
+            });
+        });
+    }
+});
+</script>
+<script>
+    function goBack() {
+        // La función history.back() regresa a la URL anterior en el historial del navegador.
+        window.history.back();
+    }
+</script>
 </body>
+
 </html>

@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>archivo gratuito</title>
+  <link rel="icon" href="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759771502/icono_web-01_pcbhuw.png" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <meta name="description" content="contenido gratuito disponible para descarga.">
+  
+  
+  <meta property="og:title" content="archivo gratuito">
+  <meta property="og:description" content="contenido gratuito disponible para descarga.">
+  <meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
+  <meta property="og:url" content="https://sotosotosoto.com/dehoyparamañanaa.html">
+  <meta property="og:type" content="website">
+  
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: rgb(243, 243, 243);
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0px 0px;
+      padding-top: 100px;
+    }
+
+    .logo-container {
+      position: fixed;
+      top: 60px;
+      left: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .logo-container img {
+      width: 90px;
+      height: auto;
+    }
+
+
+    .descripcion {
+      text-align: justify;
+      padding: 140px;
+      padding-top: 70px;
+      font-size: 14px;
+      color: rgb(51, 51, 51);
+      font-family: "Lexend", sans-serif;
+    }
+
+
+    .descripcion2 {
+      padding: 140px;
+      padding-top: 35px;
+      font-size: 14px;
+      color: #333;
+      font-family: "Lexend", sans-serif;
+    }
+
+   footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f3f3f3;
+      text-align: center;
+      padding: 5px 0;
+      z-index: 1000;
+    }
+
+    .footer-image {
+      width: 150px;
+      height: auto;
+      padding-top: 10px;
+      margin-top: -4px;
+      animation: mostrarImagenes 3s ease forwards;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      padding: 20px;
+      padding-top: 0px;
+      padding-bottom: 168px;
+      max-width: 1000px;
+      margin: 0 auto;
+      margin-top: -80px;
+    
+    }
+
+    .imagen-hover {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .imagen-hover img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: opacity 0.8s ease;
+    }
+
+    /* REGLAS GLOBALES (APLICAN POR DEFECTO: OCULTAS EN ESCRITORIO, A ESPERA DE MOSTRARSE CON HOVER) */
+
+/* REGLAS GLOBALES (Escritorio: Efecto Hover) */
+
+.imagen-hover img.img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Inicia oculta */
+    opacity: 0; 
+    transition: opacity 0.8s ease; 
+}
+
+.imagen-hover:hover img.img-hover {
+    /* CLAVE 1: Muestra la imagen de hover */
+    opacity: 1; 
+}
+
+.imagen-hover img.img-original {
+    /* La imagen original se mantiene visible por defecto (opacity: 1) */
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+
+.imagen-hover:hover img.img-original {
+    /* 🛑 CLAVE 2: Oculta o reduce la opacidad de la imagen ORIGINAL al hacer HOVER 🛑 */
+    /* Usamos '0' para que desaparezca totalmente y solo se vea el img-hover */
+    opacity: 1; 
+}
+
+    @media (max-width: 768px) {
+      .galeria {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .galeria {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      top: 49px;
+      left: 13px;
+      z-index: 1100;
+      background-color: transparent;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .menu-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+      position: fixed;
+      top: 100px;
+      left: 20px;
+      background-color: #e2e2e2f0;
+      border: rgb(118 118, 118) 1px;
+      padding: 10px;
+      z-index: 1100;
+    }
+
+    .menu-mobile a img {
+      width: 90px;
+      height: auto;
+    }
+    
+/* 🛑 ANULA EL RESALTE SOLO PARA LAS IMÁGENES DE LA GALERÍA 🛑 */
+.imagen-hover {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+}
+    /* En escritorio se muestra el menú clásico y se oculta el hamburguesa */
+@media (max-width: 768px) {
+  .logo-container {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-mobile {
+    display: none;
+  }
+
+  .menu-mobile.active {
+    display: flex;
+  }
+}
+
+
+
+
+
+  .menu-toggle,
+  .menu-mobile a,
+  .menu-mobile a img {
+    -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4) !important;
+  }
+
+    
+  
+
+    @media (max-width: 480px) {
+      body {
+        /* Reduce el espacio superior. Por ejemplo, quita 10px de padding/margen superior. */
+        margin-top: -5px; /* Ajusta el valor según cuánto quieras subir */
+        padding-bottom:-10px;
+    }
+      .descripcion2 { padding: 23px 45px; font-size: 13px; text-align: center; }
+      .descripcion{ padding: 30px 5px; font-size: 13px; text-align: justify; }
+      .galeria { 
+        grid-template-columns: 1fr; 
+        
+        /* 💡 AJUSTE DE MARGEN Y RELLENO PARA CONTROLAR EL ESPACIO INFERIOR 💡 */
+        /* Tenías un padding y gap en una sola línea. Lo separamos para anular el padding-bottom grande: */
+        padding-top: 10px; /* Ya lo tenías ajustado */
+        padding-bottom: 40px; /* ⬅️ CLAVE: Reducir el gran padding global (168px) */
+        padding-left: 1px; /* Ya lo tenías ajustado */
+        padding-right: 1px; /* Ya lo tenías ajustado */
+        gap: 40px; /* Ya lo tenías ajustado */
+
+        margin-top: 10px; 
+        margin-bottom: 100px; /* Puedes dejar este en 0 o ajustarlo con el padding-bottom */
+    }
+
+    /* 🛑 CLAVE 1: Aplicamos el ancho y centrado al ENLACE (<a>) 🛑 */
+    .galeria > a {
+        /* Aseguramos que se comporte como un bloque para centrar y aplicar ancho */
+        display: block; 
+        
+        /* Reducimos el área de clic al 82% de la columna */
+        max-width: 82% !important; 
+        width: 82% !important;
+        
+        /* Centramos el enlace (el área de clic) */
+        margin: 0 auto; 
+    }
+    
+    /* 🛑 CLAVE 2: Quitamos el centrado que habías puesto en el .imagen-hover 🛑 */
+    .imagen-hover {
+        /* Ahora el contenedor debe ser 100% del <a> reducido */
+        width: 100% !important; 
+        max-width: 100% !important;
+        margin: 0 !important; /* Aseguramos que no haya margen extra */
+        display: block !important;
+    }
+    
+    .imagen-hover img {
+        /* La imagen usa todo el 100% del .imagen-hover (que ahora es 82% de la columna) */
+        max-width: 100%; 
+        width: 100%; 
+        height: auto;
+        margin: 0; 
+    }
+   
+    .imagen-hover img.img-hover {
+        opacity: 0 !important; /* Fuerza la ocultación */
+        pointer-events: none; 
+    }
+
+    /* 🛑 ANULACIÓN CLAVE 4: Anular el efecto HOVER en móvil 🛑 */
+    .imagen-hover:hover img.img-hover {
+        opacity: 0 !important; 
+    }
+    
+    /* ... (asegúrate de que la original SÍ se vea si no quieres el hover) ... */
+    .imagen-hover img.img-original {
+        opacity: 1 !important; /* La original siempre visible en móvil */
+    }
+ }
+    
+    @media (min-width: 481px) and (max-width: 768px) {
+      .galeria { grid-template-columns: 1fr; gap: 20px; padding: 10px 0px; margin-top: 0; margin-bottom: 70px; }
+      .descripcion { padding: 30px 0px; font-size: 14px; text-align: justify; }
+      .descripcion2 { padding: 30px 35px; font-size: 14px; text-align: center; }
+      .imagen-hover { width: 100%; }
+      .logo img { max-width: 120px; }
+      .menu-toggle { display: block; position: fixed; top: 49px; left: 13px; z-index: 1100; background-color: transparent; border: none; font-size: 30px; cursor: pointer; opacity: 0.7; }
+      .menu-mobile { display: none; flex-direction: column; gap: 20px; position: fixed; top: 85px; left: 20px; background-color: rgba(226, 226, 226, 0.95); border: rgb(118, 118, 118) 1px; padding: 10px; z-index: 1100; }
+      .menu-mobile.active { display: flex; }
+      .menu-toggle { opacity: 0.8; }
+      
+    }
+    
+    /* --- INICIO DE ESTILOS PARA EL MODAL Y FORMULARIO --- */
+    #modal-content {
+  display: grid;
+  grid-template-columns: minmax(0, 600px) 320px;
+  align-items: center; /* <-- CORRECCIÓN 1 */
+  gap: 30px;
+  max-width: 95%;
+  max-height: 90%;
+}
+
+#modal-img {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  display: block;
+  object-fit: contain; /* <-- CORRECCIÓN 2 */
+}
+
+    #modal-info-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 320px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    #modal-text {
+      font-family: "Lexend", sans-serif;
+      font-size: 14px;
+      color: #333;
+      text-align: left;
+      line-height: 1.5;
+      margin-bottom: 20px; /* Espacio entre el texto y el formulario */
+      overflow-wrap: break-word;
+    }
+
+    .modal-form label {
+      display: block;
+      text-align: left;
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .modal-form input,
+    .modal-form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: "Lexend", sans-serif;
+      font-size: 14px;
+    }
+
+    .modal-form button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      background-color: #333;
+      color: white;
+      font-family: "Lexend", sans-serif;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .modal-form button:hover {
+      background-color: #555;
+    }
+
+    #form-message {
+      display: none;
+      color: #28a745;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Versión móvil para el modal */
+    @media (max-width: 768px) {
+      #modal-content {
+        flex-direction: column;
+        text-align: center;
+        overflow-y: auto;
+        padding: 40px 10px;
+      }
+      #modal-img { max-width: 80%; }
+      #modal-info-container { text-align: center; margin-top: 15px; max-width: 90%; }
+      #modal-text { text-align: center; }
+      .modal-form label { text-align: center; }
+    }
+    /* --- FIN DE ESTILOS --- */
+
+
+         /* 💻 Ajustes SÓLO para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .icono-regreso-menu {
+        display: none !important;
+    }
+.logo-container {
+      display: none;
+    }
+     .logo {
+  padding-top: 180px; /* <--- Ajusta este valor como quieras */
+}
+    .menu-toggle {
+      display: block;
+      font-size: 70px; /* Hamburguesa MÁS GRANDE */
+      top: 49px;
+      left: 19px;
+      opacity: 0.8;
+      position: fixed;
+      z-index: 1100;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+     .menu-mobile {
+      top: 150px; /* Ajusta posición de menú */
+      left: 30px;
+       gap: 30px;
+      background-color: rgba(226, 226, 226, 0.95);
+      border: rgb(118, 118, 118) 1px;
+    }
+    .menu-mobile a img {
+        width: 180px; /* Logos del menú MÁS GRANDES */
+    }
+    .menu-mobile.active {
+        display: flex !important; /* Muestra el menú cuando está activo */
+        
+        /* Aseguramos que la posición y z-index sean correctos para que se vea bien */
+        position: fixed; 
+        z-index: 1200 !important; /* Debe estar por encima del menu-toggle (1100) */
+      
+        
+        /* Los estilos de .menu-mobile que definiste antes se heredarán, 
+           pero es bueno repetirlos aquí si el display era 'none'. */
+        top: 150px; 
+        left: 30px;
+        gap: 30px;
+        flex-direction: column; /* Asumiendo que quieres los logos apilados */
+    }
+
+    /* 2. Logo principal MÁS GRANDE */
+    .logo img {
+      max-width: 250px !important; /* Ajuste del logo (más grande que móvil) */
+    }
+    .logo-img-unica { /* Si existe esta clase específica */
+        max-width: 250px !important; 
+        height: auto !important;
+        position: relative;
+        top: 68px; 
+    }
+   
+  .descripcion {
+      padding: 15px 0px; /* Padding de tableta */
+      font-size: 25px;     /* Texto MÁS GRANDE */
+      text-align: justify;
+    }
+    .descripcion2 {
+      padding: 90px 230px;
+      font-size: 25px; /* Mantiene 14px */
+      text-align: center;
+      margin-bottom: -175px; /* Margen de tableta */
+    }
+
+    /* 4. Galería (1 columna, proporciones de tableta) */
+    .galeria {
+      grid-template-columns: 1fr;
+      gap: 65px;
+      padding: 0px;
+      padding-top: 110px;
+      padding-bottom: 340px;
+      max-width: 560px;
+      margin: 0 auto;
+      margin-top: 40px;
+      margin-bottom: -40px;
+    }
+    .imagen-hover {
+      width: 100%;
+    }
+    .mover-derecha {
+      transform: none;
+    }
+
+    /* 5. Video (proporciones de tableta) */
+    .video-galeria {
+      grid-column: auto;
+      width: 100%;
+      margin-top: -30px;
+      margin-left: 0;
+      padding-top: 226.25%; /* 16:9 ratio */
+    }
+    .video-galeria iframe {
+      width: 100%;
+      height: 100%;
+    }
+    
+
+    /* 6. Hover fijo (igual que en móvil) */
+    .imagen-hover img.img-hover {
+      opacity: 1 !important;
+      pointer-events: none;
+    }
+    .imagen-hover:hover img.img-hover {
+      opacity: 1 !important;
+    }
+    .imagen-hover:hover img.img-original {
+      opacity: 1 !important;
+    }
+    
+    /* 7. Footer de tableta */
+    .footer-image {
+        width: 260px !important;
+    }
+    
+    /* 8. Texto solo tableta (si lo necesitas) */
+    .texto-solo-tablet {
+        display: block;
+        font-size: 18px;
+        color: #333;
+        padding: 20px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    /* 9. Estilos de Chat (si existen) */
+    #soto-launcher {
+        width: 100px !important; 
+        height: 80px !important;
+        bottom: 80px !important;
+    }
+    #soto-notification {
+        width: 45px !important; 
+        height: 35px !important;
+        font-size: 20px !important;
+        top: -38px !important;
+        right: 28px !important;
+        padding: 0 !important;
+        text-align: center !important;
+        line-height: 30px !important;
+    }
+    #soto-chat {
+      position: fixed;
+      bottom: 162px !important;
+      right: 33px;
+      width: 430px !important;
+      height: 520px !important;
+    }
+    .bot-message,
+    .user-message {
+      font-size: 24px !important;
+    }
+    #soto-chat #user-input,
+  #user-input {
+    border: none !important;
+    padding: 10px !important;
+    font-size: 24px !important;
+    background-color: white !important;
+  }
+ #modal-content { 
+        /* Corregir valores excesivos a un tamaño lógico para Tablet */
+        width: 90% !important; 
+        max-width: 1000px !important; /* Limite el ancho a un valor grande, por ejemplo, 800px */
+        max-height: 95vh !important; /* Limite la altura */
+        
+        /* Mantenemos el centrado */
+        margin: 2vh auto !important; 
+    }
+    
+    /* 2. Ajuste del Carrusel (el contenedor de la imagen grande) */
+    .carousel-container { 
+        width: 100% !important; /* Ocupa todo el ancho disponible en #modal-content */
+        max-width: 500px !important; /* Aumenta el ancho máximo de la imagen */
+    }
+    .carousel-slide { 
+        height: 700px !important; /* AUMENTAR la altura visible del carrusel */
+    }
+
+     .carousel-btn.prev {
+    /* Mueve la flecha "prev" más hacia el centro (más a la derecha) */
+    left: -15px !important; /* Ajusta este valor. 20px es el margen desde el borde izquierdo del carrusel. */
+    top: 50%; /* Mantener centrado verticalmente (si es el estilo predeterminado) */
+}
+
+/* Flecha de Navegación Derecha (Siguiente) */
+.carousel-btn.next {
+    /* Mueve la flecha "next" más hacia el centro (más a la izquierda) */
+    right: -15px !important; /* Ajusta este valor. 20px es el margen desde el borde derecho del carrusel. */
+    top: 50%; /* Mantener centrado verticalmente */
+}
+
+/* Estilo general del botón (si lo necesitas más grande o con más padding) */
+.carousel-btn {
+    padding: 15px !important; /* Haz que el área de clic sea más grande */
+    font-size: 30px !important; /* Si usas texto o iconos de fuente */
+}
+
+#modal-info-container { 
+    max-width: 100% !important; 
+    padding: 0px;
+    
+    /* 💡 CLAVE: Mover a la derecha usando un margen izquierdo 💡 */
+    /* El valor positivo empuja el contenedor y su contenido hacia la derecha. */
+    margin-left: -50px !important; /* Ajusta 20px al valor que desees */
+}
+    
+    /* 4. Ajuste del Texto */
+    #modal-text, 
+    .modal-form label,
+    .modal-form input,
+    .modal-form select,
+    .modal-form button {
+        font-size: 25px !important; /* Aumenta el tamaño de la fuente para que el modal se vea más grande */
+    }
+    .modal-close-btn {
+    font-size: 30px; /* Aumenta este valor (ej. de 20px a 30px) */
+    font-weight: bold; /* Opcional: Para hacerla más gruesa */
+    padding: 10px; /* Opcional: Hace el área de click más grande */
+}
+  /* Mantenemos tus estilos específicos de chat y otros de tablet grande si los necesitas */
+    /* ... (Tus estilos de chat de 769px a 1024px) ... */
+    .imagen-hover img.img-hover {
+    /* Mantenemos la opacidad y el manejo de eventos que ya tienes */
+    opacity: 1 !important;
+    pointer-events: none;
+    
+    /* 🚨 CLAVE: REDUCIR EL TAMAÑO 🚨 */
+    width: 90% !important; /* Haz que ocupe el 60% del contenedor padre */
+    max-width: 470px !important; /* Opcional: Establece un límite de píxeles */
+    height: auto !important; /* Mantiene la proporción */
+    
+
+    top: 194px; /* Ejemplo: Mueve la imagen 250px desde arriba */
+    left: 6px; /* Ejemplo: Mueve la imagen 200px desde la izquierda */
+}
+    /* Mantenemos tus estilos específicos de chat y otros de tablet grande si los necesitas */
+    /* ... (Tus estilos de chat de 769px a 1024px) ... */
+}
+
+.boton-regreso-al-final {
+    display: none; 
+}
+
+
+@media (min-width: 769px) {
+
+  /* Chrome, Edge, Safari */
+  ::-webkit-scrollbar {
+    width: 8px;      /* tamaño normal */
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: transparent; /* el “agarre” se hace invisible */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent; /* el riel se hace invisible */
+  }
+
+  /* Firefox */
+  body {
+    scrollbar-width: thin;         /* no recomendado: smooth */
+    scrollbar-color: transparent transparent;
+  }
+}
+
+  </style>
+</head>
+<body>
+ <!-- Aquí va el contenido de tu página web... -->
+
+  <!-- BURBUJA DEL CHAT DE SOTO -->
+  <div id="soto-launcher">
+
+    <img
+
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_100,c_scale/v1755968841/soto_logo.0010_xh9icu.png"
+
+        srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_100,c_scale/v1755968841/soto_logo.0010_xh9icu.png 100w,
+
+                https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_200,c_scale/v1755968841/soto_logo.0010_xh9icu.png 200w"
+
+        alt="soto cara">
+ <div id="soto-notification">¿?</div>
+</div>
+
+        <div id="soto-chat" style="display: none;"><div id="chat-window"><button id="close-chat" class="close-chat-btn">X</button><div id="chat-messages"></div><input type="text" id="user-input" placeholder="Escribe tus dudas..." /></div></div>  
+
+       
+
+        <link rel="stylesheet" href="../chat.css">
+
+        <script src="../chat.js"></script>
+
+
+
+
+ <!-- Botón hamburguesa solo visible en móvil -->
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<!-- Menú hamburguesa móvil -->
+<div class="menu-mobile" id="mobileMenu"> 
+ <a href="../">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
+  </a>
+
+   <a href="../proyectos-patio/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 2">
+  </a>
+  
+ <a href="../acerca-de-patio/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
+  </a>
+   <a href="../archivo-en-venta/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477916/tienda-01_ntkqad.png" alt="Logo 3">
+  </a>
+  <a href="../contacto/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 3">
+  </a>
+  <a href="../oficina/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 5">
+  </a>
+  
+ 
+</div>
+
+
+
+
+
+
+
+
+  <div class="logo-container">
+    <a href="../">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
+     </a>
+
+      <a href="../proyectos-patio/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 2">
+  </a>
+  <a href="../acerca-de-patio/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
+  </a>
+  <a href="../archivo-en-venta/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477916/tienda-01_ntkqad.png" alt="Logo 3">
+  </a>
+  <a href="../contacto/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 3">
+  </a>
+  <a href="../oficina/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 5">
+  </a>
+
+
+
+
+
+
+
+   </div>
+  <div class="logo">
+    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759845871/archivo_gratis_apnfr6.png" alt="logo archivo en venta, oficina soto" style="max-width: 165px; height: auto;">
+  </div>
+
+  <div class="descripcion2">
+    <p>
+      <h3>Descargas gratuitas<br><br></h3>
+      Puedes descargar fondos de pantalla y archivos de texto disponibles.<br>Solo da click sobre la imagen para descargar.<br><i>Nota: el uso comercial de estos archivos está prohibido.<i><br>
+    </p>
+  </div>
+  
+  <div class="galeria">
+    <a href="https://fromsmash.com/soto1" target="_blank">
+
+    <div class="imagen-hover">
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847562/fondodepantallaweb_mj4ywo.png" class="img-original" alt="fondo de pantalla 1">
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover color sol, oficina soto">
+    </div>
+</a>
+
+ <a href="https://fromsmash.com/soto2" target="_blank">
+    <div class="imagen-hover">
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847562/fondodepantalla2web_tczdsv.png" class="img-original" alt="fondo de pantalla 2">
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover las escondidas n1, oficina soto">
+    </div>
+</a>
+     <a href="https://fromsmash.com/soto3" target="_blank">
+    <div class="imagen-hover">
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847562/fondodepantalla3web_e5lvus.png" class="img-original" alt="fondo de pantalla 3">
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover las escondidas n2, oficina soto"> 
+    </div>
+</a>
+     <a href="https://fromsmash.com/soto4" target="_blank">
+    <div class="imagen-hover">
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847562/fondodepantalla4web_sggjgz.png" class="img-original" alt="fondo de pantalla 4">
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover El techo se ve raro, oficina soto"> 
+    </div>
+</a>
+     <a href="https://fromsmash.com/soto5" target="_blank">
+    <div class="imagen-hover">
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847561/fondodepantalla5web_taxx5x.png" class="img-original" alt="fondo de pantalla 5">
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover Palomas, oficina soto"> 
+    </div>
+</a>
+ <a href="https://fromsmash.com/soto6I" target="_blank">
+    <div class="imagen-hover">
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847561/fondodepantalla6web_ygfyic.png" class="img-original" alt="fondo de pantalla 6">
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover Ojalá ser una mariposa, oficina soto"> 
+    </div>
+</a>
+
+ <a href="https://fromsmash.com/soto7" target="_blank">
+    <div class="imagen-hover">
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847561/fondodepantalla7web_louvv8.png" class="img-original" alt="fondo de pantalla 7">
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover Chisme de vecinos, oficina soto"> 
+    </div>
+</a>
+
+ <a href="https://fromsmash.com/soto8" target="_blank">
+     <div class="imagen-hover">
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847561/fondodepantalla8web_wonzzi.png" class="img-original" alt="fondo de pantalla 8">
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover Chisme de vecinos, oficina soto"> 
+   </div>
+    </a>
+     </div>
+    
+    
+  
+  <footer>
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760111670/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
+  </footer>
+  
+  <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgba(243, 243, 243, 1); justify-content:center; align-items:center; cursor:pointer;">
+    <span id="cerrar-modal" style="position:absolute; top:20px; right:30px; color:rgb(0, 0, 0); font-size:40px; cursor:pointer;">&times;</span>
+    
+    <div id="modal-content" style="cursor: default;">
+      <img id="modal-img" src="" alt="Imagen ampliada" />
+      <div id="modal-info-container">
+        <div id="modal-text">
+            </div>
+        <form id="modal-form" class="modal-form" action="https://formspree.io/f/xovkvgpl" method="POST">
+            <p style="text-align: left; margin-top: 0; margin-bottom: 15px; font-size: 16px; font-weight: bold;">Solicitar información</p>
+            <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div>
+              
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+            <div>
+
+      
+                <label for="formato">Formato</label>
+                <select id="formato" name="formato" required>
+                    <option value="">Selecciona una opción...</option>
+                    <option value="particular">A3 - 40€</option>
+                    <option value="asociacion">A4 - 30€</option>
+                    <option value="galeria">A5 - 18€</option>
+                </select>
+            </div>
+            <div>
+               
+                <label for="ubicacion">Ubicación (Ciudad, País)</label>
+                <input type="text" id="ubicacion" name="ubicacion" required>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="form-message"></p>
+      </div>
+    </div>
+  </div>
+
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  const modalText = document.getElementById('modal-text');
+  const cerrarModal = document.getElementById('cerrar-modal');
+  
+  const modalForm = document.getElementById('modal-form');
+  const formMessage = document.getElementById('form-message');
+  // Definimos el botón aquí para que sea accesible en todas las funciones
+  const submitButton = modalForm.querySelector('button');
+
+  document.querySelectorAll('.img-hover[data-full]').forEach(img => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const imgGrande = img.getAttribute('data-full');
+      const textoObra = img.getAttribute('data-text');
+      
+      modalImg.src = imgGrande;
+      if (textoObra) { modalText.innerHTML = textoObra; } 
+      else { modalText.innerHTML = ""; }
+      
+      modal.style.display = 'flex';
+    });
+  });
+
+  function closeModal() {
+    modal.style.display = 'none';
+    modalImg.src = '';
+    modalText.innerHTML = '';
+    
+    // El reseteo ahora también incluye el botón
+    setTimeout(() => {
+        modalForm.style.display = 'block';
+        formMessage.style.display = 'none';
+        formMessage.textContent = '';
+        modalForm.reset();
+        
+        // --- INICIO DE LÍNEAS AÑADIDAS ---
+        submitButton.disabled = false;      // Vuelve a habilitar el botón
+        submitButton.textContent = 'Enviar';  // Restaura el texto original del botón
+        // --- FIN DE LÍNEAS AÑADIDAS ---
+
+    }, 300);
+  }
+
+  cerrarModal.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) { closeModal(); }
+  });
+
+  modalForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(modalForm);
+    const action = modalForm.action;
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Enviando...';
+
+    fetch(action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+          'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        modalForm.style.display = 'none';
+        formMessage.textContent = '¡Gracias! Tu solicitud ha sido enviada.';
+        formMessage.style.display = 'block';
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            formMessage.textContent = data["errors"].map(error => error["message"]).join(", ");
+          } else {
+            formMessage.textContent = 'Oops! Hubo un problema al enviar tu formulario.';
+          }
+          formMessage.style.color = 'red';
+          formMessage.style.display = 'block';
+          submitButton.disabled = false;
+          submitButton.textContent = 'Enviar';
+        })
+      }
+    }).catch(error => {
+      formMessage.textContent = 'Oops! Hubo un problema de red.';
+      formMessage.style.color = 'red';
+      formMessage.style.display = 'block';
+      submitButton.disabled = false;
+      submitButton.textContent = 'Enviar';
+    });
+  });
+});
+
+function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+}
+
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+}, false);
+</script>
+<script>
+window.addEventListener("load", function () {
+    
+    const launcher = document.getElementById("soto-launcher");
+    const notification = document.getElementById("soto-notification");
+    const launcherImage = launcher ? launcher.querySelector("img") : null;
+
+    if (launcherImage && notification) {
+        
+        notification.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Lista de eventos a simular
+            const eventsToFire = ['mousedown', 'mouseup', 'click'];
+            
+            eventsToFire.forEach(function(eventName) {
+                const clickEvent = new MouseEvent(eventName, {
+                    bubbles: true,
+                    cancelable: true,
+                    view: window
+                });
+                
+                // Dispara el evento en LA IMAGEN (lo más probable)
+                launcherImage.dispatchEvent(clickEvent);
+                
+                // Dispara el evento en EL DIV PADRE (por si acaso)
+                launcher.dispatchEvent(clickEvent);
+            });
+        });
+    }
+});
+</script>
+</body>
+</html>

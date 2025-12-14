@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>soto</title>
+    <title>soto responde</title>
     
     <link rel="icon" href="https://res.cloudinary.com/dbwezmju6/image/upload/v1750415672/icono_wev-01_gllalq.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-    <meta name="description" content="soto es el sitio donde ocurre todo">
+    <meta name="description" content="habla con soto, este es el sitio donde ocurre todo.">
     
     <meta property="og:title" content="inicio">
     <meta property="og:description" content="inicio de soto, el sitio donde ocurre todo.">
@@ -335,7 +335,87 @@
   -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4); /* rojo semitransparente */
 }
         }
-    </style>
+
+ 
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* 1. Oculta menú escritorio, muestra hamburguesa GRANDE (Tus Medidas) */
+    .logo-container {
+        display: none;
+    }
+    .logo {
+        padding-top: 180px;
+    }
+    .menu-toggle {
+        display: block;
+        font-size: 70px; /* Hamburguesa MÁS GRANDE */
+        top: 49px;
+        left: 19px;
+        opacity: 0.8;
+        position: fixed;
+        z-index: 1000001;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    .menu-mobile {
+        top: 150px; /* Ajusta posición de menú */
+        left: 30px;
+        gap: 30px;
+        background-color: rgba(226, 226, 226, 0.95);
+        border: rgb(118, 118, 118) 1px;
+    }
+    .menu-mobile a img {
+        width: 180px; /* Logos del menú MÁS GRANDES */
+    }
+    .menu-mobile.active {
+        display: flex !important; /* Muestra el menú cuando está activo */
+        position: fixed; 
+        z-index: 1200000 !important; 
+        top: 150px; 
+        left: 30px;
+        gap: 30px;
+        flex-direction: column; 
+    }
+
+  
+    
+    /* 3. Estilos de Galería e Imágenes (Mantenemos los estilos anteriores que simulan móvil grande) */
+    .container { 
+        /* Usamos casi el ancho completo, permitiendo más espacio que en móvil. */
+        width: 95% !important; 
+        
+        /* Aumentamos significativamente el MAX-WIDTH. 
+           Si tu tablet es de 1024px, 900px hace que el contenido se estire. */
+        max-width: 900px !important; 
+        
+        margin: 0 auto; /* Asegura el centrado */
+    }
+    body {
+        padding-top: 80px !important; 
+        margin-top: 20px !important;
+        padding-bottom: 20px;
+    }
+    
+    /* 4. Footer */
+    .footer-image {
+        width: 260px !important;
+    }
+     .top-banner {
+        height: 60px; /* Ajusta este valor (ej. 45px, 50px) como prefieras */
+    }
+    .scroll-text { /* O puedes usar .top-banner .scroll-text si necesitas más especificidad */
+        font-size: 27px; /* Ajusta el tamaño del texto */
+        /* Puede que necesites ajustar la alineación si no se centra bien: */
+        /* line-height: 45px; */ /* (Usa el mismo valor que la altura del banner para centrar verticalmente) */
+    }
+
+}
+
+.boton-regreso-al-final {
+    display: none; 
+}
+</style>
+
 </head>
 <body>
     <a href="https://sotosotosoto.com/acerca-de-soto/" target="_blank" class="banner-link">
@@ -369,24 +449,24 @@
 
     <div class="menu-mobile" id="mobileMenu">
         <a href="../">
-            <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751476758/soto_icono_ny0lp9.png" alt="Logo 5">
+            <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
         </a>
-        <a href="../patio-trasero/">
+        <a href="../patio/">
             <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751475659/patio_menu_m0399x.png" alt="Logo 5">
         </a>
     </div>
 
     <div class="logo-container">
         <a href="../">
-            <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751476758/soto_icono_ny0lp9.png" alt="Logo 5">
+            <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
         </a>
-        <a href="../patio-trasero/">
-            <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751475659/patio_menu_m0399x.png" alt="Logo 5">
+        <a href="../patio/">
+            <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759490897/patio_menu_m0399x.png" alt="Logo 5">
         </a>
     </div>
 
     <footer>
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751476362/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760111670/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
     </footer>
 
     <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">

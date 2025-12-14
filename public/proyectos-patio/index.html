@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>proyectos de oficina</title>
+  <title>proyectos del patio trasero</title>
   <link rel="icon" href="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759771502/icono_web-01_pcbhuw.png" type="image/png">
   
-   <meta name="description" content="proyectos dedicados al trabajo detrás de un ordenador">
+   <meta name="description" content="proyectos experimentales, artísticos y de valor conceptual.">
   
-  <meta property="og:title" content="proyectos de oficina">
-<meta property="og:description" content="proyectos dedicados al trabajo detrás de un ordenador">
+  <meta property="og:title" content="proyectos del patio trasero">
+<meta property="og:description" content="proyectos experimentales, artísticos y de valor conceptual.">
 <meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
-<meta property="og:url" content="https://sotosotosoto.com../proyectos-oficina/">
+<meta property="og:url" content="https://sotosotosoto.com../proyectos-patio/">
 <meta property="og:type" content="website">
-  
   
   <style>
     body {
@@ -49,7 +48,7 @@
       height: auto;
     }
 
-     footer {
+      footer {
       position: fixed;
       bottom: 0;
       left: 0;
@@ -70,7 +69,7 @@
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       grid-gap: 20px;
       max-width: 1200px;
       width: 100%;
@@ -109,7 +108,7 @@
       }
     }
 
- @media (min-width: 481px) and (max-width: 768px) {
+  @media (min-width: 481px) and (max-width: 768px) {
       .gallery {
         grid-template-columns: 1fr;
       }
@@ -153,10 +152,14 @@
 .menu-mobile a:last-child {
   margin-bottom: -21px;
 }
+
 .menu-mobile a img {
   width: 90px;
   height: auto;
 }
+ .menu-mobile.active {
+    display: flex;
+  }
 
 
 
@@ -183,14 +186,14 @@
 
 
 
-a, button, .tus-elementos-clickeables {
-  -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4); /* rojo semitransparente */
-}
+  .menu-toggle,
+  .menu-mobile a,
+  .menu-mobile a img {
+    -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4) !important;
+  }
 
 
-
-
-/* Versión tablet */
+/* Versión tablet movil */
   @media (min-width: 481px) and (max-width: 768px) {
 
 .menu-toggle {
@@ -217,6 +220,8 @@ a, button, .tus-elementos-clickeables {
       border: rgb(118, 118, 118) 1px;
       padding: 10px;
       z-index: 1100;
+    
+      
     }
 
     .menu-mobile.active {
@@ -232,7 +237,6 @@ a, button, .tus-elementos-clickeables {
 
 /* 💻 Ajustes SÓLO para tablets */
 @media (min-width: 769px) and (max-width: 1024px) {
-
     .icono-regreso-menu {
         display: none !important;
     }
@@ -248,7 +252,61 @@ a, button, .tus-elementos-clickeables {
         width: 150px; /* Ajusta este valor para hacer los logos más grandes */
         /* height: auto; ya está por defecto, no hace falta repetirlo */
     }
+        #soto-launcher {
+        width: 100px !important;  
+        height: 80px !important;
+        /* --- AÑADE ESTA LÍNEA PARA SUBIRLO --- */
+        bottom: 80px !important; /* Ajusta este valor (más alto = más arriba) */
+        /* right: 20px !important; */ /* No necesitas cambiar 'right' a menos que también quieras moverlo horizontalmente */
+    }
 
+    #soto-notification {
+        width: 45px !important;   
+        height: 35px !important;
+        font-size: 20px !important;
+        top: -38px !important;
+        right: 28px !important;
+        /* --- AÑADE ESTAS 3 LÍNEAS --- */
+        padding: 0 !important; /* 1. Quita el padding antiguo */
+        text-align: center !important; /* 2. Centra horizontalmente */
+        line-height: 30px !important; /* 3. Ajusta la altura de línea */
+    }
+
+     #soto-chat {
+  position: fixed;
+  bottom: 162px !important; /* Ajusta este valor (más alto = más arriba) */
+  right: 33px; 
+  width: 430px !important;
+  height:520px !important;
+
+}
+
+.bot-message,
+.user-message {
+  background: #e0e0e0; /* Fondo para ambos mensajes */
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 24px !important;
+  font-family: "Lexend", sans-serif;
+  line-height: 1.5;
+  width: fit-content; /* Ajusta el tamaño del mensaje */
+  max-width: 80%; /* Limita el ancho de los mensajes */
+  margin-bottom: 1px;
+  text-align:  left; /* Alinea ambos mensajes a la izquierda */
+}
+#soto-chat #user-input,
+  #user-input {
+    border: none !important;
+    padding: 10px !important;
+    font-size: 24px !important;
+    background-color: white !important;
+  }
+
+  .close-chat-btn {
+  
+  font-size: 25px!important;
+  
+}
 
 .descripcion {
       padding: 15px 230px;
@@ -272,10 +330,16 @@ a, button, .tus-elementos-clickeables {
 .gallery {
         grid-template-columns: repeat(2, 1fr);
       }
-        .logo-container {
+
+
+      /* --- INICIO: CÓDIGO DEL MENÚ DE TABLET --- */
+
+/* 1. Oculta el menú de escritorio */
+.logo-container {
   display: none !important; /* !important para anular la regla existente */
 }
 
+/* 2. Muestra y agranda el botón de hamburguesa */
 .menu-toggle {
   display: block;
   font-size: 70px; /* Hamburguesa MÁS GRANDE */
@@ -315,7 +379,10 @@ a, button, .tus-elementos-clickeables {
 .menu-mobile.active {
   display: flex;
 }
+
+/* --- FIN: CÓDIGO DEL MENÚ DE TABLET --- */
 }
+
 /* 2. Estilos para la imagen del botón de regreso */
 .icono-regreso-menu {
     /* Hereda el tamaño estándar del menú, pero puedes darle un tamaño específico si es diferente */
@@ -337,13 +404,15 @@ a, button, .tus-elementos-clickeables {
 .boton-regreso-al-final {
     display: none; 
 }
-
 /* Ocultar botón regresar en móviles */
 @media (max-width: 480px) {
     .icono-regreso-menu {
         display: none !important;
     }
 }
+
+
+
 
 
 
@@ -367,8 +436,6 @@ a, button, .tus-elementos-clickeables {
       max-width: 1200px;
       width: 100%;
     }
-
-   
        /* También puedes ajustar el tamaño del texto de la animación */
             .intro-text {
                 font-size: 6em; 
@@ -440,6 +507,7 @@ a, button, .tus-elementos-clickeables {
         /* right: 20px !important; */ /* No necesitas cambiar 'right' a menos que también quieras moverlo horizontalmente */
     }
 
+
     footer {
         position: fixed;
         bottom: 0;
@@ -490,10 +558,34 @@ a, button, .tus-elementos-clickeables {
 
 
 
-
   </style>
 </head>
 <body>
+
+ <!-- Aquí va el contenido de tu página web... -->
+
+  <!-- BURBUJA DEL CHAT DE SOTO -->
+   <div id="soto-launcher">
+
+    <img
+
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_100,c_scale/v1755968841/soto_logo.0010_xh9icu.png"
+
+        srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_100,c_scale/v1755968841/soto_logo.0010_xh9icu.png 100w,
+
+                https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_200,c_scale/v1755968841/soto_logo.0010_xh9icu.png 200w"
+
+        alt="soto cara">
+ <div id="soto-notification">¿?</div>
+</div>
+
+        <div id="soto-chat" style="display: none;"><div id="chat-window"><button id="close-chat" class="close-chat-btn">X</button><div id="chat-messages"></div><input type="text" id="user-input" placeholder="Escribe tus dudas..." /></div></div>  
+
+       
+
+        <link rel="stylesheet" href="../chat.css">
+
+        <script src="../chat.js"></script>
 
 
 
@@ -502,43 +594,49 @@ a, button, .tus-elementos-clickeables {
 
 <!-- Menú hamburguesa móvil -->
 <div class="menu-mobile" id="mobileMenu">
-  
-<a href="../">
+  <a href="../">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
   </a>
-  <a href="../acerca-de-oficina/">
+  <a href="../acerca-de-patio/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
   </a>
-  <a href="../contacto-diseño/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 4">
+  <a href="../soto-artista-virtual/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751478380/lo_ultimo_web_xijtal.png" alt="Logo 3">
   </a>
-  <a href="../patio/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751475659/patio_menu_m0399x.png" alt="Logo 5">
+  <a href="../archivo-en-venta/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477916/tienda-01_ntkqad.png" alt="Logo 3">
   </a>
-
-
-<a href="#" onclick="window.history.back(); return false;" class="enlace-regreso">
+   <a href="../contacto/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 3">
+  </a>
+  <a href="../oficina/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 3">
+  </a>
+  <a href="#" onclick="window.history.back(); return false;" class="enlace-regreso">
         <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-menu">
     </a>
-
+  
 </div>
 
 <!-- Menú clásico en escritorio -->
 <div class="logo-container">
- 
-
-  <a href="../">
+   <a href="../">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
-     </a>
-  
-  <a href="../acerca-de-oficina/">
+  </a>
+  <a href="../acerca-de-patio/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
   </a>
-  <a href="../contacto-diseño/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 4">
+  <a href="../soto-artista-virtual/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751478380/lo_ultimo_web_xijtal.png" alt="Logo 3">
   </a>
-  <a href="../patio/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759490897/patio_menu_m0399x.png" alt="Logo 5">
+  <a href="../archivo-en-venta/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477916/tienda-01_ntkqad.png" alt="Logo 3">
+  </a>
+  <a href="../contacto/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 3">
+  </a>
+  <a href="../oficina/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 3">
   </a>
 
 <a href="#" onclick="window.history.back(); return false;" class="enlace-regreso">
@@ -548,131 +646,173 @@ a, button, .tus-elementos-clickeables {
 
 
 
-<div class="gallery">
-    <a href="../el-hogar/">
+    <div class="gallery">
+    <a href="../soto-artista-virtual/">
       <img 
-        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751488029/el_hogar_poster_final-01_kwyqaf.png" 
-        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751489335/el_hogar_web3-01_woz22r.png"
-        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751488029/el_hogar_poster_final-01_kwyqaf.png"
-        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_500,c_scale/v1751488295/el_hogar_movil_nuevo-01_ij7maj.png"
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1600,c_scale/v1761836279/soto_portada-01_gjmmgd.png" 
+        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1600,c_scale/v1759744602/soto_portadaa-01_xm0pg6.png"
+        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1600,c_scale/v1761836279/soto_portada-01_gjmmgd.png"
+        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1761843820/soto_portada_movil_touang.png"
+        alt="Imagen 14"
+        loading="lazy">
+    </a>
+<a href="../desoido/">
+      <img 
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751560810/1PP_vhi2d6.png"
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751562785/desoido_portada_final2-01_yqxnkb.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751560810/1PP_vhi2d6.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1751564420/desoidoapp_movil_rf7az4.png"
         alt="Imagen 1"
         loading="lazy">
     </a>
-
-    <a href="../monaco/">
+    
+    <a href="../de-hoy-para-mañana/">
       <img 
-        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751489048/pdmona-01_mcgwbz.png" 
-        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751489294/PD3-01_ckwulw.png"
-        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751489048/pdmona-01_mcgwbz.png"
-        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_500,c_scale/v1751489478/MONACO_MOVIL2-01_igzpih.png"
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561065/2PP_nvvb5q.png" 
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751562780/de_hoy_portada-01_k3xe5j.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561065/2PP_nvvb5q.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1751564421/dehoy_movil_o54fri.png"
         alt="Imagen 2"
         loading="lazy">
     </a>
 
-    <a href="../premios-deporte-y-ciudadania/">
+    <a href="../chingaderas-en-la-ventana/">
       <img 
-        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751490158/premio1-01_c4o3lj.png" 
-        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751490263/PD2-01_o75x5o.png"
-        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751490158/premio1-01_c4o3lj.png"
-        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_500,c_scale/v1751490367/premios_movil2-01_wbtino.png"
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561113/3PP_vpy7qx.png" 
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751562779/chingaderas_portada-01_zg8wjj.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561113/3PP_vpy7qx.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1751992953/chingaderas_movil_ctx4vt.png"
         alt="Imagen 3"
         loading="lazy">
     </a>
 
-    <a href="../guardabosques-GDL/">
+    <a href="../por-que-nos-cuesta-escuchar/">
       <img 
-        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751490917/guardabosques_web2-01_y3omg5.png" 
-        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751491073/PD4-01_xplapu.png"
-        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751490917/guardabosques_web2-01_y3omg5.png"
-        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_500,c_scale/v1751491154/guarda_movil2-01_roihng.png"
-        alt="Imagen 4"
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561084/4PP_hk8du3.png" 
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751562784/porque_nos_cuesta_portada_final-01_aeoizu.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561084/4PP_hk8du3.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1751564430/porque_movil_rk6xpf.png"
+        alt="Imagen 4" 
+        loading="lazy"> 
+    </a>
+
+    <a href="../estudio-de-objetos-no-identificados/">
+      <img 
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561130/5PP_fuiqex.png" 
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751562346/estudio_portada-01_cohmhb.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561130/5PP_fuiqex.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1751564436/objetos_movil_t0d64n.png"
+        alt="Imagen 5"
         loading="lazy">
     </a>
 
-    <a href="../colectivo-habitantes/">
+    <a href="../espacios-comunes/">
       <img 
-        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751495562/tarjetas_habitantes3_myq8op.png" 
-        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751491722/PD5-01_hkcwv1.png"
-        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751495562/tarjetas_habitantes3_myq8op.png"
-        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_500,c_scale/v1751491819/HABITANTES_MOVIL2-01_ltvo82.png"
-        alt="Imagen 5"
-        loading="lazy">
-    </a> 
-
-    <a href="../addy/">
-      <img 
-        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751492824/addy_poster_final-01_ljfjcm.png" 
-        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751492900/PD6-01_mzh9xr.png"
-        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751492824/addy_poster_final-01_ljfjcm.png"
-        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_500,c_scale/v1751492991/addy_movil2-01_vtswvl.png"
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561176/6PP_zizxhj.png" 
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751562336/espacios_comunes_portada-01_nkgbh9.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561176/6PP_zizxhj.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1751564436/espacios_movil_sn0eyq.png"
         alt="Imagen 6"
         loading="lazy">
     </a>
 
-    <a href="../perlata/">
+    <a href="../hay-flores-a-domicilio/">
       <img 
-        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751493543/perlata_web2-01_agimuq.png" 
-        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751493973/PD7-01_ndkzja.png"
-        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751493543/perlata_web2-01_agimuq.png"
-        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_500,c_scale/v1751494048/perlata_movil2-01_z53mbn.png"
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561183/7PP_shw8gv.png" 
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751562334/hay_flores_portada-01_rxedlt.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561183/7PP_shw8gv.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1751564448/hay_flores_movil_b3tc7e.png"
         alt="Imagen 7"
         loading="lazy">
     </a>
 
-    <a href="../alquimia/"> 
+    <a href="../ya-soy-artista/">
       <img 
-        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751495035/alqumia_web4-01_l4vi9i.png" 
-        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751495061/PD9-01_rysgcy.png"
-        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751495035/alqumia_web4-01_l4vi9i.png"
-        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_500,c_scale/v1751495098/alqumia_movil_nuevo-01_qrwsvd.png"
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561199/8PP_lrbkru.png" 
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751562333/yasoy_portada-01_necpuf.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561199/8PP_lrbkru.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1751564450/ya_soy_movil_fbmzjs.png"
         alt="Imagen 8"
         loading="lazy">
-    </a> 
+    </a>
 
-    <a href="../barra-100/">
+    <a href="../inmenso/">
       <img 
-        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751495805/pdbarra100-01_jtp2dt.png" 
-        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751497428/PD8_zzlaka.png"
-        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751495805/pdbarra100-01_jtp2dt.png"
-        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_500,c_scale/v1751495890/barra100_movil-01_h60bns.png"
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561206/9PP_q6rxs9.png" 
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751562802/inmenso_portada-01_t8tsqj.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561206/9PP_q6rxs9.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1751564442/inmenso_movil_vkjoap.png"
         alt="Imagen 9"
         loading="lazy">
-    </a> 
+    </a>
 
-    <a href="../valtina/"> 
+    <a href="../algunas-cosas/">
       <img 
-        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751496469/VALTINA_ORDENADOR_NUEVO-01_rgyz4o.png" 
-        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751496550/PD10-01_bll4uv.png"
-        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751496469/VALTINA_ORDENADOR_NUEVO-01_rgyz4o.png"
-        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_500,c_scale/v1751496600/VALTINA_MOVIL_FINAL_NUEVO-01_prs5u3.png"
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561212/10PP_qbn47v.png" 
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751562801/algunas_portada-01_zbu9s4.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561212/10PP_qbn47v.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1751564414/algunas_movil_k33ojm.png"
         alt="Imagen 10"
         loading="lazy">
     </a>
 
-    <a href="../confin/">
+    <a href="../no-solo-tiempo/">
       <img 
-        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751497678/confin_web3-01_o8ecse.png" 
-        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751497738/PD11-01_xks3ci.png"
-        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751497678/confin_web3-01_o8ecse.png"
-        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_500,c_scale/v1751497778/CONFINULTIMO-01_btidtf.png"
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561233/11PP_wvglkl.png" 
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751562797/no_solo_portada-01_potmhj.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561233/11PP_wvglkl.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1751564413/no_solo_tiempo_movil_fksug4.png"
         alt="Imagen 11"
         loading="lazy">
     </a>
 
-    <a href="../hilachas/">
+    <a href="../apariencias/">
       <img 
-        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751997215/hilachas_portada_web_nueva-01_yngczn.png" 
-        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751498088/PD12-01_os02w8.png"
-        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751997215/hilachas_portada_web_nueva-01_yngczn.png"
-        data-mobile="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_500,c_scale/v1751498095/hilachas_portada_nueva-01_hstwud.png"
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561241/12PP_bwgiy8.png" 
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751562795/apariencias_portada-01_uwty6r.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561241/12PP_bwgiy8.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1751564412/apariencias_movil_pdjkos.png"
         alt="Imagen 12"
-        loading="lazy"> 
+        loading="lazy">
     </a>
-</div>
+
+    <a href="../silueta-de-olvido/">
+      <img 
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561254/14PP_wimk0h.png" 
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751562791/siluerta_portada-01_kgliwk.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561254/14PP_wimk0h.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1751564459/silueta_de_olvido_movil_zsoext.png"
+        alt="Imagen 13"
+        loading="lazy">
+    </a>
+
+    <a href="../descripcion-de-mi-pais/">
+      <img 
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561277/13PP_w0pin2.png" 
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751562790/descripcion_portada-01_kznaiz.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561277/13PP_w0pin2.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1751564449/descripcion_movil_fjrry8.png"
+        alt="Imagen 14"
+        loading="lazy">
+    </a>
+    
+  </div>
 
   <footer>
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760111670/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
   </footer>
+<script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        }, false);
+</script>
+
+
 
  <script>
         function toggleMenu() {
@@ -748,11 +888,47 @@ a, button, .tus-elementos-clickeables {
         });
     });
     </script>
-   <script>
+
+<script>
+window.addEventListener("load", function () {
+    
+    const launcher = document.getElementById("soto-launcher");
+    const notification = document.getElementById("soto-notification");
+    const launcherImage = launcher ? launcher.querySelector("img") : null;
+
+    if (launcherImage && notification) {
+        
+        notification.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Lista de eventos a simular
+            const eventsToFire = ['mousedown', 'mouseup', 'click'];
+            
+            eventsToFire.forEach(function(eventName) {
+                const clickEvent = new MouseEvent(eventName, {
+                    bubbles: true,
+                    cancelable: true,
+                    view: window
+                });
+                
+                // Dispara el evento en LA IMAGEN (lo más probable)
+                launcherImage.dispatchEvent(clickEvent);
+                
+                // Dispara el evento en EL DIV PADRE (por si acaso)
+                launcher.dispatchEvent(clickEvent);
+            });
+        });
+    }
+});
+</script>
+
+<script>
     function goBack() {
         // La función history.back() regresa a la URL anterior en el historial del navegador.
         window.history.back();
     }
 </script>
+
 </body>
 </html>

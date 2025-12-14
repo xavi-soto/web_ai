@@ -4,10 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>de hoy para mañana</title>
-   <link rel="icon" href="https://res.cloudinary.com/dbwezmju6/image/upload/v1750391546/icono_wev-01_gllalq.png" type="image/png">
+   <link rel="icon" href="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759771502/icono_web-01_pcbhuw.png" type="image/png">
 
   <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-  <meta name="description" content="soto es el sitio donde ocurre todo">
+  <meta name="description" content="proyecto que explora lo cotidiano y lo absurdo de la vida diaria, presentando obras que reflejan la complejidad de los actos simples y esenciales.">
+  
+   <!-- IGNORE -->
+   <meta name="description" content="soto es el sitio donde ocurre todo">
+   <!-- IGNORE -->
   
   <meta property="og:title" content="de hoy para mañana">
 <meta property="og:description" content="de hoy para mañana, es una exposición que explora lo cotidiano y lo absurdo de la vida diaria, presentando obras que reflejan la complejidad de los actos simples y esenciales.">
@@ -16,252 +20,174 @@
 <meta property="og:type" content="website">
   
   
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: rgb(243, 243, 243);
-      text-align: center;
-      /* efecto de aparición */
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards;
-}
+<style>
+  /* Estilos generales (ESCRITORIO) */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(243, 243, 243);
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
 
-@keyframes fadeIn {
-  to {
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+    padding-top: 100px;
+  }
+
+  .logo-container {
+    position: fixed;
+    top: 60px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  .logo-container img {
+    width: 90px;
+    height: auto;
+  }
+
+  .descripcion {
+    text-align: justify;
+    padding: 150px;
+    padding-top: 50px;
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+    font-family: "Lexend", sans-serif;
+  }
+
+  .descripcion2 {
+    padding: 140px;
+    padding-top: 70px;
+    font-size: 14px;
+    color: #333;
+    font-family: "Lexend", sans-serif;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f3f3f3;
+    text-align: center;
+    padding: 5px 0;
+    z-index: 1000;
+  }
+
+  .footer-image {
+    width: 150px;
+    height: auto;
+    padding-top: 10px;
+    margin-top: -4px;
+    /* animation: mostrarImagenes 3s ease forwards; */
+  }
+
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px 25px;
+    padding: 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: -80px;
+    margin-bottom: 30px;
+  }
+
+  
+  .imagen-hover {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .imagen-hover img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.6s ease;
+  }
+
+  .imagen-hover img.img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  .imagen-hover:hover img.img-hover {
     opacity: 1;
   }
-}
 
-   .logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 0px;
-  padding-top: 100px;
-}
+  .imagen-hover:hover img.img-original {
+    opacity: 1; /* Corregido de 3 */
+  }
 
-.logo-container {
-  position: fixed;
-  top: 60px;
-  left: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
-}
+  .mover-derecha {
+    transform: translateX(100px);
+  }
 
- .logo-container img {
-      width: 90px;
-      height: auto;
-    }
-
-
-    .descripcion {
-        text-align: justify;
-      padding: 140px;
-      padding-top: 70px;
-      font-size: 14px;
-      color: rgb(51, 51, 51);
-      font-family: "Lexend", sans-serif;
-    }
-
-
-     .descripcion2 {
-      
-      padding: 140px;
-      padding-top: 70px;
-      font-size: 14px;
-      color: #333;
-      font-family: "Lexend", sans-serif;
-    }
-
-
-
-
-
-    footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #f3f3f3; /* Asegura que tenga el mismo fondo */
-        text-align: center;
-        padding: 10px 0;
-        z-index: 1000; /* Se mantiene por encima de otros elementos */
-    }
-
-
-
-        .footer-image {
-            width: 150px; /* Ajusta el tamaño de la imagen */
-            height: auto;
-            padding-top: 0px;
-            margin-top: 0px;
-            animation: mostrarImagenes 3s ease forwards;
-        }
-
-
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      padding: 20px;
-      padding-top: 0px;
-      padding-bottom: 70px;
-      max-width: 1200px;
-      margin: 0 auto;
-      margin-top: -80px;
-        margin-bottom: -40px;
-    }
-
-    .imagen-hover {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .imagen-hover img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: opacity 0.8s ease;
-    }
-
-    .imagen-hover img.img-hover {
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-    }
-
-    .imagen-hover:hover img.img-hover {
-      opacity: 1
-    }
-
-    .imagen-hover:hover img.img-original {
-      opacity: 3;
-    }
-
-    @media (max-width: 768px) {
-      .galeria {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .galeria {
-        grid-template-columns: 1fr;
-      }
-    }
-
-
-
-
-
-
-
-
-
-/* NUEVO PARA MOVIL!!!!! APARTIR DE AQUI */
-
-
-    /* Menú hamburguesa solo en móvil */
-.menu-toggle {
-  display: none;
-  position: fixed;
-  top: 49px;
-  left: 13px;
-  z-index: 1100;
-  background-color: transparent;
-  border: none;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.menu-mobile {
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  position: fixed;
-  top: 100px;
-  left: 20px;
-   background-color: #e2e2e2f0;
-   border: rgb(118 118, 118) 1px;
-  padding: 10px;
-  z-index: 1100;
-}
-
-.menu-mobile a img {
-  width: 90px;
-  height: auto;
-}
-
-
-
-/* En escritorio se muestra el menú clásico y se oculta el hamburguesa */
-@media (max-width: 768px) {
-  .logo-container {
+  .texto-solo-tablet {
     display: none;
   }
 
+  /* Menú hamburguesa (oculto por defecto) */
   .menu-toggle {
-    display: block;
+    display: none;
+    position: fixed;
+    top: 49px;
+    left: 13px;
+    z-index: 1100;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
   }
 
   .menu-mobile {
     display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    background-color: #e2e2e2f0;
+    border: rgb(118, 118, 118) 1px;
+    padding: 10px;
+    z-index: 1100;
+  }
+
+  .menu-mobile a img {
+    width: 90px;
+    height: auto;
   }
 
   .menu-mobile.active {
     display: flex;
   }
-}
 
-
-
-
-/* Versión móvil: textos y galeria */
-
-
-@media (max-width: 480px) {
-
-  .descripcion2 {
-    padding: 30px 25px;
-    font-size: 13px;
-    text-align: center;
-  }
-
-   .descripcion{
-    padding: 30px 5px;
-    font-size: 13px;
-    text-align: justify;
-  }
-
-  .galeria {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 10px 1px;
-    margin-top: 0;
-    margin-bottom: 70px;
-  }
-
-  .imagen-hover {
-    width: 100%;
-  }
-
-  .mover-derecha {
-    transform: none;
-  }
-}
-
-
-
-
-
-
-
-.modal-img {
+  .modal-img {
     max-width: 90%;
     max-height: 100%;
     border: 5px solid rgba(255, 255, 255, 0);
@@ -269,145 +195,475 @@
     transition: all 0.3s ease;
   }
 
-  /* Versión móvil: imagen más grande cancelada */
-  @media (max-width: 640px) {
-  #modal-img {
-    width: 130vw !important;
-    height: auto !important;
-    max-width: none !important;
-    max-height: none !important;
-  }
+
+    /* 1. Ocultación del Scrollbar (Reglas que evitan el desplazamiento del contenido) */
+html::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+body::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+body {
+    -ms-overflow-style: none !important;  /* IE and Edge */
+    scrollbar-width: none !important;  /* Firefox */
 }
 
+/* 2. BLOQUEO AGRESIVO DEL SCROLL CUANDO EL MODAL ESTÁ ABIERTO */
+/* Usamos el elemento <html> para anular el scroll de toda la página. */
 
-/* Versión móvil: hover fijo */
-
-@media (max-width: 768px) {
-  .imagen-hover img.img-hover {
-    opacity: 1 !important;
-    pointer-events: none;
-  }
-
-  .imagen-hover:hover img.img-hover {
-    opacity: 1 !important;
-  }
-
-  .imagen-hover:hover img.img-original {
-    opacity: 1 !important;
-  }
+html.modal-open {
+    /* Forzamos la eliminación del scroll. Si esto mueve el footer, es inevitable. */
+    overflow: hidden !important; 
+    overflow-y: hidden !important;
 }
 
-
-
-a, button, .tus-elementos-clickeables {
-  -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4); /* rojo semitransparente */
+/* Opcional: Si el scroll se mantiene en el body, también lo bloqueamos */
+body.modal-open {
+    overflow: hidden !important;
+    overflow-y: hidden !important;
 }
 
+  a, button, .tus-elementos-clickeables {
+    -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4);
+  }
+  a:focus, img:focus {
+    outline: none;
+  }
+  img, a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  .menu-toggle,
+  .menu-mobile a,
+  .menu-mobile a img {
+    -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4) !important;
+  }
 
 
+  /* --- INICIO: Media Queries --- */
 
-/* Versión tablet */
-  @media (min-width: 481px) and (max-width: 768px) {
-    /* Galería de imágenes */
-    .galeria {
-      grid-template-columns: 1fr; /* Una sola columna */
-      gap: 20px;
-      padding: 10px 0px;
-      margin-top: 0;
-      margin-bottom: 70px;
+  /* --- INICIO: TABLET (769px a 1024px) --- */
+  /* (Usa el diseño móvil, pero con proporciones más grandes) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    /* 1. Oculta menú escritorio, muestra hamburguesa GRANDE */
+    .logo-container {
+      display: none;
+    }
+     .logo {
+  padding-top: 180px; /* <--- Ajusta este valor como quieras */
+}
+    .menu-toggle {
+      display: block;
+      font-size: 70px; /* Hamburguesa MÁS GRANDE */
+      top: 49px;
+      left: 19px;
+      opacity: 0.8;
+      position: fixed;
+      z-index: 1100;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+     .menu-mobile {
+      top: 150px; /* Ajusta posición de menú */
+      left: 30px;
+       gap: 30px;
+      background-color: rgba(226, 226, 226, 0.95);
+      border: rgb(118, 118, 118) 1px;
+    }
+    .menu-mobile a img {
+        width: 180px; /* Logos del menú MÁS GRANDES */
     }
 
-    /* Descripción para tablet */
-    .descripcion {
-      padding: 30px 0px;
-      font-size: 14px; /* Un tamaño más grande que en móvil */
+    /* 2. Logo principal MÁS GRANDE */
+    .logo img {
+      max-width: 250px !important; /* Ajuste del logo (más grande que móvil) */
+    }
+    .logo-img-unica { /* Si existe esta clase específica */
+        max-width: 250px !important; 
+        height: auto !important;
+        position: relative;
+        top: 68px; 
+    }
+
+   
+  .descripcion {
+      padding: 15px 0px; /* Padding de tableta */
+      font-size: 25px;     /* Texto MÁS GRANDE */
       text-align: justify;
     }
-
-     .descripcion2 {
-      padding: 30px 35px;
-      font-size: 14px; /* Un tamaño más grande que en móvil */
+    .descripcion2 {
+      padding: 90px 230px;
+      font-size: 25px; /* Mantiene 14px */
       text-align: center;
+      margin-bottom: 215px; /* Margen de tableta */
     }
 
-    /* Modificar las imágenes hover */
+    /* 4. Galería (1 columna, proporciones de tableta) */
+    .galeria {
+      grid-template-columns: 1fr;
+      gap: 65px;
+      padding: 0px;
+      padding-top: 110px;
+      padding-bottom: 70px;
+      max-width: 560px;
+      margin: 0 auto;
+      margin-top: 40px;
+      margin-bottom: -40px;
+    }
     .imagen-hover {
       width: 100%;
     }
-
-    /* Asegurar que el logo no se vea demasiado pequeño */
-    .logo img {
-      max-width: 120px; /* Ajuste del tamaño del logo */
+    .mover-derecha {
+      transform: none;
     }
 
+    /* 5. Video (proporciones de tableta) */
+    .video-galeria {
+      grid-column: auto;
+      width: 100%;
+      margin-top: -30px;
+      margin-left: 0;
+      padding-top: 226.25%; /* 16:9 ratio */
+    }
+    .video-galeria iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* 6. Hover fijo (igual que en móvil) */
+    .imagen-hover img.img-hover {
+      opacity: 1 !important;
+      pointer-events: none;
+    }
+    .imagen-hover:hover img.img-hover {
+      opacity: 1 !important;
+    }
+    .imagen-hover:hover img.img-original {
+      opacity: 1 !important;
+    }
+    
+    /* 7. Footer de tableta */
+    .footer-image {
+        width: 260px !important;
+    }
+    
+    /* 8. Texto solo tableta (si lo necesitas) */
+    .texto-solo-tablet {
+        display: block;
+        font-size: 18px;
+        color: #333;
+        padding: 20px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    /* 9. Estilos de Chat (si existen) */
+    #soto-launcher {
+        width: 100px !important; 
+        height: 80px !important;
+        bottom: 80px !important;
+    }
+    #soto-notification {
+        width: 45px !important; 
+        height: 35px !important;
+        font-size: 20px !important;
+        top: -38px !important;
+        right: 28px !important;
+        padding: 0 !important;
+        text-align: center !important;
+        line-height: 30px !important;
+    }
+    #soto-chat {
+      position: fixed;
+      bottom: 162px !important;
+      right: 33px;
+      width: 430px !important;
+      height: 520px !important;
+    }
+    .bot-message,
+    .user-message {
+      font-size: 24px !important;
+    }
+    #soto-chat #user-input,
+  #user-input {
+    border: none !important;
+    padding: 10px !important;
+    font-size: 24px !important;
+    background-color: white !important;
+  }
+  }
+  /* --- FIN: TABLET --- */
+
+
+  /* --- INICIO: MÓVIL (hasta 768px) --- */
+  /* (Este bloque contiene tus estilos originales para móvil y tablet pequeña) */
+  @media (max-width: 768px) {
+    .galeria {
+      grid-template-columns: 1fr; /* 1 columna */
+      gap: 40px;
+      padding: 30px 0px;
+      margin-top: 0;
+      margin-bottom: 0px;
+    }
+    .logo {
+  padding-top: 50px; /* <--- Original era 100px. Ajusta este valor. */
+}
+
+    .logo-container {
+      display: none;
+    }
 
     .menu-toggle {
-      display: block; /* Asegurarse de que el botón hamburguesa se vea */
-      position: fixed;
+      display: block;
+      opacity: 0.8;
       top: 49px;
-      left: 11px;
+      left: 13px;
+      position: fixed;
       z-index: 1100;
       background-color: transparent;
       border: none;
       font-size: 30px;
       cursor: pointer;
-      opacity: 0.7; /* Ajustar la opacidad como en la versión móvil */
     }
 
     .menu-mobile {
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-      position: fixed;
-      top: 85px;
+      top: 100px;
       left: 20px;
-      background-color: rgba(226, 226, 226, 0.95); /* Asegura que la opacidad se mantenga */
+      background-color: rgba(226, 226, 226, 0.95);
       border: rgb(118, 118, 118) 1px;
-      padding: 10px;
-      z-index: 1100;
     }
 
-    .menu-mobile.active {
-      display: flex; /* Mostrar el menú cuando esté activo */
+    /* Hover fijo */
+    .imagen-hover img.img-hover {
+      opacity: 1 !important;
+      pointer-events: none;
+    }
+    .imagen-hover:hover img.img-hover {
+      opacity: 1 !important;
+    }
+    .imagen-hover:hover img.img-original {
+      opacity: 1 !important;
     }
 
-    /* Mostrar el menú hamburguesa en tablet */
-    .menu-toggle {
-      opacity: 0.8; /* Ajuste de opacidad */
+    /* Logo principal */
+    .logo img {
+      max-width: 120px;
+    }
+    /* .logo-img-unica se define abajo */
+
+    /* Descripciones */
+    .descripcion {
+      padding: 30px 0px;
+      font-size: 14px;
+      text-align: justify;
+    }
+    .descripcion2 {
+      padding: 30px 35px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .imagen-hover {
+      width: 100%;
+    }
+
+    .mover-derecha {
+      transform: none;
+    }
+
+    .video-galeria {
+      grid-column: auto;
+      width: 100%;
+      margin-top: -50px;
+      margin-left: 0;
+      padding-top: 226.25%; /* 16:9 ratio */
+    }
+    .video-galeria iframe {
+      width: 100%;
+      height: 100%;
+    }
+    
+    /* Banner móvil */
+    .top-banner-mobile {
+      display: flex !important; /* Muestra el banner */
+    }
+    body {
+        padding-top: 40px !important;
     }
   }
+  /* --- FIN: MÓVIL --- */
 
- 
+
+  /* --- INICIO: MÓVIL PEQUEÑO (hasta 480px) --- */
+  @media (max-width: 480px) {
+    .galeria {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 10px 1px;
+      margin-top: 0;
+      margin-bottom: 70px;
+    }
+
+    .video-galeria {
+      margin-top: -30px;
+    }
+
+    .descripcion2 {
+      padding: 55px 35px;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .descripcion {
+      padding: 30px 5px;
+      font-size: 13px;
+      text-align: justify;
+    }
+    
+    .imagen-hover {
+        width: 100%;
+    }
+  }
+  /* --- FIN: MÓVIL PEQUEÑO --- */
+
+
+  /* --- INICIO: Modal (hasta 640px) --- */
+  @media (max-width: 640px) {
+    #modal-img {
+      width: 130vw !important;
+      height: auto !important;
+      max-width: none !important;
+      max-height: none !important;
+    }
+  }
+  /* --- FIN: Modal --- */
   
+/* 2. Estilos para la imagen del botón de regreso */
+.icono-regreso-menu {
+    /* Hereda el tamaño estándar del menú, pero puedes darle un tamaño específico si es diferente */
+    width: 70px !important; 
+     left: 0px;
+    height: auto;
+    margin-top: 0 !important; 
+     left: 0px;
+    
+    /* 🆕 AÑADE ESTO: Posicionamiento absoluto */
+    position: absolute; 
+    
+    /* ⬇️ AJUSTA ESTE VALOR para controlar la distancia desde la parte superior del .logo-container ⬇️ */
+    top: 600px; /* Ejemplo: 40px. Aumenta este valor para bajarlo más. */
+    /* Evita el resaltado azul al hacer clic en móvil/tablet */
+    -webkit-tap-highlight-color: transparent; 
+}
 
 
 
 
 
 
+/* --- regreso movil ---------------------------------------------------------------- */
 
-  </style>
+/* 1. Ocultar el botón por defecto (Escritorio y Tablet) */
+.boton-regreso-flotante {
+    display: none; 
+}
+
+/* 2. Asegurar que esté oculto en Tablet si ya lo habías mostrado */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .boton-regreso-flotante {
+        display: none !important;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    
+    /* Ocultar el botón si ya está visible en el menú o en otro lugar de escritorio */
+    .boton-regreso-flotante {
+        display: none !important; 
+    }
+    
+    /* 🆕 NUEVO ESTILO: Botón de Contenido (NO FLOTANTE) */
+    .boton-regreso-al-final {
+        display: block !important; /* Lo hacemos visible como un bloque */
+        
+        /* 🛑 CLAVE: ELIMINA CUALQUIER POSICIONAMIENTO FIJO 🛑 */
+        position: static; /* O simplemente quita esta línea si nunca le diste 'fixed' */
+        
+        /* Centrar el botón horizontalmente como si fuera una imagen más */
+        margin: 0px auto; /* ⬅️ 40px: Espacio arriba/abajo. 'auto': Centra horizontalmente. */
+        
+        padding: 0;
+        text-align: center; /* Asegura que la imagen dentro del enlace se centre */
+    }
+
+    /* Estilo de la imagen */
+    .icono-regreso-contenido {
+        width: 60px; /* Tamaño para el móvil */
+        height: auto;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+}
+.boton-regreso-al-final {
+    display: none; 
+}
+
+/* Hacer que el botón aparezca en TABLET igual que en MÓVIL */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .boton-regreso-al-final {
+        display: block !important;
+        position: static;        /* No flotante */
+        margin: 140px auto;       /* Centrado igual que móvil */
+        margin-bottom: -155px;
+        text-align: center;
+    }
+
+    .icono-regreso-contenido {
+        width: 100px;             /* Más grande que móvil */
+        height: auto;
+    }
+
+    /* Ocultar cualquier otro botón que no quieras en tablet */
+    .boton-regreso-flotante,
+    .icono-regreso-menu {
+        display: none !important;
+    }
+}
+</style>
 </head>
 <body>
  <!-- Aquí va el contenido de tu página web... -->
 
   <!-- BURBUJA DEL CHAT DE SOTO -->
   <div id="soto-launcher">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1755968841/soto_logo.0010_xh9icu.png" alt="soto" />
-  </div>
 
-  <div id="soto-chat" style="display: none;">
-    <div id="chat-window">
-         <button id="close-chat" class="close-chat-btn">X</button>
-      <div id="chat-messages"></div>
-      <input type="text" id="user-input" placeholder="Escribe tus dudas..." />
-    </div>
-  </div>  
-<div id="soto-notification">¿?</div>
+    <img
 
-  <link rel="stylesheet" href="../chat.css">
-  <script src="../chat.js"></script>
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_100,c_scale/v1755968841/soto_logo.0010_xh9icu.png"
 
+        srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_100,c_scale/v1755968841/soto_logo.0010_xh9icu.png 100w,
+
+                https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_200,c_scale/v1755968841/soto_logo.0010_xh9icu.png 200w"
+
+        alt="soto cara">
+ <div id="soto-notification">¿?</div>
+</div>
+
+        <div id="soto-chat" style="display: none;"><div id="chat-window"><button id="close-chat" class="close-chat-btn">X</button><div id="chat-messages"></div><input type="text" id="user-input" placeholder="Escribe tus dudas..." /></div></div>  
+
+       
+
+        <link rel="stylesheet" href="../chat.css">
+
+        <script src="../chat.js"></script>
 
 
 
@@ -417,21 +673,28 @@ a, button, .tus-elementos-clickeables {
 <!-- Menú hamburguesa móvil -->
 <div class="menu-mobile" id="mobileMenu">
   <a href="../">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751476758/soto_icono_ny0lp9.png" alt="Logo 5">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
   </a>
-  <a href="../proyectos-patio-trasero/">
+  <a href="../proyectos-patio/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 1">
   </a>
-  <a href="../acerca-de-patio-trasero/">
+  <a href="../acerca-de-patio/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
   </a>
-  <a href="../sobre-este-sitio-web/">
+  <a href="../soto-artista-virtual/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751478380/lo_ultimo_web_xijtal.png" alt="Logo 3">
   </a>
+  <a href="../archivo-en-venta/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477916/tienda-01_ntkqad.png" alt="Logo 3">
+  </a>
+  <a href="../contacto/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 3">
+  </a>
   <a href="../oficina/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751475517/oficina1_xds5wg.png" alt="Logo 3">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 3">
   </a>
   
+
   
 </div>
 
@@ -441,31 +704,39 @@ a, button, .tus-elementos-clickeables {
 
 
 
-
   <div class="logo-container">
     <a href="../">   
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751476758/soto_icono_ny0lp9.png" alt="Logo 4">
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 4">
     </a>
 
-    <a href="../proyectos-patio-trasero/">
+    <a href="../proyectos-patio/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 1">
 </a>
-<a href="../acerca-de-patio-trasero/">  
+<a href="../acerca-de-patio/">  
 <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
 </a>
-<a href="../sobre-este-sitio-web/">
+<a href="../soto-artista-virtual/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751478380/lo_ultimo_web_xijtal.png" alt="Logo 3">
   </a>
+  <a href="../archivo-en-venta/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477916/tienda-01_ntkqad.png" alt="Logo 3">
+  </a>
+  <a href="../contacto/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 3">
+  </a>
 <a href="../oficina/">   
-<img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751475517/oficina1_xds5wg.png" alt="Logo 3">
+<img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 3">
 </a>
+<a href="#" onclick="window.history.back(); return false;" class="enlace-regreso">
+        <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-menu">
+    </a>
 
 
 
     
    </div>
   <div class="logo">
-    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1751714152/dehoy_logo_expo_venyiq.png" alt="Logo" style="max-width: 150px; height: auto;">
+    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1751714152/dehoy_logo_expo_venyiq.png" alt="logo de hoy para mañana, patio soto" style="max-width: 150px; height: auto;">
   
   </div>
 
@@ -498,429 +769,453 @@ a, button, .tus-elementos-clickeables {
   </div>
 
     
-  <div class="galeria">
-    <!-- Repetí esta estructura para las 16 imágenes -->
- 
-<div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751714925/d21-01_fmatrs.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751714925/d21-01_fmatrs.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751714925/d21-01_fmatrs.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751714925/d21-01_fmatrs.png"
-    class="img-original"
-    alt="Imagen 1"
-  >
+ <div class="galeria">
+    
+    <div class="imagen-hover">
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751714925/d21-01_fmatrs.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751714925/d21-01_fmatrs.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751714925/d21-01_fmatrs.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751714925/d21-01_fmatrs.png"
+            class="img-original"
+            alt="de hoy para mañana exposición valencia 2024, patio soto"
+            loading="lazy"
+        >
 
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751714953/dt16-01_qrhcst.png"
-    class="img-hover"
-    alt="Hover Imagen 1"
-  >
-</div>
-
-<div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751714993/d22-01_wyrsfo.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751714993/d22-01_wyrsfo.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751714993/d22-01_wyrsfo.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751714993/d22-01_wyrsfo.png"
-    class="img-original"
-    alt="Imagen 2"
-  >
-
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751715022/dt16-01_hpv87t.png"
-    class="img-hover"
-    alt="Hover Imagen 2"
-  >
-</div>
-
-
-   <div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751715057/d20-01_kebcmf.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751715057/d20-01_kebcmf.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751715057/d20-01_kebcmf.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751715057/d20-01_kebcmf.png"
-    class="img-original"
-    alt="Imagen 2"
-  >
-
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751715068/dt16-01_e64xwq.png"
-    class="img-hover"
-    alt="Hover Imagen 2"
-  >
-</div>
-
-
-
-<div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751715565/d16-0122_q3dxyz.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751715565/d16-0122_q3dxyz.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751715565/d16-0122_q3dxyz.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751715565/d16-0122_q3dxyz.png"
-    class="img-original"
-    alt="Imagen 1"
-  >
-
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751715664/dt1-01_sspvw5.png"
-    class="img-hover"
-    alt="Hover Imagen 1"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751716959/dehoy1-01_doepqo.png"
-  >
-</div>
-
- 
-<div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751717083/d1-01_zejhc3.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751717083/d1-01_zejhc3.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751717083/d1-01_zejhc3.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751717083/d1-01_zejhc3.png"
-    class="img-original"
-    alt="Imagen 2"
-  >
-
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751717119/dt2-01_klgdna.png"
-    class="img-hover"
-    alt="Hover Imagen 2"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751717181/G19-01_z8ch2v.png"
-  >
-</div>
-
-<div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751717565/d9-01_q30cqy.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751717565/d9-01_q30cqy.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751717565/d9-01_q30cqy.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751717565/d9-01_q30cqy.png"
-    class="img-original"
-    alt="Imagen 2"
-  >
-
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751717599/dt3-01_fjp5iq.png"
-    class="img-hover"
-    alt="Hover Imagen 2"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751717757/G13-01_fdubxp.png"
-  >
-</div>
-
-
-      <div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751717940/d14-01_oukuyc.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751717940/d14-01_oukuyc.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751717940/d14-01_oukuyc.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751717940/d14-01_oukuyc.png"
-    class="img-original"
-    alt="Imagen 2"
-  >
-
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751717958/dt4-01_ixtmrq.png"
-    class="img-hover"
-    alt="Hover Imagen 2"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751717993/G1-01_nyhgre.png"
-  >
-</div>
-
-
-
-<div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751718204/d15-01_niw3ci.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751718204/d15-01_niw3ci.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751718204/d15-01_niw3ci.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751718204/d15-01_niw3ci.png"
-    class="img-original"
-    alt="Imagen 2"
-  >
-
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751718209/dt5-01_pajgkb.png"
-    class="img-hover"
-    alt="Hover Imagen 2"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751718263/G17-01_neykp8.png"
-  >
-</div>
-<div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751718332/d12-01_s45zao.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751718332/d12-01_s45zao.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751718332/d12-01_s45zao.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751718332/d12-01_s45zao.png"
-    class="img-original"
-    alt="Imagen 2"
-  >
-
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751718368/dt6-01_u2h08w.png"
-    class="img-hover"
-    alt="Hover Imagen 2"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751718387/G23-01_v6tuui.png"
-  >
-</div>
-
-     <div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751722185/d8-01_o6oxzp.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751722185/d8-01_o6oxzp.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751722185/d8-01_o6oxzp.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751722185/d8-01_o6oxzp.png"
-    class="img-original"
-    alt="Imagen 2"
-  >
-
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751722230/dt7-01_yavlag.png"
-    class="img-hover"
-    alt="Hover Imagen 2"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751722323/G11-01_baqhrl.png"
-  >
-</div>
-
-
- <div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751722572/d13-01_yf94vp.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751722572/d13-01_yf94vp.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751722572/d13-01_yf94vp.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751722572/d13-01_yf94vp.png"
-    class="img-original"
-    alt="Imagen 2"
-  >
-
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751722632/dt7.1-01_nd0rwm.png"
-    class="img-hover"
-    alt="Hover Imagen 2"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751722761/G22-01_voyvou.png"
-  >
-</div>
-
- 
-<div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751722981/d11-01_gbzbjf.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751722981/d11-01_gbzbjf.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751722981/d11-01_gbzbjf.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751722981/d11-01_gbzbjf.png"
-    class="img-original"
-    alt="Imagen 2"
-  >
-
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751723033/dt8-01_uxqtxz.png"
-    class="img-hover"
-    alt="Hover Imagen 2"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751723231/G9-01_gmjngh.png"
-  >
-</div>
-
-
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751714953/dt16-01_qrhcst.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana exposición valencia 2024, patio soto"
+            loading="lazy"
+        >
+    </div>
 
     <div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751725854/d2-01_ahqyjd.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751725854/d2-01_ahqyjd.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751725854/d2-01_ahqyjd.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751725854/d2-01_ahqyjd.png"
-    class="img-original"
-    alt="Imagen 2"
-  >
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751714993/d22-01_wyrsfo.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751714993/d22-01_wyrsfo.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751714993/d22-01_wyrsfo.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751714993/d22-01_wyrsfo.png"
+            class="img-original"
+            alt="de hoy para mañana exposición valencia 2024, patio soto"
+            loading="lazy"
+        >
 
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751725938/dt9-01_uz1wr7.png"
-    class="img-hover"
-    alt="Hover Imagen 2"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751725996/G8-01_gzfj58.png"
-  >
-</div>
-
-      
-
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751715022/dt16-01_hpv87t.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana exposición valencia 2024, patio soto"
+            loading="lazy"
+        >
+    </div>
 
     <div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751723773/d10-01_lndmfe.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751723773/d10-01_lndmfe.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751723773/d10-01_lndmfe.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751723773/d10-01_lndmfe.png"
-    class="img-original"
-    alt="Imagen 2"
-  >
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751715057/d20-01_kebcmf.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751715057/d20-01_kebcmf.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751715057/d20-01_kebcmf.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751715057/d20-01_kebcmf.png"
+            class="img-original"
+            alt="de hoy para mañana exposición valencia 2024, patio soto"
+            loading="lazy"
+        >
 
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751723881/dt10-01_jsp1sl.png"
-    class="img-hover"
-    alt="Hover Imagen 2"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751723932/dehoy12-01_bbgbvp.png"
-  >
-</div>
-
-
-
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751715068/dt16-01_e64xwq.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana exposición valencia 2024, patio soto"
+            loading="lazy"
+        >
+    </div>
 
     <div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751724121/d5-01_egvqxs.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751724121/d5-01_egvqxs.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751724121/d5-01_egvqxs.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751724121/d5-01_egvqxs.png"
-    class="img-original"
-    alt="Imagen 2"
-  >
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751715565/d16-0122_q3dxyz.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751715565/d16-0122_q3dxyz.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751715565/d16-0122_q3dxyz.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751715565/d16-0122_q3dxyz.png"
+            class="img-original"
+            alt="de hoy para mañana pieza 1, patio soto"
+            loading="lazy"
+        >
 
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751724158/dt11-01_by7rfl.png"
-    class="img-hover"
-    alt="Hover Imagen 2"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751724182/G20-01_gr9iok.png"
-  >
-</div>
-
-<div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751724310/d7-01_ck7eof.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751724310/d7-01_ck7eof.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751724310/d7-01_ck7eof.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751724310/d7-01_ck7eof.png"
-    class="img-original"
-    alt="Imagen 2"
-  >
-
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751724362/dt12-01_tmy5nc.png"
-    class="img-hover"
-    alt="Hover Imagen 2"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751724452/G21-01_trvqzp.png"
-  >
-</div>
-
-
-<div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751724738/d4-01_fo9lyc.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751724738/d4-01_fo9lyc.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751724738/d4-01_fo9lyc.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751724738/d4-01_fo9lyc.png"
-    class="img-original"
-    alt="Imagen 2"
-  >
-
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751724808/dt13-01_tjehwm.png"
-    class="img-hover"
-    alt="Hover Imagen 2"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751724999/G4-01_yqh5hp.png"
-  >
-</div>
-
-
-<div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751725219/d6-01_zuitjm.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751725219/d6-01_zuitjm.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751725219/d6-01_zuitjm.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751725219/d6-01_zuitjm.png"
-    class="img-original"
-    alt="Imagen 2"
-  >
-
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751725269/dt14-01_erlxgm.png"
-    class="img-hover"
-    alt="Hover Imagen 2"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751725395/G3-01_no7i2v.png"
-  >
-</div>
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751715664/dt1-01_sspvw5.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana pieza 1, patio soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751716959/dehoy1-01_doepqo.png"
+            loading="lazy"
+        >
+    </div>
 
     <div class="imagen-hover">
-  <img 
-    srcset="
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751725562/d3-01_v1iihm.png 600w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751725562/d3-01_v1iihm.png 1200w,
-      https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751725562/d3-01_v1iihm.png 1600w
-    "
-    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751725562/d3-01_v1iihm.png"
-    class="img-original"
-    alt="Imagen 2"
-  >
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751717083/d1-01_zejhc3.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751717083/d1-01_zejhc3.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751717083/d1-01_zejhc3.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751717083/d1-01_zejhc3.png"
+            class="img-original"
+            alt="de hoy para mañana pieza 2, patio soto"
+            loading="lazy"
+        >
 
-  <img 
-    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp/v1751725616/dt15-01_fepxnm.png"
-    class="img-hover"
-    alt="Hover Imagen 2"
-    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751725690/G2-01_cp3yqa.png"
-  >
-</div>
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751717119/dt2-01_klgdna.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana pieza 2, patio soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751717181/G19-01_z8ch2v.png"
+            loading="lazy"
+        >
+    </div>
 
-  
+    <div class="imagen-hover">
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751717565/d9-01_q30cqy.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751717565/d9-01_q30cqy.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751717565/d9-01_q30cqy.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751717565/d9-01_q30cqy.png"
+            class="img-original"
+            alt="de hoy para mañana pieza 3, patio soto"
+            loading="lazy"
+        >
+
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751717599/dt3-01_fjp5iq.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana pieza 3, patio soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751717757/G13-01_fdubxp.png"
+            loading="lazy"
+        >
+    </div>
+
+    <div class="imagen-hover">
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751717940/d14-01_oukuyc.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751717940/d14-01_oukuyc.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751717940/d14-01_oukuyc.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751717940/d14-01_oukuyc.png"
+            class="img-original"
+            alt="de hoy para mañana pieza 4, patio soto"
+            loading="lazy"
+        >
+
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751717958/dt4-01_ixtmrq.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana pieza 4, patio soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751717993/G1-01_nyhgre.png"
+            loading="lazy"
+        >
+    </div>
+
+    <div class="imagen-hover">
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751718204/d15-01_niw3ci.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751718204/d15-01_niw3ci.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751718204/d15-01_niw3ci.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751718204/d15-01_niw3ci.png"
+            class="img-original"
+            alt="de hoy para mañana pieza 5, patio soto"
+            loading="lazy"
+        >
+
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751718209/dt5-01_pajgkb.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana pieza 5, patio soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751718263/G17-01_neykp8.png"
+            loading="lazy"
+        >
+    </div>
+
+    <div class="imagen-hover">
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751718332/d12-01_s45zao.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751718332/d12-01_s45zao.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751718332/d12-01_s45zao.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751718332/d12-01_s45zao.png"
+            class="img-original"
+            alt="de hoy para mañana pieza 6, patio soto"
+            loading="lazy"
+        >
+
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751718368/dt6-01_u2h08w.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana pieza 6, patio soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751718387/G23-01_v6tuui.png"
+            loading="lazy"
+        >
+    </div>
+
+    <div class="imagen-hover">
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751722185/d8-01_o6oxzp.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751722185/d8-01_o6oxzp.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751722185/d8-01_o6oxzp.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751722185/d8-01_o6oxzp.png"
+            class="img-original"
+            alt="de hoy para mañana pieza 7, patio soto"
+            loading="lazy"
+        >
+
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751722230/dt7-01_yavlag.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana pieza 7, patio soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751722323/G11-01_baqhrl.png"
+            loading="lazy"
+        >
+    </div>
+
+    <div class="imagen-hover">
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751722572/d13-01_yf94vp.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751722572/d13-01_yf94vp.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751722572/d13-01_yf94vp.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751722572/d13-01_yf94vp.png"
+            class="img-original"
+            alt="de hoy para mañana pieza 8, patio soto"
+            loading="lazy"
+        >
+
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751722632/dt7.1-01_nd0rwm.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana pieza 8, patio soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751722761/G22-01_voyvou.png"
+            loading="lazy"
+        >
+    </div>
+
+    <div class="imagen-hover">
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751722981/d11-01_gbzbjf.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751722981/d11-01_gbzbjf.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751722981/d11-01_gbzbjf.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751722981/d11-01_gbzbjf.png"
+            class="img-original"
+            alt="de hoy para mañana pieza 9, patio soto"
+            loading="lazy"
+        >
+
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751723033/dt8-01_uxqtxz.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana pieza 9, patio soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751723231/G9-01_gmjngh.png"
+            loading="lazy"
+        >
+    </div>
+
+    <div class="imagen-hover">
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751725854/d2-01_ahqyjd.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751725854/d2-01_ahqyjd.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751725854/d2-01_ahqyjd.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751725854/d2-01_ahqyjd.png"
+            class="img-original"
+            alt="de hoy para mañana pieza 10, patio soto"
+            loading="lazy"
+        >
+
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751725938/dt9-01_uz1wr7.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana pieza 10, patio soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751725996/G8-01_gzfj58.png"
+            loading="lazy"
+        >
+    </div>
+
+    <div class="imagen-hover">
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751723773/d10-01_lndmfe.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751723773/d10-01_lndmfe.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751723773/d10-01_lndmfe.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751723773/d10-01_lndmfe.png"
+            class="img-original"
+            alt="de hoy para mañana pieza 11, patio soto"
+            loading="lazy"
+        >
+
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751723881/dt10-01_jsp1sl.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana pieza 11, patio soto"
+            data-full="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp,q_auto/v1758905528/G7-01_iimzxt.png"
+            loading="lazy"
+        >
+    </div>
+
+    <div class="imagen-hover">
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751724121/d5-01_egvqxs.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751724121/d5-01_egvqxs.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751724121/d5-01_egvqxs.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751724121/d5-01_egvqxs.png"
+            class="img-original"
+            alt="de hoy para mañana pieza 12, patio soto"
+            loading="lazy"
+        >
+
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751724158/dt11-01_by7rfl.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana pieza 12, patio soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751724182/G20-01_gr9iok.png"
+            loading="lazy"
+        >
+    </div>
+
+    <div class="imagen-hover">
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751724310/d7-01_ck7eof.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751724310/d7-01_ck7eof.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751724310/d7-01_ck7eof.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751724310/d7-01_ck7eof.png"
+            class="img-original"
+            alt="de hoy para mañana pieza 13, patio soto"
+            loading="lazy"
+        >
+
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751724362/dt12-01_tmy5nc.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana pieza 13, patio soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751724452/G21-01_trvqzp.png"
+            loading="lazy"
+        >
+    </div>
+
+    <div class="imagen-hover">
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751724738/d4-01_fo9lyc.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751724738/d4-01_fo9lyc.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751724738/d4-01_fo9lyc.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751724738/d4-01_fo9lyc.png"
+            class="img-original"
+            alt="de hoy para mañana pieza 14, patio soto"
+            loading="lazy"
+        >
+
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751724808/dt13-01_tjehwm.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana pieza 14, patio soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751724999/G4-01_yqh5hp.png"
+            loading="lazy"
+        >
+    </div>
+
+    <div class="imagen-hover">
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751725219/d6-01_zuitjm.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751725219/d6-01_zuitjm.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751725219/d6-01_zuitjm.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751725219/d6-01_zuitjm.png"
+            class="img-original"
+            alt="de hoy para mañana pieza 15, patio soto"
+            loading="lazy"
+        >
+
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751725269/dt14-01_erlxgm.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana pieza 15, patio soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751725395/G3-01_no7i2v.png"
+            loading="lazy"
+        >
+    </div>
+
+    <div class="imagen-hover">
+        <img 
+            srcset="
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_600/v1751725562/d3-01_v1iihm.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751725562/d3-01_v1iihm.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751725562/d3-01_v1iihm.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751725562/d3-01_v1iihm.png"
+            class="img-original"
+            alt="de hoy para mañana pieza 16, patio soto"
+            loading="lazy"
+        >
+
+        <img 
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751725616/dt15-01_fepxnm.png"
+            class="img-hover"
+            alt="Hover de hoy para mañana pieza 16, patio soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751725690/G2-01_cp3yqa.png"
+            loading="lazy"
+        >
+    </div>
+
+
+
+ <a href="#" onclick="window.history.back(); return false;" class="boton-regreso-al-final">
+    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-contenido">
+</a>
+
 
 
 
       <footer>
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751476362/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760111670/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
     </footer>
 
 
@@ -978,8 +1273,46 @@ function toggleMenu() {
 </script>
 
 
+<script>
+window.addEventListener("load", function () {
+    
+    const launcher = document.getElementById("soto-launcher");
+    const notification = document.getElementById("soto-notification");
+    const launcherImage = launcher ? launcher.querySelector("img") : null;
 
+    if (launcherImage && notification) {
+        
+        notification.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Lista de eventos a simular
+            const eventsToFire = ['mousedown', 'mouseup', 'click'];
+            
+            eventsToFire.forEach(function(eventName) {
+                const clickEvent = new MouseEvent(eventName, {
+                    bubbles: true,
+                    cancelable: true,
+                    view: window
+                });
+                
+                // Dispara el evento en LA IMAGEN (lo más probable)
+                launcherImage.dispatchEvent(clickEvent);
+                
+                // Dispara el evento en EL DIV PADRE (por si acaso)
+                launcher.dispatchEvent(clickEvent);
+            });
+        });
+    }
+});
+</script>
 
+<script>
+    function goBack() {
+        // La función history.back() regresa a la URL anterior en el historial del navegador.
+        window.history.back();
+    }
+</script>
 
 
 

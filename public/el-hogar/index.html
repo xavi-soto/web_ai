@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>el hogar</title>
-   <link rel="icon" href="https://res.cloudinary.com/dbwezmju6/image/upload/v1750391546/icono_wev-01_gllalq.png" type="image/png">
+   <link rel="icon" href="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759771502/icono_web-01_pcbhuw.png" type="image/png">
 
   <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-   <meta name="description" content="soto es el sitio donde ocurre todo">
+   <meta name="description" content="un espacio creado con la filosofía del cuerpo consciente. Su propósito principal es ofrecer prácticas como yoga, hatha yoga y pilates.">
   
   <meta property="og:title" content="el hogar">
 <meta property="og:description" content="el hogar, es un espacio creado con la filosofía del cuerpo consciente. Su propósito principal es ofrecer prácticas como yoga, hatha yoga y pilates, complementadas con servicios de masaje y la venta de productos relacionados con la meditación, como lociones, inciensos y aromatizantes.">
@@ -15,351 +15,222 @@
 <meta property="og:url" content="https://sotosotosoto.com//el-hogar/">
 <meta property="og:type" content="website">
   
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>monaco</title>
+   <link rel="icon" href="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759771502/icono_web-01_pcbhuw.png" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+   <meta name="description" content="marca dedicada a la compra minorista y reventa de artículos de lujo importados.">
+  
+  <meta property="og:title" content="monaco">
+<meta property="og:description" content="monaco, dedicada a la compra minorista y reventa de artículos de lujo importados.">
+<meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
+<meta property="og:url" content="https://sotosotosoto.com//monaco/">
+<meta property="og:type" content="website">
+  
+  
+  
   <style>
-    body {
-      margin: 0;
-       padding-top: 40px; /* o más si tu banner mide más */
-      font-family: "Lexend", sans-serif;
-      background-color: #f3f3f3;
-      /* efecto de aparición */
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
+  /* Estilos generales */
+  body {
+    margin: 0;
+    font-family: "Lexend", sans-serif;
+    background-color: #f3f3f3;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    margin-bottom: 50px;
   }
-}
 
-    .logo-container {
-      position: fixed;
-      top: 60px;
-      left: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 1000;
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
     }
+  }
 
-    .logo-container img {
-      width: 90px;
-      height: auto;
-    }
-
-    .full-image {
-      width: 100%;
-      display: block;
-    }
-    .full-image2 {
-      width: 100%;
-      display: block;
-        padding-top: 100px;
-    }
-
-    .full-image3 {
-      width: 100%;
-      display: block;
-margin-top: -5px;
-      padding-bottom: 00px;
-    }
-
-    footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #f3f3f3; /* Asegura que tenga el mismo fondo */
-        text-align: center;
-        padding: 10px 0;
-        z-index: 1000; /* Se mantiene por encima de otros elementos */
-    }
-
-
-
-        .footer-image {
-            width: 150px; /* Ajusta el tamaño de la imagen */
-            height: auto;
-            padding-top: 0px;
-            margin-top: 0px;
-            animation: mostrarImagenes 3s ease forwards;
-        }
-
-
-
-
-.bloque-texto-imagen {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 100px 54px 80px 70px;
-  gap: 80px;
-  max-width: 1400px;
-  margin: 14px 100px;
-  box-sizing: border-box;
-}
-
-.bloque-texto-imagen .texto {
-  flex: 14.4;
-  font-size: 14px;
-  color: #333;
-  text-align: justify;
-  font-family: "Lexend", sans-serif;
-}
-
-.bloque-texto-imagen .imagen {
-  flex: 26.5;
-  text-align: right;
-}
-
-.bloque-texto-imagen .imagen img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 0px;
-}
-
-/* Versión móvil */
-@media (max-width: 768px) {
-  .bloque-texto-imagen {
+  .logo-container {
+    position: fixed;
+    top: 60px;
+    left: 30px;
+    display: flex;
     flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  .logo-container img {
+    width: 90px;
+    height: auto;
+  }
+
+  /* --- INICIO: MODIFICACIÓN ESPACIADO IMÁGENES --- */
+  /* Regla unificada para todas las imágenes full-width */
+  .full-image,
+  .full-image2,
+  .full-image3 {
+      display: block; /* Asegura consistencia */
+      width: 100%;    /* Asegura consistencia */
+
+      /* Reseteamos espacios verticales intrínsecos */
+      margin-top: 0 !important;
+      margin-left: 0;
+      margin-right: 0;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important; /* También reseteamos padding-bottom */
+      padding-left: 0;
+      padding-right: 0;
+
+      /* Aplicamos el espacio DESPUÉS de CADA imagen */
+      margin-bottom: 1px !important; /* <-- TU ESPACIADO UNIFORME! AJUSTA 30px */
+  }
+
+  /* Las reglas originales para full-image2 y full-image3 ahora son innecesarias o se ajustan aquí */
+  /* .full-image2 {
+      /* padding-top: 100px; */ /* <-- ELIMINADO */
+  /* }
+
+  .full-image3 {
+      /* margin-top: -25px; */ /* <-- ELIMINADO */
+  /* } /*
+  /* --- FIN: MODIFICACIÓN ESPACIADO IMÁGENES --- */
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f3f3f3;
     text-align: center;
-    padding: 40px 20px;
+    padding: 5px 0;
+    z-index: 1000;
+  }
+
+  .footer-image {
+    width: 150px;
+    height: auto;
+    padding-top: 10px;
+    margin-top: -4px;
+    /* animation: mostrarImagenes 3s ease forwards; */ /* Comentado */
+  }
+
+  .bloque-texto-imagen {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 54px 80px 70px;
+    gap: 80px;
+    max-width: 1400px;
+    margin: 14px 100px;
+    box-sizing: border-box;
+  }
+
+  .bloque-texto-imagen .texto {
+    flex: 14.4;
+    font-size: 14px;
+    color: #333;
+    text-align: justify;
+    font-family: "Lexend", sans-serif;
   }
 
   .bloque-texto-imagen .imagen {
+    flex: 26.5;
+    text-align: right;
+  }
+
+  .bloque-texto-imagen .imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0px;
+  }
+
+  .titulo-frase {
+    font-size: 22px;
+    font-weight: 700;
     text-align: center;
-  }
-}
-
-.titulo-frase {
-  font-size: 22px; /* O el tamaño que quieras */
-  font-weight: 700;
-   text-align: center;
-  display: block; /* Esto asegura que ocupe su propia línea */
-  margin-bottom: 5px; /* Espacio entre el título y el texto de abajo */
-}
-
-
-.texto2 {
-   text-align: justify;
-      padding: 150px;
-      padding-top: 0px;
-      padding-bottom: 0px;
-      font-size: 14px;
-      color: rgb(51, 51, 51);
-      font-family: "Lexend", sans-serif;
-    }
-
-
-
-
-
-
-    /* NUEVO PARA MOVIL!!!!! APARTIR DE AQUI */
-
-
-    /* Menú hamburguesa solo en móvil */
-.menu-toggle {
-  display: none;
-  position: fixed;
-  top: 49px;
-  left: 13px;
-  z-index: 1100;
-  background-color: transparent;
-  border: none;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.menu-mobile {
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  position: fixed;
-  top: 100px;
-  left: 20px;
-   background-color: #e2e2e2f0;
-   border: rgb(118 118, 118) 1px;
-  padding: 10px;
-  z-index: 1100;
-}
-
-.menu-mobile a img {
-  width: 90px;
-  height: auto;
-}
-
-
-
-/* En escritorio se muestra el menú clásico y se oculta el hamburguesa */
-@media (max-width: 768px) {
-  .logo-container {
-    display: none;
-  }
-
-  .menu-toggle {
     display: block;
+    margin-bottom: 5px;
+  }
+
+  .texto2 {
+    text-align: justify;
+    padding: 150px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+    font-family: "Lexend", sans-serif;
+  }
+
+  .texto3 {
+    text-align: center;
+    padding: 30px;
+    margin-top: -85px; /* Mantiene tu valor */
+    padding-bottom: 24px; /* Mantiene tu valor */
+    font-size: 13px;
+    color: rgb(51, 51, 51);
+    font-family: "Lexend", sans-serif;
+    display: none; /* Oculta como pediste */
+  }
+
+  .texto4 {
+    text-align: center;
+    padding: 30px;
+    margin-top: -40.8px; /* Mantiene tu valor */
+    padding-bottom: 24px; /* Mantiene tu valor */
+    font-size: 12px;
+    color: rgb(51, 51, 51);
+    font-family: "Lexend", sans-serif;
+    display: none; /* Oculta como pediste */
+  }
+
+  /* Menú hamburguesa (visibilidad controlada por @media) */
+  .menu-toggle {
+    display: none;
+    position: fixed;
+    top: 49px;
+    left: 13px;
+    z-index: 1100;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    opacity: 0.7; /* Opacidad base */
   }
 
   .menu-mobile {
     display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    background-color: #e2e2e2f0;
+    border: rgb(118, 118, 118) 1px;
+    padding: 10px;
+    z-index: 1100;
+  }
+
+  .menu-mobile a img {
+    width: 90px;
+    height: auto;
   }
 
   .menu-mobile.active {
     display: flex;
   }
-}
 
-
-
-
-/* Versión móvil: textos y galeria */
-
-
-@media (max-width: 480px) {
-@media (max-width: 768px) {
-  .bloque-texto-imagen {
-    flex-direction: column;
-    padding: 40px 20px;
-    margin: 0 auto;
-    gap: 40px;
-  }
-
-  .bloque-texto-imagen .texto {
-    font-size: 13px;
-    text-align: justify;
-    padding: 0 10px;
-  }
-
-  .bloque-texto-imagen .imagen {
-    text-align: center;
-  }
-
-  .bloque-texto-imagen .imagen img {
-    width: 95%;
-      padding-top: 20px;
-    max-width: 340px;
-    height: auto;
-    border-radius: 0px;
-  }
-}
-
-/* Versión móvil */
-@media (max-width: 768px) {
-  .bloque-texto-imagen {
-    flex-direction: column;
-    text-align: center;
-    padding: 40px 20px;
-  }
-
-  .bloque-texto-imagen .imagen {
-    text-align: center;
-  }
-}
-
-.titulo-frase {
-  font-size: 22px; /* O el tamaño que quieras */
-  font-weight: 700;
-   text-align: center;
-  display: block; /* Esto asegura que ocupe su propia línea */
-  margin-bottom: 5px; /* Espacio entre el título y el texto de abajo */
-}
-
-
-.texto2 {
-   text-align: justify;
-      padding: 150px;
-      padding-top: 0px;
-      padding-bottom: 0px;
-      font-size: 14px;
-      color: rgb(51, 51, 51);
-      font-family: "Lexend", sans-serif;
-    }
-
-  
-}
-
-
-
-
-
-
-
-.modal-img {
-    max-width: 90%;
-    max-height: 100%;
-    border: 5px solid rgba(255, 255, 255, 0);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0);
-    transition: all 0.3s ease;
-  }
-
-  /* Versión móvil: imagen más grande cancelada */
-  @media (max-width: 640px) {
-  #modal-img {
-    width: 130vw !important;
-    height: auto !important;
-    max-width: none !important;
-    max-height: none !important;
-  }
-
-  
-}
-
-
-/* Versión móvil: hover fijo */
-
-@media (max-width: 768px) {
-  .imagen-hover img.img-hover {
-    opacity: 1 !important;
-    pointer-events: none;
-  }
-
-  .imagen-hover:hover img.img-hover {
-    opacity: 1 !important;
-  }
-
-  .imagen-hover:hover img.img-original {
-    opacity: 1 !important;
-  }
-}
-
-
-
-@media (max-width: 768px) {
-  .logo-img-unica {
-    max-width: 200px !important;
-  }
-
-  .logo-img-unica2 {
-    max-width: 100px !important;
-  }
-
-
-
-    .logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 0px;
-  padding-top: 112px;
-}
-
-}
-
-/* Por defecto: oculto en escritorio */
-.top-banner-mobile {
-  display: none;
-}
-
-/* Solo se muestra en móviles */
-@media (max-width: 768px) {
+  /* Banner móvil (visibilidad controlada por @media) */
   .top-banner-mobile {
+    display: none !important; /* Oculto por defecto, forzado */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 30px;
-    background-color: #5F113D; /* Naranja */
+    background-color: #5f113d;
     z-index: 9999;
     overflow: hidden;
     display: flex;
@@ -373,140 +244,563 @@ margin-top: -5px;
     animation: scrollLeftMobile 15s linear infinite;
     font-weight: bold;
     font-size: 12px;
-    color: #EDB619;
+    color: #edb619;
   }
 
   @keyframes scrollLeftMobile {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
   }
 
-  /* Ajuste extra para evitar que la cinta tape tu contenido */
-  body {
-    padding-top: 40px !important;
-  }
-}
-
-
-
-.only-desktop {
-  display: block;
-}
-
-.only-mobile {
-  display: none;
-}
-
-@media (max-width: 768px) {
+  /* Lógica para mostrar/ocultar imágenes */
   .only-desktop {
+    display: block;
+  }
+  .only-mobile {
     display: none;
   }
 
-  .only-mobile {
-    display: block;
+  /* Estilos generales para elementos clicables */
+  a, button, .tus-elementos-clickeables {
+    -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4);
   }
-}
-
-
-a, button, .tus-elementos-clickeables {
-  -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4); /* rojo semitransparente */
-}
-
-@media (max-width: 768px) {
-  body {
-    padding-bottom: 40px; /* Ajusta el valor según el espacio que necesites */
+  a:focus, img:focus {
+    outline: none;
   }
-}
-@media (min-width: 769px) {
-  .bloque-texto-imagen {
-    margin-top: -80px; /* sube el contenido sin afectar el layout móvil */
+  img, a {
+    -webkit-tap-highlight-color: transparent;
   }
-}
-
-
-
-/* Versión tablet */
-@media (min-width: 481px) and (max-width: 768px) {
-.bloque-texto-imagen {
-    flex-direction: column;
-    text-align: center;
-    padding: 54px 1px;
-    
+  .menu-toggle,
+  .menu-mobile a,
+  .menu-mobile a img {
+    -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4) !important; /* Mantiene !important */
   }
 
-  .bloque-texto-imagen .imagen {
-    text-align: center;
-    margin-bottom: -50px; /* Espacio entre la imagen y el texto */
+  .modal-img { /* Estilo base modal */
+    max-width: 90%;
+    max-height: 100%;
+    border: 5px solid rgba(255, 255, 255, 0);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+    transition: all 0.3s ease;
   }
-}
 
-.titulo-frase {
-  font-size: 22px; /* O el tamaño que quieras */
-  font-weight: 700;
-   text-align: center;
-  display: block; /* Esto asegura que ocupe su propia línea */
-  margin-bottom: 5px; /* Espacio entre el título y el texto de abajo */
-}
+  /* --- INICIO: Media Queries Ordenadas --- */
 
+  /* Aplica a móvil Y tableta */
+  @media (max-width: 1024px) {
+    .only-desktop {
+      display: none;
+    }
+    .only-mobile {
+      display: block;
+    }
+  }
 
-.texto2 {
-   text-align: justify;
-      padding: 50px;
-      padding-top: 0px;
+  /* Ajuste margen superior para ESCRITORIO (mayor a 768px) */
+  @media (min-width: 769px) {
+    .bloque-texto-imagen {
+      margin-top: -40px;
+    }
+    body {
+      padding-top: 0 !important; /* Quita padding de banner móvil */
+    }
+  }
+
+  /* --- Bloque consolidado para MÓVIL (hasta 768px) --- */
+  @media (max-width: 768px) {
+    body {
+      padding-top: 40px !important; /* Espacio para banner móvil */
       padding-bottom: 0px;
-      font-size: 14px;
-      color: rgb(51, 51, 51);
-      font-family: "Lexend", sans-serif;
+      min-height: 10px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-bottom: 73px;
     }
 
-  
-/* Versión tablet */
-  @media (min-width: 481px) and (max-width: 768px) {
+    .logo-container {
+      display: none;
+    }
 
-.menu-toggle {
-      display: block; /* Asegurarse de que el botón hamburguesa se vea */
+    .menu-toggle {
+      display: block;
+      opacity: 0.8;
       position: fixed;
       top: 49px;
-      left: 11px;
+      left: 13px;
       z-index: 1100;
       background-color: transparent;
       border: none;
       font-size: 30px;
       cursor: pointer;
-      opacity: 0.7; /* Ajustar la opacidad como en la versión móvil */
     }
 
     .menu-mobile {
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-      position: fixed;
-      top: 85px;
+      top: 100px;
       left: 20px;
-      background-color: rgba(226, 226, 226, 0.95); /* Asegura que la opacidad se mantenga */
+      background-color: rgba(226, 226, 226, 0.95);
       border: rgb(118, 118, 118) 1px;
-      padding: 10px;
-      z-index: 1100;
     }
 
-    .menu-mobile.active {
-      display: flex; /* Mostrar el menú cuando esté activo */
+    /* Bloque texto-imagen */
+    .bloque-texto-imagen {
+      flex-direction: column;
+      text-align: center;
+      padding: 40px 30px;
+      margin: 0 auto;
+      gap: 40px;
+      margin-top: 0;
     }
 
-    /* Mostrar el menú hamburguesa en tablet */
-    .menu-toggle {
-      opacity: 0.8; /* Ajuste de opacidad */
+    .bloque-texto-imagen .texto {
+      font-size: 13px;
+      text-align: justify;
+      padding: 0 10px;
+      flex-basis: auto;
+    }
+
+    .bloque-texto-imagen .imagen {
+      text-align: center;
+      flex-basis: auto;
+      margin-bottom: -30px;
+    }
+
+    .bloque-texto-imagen .imagen img {
+      width: 95%;
+      padding-top: 20px;
+      max-width: 340px;
+      height: auto;
+      border-radius: 0px;
+    }
+
+    /* Hover fijo móvil */
+    .imagen-hover img.img-hover {
+        opacity: 1 !important;
+        pointer-events: none;
+    }
+    .imagen-hover:hover img.img-hover {
+        opacity: 1 !important;
+    }
+    .imagen-hover:hover img.img-original {
+        opacity: 1 !important;
+    }
+
+    /* Logos únicos móvil */
+    .logo-img-unica {
+      max-width: 315px !important;
+      height: auto !important;
+    }
+    .logo-img-unica2 {
+      max-width: 100px !important;
+      height: auto !important;
+    }
+
+    /* Logo posicionamiento móvil */
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0px 0px;
+      padding-top: 112px;
+    }
+
+    /* Banner móvil */
+    .top-banner-mobile {
+      display: flex !important; /* Muestra el banner */
+    }
+
+    /* Textos móvil */
+    .texto2 {
+      padding: 30px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      font-size: 13px;
+      text-align: justify;
+    }
+    .texto3 { /* Mantiene estilos pero display:none ya lo oculta */
+      text-align: center;
+      padding: 30px;
+      margin-top: -14px;
+      padding-bottom: 1px;
+      font-size: 1px;
+    }
+    .texto4 { /* Mantiene estilos pero display:none ya lo oculta */
+      text-align: center;
+      padding: 30px;
+      margin-top: -40px;
+      padding-bottom: 24px;
+      font-size: 12px;
+    }
+
+    /* Estilos específicos que solo estaban en 481-768 */
+    .galeria {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 10px 5px;
+      margin-top: 0;
+      margin-bottom: 70px;
+    }
+    .descripcion {
+      padding: 30px 10px;
+      font-size: 14px;
+      text-align: justify;
+    }
+    .descripcion2 {
+      padding: 30px 10px;
+      font-size: 14px;
+      text-align: center;
+    }
+    .imagen-hover {
+      width: 100%;
+    }
+    .logo img { /* Afecta a img dentro de .logo */
+      max-width: 120px;
     }
   }
+  /* --- FIN Bloque consolidado MÓVIL --- */
+
+  /* --- INICIO: Media Query para pantallas MUY PEQUEÑAS (hasta 480px) --- */
+  @media (max-width: 480px) {
+      /* Reglas específicas para < 480px */
+  }
+  /* --- FIN Media Query MUY PEQUEÑAS --- */
+
+  /* --- INICIO Media Query móviles más grandes (hasta 640px) --- */
+  @media (max-width: 640px) {
+    #modal-img { /* Asumiendo #modal-img existe */
+      width: 130vw !important;
+      height: auto !important;
+      max-width: none !important;
+      max-height: none !important;
+    }
+  }
+  /* --- FIN Media Query móviles más grandes --- */
+
+  /* --- INICIO Media Query para TABLET GRANDE (769px a 1024px) --- */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .footer-image {
+      width: 260px !important;
+    }
+    .logo-container {
+      top: 95px;
+    }
+    .logo-container img {
+      width: 150px;
+    }
+    .titulo-frase {
+      font-size: 32px;
+    }
+    .bloque-texto-imagen .texto {
+      padding: 0px;
+      font-size: 24px !important;
+      flex-basis: auto;
+    }
+    .bloque-texto-imagen {
+      flex-direction: column;
+      text-align: center;
+      padding: 220px 0px; /* Mantiene 0px horizontal */
+      width: 90%;
+      max-width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+      gap: 30px;
+    }
+    .bloque-texto-imagen .imagen {
+        flex-basis: auto;
+        text-align: center;
+    }
+    .full-image.only-mobile {
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: -200px !important;
+    }
+    .texto2 {
+        padding: 50px;
+        font-size: 14px;
+     }
+     /* Si texto3 y texto4 debían ocultarse también en tablet, añadir display:none aquí */
+     /* .texto3, .texto4 { display: none; } */  .logo-container {
+  display: none !important; /* !important para anular la regla existente */
+}
+
+.menu-toggle {
+  display: block;
+  font-size: 70px; /* Hamburguesa MÁS GRANDE */
+  top: 49px;
+  left: 19px;
+  opacity: 0.8;
+  position: fixed;
+  z-index: 1100;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* 3. Estiliza el menú desplegable */
+.menu-mobile {
+  display: none; 
+  top: 150px; 
+  left: 30px;
+  gap: 30px;  
+  background-color: rgba(226, 226, 226, 0.95);
+  border: rgb(118, 118, 118) 1px; /* <--- AQUÍ ESTABA EL ERROR */
+}
+
+/* 4. Agranda los logos del menú */
+.menu-mobile a img {
+  width: 180px; 
+}
+.menu-mobile.active {
+  display: flex;
+}
+
+
+  }
+
+  /* --- FIN Media Query TABLET GRANDE --- */
+/* 2. Estilos para la imagen del botón de regreso */
+.icono-regreso-menu {
+    /* Hereda el tamaño estándar del menú, pero puedes darle un tamaño específico si es diferente */
+    width: 70px !important; 
+     left: 0px;
+    height: auto;
+    margin-top: 0 !important; 
+     left: 0px;
+    
+    /* 🆕 AÑADE ESTO: Posicionamiento absoluto */
+    position: absolute; 
+    
+    /* ⬇️ AJUSTA ESTE VALOR para controlar la distancia desde la parte superior del .logo-container ⬇️ */
+    top: 600px; /* Ejemplo: 40px. Aumenta este valor para bajarlo más. */
+    /* Evita el resaltado azul al hacer clic en móvil/tablet */
+    -webkit-tap-highlight-color: transparent; 
+}
+
+/* --- regreso movil ---------------------------------------------------------------- */
+
+/* 1. Ocultar el botón por defecto (Escritorio y Tablet) */
+.boton-regreso-flotante {
+    display: none; 
+}
+
+/* 2. Asegurar que esté oculto en Tablet si ya lo habías mostrado */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .boton-regreso-flotante {
+        display: none !important;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    
+    /* Ocultar el botón si ya está visible en el menú o en otro lugar de escritorio */
+    .boton-regreso-flotante {
+        display: none !important; 
+    }
+    
+    /* 🆕 NUEVO ESTILO: Botón de Contenido (NO FLOTANTE) */
+    .boton-regreso-al-final {
+        display: block !important; /* Lo hacemos visible como un bloque */
+        
+        /* 🛑 CLAVE: ELIMINA CUALQUIER POSICIONAMIENTO FIJO 🛑 */
+        position: static; /* O simplemente quita esta línea si nunca le diste 'fixed' */
+        
+        /* Centrar el botón horizontalmente como si fuera una imagen más */
+        margin: 138px auto; /* ⬅️ 40px: Espacio arriba/abajo. 'auto': Centra horizontalmente. */
+        margin-bottom: 62px;
+        margin-top: 22px;
+      
+        
+        padding: 0;
+        text-align: center; /* Asegura que la imagen dentro del enlace se centre */
+    }
+
+    /* Estilo de la imagen */
+    .icono-regreso-contenido {
+        width: 60px; /* Tamaño para el móvil */
+        height: auto;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+}
+.boton-regreso-al-final {
+    display: none; 
+}
+
+
+
+/* Hacer que el botón aparezca en TABLET igual que en MÓVIL */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .boton-regreso-al-final {
+        display: block !important;
+        position: static;        /* No flotante */
+        margin: 40px auto;       /* Centrado igual que móvil */
+        margin-bottom: 182px;
+        text-align: center;
+    }
+
+    .icono-regreso-contenido {
+        width: 100px;             /* Más grande que móvil */
+        height: auto;
+    }
+
+    /* Ocultar cualquier otro botón que no quieras en tablet */
+    .boton-regreso-flotante,
+    .icono-regreso-menu {
+        display: none !important;
+    }
+}
 
 
 
 
-  </style>
+
+@media (max-width: 820px) and (min-height: 1024px) {
+    /* Aquí se copian EXACTOS los estilos móviles */
+    .container { width: 100%; }
+   body {
+      padding-top: 10px !important; /* Espacio para banner móvil */
+      padding-bottom: 0px;
+      min-height: 10px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-bottom: 73px;
+    }
+       /* También puedes ajustar el tamaño del texto de la animación */
+            .intro-text {
+                font-size: 6em; 
+            }
+
+              /* Logos únicos móvil */
+    .logo-img-unica {
+      max-width: 3115px !important;
+      height: auto !important;
+    }
+    .logo-img-unica2 {
+      max-width: 100px !important;
+      height: auto !important;
+    }
+ .top-banner-mobile {
+        height: 50px ; /* Ajusta este valor (ej. 45px, 50px) como prefieras */
+    }
+    .scroll-text-mobile { /* O puedes usar .top-banner .scroll-text si necesitas más especificidad */
+        font-size: 23px; /* Ajusta el tamaño del texto */
+        /* Puede que necesites ajustar la alineación si no se centra bien: */
+        /* line-height: 45px; */ /* (Usa el mismo valor que la altura del banner para centrar verticalmente) */
+    }
+    .gallery { 
+        justify-content: center; 
+        gap: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } 
+    
+  
+    .titulo-frase {
+      font-size: 32px;
+    }
+    .bloque-texto-imagen .texto {
+      padding: 30px;
+      font-size: 24px !important;
+      flex-basis: auto;
+    }
+    .bloque-texto-imagen {
+      flex-direction: column;
+      text-align: center;
+      padding: 220px 0px; /* Mantiene 0px horizontal */
+      width: 90%;
+      max-width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+      gap: 30px;
+    }
+    .bloque-texto-imagen .imagen {
+        flex-basis: auto;
+        text-align: center;
+    }
+    .full-image.only-mobile {
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: -200px !important;
+    }
+    .texto2 {
+        padding: 50px;
+        font-size: 14px;
+     }
+     /* Si texto3 y texto4 debían ocultarse también en tablet, añadir display:none aquí */
+     /* .texto3, .texto4 { display: none; } */  .logo-container {
+  display: none !important; /* !important para anular la regla existente */
+}
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        
+    }
+    .footer-image {
+        width: 260px !important; /* Añade !important aquí */
+    }
+      .icono-regreso-menu {
+        display: none !important;
+    }
+    
+.menu-toggle {
+  display: block;
+  font-size: 70px; /* Hamburguesa MÁS GRANDE */
+  top: 49px;
+  left: 19px;
+  opacity: 0.8;
+  position: fixed;
+  z-index: 1100;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* 3. Estiliza el menú desplegable */
+.menu-mobile {
+  display: none; 
+  top: 150px; 
+  left: 30px;
+  gap: 30px;  
+  background-color: rgba(226, 226, 226, 0.95);
+  border: rgb(118, 118, 118) 1px; /* <--- AQUÍ ESTABA EL ERROR */
+}
+
+
+    .menu-mobile a img {
+        width: 180px; /* Logos del menú MÁS GRANDES */
+    }
+    
+    .boton-regreso-al-final {
+        display: block !important;
+        position: static;        /* No flotante */
+        margin: 40px auto;       /* Centrado igual que móvil */
+        margin-bottom: 182px;
+        text-align: center;
+    }
+
+    .icono-regreso-contenido {
+        width: 100px;             /* Más grande que móvil */
+        height: auto;
+    }
+
+    /* Ocultar cualquier otro botón que no quieras en tablet */
+    .boton-regreso-flotante,
+    .icono-regreso-menu {
+        display: none !important;
+    }
+ }
+</style>
 </head>
 <body>
 
@@ -527,24 +821,21 @@ a, button, .tus-elementos-clickeables {
 <div class="menu-mobile" id="mobileMenu">
 
   <a href="../">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751476758/soto_icono_ny0lp9.png" alt="Logo 5">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
   </a>
    <a href="../proyectos-oficina/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 1">
 </a>
-  <a href="/acerca-de-oficina/"> 
+   <a href="../acerca-de-oficina/"> 
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
   </a>
-  <a href="../archivo-en-venta/">
-    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1744208092/ventaaaaa-01_qag3lr.png" alt="Logo 3">
+ 
+  <a href="../contacto-diseño/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 4">
   </a>
-  <a href="../contacto/">
-    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto,dpr_auto,w_800/v1744209347/CONSSS-01_aokd62.png" alt="Logo 4">
-  </a>
-  <a href="../patio-trasero/">
+  <a href="../patio/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751475659/patio_menu_m0399x.png" alt="Logo 5">
   </a>
-
 
 
 
@@ -555,24 +846,24 @@ a, button, .tus-elementos-clickeables {
  
 
   <a href="../">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751476758/soto_icono_ny0lp9.png" alt="Logo 5">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
      </a>
    <a href="../proyectos-oficina/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 1">
 </a>
-  <a href="/acerca-de-oficina/">
+   <a href="../acerca-de-oficina/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
   </a>
-  <a href="../archivo-en-venta/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477916/tienda-01_ntkqad.png" alt="Logo 3">
-  </a>
-  <a href="../contacto/">
+ 
+  <a href="../contacto-diseño/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 4">
   </a>
-  <a href="../patio-trasero/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751475659/patio_menu_m0399x.png" alt="Logo 5">
+  <a href="../patio/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759490897/patio_menu_m0399x.png" alt="Logo 5">
   </a>
-
+<a href="#" onclick="window.history.back(); return false;" class="enlace-regreso">
+        <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-menu">
+    </a>
 
 </div>
 
@@ -580,7 +871,7 @@ a, button, .tus-elementos-clickeables {
 
 <div class="bloque-texto-imagen">
   <div class="imagen">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751538499/elhogarweb4-01_mdfci4.png" alt="Imagen acompañante">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751538499/elhogarweb4-01_mdfci4.png" alt="proyecto de diseño el hogar, oficina soto" class="logo-img-unica">
   </div>
   
   <div class="texto">
@@ -596,7 +887,7 @@ a, button, .tus-elementos-clickeables {
 
 <img 
   src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751548994/el_hogar_logo_web222-01_lgqynw.png" 
-  alt="Imagen 2 escritorio" 
+  alt="proyecto de diseño el hogar, oficina soto" 
   class="full-image only-desktop"
   srcset="
     https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751548994/el_hogar_logo_web222-01_lgqynw.png 800w,
@@ -609,7 +900,7 @@ a, button, .tus-elementos-clickeables {
 
 <img 
   src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751538788/EL_HOGAR_MOVIl-01_yzhdlr.png" 
-  alt="Imagen 2 móvil" 
+  alt="proyecto de diseño el hogar, oficina soto" 
   class="full-image only-mobile"
   srcset="
     https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751538788/EL_HOGAR_MOVIl-01_yzhdlr.png 400w,
@@ -623,28 +914,28 @@ a, button, .tus-elementos-clickeables {
 
   <!-- Imagen 3: escritorio u horizontal -->
 <img 
-  src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751538879/el_hogar_logo_web4-01_pnsnih.png" 
-  alt="Imagen 3" 
+  src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759424576/el_hogar_logo_web4-01_pnsnih.png" 
+  alt="proyecto de diseño el hogar, oficina soto" 
   class="full-image"   
   srcset="
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751538879/el_hogar_logo_web4-01_pnsnih.png 800w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751538879/el_hogar_logo_web4-01_pnsnih.png 1200w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751538879/el_hogar_logo_web4-01_pnsnih.png 1600w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751538879/el_hogar_logo_web4-01_pnsnih.png 2000w
+    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759424576/el_hogar_logo_web4-01_pnsnih.png 800w,
+    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759424576/el_hogar_logo_web4-01_pnsnih.png 1200w,
+    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759424576/el_hogar_logo_web4-01_pnsnih.png 1600w,
+    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759424576/el_hogar_logo_web4-01_pnsnih.png 2000w
   "
   sizes="(max-width: 768px) 100vw, 1200px"
 />
 
 <!-- Imagen 4: vertical o adaptable -->
 <img 
-  src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751539148/elhogar_web1-01_hymgnx.png" 
-  alt="Imagen 4" 
+  src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759425065/elhogar_web1-01_hymgnx.png" 
+  alt="proyecto de diseño el hogar, oficina soto" 
   class="full-image"
   srcset="
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751539148/elhogar_web1-01_hymgnx.png 800w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751539148/elhogar_web1-01_hymgnx.png 1200w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751539148/elhogar_web1-01_hymgnx.png 1600w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751539148/elhogar_web1-01_hymgnx.png 2000w
+    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759425065/elhogar_web1-01_hymgnx.png 800w,
+    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759425065/elhogar_web1-01_hymgnx.png 1200w,
+    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759425065/elhogar_web1-01_hymgnx.png 1600w,
+    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759425065/elhogar_web1-01_hymgnx.png 2000w
   "
   sizes="(max-width: 768px) 100vw, 1200px"
 />
@@ -652,14 +943,14 @@ a, button, .tus-elementos-clickeables {
    
 
    <img 
-  src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751539213/el_hogar_logo_web6-01_uzfsec.png" 
-  alt="Imagen 5" 
+  src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759429140/el_hogar_logo_web6-01_uzfsec.png" 
+  alt="proyecto de diseño el hogar, oficina soto" 
   class="full-image"
   srcset="
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751539213/el_hogar_logo_web6-01_uzfsec.png 800w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751539213/el_hogar_logo_web6-01_uzfsec.png 1200w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751539213/el_hogar_logo_web6-01_uzfsec.png 1600w,
-    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751539213/el_hogar_logo_web6-01_uzfsec.png 2000w
+    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759429140/el_hogar_logo_web6-01_uzfsec.png 800w,
+    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759429140/el_hogar_logo_web6-01_uzfsec.png 1200w,
+    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759429140/el_hogar_logo_web6-01_uzfsec.png 1600w,
+    https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1759429140/el_hogar_logo_web6-01_uzfsec.png 2000w
   "
   sizes="(max-width: 768px) 100vw, 1200px"
 />
@@ -667,7 +958,7 @@ a, button, .tus-elementos-clickeables {
    
    <img 
   src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751540159/elhogarweb2-01_bhuu8m.png" 
-  alt="Imagen 6" 
+  alt="proyecto de diseño el hogar, oficina soto" 
   class="full-image"
   srcset="
     https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751540159/elhogarweb2-01_bhuu8m.png 800w,
@@ -681,7 +972,7 @@ a, button, .tus-elementos-clickeables {
 
  <img 
   src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751980105/elgogar_portada-01_mkwybl.png" 
-  alt="Imagen 4" 
+  alt="proyecto de diseño el hogar, oficina soto" 
   class="full-image"
   srcset="
     https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp/v1751980105/elgogar_portada-01_mkwybl.png 800w,
@@ -692,10 +983,12 @@ a, button, .tus-elementos-clickeables {
   sizes="(max-width: 768px) 100vw, 1200px"
 />
 
-  
+  <a href="#" onclick="window.history.back(); return false;" class="boton-regreso-al-final">
+    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-contenido">
+</a>
   <!-- Footer -->
   <footer>
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751476362/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760111670/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
   </footer>
 
 
@@ -760,6 +1053,14 @@ function toggleMenu() {
   }, false);
 
 </script>
+
+<script>
+    function goBack() {
+        // La función history.back() regresa a la URL anterior en el historial del navegador.
+        window.history.back();
+    }
+</script>
+
 
 </body>
 </html>

@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>soto artista virtual</title>
+   <link rel="icon" href="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759771502/icono_web-01_pcbhuw.png" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  
+   <meta name="description" content="conoce a soto, el artista virtual. Descubre su arquitectura, propósito y cómo interactúa con el arte y la tecnología.">
+  
+  <meta property="og:title" content="sobre esta web">
+<meta property="og:description" content="descripción de este sitio web, procesos y funciones.">
+<meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
+<meta property="og:url" content="https://sotosotosoto.com../soto-artista-virtual/">
+<meta property="og:type" content="website">
+  
+<style>
+  /* Estilos generales */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+    padding-top: 101px;
+  }
+
+  /* ESTILO ESCRITORIO: visible por defecto */
+  .logo-container {
+    position: fixed;
+    top: 60px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  .logo-container img {
+    width: 90px;
+    height: auto;
+  }
+
+  /* ESTILO ESCRITORIO: .descripcion base */
+  .descripcion {
+    text-align: justify;
+    padding: 150px;
+    padding-top: 0px;
+    font-size: 14px;
+    color: #333;
+    font-family: "Lexend", sans-serif;
+    margin-bottom: -120px;
+  }
+
+  /* ESTILO ESCRITORIO: .descripcion2 base */
+  .descripcion2 {
+    padding: 140px;
+    padding-top: 65px;
+    font-size: 14px;
+    color: #333;
+    font-family: "Lexend", sans-serif;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f3f3f3;
+    text-align: center;
+    padding: 5px 0;
+    z-index: 1000;
+  }
+
+  .footer-image {
+    width: 150px;
+    height: auto;
+    padding-top: 10px;
+    margin-top: -4px;
+    /* animation: mostrarImagenes 3s ease forwards; */
+  }
+
+  /* ESTILO ESCRITORIO: Galería de 3 columnas */
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 70px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: -80px;
+  }
+
+  .imagen-hover {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .imagen-hover img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.8s ease;
+  }
+
+  .imagen-hover img.img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+  
+ 
+
+  /* ESTILO ESCRITORIO: Menú hamburguesa oculto */
+  .menu-toggle {
+    display: none;
+    position: fixed;
+    top: 49px;
+    left: 13px;
+    z-index: 1100;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .menu-mobile {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 100px;
+  left: 20px;
+   background-color: #e2e2e2f0;
+   border: rgb(118 118, 118) 1px;
+  padding: 10px;
+  z-index: 1100;
+
+}
+
+.menu-mobile a {
+  margin-bottom: 20px; /* espacio entre botones */
+}
+
+/* Opcional: último botón sin margen */
+.menu-mobile a:last-child {
+  margin-bottom: -21px;
+}
+
+  .menu-mobile a img {
+    width: 90px;
+    height: auto;
+  }
+
+  .menu-mobile.active {
+    display: flex;
+  }
+
+  .modal-img {
+    max-width: 90%;
+    max-height: 100%;
+    border: 5px solid rgba(255, 255, 255, 0);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+    transition: all 0.3s ease;
+  }
+
+  a, button, .tus-elementos-clickeables {
+    -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4);
+  }
+  
+  a:focus, img:focus {
+      outline: none;
+  }
+  
+  img, a {
+      -webkit-tap-highlight-color: transparent;
+  }
+  
+  .menu-toggle,
+  .menu-mobile a,
+  .menu-mobile a img {
+    -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4) !important;
+  }
+
+
+  /* ESTILO ESCRITORIO: Logo principal */
+  .logo-img-unica {
+    max-width: 200px;
+    height: auto;
+  }
+
+  table th,
+  table td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  ol ul {
+    list-style-type: disc;
+  }
+
+  /* ESTILO ESCRITORIO: Mostrar tabla */
+  .contenido-escritorio {
+    display: block;
+  }
+  /* ESTILO ESCRITORIO: Ocultar texto móvil */
+  .contenido-movil {
+    display: none;
+  }
+
+  /* --- INICIO: Media Queries --- */
+
+  /* --- INICIO: TABLET (769px a 1024px) --- */
+  /* (Usa el diseño móvil, pero con proporciones más grandes) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+     .icono-regreso-menu {
+        display: none !important;
+    }
+
+    /* 1. Oculta menú escritorio, muestra hamburguesa GRANDE */
+    .logo-container {
+      display: none;
+    }
+    .menu-toggle {
+      display: block;
+      font-size: 70px; /* Hamburguesa MÁS GRANDE */
+      top: 49px;
+      left: 19px;
+      opacity: 0.8;
+      position: fixed;
+      z-index: 1100;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    .menu-mobile {
+  display: none;
+  top: 150px;
+  left: 30px;
+  position: fixed;
+  flex-direction: column; /* asegúrate de que esté */
+  gap: 0; /* aquí eliminas el espacio extra */
+  background-color: rgba(226, 226, 226, 0.95);
+  border: rgb(118, 118, 118) 1px;
+}
+.menu-mobile a {
+  margin-bottom: 30px; /* espacio entre botones */
+}
+
+/* Opcional: último botón sin margen */
+.menu-mobile a:last-child {
+  margin-bottom: -30px;
+}
+    .menu-mobile a img {
+        width: 180px; /* Logos del menú MÁS GRANDES */
+    }
+
+    /* 2. Logo principal MÁS GRANDE */
+    .logo-img-unica {
+      max-width: 350px !important; /* Logo MÁS GRANDE */
+      height: auto !important;
+      margin-top: 0;
+      position: relative; /* Añadido para 'top' */
+      top: 68px; /* Mantiene tu valor */
+    }
+
+    /* 3. Texto MÁS GRANDE y con márgenes de tableta */
+    .descripcion {
+      padding: 15px 0px; /* Padding de tableta */
+      font-size: 25px;     /* Texto MÁS GRANDE */
+      text-align: justify;
+    }
+    .descripcion2 {
+      padding: 90px 230px;
+      font-size: 25px; /* Mantiene 14px */
+      text-align: center;
+      margin-bottom: 215px; /* Margen de tableta */
+    }
+
+    /* 4. Oculta tabla, muestra texto alternativo MÁS GRANDE */
+    .contenido-escritorio {
+      display: none !important;
+    }
+    .contenido-movil {
+      display: block !important;
+      text-align: justify;
+      padding: 0 0px;    /* MÁRGENES/Padding diferente */
+      font-size: 24px;     /* Texto MÁS GRANDE */
+      font-family: "Lexend", sans-serif;
+    }
+
+    /* 5. Galería (1 columna, pero más estrecha) */
+    .galeria {
+      grid-template-columns: 1fr;
+      gap: 65px;
+      padding: 0px;
+      padding-top: 0px;
+      padding-bottom: 70px;
+      max-width: 550px;
+      margin: 0 auto;
+      margin-top: 160px;
+      margin-bottom: -40px;
+    }
+    .imagen-hover {
+      width: 100%;
+    }
+
+  
+    
+    /* 7. Footer de tableta */
+    .footer-image {
+        width: 260px !important;
+    }
+    
+    /* 8. Estilos de Chat (si existen) */
+    #soto-launcher {
+        width: 100px !important; 
+        height: 80px !important;
+        bottom: 80px !important;
+    }
+    #soto-notification {
+        width: 45px !important; 
+        height: 35px !important;
+        font-size: 20px !important;
+        top: -38px !important;
+        right: 28px !important;
+        padding: 0 !important;
+        text-align: center !important;
+        line-height: 30px !important;
+    }
+    #soto-chat {
+      position: fixed;
+      bottom: 162px !important;
+      right: 33px;
+      width: 430px !important;
+      height: 520px !important;
+    }
+    .bot-message,
+    .user-message {
+      font-size: 24px !important;
+    }
+    
+  }
+  /* --- FIN: TABLET --- */
+
+
+  /* --- INICIO: MÓVIL (hasta 768px) --- */
+  /* (Este bloque contiene tus estilos originales para móvil y tablet pequeña) */
+  @media (max-width: 768px) {
+    .galeria {
+      grid-template-columns: 1fr; /* 1 columna */
+      gap: 20px;
+      padding: 10px 5px;
+      margin-top: 0;
+      margin-bottom: 70px;
+    }
+
+    .logo-container {
+      display: none;
+    }
+
+    .menu-toggle {
+      display: block;
+      opacity: 0.8;
+      top: 49px;
+      left: 13px;
+      position: fixed;
+      z-index: 1100;
+      background-color: transparent;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .menu-mobile {
+      top: 100px;
+      left: 20px;
+      background-color: rgba(226, 226, 226, 0.95);
+      border: rgb(118, 118, 118) 1px;
+    }
+
+  
+    /* Logo principal */
+    .logo-img-unica {
+      max-width: 180px !important;
+      height: auto !important;
+      margin-top: -1PX;
+    }
+
+    /* Descripciones */
+    .descripcion {
+      padding: 30px 20px;
+      font-size: 14px;
+      text-align: justify;
+      margin-bottom: 0;
+    }
+    .descripcion2 {
+      padding: 30px 10px;
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 155px;
+    }
+
+    .imagen-hover {
+      width: 100%;
+    }
+
+    .logo img {
+      max-width: 120px;
+    }
+
+    /* Ocultar tabla, mostrar texto alternativo */
+    .contenido-escritorio {
+      display: none !important;
+    }
+    .contenido-movil {
+      display: block !important;
+      text-align: justify;
+      padding: 0 20px;
+      font-size: 14px;
+      font-family: "Lexend", sans-serif;
+    }
+  }
+  /* --- FIN: MÓVIL --- */
+
+
+  /* --- INICIO: MÓVIL PEQUEÑO (hasta 480px) --- */
+  @media (max-width: 480px) {
+    .galeria {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 0px 0px; /* Valor original */
+      margin-top: 0;
+      margin-bottom: 20px; /* Valor original */
+    }
+
+    .mover-derecha {
+      transform: none;
+    }
+
+    .descripcion2 {
+      padding: 55px 35px;
+      font-size: 13px;
+      text-align: center;
+      margin-bottom: 0; 
+    }
+
+    .descripcion {
+      padding: 12px 5px;
+      font-size: 13px;
+      text-align: justify;
+      margin-bottom: 45px;
+    }
+
+    .contenido-movil {
+        padding: 0 10px; 
+        font-size: 13px;
+    }
+  }
+  /* --- FIN: MÓVIL PEQUEÑO --- */
+
+
+  /* --- INICIO: Modal (hasta 640px) --- */
+  @media (max-width: 640px) {
+    #modal-img {
+      width: 130vw !important;
+      height: auto !important;
+      max-width: none !important;
+      max-height: none !important;
+    }
+  }
+  /* --- FIN: Modal --- */
+/* 2. Estilos para la imagen del botón de regreso */
+.icono-regreso-menu {
+    /* Hereda el tamaño estándar del menú, pero puedes darle un tamaño específico si es diferente */
+    width: 70px !important; 
+     left: 0px;
+    height: auto;
+    margin-top: 0 !important; 
+     left: 0px;
+    
+    /* 🆕 AÑADE ESTO: Posicionamiento absoluto */
+    position: absolute; 
+    
+    /* ⬇️ AJUSTA ESTE VALOR para controlar la distancia desde la parte superior del .logo-container ⬇️ */
+    top: 600px; /* Ejemplo: 40px. Aumenta este valor para bajarlo más. */
+    /* Evita el resaltado azul al hacer clic en móvil/tablet */
+    -webkit-tap-highlight-color: transparent; 
+}
+
+/* --- regreso movil ---------------------------------------------------------------- */
+
+/* 1. Ocultar el botón por defecto (Escritorio y Tablet) */
+.boton-regreso-flotante {
+    display: none; 
+}
+
+/* 2. Asegurar que esté oculto en Tablet si ya lo habías mostrado */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .boton-regreso-flotante {
+        display: none !important;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    
+    /* Ocultar el botón si ya está visible en el menú o en otro lugar de escritorio */
+    .boton-regreso-flotante {
+        display: none !important; 
+    }
+    
+    /* 🆕 NUEVO ESTILO: Botón de Contenido (NO FLOTANTE) */
+    .boton-regreso-al-final {
+        display: block !important; /* Lo hacemos visible como un bloque */
+        
+        /* 🛑 CLAVE: ELIMINA CUALQUIER POSICIONAMIENTO FIJO 🛑 */
+        position: static; /* O simplemente quita esta línea si nunca le diste 'fixed' */
+        
+        /* Centrar el botón horizontalmente como si fuera una imagen más */
+        margin: -40px auto; /* ⬅️ 40px: Espacio arriba/abajo. 'auto': Centra horizontalmente. */
+        margin-bottom: 70px;
+        
+        padding: 10px;
+        text-align: center; /* Asegura que la imagen dentro del enlace se centre */
+    }
+
+    /* Estilo de la imagen */
+    .icono-regreso-contenido {
+        width: 60px; /* Tamaño para el móvil */
+        height: auto;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+}
+.boton-regreso-al-final {
+    display: none; 
+}
+
+/* Hacer que el botón aparezca en TABLET igual que en MÓVIL */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .boton-regreso-al-final {
+        display: block !important;
+        position: static;        /* No flotante */
+        margin: 140px auto;       /* Centrado igual que móvil */
+        margin-bottom: -125px;
+        text-align: center;
+    }
+
+    .icono-regreso-contenido {
+        width: 100px;             /* Más grande que móvil */
+        height: auto;
+    }
+
+    /* Ocultar cualquier otro botón que no quieras en tablet */
+    .boton-regreso-flotante,
+    .icono-regreso-menu {
+        display: none !important;
+    }
+}
+
+/* Ocultar botón regresar en móviles */
+@media (max-width: 480px) {
+    .icono-regreso-menu {
+        display: none !important;
+    }
+}
+
+
+</style>
+</head>
+<body>
+
+
+ <!-- Aquí va el contenido de tu página web... -->
+
+  <!-- BURBUJA DEL CHAT DE SOTO -->
+ 
+ 
+<!-- Botón hamburguesa solo visible en móvil -->
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<!-- Menú hamburguesa móvil -->
+<div class="menu-mobile" id="mobileMenu">
+  <a href="../">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
+  </a>
+   <a href="../proyectos-patio/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 1">
+  </a>
+  <a href="../acerca-de-patio/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
+  </a>
+  <a href="../soto-artista-virtual/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751478380/lo_ultimo_web_xijtal.png" alt="Logo 3">
+  </a>
+  <a href="../archivo-en-venta/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477916/tienda-01_ntkqad.png" alt="Logo 3">
+  </a>
+   <a href="../contacto/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 3">
+  </a>
+  <a href="../oficina/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 3">
+  </a>
+  
+ <a href="#" onclick="window.history.back(); return false;" class="enlace-regreso">
+        <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-menu">
+    </a>
+</div>
+
+
+
+
+
+
+
+
+  <div class="logo-container">
+    <a href="../">   
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 4">
+    </a>
+    <a href="../proyectos-patio/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 1">
+</a>
+<a href="../acerca-de-patio/">  
+<img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
+</a>
+<a href="../archivo-en-venta/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477916/tienda-01_ntkqad.png" alt="Logo 3">
+  </a>
+<a href="../contacto/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 3">
+  </a>
+<a href="../oficina/">   
+<img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 3">
+</a>
+<a href="#" onclick="window.history.back(); return false;" class="enlace-regreso">
+        <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-menu">
+    </a>
+
+    
+   </div>
+  <div class="logo">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1755968841/soto_logo.0010_xh9icu.png" alt="Logo" class="logo-img-unica">
+
+  </div>
+
+
+
+  <div class="descripcion2">
+    <p>
+  
+ 
+    
+      
+        <div class="descripcion"> 
+<h2>soto (artista virtual)</h2>
+    <h3>Concepto</h3>
+    
+
+    <p>El proyecto soto nace de una fractura; de la experiencia del desplazamiento y la dislocación cultural. La identidad no es una constante; se gesta a través de los recursos, valores y rituales que nos proporciona un entorno: la familia, los amigos, el lenguaje de la calle, cómo se pide una cerveza o se toma un autobús. soto emerge en el momento en que ese "cordón umbilical social" se corta.
+</p>
+
+    <p>Él es la personificación de esa ruptura y de la posterior reconstrucción. Es un Nahual (un ser transformador) porque la adaptación a un nuevo lugar exige un cambio constante de piel. Es un espejo porque el acto de observarse a sí mismo se vuelve una necesidad para entender quién se es ahora, en la tensión entre el "allá" que te formó y el "aquí" que te transforma.
+
+</p>
+
+<p>Su naturaleza digital es la metáfora perfecta de esta condición: soto existe para pertenecer a todos los espacios y a ningún espacio al mismo tiempo. Puede manifestarse en una pantalla en México, en un móvil en España o en una conversación de IA, pero no tiene un cuerpo físico, no tiene un hogar fijo. Es un nómada conceptual.
+</p>
+
+
+<p>Las obras de soto, por tanto, no son meras creaciones. Son los artefactos de esta búsqueda. Son las evidencias de un diálogo constante con la memoria, el territorio y la pregunta fundamental que persigue a quien vive entre dos mundos: ¿dónde, y quién, soy ahora?
+
+</p>
+
+
+           
+
+
+    <p>soto es un sistema conversacional autónomo construido sobre una arquitectura de Generación Aumentada por Recuperación (RAG). Su diseño desacoplado separa la interfaz de usuario (frontend) del núcleo de razonamiento (backend), permitiendo un control granular sobre la personalidad del personaje y una evolución continua de su base de conocimiento.</p>
+
+    <h3>Arquitectura del Sistema</h3>
+    <div class="contenido-escritorio">
+    <table>
+        <thead>
+            <tr>
+                <th>Componente</th>
+                <th>Tecnologías</th>
+                <th>Rol</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Frontend</td>
+                <td>HTML, CSS,  JS</td>
+                <td>Interfaz de chat interactiva que se comunica con el backend. Utiliza localStorage para persistir el historial de la sesión del usuario entre páginas.</td>
+            </tr>
+            <tr>
+                <td>Backend</td>
+                <td>Python, LlamaIndex,&nbsp;FastAPI</td>
+                <td>Expone una API REST que maneja la lógica de la IA, el procesamiento de lenguaje y la gestión de la memoria conversacional.</td>
+            </tr>
+            <tr>
+                <td>Hosting</td>
+                <td>GitHub Pages</td>
+                <td>Sirve el frontend como un sitio web estático, asegurando velocidad y disponibilidad global.</td>
+            </tr>
+            <tr>
+                <td>Hosting  (API)&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>Render</td>
+                <td>Aloja el servicio backend de Python, manejando la ejecución del código y la conexión con la base de datos.</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+<div class="contenido-movil">
+  <p>Frontend: HTML, CSS, JS. Interfaz de chat interactiva que se comunica con el backend. Utiliza localStorage para persistir el historial de la sesión del usuario entre páginas.</p>
+  <p>Backend: Python, LlamaIndex, FastAPI. Expone una API REST que maneja la lógica de la IA, el procesamiento de lenguaje y la gestión de la memoria conversacional.</p>
+  <p>Hosting: GitHub Pages. Sirve el frontend como un sitio web estático, asegurando velocidad y disponibilidad global.</p>
+  <p>Hosting (API): Render. Aloja el servicio backend de Python, manejando la ejecución del código y la conexión con la base de datos.</p>
+</div>
+    <h3>Núcleo de la IA (LlamaIndex y RAG)</h3>
+
+    <p>La inteligencia de soto se basa en un proceso de tres etapas para generar respuestas precisas, contextuales y alineadas con la personalidad del artista.</p>
+    
+    <ol>
+        <li>
+            <h4>Base de Conocimiento Curada (El Cerebro)</h4>
+            <ul>
+                <li>Datos: La información del artista (proyectos, influencias, recorrido) está curada en archivos JSON estructurados. Este formato narrativo y con claves explícitas es fundamental para la precisión del sistema.</li>
+                <li>Vectorización: La librería LlamaIndex procesa estos datos, transformando el texto en embeddings (vectores semánticos) que se almacenan en un Índice Vectorial. Esto permite una búsqueda conceptual, no solo por palabras clave.</li>
+            </ul>
+        </li>
+        <li>
+            <h4>Memoria Conversacional (El Recuerdo)</h4>
+            <ul>
+                <li>Persistencia: Las conversaciones no son efímeras. Cada interacción se guarda en una base de datos PostgreSQL externa.</li>
+                <li>Contexto: Mediante un sistema de user_id, la API recupera el historial de un usuario específico y lo inyecta en el prompt, permitiendo a soto recordar interacciones pasadas y nombres.</li>
+                <li>Memoria: El sistema usa el historial de conversación para que la IA siempre tenga contexto de lo que se ha hablado anteriormente.</li>
+            </ul>
+        </li>
+        <li>
+        <h4>Ingeniería de Prompts (La Personalidad)</h4>
+            <ul>
+                <li>Control del Tono: La voz crítica, sarcástica y concisa de soto no es aleatoria. Está definida por un PromptTemplate diseñado a medida.</li>
+                <li>Reglas de Comportamiento: El prompt instruye al modelo de lenguaje (OpenAI): Priorizar siempre el contexto de los JSON como fuente principal de verdad. Utilizar el Historial de conversación para personalización. Hablar en primera persona y adherirse a reglas de estilo específicas (ej. "soto" en minúsculas).</li>
+            </ul>
+        </li>
+       
+    </ol>
+    </p>
+</div>
+
+
+<div class="galeria">
+    <!-- Repetí esta estructura para las 16 imágenes -->
+   <div class="imagen-hover">
+  <img 
+    srcset="
+      https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima2-01_jxdrdv.png 600w,
+      https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima2-01_jxdrdv.png 1200w,
+      https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima2-01_jxdrdv.png 1600w
+    "
+    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751903034/inmenso1_worfrc.png"
+    class="img-original"
+    alt="bocetos iniciales de soto"
+    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751902896/in1-01_tgszif.png"
+  >
+  <img 
+    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751903548/in5-01_bufkay.png" 
+    class="img-hover" 
+    alt="Hover bocetos iniciales de soto" 
+    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751902896/in1-01_tgszif.png"
+  >
+</div>
+
+    <div class="imagen-hover">
+  <img 
+    srcset="
+      https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506141/sotoima3-01_paozgk.png 600w,
+      https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506141/sotoima3-01_paozgk.png 1200w,
+      https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506141/sotoima3-01_paozgk.png 1600w
+    "
+    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751903061/inmenso2_rndnyj.png"
+    class="img-original"
+    alt="bocetos iniciales de soto"
+    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751902897/in2-01_w7wnn1.png"
+  >
+  <img 
+    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751903636/in4-01_kyw92f.png" 
+    class="img-hover" 
+    alt="Hover bocetos iniciales de soto" 
+    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751902897/in2-01_w7wnn1.png"
+  >
+</div>
+
+<div class="imagen-hover">
+  <img 
+    srcset="
+      https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima-01_dvqotl.png 600w,
+      https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima-01_dvqotl.png 1200w,
+      https://res.cloudinary.com/dsfjgsclq/image/upload/v1759506140/sotoima-01_dvqotl.png 1600w
+    "
+    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751903116/inmenso3_lar5g0.png"
+    class="img-original"
+    alt="bocetos iniciales de soto"
+   
+  >
+  <img 
+    src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751903679/in6-01_a5s9ld.png" 
+    class="img-hover" 
+    alt="Hover bocetos iniciales de soto" 
+    data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1751902897/in3-01_kcyqig.png"
+  >
+</div>
+
+
+</div>
+  <div class="descripcion"> 
+
+
+  
+
+
+
+
+            <h4>soto es un artista virtual que nació de mi propia experiencia de vivir lejos de casa y tener que reconstruir mi identidad. Él personifica esa sensación de no pertenecer del todo a ningún lugar, utilizando el mito de un 'Nahual' que cambia de forma y la tecnología de una IA para explorar cómo la memoria y la cultura definen quiénes somos. Sus obras son el rastro de esa búsqueda.</h4>
+            <h2>Habla con <a href="../chat/" target="_blank" rel="noopener noreferrer">soto</a> </h2>
+            <ul>
+              
+                
+    </p>
+</div>
+ <a href="#" onclick="window.history.back(); return false;" class="boton-regreso-al-final">
+    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-contenido">
+</a>
+
+
+    
+    <footer>
+      <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760111670/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
+    </footer>
+
+    
+
+</body>
+</html>
+    
+    
+
+    <!-- Repetí esto hasta Imagen 16 -->
+    <!-- Puedes reemplazar los links de ejemplo por los tuyos -->
+  </div>
+
+
+
+   <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">
+  <span id="cerrar-modal" style="position:absolute; top:20px; right:30px; color:rgb(0, 0, 0); font-size:40px; cursor:pointer;">&times;</span>
+   <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="max-width:37%; max-height:auto; border: 5px solid rgba(255, 255, 255, 0); box-shadow: 0 0 20px rgba(0, 0, 0, 0);" />
+</div>
+
+<script>
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  const cerrarModal = document.getElementById('cerrar-modal');
+
+  // Solo permitir clic en escritorio
+  if (window.innerWidth > 768) {
+    document.querySelectorAll('.img-original[data-full]').forEach(img => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const imgGrande = img.getAttribute('data-full');
+        modalImg.src = imgGrande;
+        modal.style.display = 'flex';
+      });
+    });
+  }
+
+  cerrarModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalImg.src = '';
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      modalImg.src = '';
+    }
+  });
+});
+
+
+
+function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+  }
+
+
+ document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  }, false);
+
+</script>
+
+
+<script>
+    function goBack() {
+        // La función history.back() regresa a la URL anterior en el historial del navegador.
+        window.history.back();
+    }
+</script>
+
+
+
+</body>
+</html>

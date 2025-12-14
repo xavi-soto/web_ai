@@ -31,12 +31,13 @@
     opacity: 1;
   }
 }
+
     .logo {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0px 0px;
-  padding-top: 100px;
+  padding-top: 120px;
 }
 
 .logo-container {
@@ -61,21 +62,22 @@
       font-size: 14px;
       color: #333;
       font-family: "Lexend", sans-serif;
-       margin-bottom: -180px;
+       margin-bottom: -120px;
     }
 
      .descripcion2 {
-    
-    padding: 140px;
-    padding-top: 95px;
-    font-size: 14px;
-    color: #333;
-    font-family: "Lexend", sans-serif;
-    
-    /* 💡 AÑADE ESTO: Margen negativo para compensar el espacio del .logo 💡 */
-    /* El .logo empuja 100px, así que necesitamos al menos -100px de compensación. */
-    margin-top: -53px; /* Usa -100px o un poco más, por ejemplo, -120px, para moverlo hacia arriba */
+      
+      padding: 140px;
+      padding-top: 60px;
+      font-size: 14px;
+      color: #333;
+      font-family: "Lexend", sans-serif;
+    }
+
+    .contenido-ajustado {
+  margin-top: -20px; /* ajusta el número según cuánto quieras subir */
 }
+
 
 
     footer {
@@ -85,7 +87,7 @@
       width: 100%;
       background-color: #f3f3f3;
       text-align: center;
-      padding: 6px 0 !important;
+      padding: 5px 0;
       z-index: 1000;
     }
 
@@ -193,7 +195,6 @@
 .menu-mobile a:last-child {
   margin-bottom: -21px;
 }
-
 .menu-mobile a img {
   width: 90px;
   height: auto;
@@ -228,16 +229,18 @@
 @media (max-width: 480px) {
 
   .descripcion2 {
-    padding: 75px 35px;
+    padding: 1px 35px;
+    margin-top: 13px;
     font-size: 13px;
     text-align: center;
   }
 
    .descripcion{
-    padding: 7px 5px;
+    padding: 5px 5px;
+ 
     font-size: 13px;
     text-align: justify;
-     margin-bottom: 80px;
+     margin-bottom: 89px;
   }
 
   .galeria {
@@ -315,49 +318,53 @@ a, button, .tus-elementos-clickeables {
 
 
 
-
 /* Estilo general (escritorio) */
 .logo-img-unica {
-  max-width: 150px;
+  max-width: 190px;
   height: auto;
 }
 
 /* Estilo específico para móvil */
 @media (max-width: 768px) {
   .logo-img-unica {
-    max-width: 150px !important; /* O el valor que desees */
+    max-width: 180px !important; /* O el valor que desees */
     height: auto !important;
       position: relative;
-    top: -1px; /* Ajusta el valor según cuánto quieras subir */
+    top: -18px; /* Ajusta el valor según cuánto quieras subir */
   }
+
+  .contenido-ajustado {
+  margin-top: -16px; /* ajusta el número según cuánto quieras subir */
 }
+}
+
+
 
 
 /* Versión tablet */
   @media (min-width: 481px) and (max-width: 768px) {
-    
     /* Galería de imágenes */
     .galeria {
       grid-template-columns: 1fr; /* Una sola columna */
       gap: 20px;
       padding: 10px 5px;
       margin-top: 0;
-      margin-bottom: 90px;
+      margin-bottom: 70px;
     }
 
     /* Descripción para tablet */
     .descripcion {
-      padding: 30px 20px;
+      padding: 15px 20px;
       font-size: 14px; /* Un tamaño más grande que en móvil */
       text-align: justify;
     }
 
      .descripcion2 {
       padding: 10px 10px;
-      margin-bottom: 140px;
+       margin-bottom: 160px;
       font-size: 14px; /* Un tamaño más grande que en móvil */
       text-align: center;
-      margin-bottom: 175px;
+      margin-bottom: 185px;
     }
 
 
@@ -410,15 +417,57 @@ a, button, .tus-elementos-clickeables {
   
   }
 
-/* 💻 Ajustes SÓLO para tablets */
+    /* 💻 Ajustes SÓLO para tablets */
 @media (min-width: 769px) and (max-width: 1024px) {
-      .icono-regreso-menu {
+    .icono-regreso-menu {
         display: none !important;
     }
+    
     .footer-image {
         width: 260px !important; /* Añade !important aquí */
 } 
 
+ #soto-launcher {
+        width: 100px !important;  
+        height: 80px !important;
+        /* --- AÑADE ESTA LÍNEA PARA SUBIRLO --- */
+        bottom: 80px !important; /* Ajusta este valor (más alto = más arriba) */
+        /* right: 20px !important; */ /* No necesitas cambiar 'right' a menos que también quieras moverlo horizontalmente */
+    }
+
+    #soto-notification {
+        width: 45px !important;   
+        height: 35px !important;
+        font-size: 20px !important;
+        top: -38px !important;
+        right: 28px !important;
+        /* --- AÑADE ESTAS 3 LÍNEAS --- */
+        padding: 0 !important; /* 1. Quita el padding antiguo */
+        text-align: center !important; /* 2. Centra horizontalmente */
+        line-height: 30px !important; /* 3. Ajusta la altura de línea */
+    }
+     #soto-chat {
+  position: fixed;
+  bottom: 162px !important; /* Ajusta este valor (más alto = más arriba) */
+  right: 33px; 
+  width: 430px !important;
+  height:520px !important;
+
+}
+
+.bot-message,
+.user-message {
+  background: #e0e0e0; /* Fondo para ambos mensajes */
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 24px !important;
+  font-family: "Lexend", sans-serif;
+  line-height: 1.5;
+  width: fit-content; /* Ajusta el tamaño del mensaje */
+  max-width: 80%; /* Limita el ancho de los mensajes */
+  margin-bottom: 1px;
+  text-align:  left; /* Alinea ambos mensajes a la izquierda */
+}
 
 .logo-container { 
         top: 95px; /* Quizás ajustar la posición vertical */
@@ -431,24 +480,26 @@ a, button, .tus-elementos-clickeables {
 
 .descripcion {
       padding: 15px 230px;
-      font-size: 24px; /* Un tamaño más grande que en móvil */
+      font-size: 25px; /* Un tamaño más grande que en móvil */
       text-align: justify;
     }
 
      .descripcion2 {
-      padding: 100px 10px;
+      padding: 90px 10px;
        margin-bottom: 160px;
       font-size: 14px; /* Un tamaño más grande que en móvil */
       text-align: center;
-      margin-bottom: 205px;
+      margin-bottom: 215px;
     }
 .logo-img-unica {
-    max-width: 280px !important; /* O el valor que desees */
+    max-width: 300px !important; /* O el valor que desees */
     height: auto !important;
       position: relative;
-    top: 78px; /* Ajusta el valor según cuánto quieras subir */
+    top: 60px; /* Ajusta el valor según cuánto quieras subir */
   }
-  .logo-container {
+/* 2. Muestra y agranda el botón de hamburguesa */
+/* 1. Oculta el menú de escritorio */
+.logo-container {
   display: none !important; /* !important para anular la regla existente */
 }
 
@@ -465,23 +516,14 @@ a, button, .tus-elementos-clickeables {
   cursor: pointer;
 }
 
+/* 3. Estiliza el menú desplegable */
 .menu-mobile {
-  display: none;
-  top: 150px;
+  display: none; 
+  top: 150px; 
   left: 30px;
-  position: fixed;
-  flex-direction: column; /* asegúrate de que esté */
-  gap: 0; /* aquí eliminas el espacio extra */
+  gap: 30px;  
   background-color: rgba(226, 226, 226, 0.95);
-  border: rgb(118, 118, 118) 1px;
-}
-.menu-mobile a {
-  margin-bottom: 30px; /* espacio entre botones */
-}
-
-/* Opcional: último botón sin margen */
-.menu-mobile a:last-child {
-  margin-bottom: -30px;
+  border: rgb(118, 118, 118) 1px; /* <--- AQUÍ ESTABA EL ERROR */
 }
 
 /* 4. Agranda los logos del menú */
@@ -492,10 +534,7 @@ a, button, .tus-elementos-clickeables {
   display: flex;
 }
 
-
 }
-
-
 /* 2. Estilos para la imagen del botón de regreso */
 .icono-regreso-menu {
     /* Hereda el tamaño estándar del menú, pero puedes darle un tamaño específico si es diferente */
@@ -524,7 +563,6 @@ a, button, .tus-elementos-clickeables {
         display: none !important;
     }
 }
-
   </style>
 </head>
 <body>
@@ -545,17 +583,17 @@ a, button, .tus-elementos-clickeables {
    <a href="../proyectos-oficina/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 2">
   </a>
-  
-  <a href="../contacto-diseño/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751477949/contac-01_adnyif.png" alt="Logo 4">
+ 
+  <a href="../contacto/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 4">
   </a>
   <a href="../patio/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751475659/patio_menu_m0399x.png" alt="Logo 5">
   </a>
+
 <a href="#" onclick="window.history.back(); return false;" class="enlace-regreso">
         <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1762986834/regresar_boton_gjzspb.png" alt="Regresar" class="icono-regreso-menu">
     </a>
-
 
 
 </div>
@@ -571,7 +609,9 @@ a, button, .tus-elementos-clickeables {
       <a href="../proyectos-oficina/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 2">
   </a>
-  <a href="../contacto-diseño/">
+  
+  
+  <a href="../contacto/">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 4">
   </a>
   <a href="../patio/">
@@ -583,7 +623,7 @@ a, button, .tus-elementos-clickeables {
     
    </div>
   <div class="logo">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751559513/oficinaf_rln9hc.png" alt="Logo" class="logo-img-unica">
+    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1760993042/chiskeylogolargo_txah5h.png" alt="Logo" class="logo-img-unica">
 
   </div>
 
@@ -592,30 +632,30 @@ a, button, .tus-elementos-clickeables {
   <div class="descripcion2">
     <p>
   
-  
-<h3>Es el escritorio. Es el archivo. Es la bandeja de entrada.</h3>
+ 
     
       
         <div class="descripcion"> 
 
 
 
-          
 
 
-      <p>La oficina es el ala de soto estudio dedicada al diseño y la comunicación visual. Aquí se desarrollan proyectos de branding, identidad, editorial y soluciones digitales que requieren enfoque, coherencia y claridad. Es también el punto de contacto para gestionar colaboraciones, coordinar entregas y asegurar un seguimiento profesional de cada proyecto.</p>
+      <p>chiskey es un estudio creativo colaborativo que nace como una evolución de soto3, expandiendo el campo de acción para abordar proyectos de mayor escala y complejidad.</p>
       
 
-      <p>  <h4>Servicios Principales:</h4></p> 
-         <ul>
-        <li><p>Diseño gráfico: Creación de materiales impresos y digitales, soluciones editoriales, carteles y sistemas visuales para comunicar con precisión.</i></p></li>
-         <li><p>Branding e identidad visual: Desarrollo de la identidad completa de un proyecto: nombre, tono, narrativa y todas las piezas necesarias para contar quién eres y cómo te ven.</i></p></li>
-         <li><p>Dirección de arte y consultoría: Asesoramiento en diseño, acompañamiento en proyectos creativos, armado de portafolios, preparación de dossiers y presentaciones visuales.</i></p></li>
-       </ul>
-<p><i>La dirección y ejecución de cada proyecto está a cargo de Xavier Soto.</i></p>
-      <h3><a href="https://drive.google.com/file/d/1v2LUtZB6JY33qnT-Qt_oFQA7FhEYlYQT/view?usp=sharing" target="_blank">Descarga su CV</a><br><br>
-</h3>
+     
+        
+        <p>Nuestra especialidad es la integración de la creatividad con la tecnología. Abarcamos desde la concepción de identidades visuales completas y producción audiovisual, hasta el desarrollo de soluciones digitales avanzadas como aplicaciones, chatbots y procesos de automatización. Nuestro enfoque colaborativo nos permite unir talentos para ofrecer soluciones integrales y a medida.</i></p>
+         <p>  <h4>Nuestro campo de acción incluye:</h4></p> 
+          <ul>
+         <li> <p>Branding e Identidades Visuales Completas.</i></p></li>
+         <li><p>Producción Audiovisual y Modelado 3D.</i></p></li>
+         <li><p>Desarrollo Web, Apps y Chatbots.</i></p></li>
+         <li><p>Automatización de Procesos Digitales.</i></p></li></ul>
+      <h3><a href="https://chiskey.es" target="_blank">chiskey.es</a><br><br>
 
+</h3>
  
 
 
@@ -645,6 +685,17 @@ a, button, .tus-elementos-clickeables {
    <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="max-width:37%; max-height:auto; border: 5px solid rgba(255, 255, 255, 0); box-shadow: 0 0 20px rgba(0, 0, 0, 0);" />
 </div>
 
+
+<script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        }, false);
+</script>
 <script>
 
 
@@ -701,6 +752,7 @@ function toggleMenu() {
         window.history.back();
     }
 </script>
+
 
 
 

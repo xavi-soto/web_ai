@@ -141,3 +141,46 @@
         z-index: 9999 !important;
     }
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    #soto-chat {
+        /* Mantenemos el centrado del escritorio/móvil */
+        position: fixed !important; 
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+
+        /* ⬆️ Aumentar el tamaño del contenedor principal (más grande que móvil, más pequeño que escritorio) */
+        width: 600px !important; 
+        height: 900px !important;
+        
+        z-index: 9999 !important;
+    }
+
+    .chat-avatar {
+        /* Avatar más grande */
+        width: 150px; 
+        height: 120px;
+    }
+
+    .chat-header {
+        /* Ajustar padding por el avatar más grande */
+        padding: 50px 60px 80px 160px;
+        /* Texto del encabezado más grande */
+        font-size: 28px; 
+    }
+
+    /* BURBUJAS DE TEXTO y Campo de Input más grandes */
+    .bot-message,
+    .user-message,
+    #user-input {
+        /* Aumentar tamaño de fuente */
+        font-size: 28px;
+    }
+    
+    .bot-message,
+    .user-message {
+        /* Padding de burbujas ligeramente mayor */
+        padding: 10px 15px;
+    }
+}

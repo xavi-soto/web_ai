@@ -1,30 +1,33 @@
 #soto-launcher {
   position: fixed;
-  bottom: 60px;
+  bottom: 20px;
   right: 20px;
   width: 60px;
   height: 60px;
   cursor: pointer;
-  z-index: 99999;
+  z-index: 2000000 !important;
+  
 }
 
 #soto-launcher img {
   width: 100%;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-  
+/* --- AÑADE ESTA LÍNEA PARA LA SUAVIDAD --- */
+    transition: transform 0.1s ease-out;
+
 }
 
 #soto-chat {
   position: fixed;
-  bottom: 120px;
-  right: 33px;
+  bottom: 82px;
+  right: 33px; 
   width: 230px;
   height: 320px;
   background:#f3f3f3 ;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0,0,0,0.2);
-  z-index: 999;
+  z-index:  100000;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -75,21 +78,28 @@
 }
 
 #soto-notification {
-  position: fixed;
-  bottom: 120px;
-  right: 33px;
-  background-color: #f3f3f3;
-  color: rgb(0, 0, 0);
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 13px;
-  font-family: "Lexend", sans-serif;
-  box-shadow: 0 2px 11px rgba(0,0,0,0.2);
-  z-index: 100000;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInUp 0.6s ease forwards;
-  cursor: pointer;
+    position: absolute;
+    top: -28px;
+    right: 13px;
+    background-color: #f3f3f3;
+    color: rgb(0, 0, 0);
+    /* ...POR ESTAS 4 LÍNEAS */
+width: 35px;  /* Le damos un ancho fijo */
+height: 25px; /* Le damos un alto fijo */
+text-align: center; /* Centramos el ¿? horizontalmente */
+line-height: 23px; /* <-- ESTA ES LA LÍNEA MÁGICA */
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: "Lexend", sans-serif;
+    box-shadow: 0 2px 11px rgba(0,0,0,0.2);
+    
+    z-index: 2000001 !important;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.6s ease forwards;
+    cursor: pointer;
+   
+
 }
 
 @keyframes fadeInUp {
@@ -109,9 +119,43 @@
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
-  z-index: 1001;
+  z-index:  100000;
 }
 
 .close-chat-btn:hover {
   color: #ff784e;
+}
+
+img, a, button, #soto-launcher, #soto-notification, .close-chat-btn {
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
+}
+
+/* --- AÑADE ESTA NUEVA REGLA --- */
+#soto-launcher img:active {
+    transform: scale(0.9); /* Hace la imagen ligeramente más pequeña mientras se presiona */
+    /* También podrías añadir otros efectos como: */
+    /* opacity: 0.8; */ /* Hacerla ligeramente transparente */
+}
+
+
+
+/* Asume que la clase '.modal-open' se aplica a <html> o <body> al abrir el modal. */
+/* Esto forzará que el launcher siempre esté encima de cualquier elemento (incluido el modal con z-index: 999). */
+
+/* 🛑 REGLA CLAVE: Forzar visibilidad cuando el modal está abierto */
+
+html.modal-open #soto-notification,
+body.modal-open #soto-notification {
+    /* Mantenemos un z-index altísimo para prevenir futuros problemas de apilamiento */
+    z-index: 2000001 !important; 
+    
+    /* 1. Anular la opacidad inicial oculta */
+    opacity: 1 !important; 
+    
+    /* 2. Anular el desplazamiento inicial de la animación (lo dejamos en su lugar final) */
+    transform: none !important; 
+    
+    /* Opcional: Asegurar que la posición sea fija si se mueve */
+    /* position: fixed !important; */
 }

@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oficina</title>
+    <title>patio</title>
     
    <link rel="icon" href="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759771502/icono_web-01_pcbhuw.png" type="image/png">
    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-  <meta name="description" content="espacio de trabajo digital.">
+  <meta name="description" content="espacio de trabajo experimental.">
   
    <!-- IGNORE -->
    <meta name="description" content="soto es el sitio donde ocurre todo">
    <!-- IGNORE -->
   
-  <meta property="og:title" content="oficina">
-<meta property="og:description" content="oficina, espacio de trabajo digital.">
+  <meta property="og:title" content="patio trasero (chingaderas)">
+<meta property="og:description" content="patio trasero, espacio de trabajo experimental.">
 <meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
-<meta property="og:url" content="https://sotosotosoto.com/../oficina/">
+<meta property="og:url" content="https://sotosotosoto.com../patio/">
 <meta property="og:type" content="website">
   
     <style>
@@ -36,10 +36,10 @@
                 background-color: #f3f3f3 !important; /* Gris claro en lugar de negro */
                 color: #000000 !important; /* Mantener texto negro */
             }
-        }
+        }    
 
         /* Estilos generales */
-        body {
+      body {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -100,7 +100,6 @@
       width: 90px;
       height: auto;
     }
-
         
 
 
@@ -178,7 +177,8 @@
             align-items: center;
             text-align: center; /* Asegura alineación */
             gap: 25px; /* Espaciado entre imágenes */
-            margin-bottom: -123px;
+             margin-bottom: -123px;
+           
         }
 
 
@@ -212,19 +212,19 @@
 .image-6:active {
     transform: scale(0.95); /* Encoge un 5% al presionar */
     /* Puedes ajustar el valor (ej: 0.98 para menos efecto) */
-}
 
+}
 
 
 
         .image-1 {
         position: relative;
-        top: -12.2px;/* Sube la imagen 20px */
+        top: -12.5px; /* Sube la imagen 20px */
     }
 
         .image-2 {
         position: relative;
-        top: 0px; /* Sube la imagen 20px */
+        top: 1px; /* Sube la imagen 20px */
     }
 
 
@@ -236,16 +236,16 @@
 
         .image-4 {
         position: relative;
-        top: -3px; /* Sube la imagen 20px */
+        top: -2.4px; /* Sube la imagen 20px */
     }
         .image-5 {
         position: relative;
-        top: -9px; /* Sube la imagen 20px */
+        top: -2.4px; /* Sube la imagen 20px */
     }
 
     .image-6 {
         position: relative;
-        top: -8px; /* Sube la imagen 20px */
+        top: 0px; /* Sube la imagen 20px */
     }
 
 
@@ -260,7 +260,7 @@
         .image-4 { width: 33%; margin: 10px 10px; }
         .image-5 { width: 33%; margin: 10px 10px; }
         .image-6 { width: 33%; margin: 10px 10px; }
-        .image-7 { width: 50%; margin: 20px 10px; }
+        .image-7 { width: 30%; margin: 20px 10px; }
 
 
         /* Efecto hover */
@@ -284,13 +284,16 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        padding-top: 78px !important; 
-        margin-top: 25px !important;
+        padding-top: 0px !important; 
+        margin-top: 103px !important;
         padding-bottom: 0px;
     }
 
 
 
+  img, a {
+            -webkit-tap-highlight-color: transparent;
+        }
         
 
             .gallery { 
@@ -303,8 +306,7 @@
 /* Animación de aparición suave */
 
 
-
-             .gallery a {
+            .gallery a {
                 margin: 12px 0;
         pointer-events: none; /* Inicialmente deshabilitado */
     }
@@ -313,8 +315,7 @@
         pointer-events: auto; /* Habilitado cuando se hace clic */
     }
 
-
-           .image-1 { width: 26%;top: -23px; }
+              .image-1 { width: 26%;top: -23px; }
             .image-2 { width: 59%; }
             .image-3 { width: 64%; }
             .image-4 { width: 60%; }
@@ -323,27 +324,24 @@
             .image-7 { width: 25%; top: 10px; }
             
 #imagen-flotante {
-        top: 36px !important;    
-        right: 15px !important;   
-        width: 55px !important; 
+        top: -43px !important;    
+        right: 23px !important;   
+        width: 35px !important; 
         /* Asegúrate de que left no esté definido aquí para evitar conflictos */
         left: auto !important; 
     }
- }
-          
+ 
 
-        
+           
+
+
+        }
+
 
         /* Eliminar el borde azul al hacer foco en enlaces e imágenes */
         a:focus, img:focus {
             outline: none;
         }
-
-        /* Evitar resaltado al hacer clic en imágenes y enlaces en dispositivos móviles */
-        img, a {
-            -webkit-tap-highlight-color: transparent;
-        }
-
 
 
 
@@ -364,7 +362,7 @@
 .menu-mobile {
   display: none;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   position: fixed;
   top: 100px;
   left: 20px;
@@ -405,68 +403,8 @@
 .menu-toggle,
 .menu-mobile a,
 .menu-mobile a img {
-  -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4);
+    -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4) !important; /* Force this color */
 }
-
-
-/* Versión tablet */
-  @media (min-width: 481px) and (max-width: 768px) {
-.container { width: 100%; }
-            body {
-                min-height: 10px; /* Evita espacio extra */
-        overflow-y: auto; /* Asegura que solo haya scroll si es necesario */
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding-top: 78px !important; 
-        margin-top: -15px !important;
-        padding-bottom: 80px;
-    }
-
-
-
-        
-
-            .gallery { 
-        justify-content: center; 
-        gap: 0px; /* Espaciado uniforme */
-        display: flex;
-        flex-direction: column; /* Asegura que las imágenes se apilen */
-        align-items: center; /* Centra las imágenes */
-    }    
-/* Animación de aparición suave */
-
-
-            .gallery a {
-                margin: 12px 0;
-            }
-
-           .image-1 { width: 26%;top: -16px; }
-            .image-2 { width: 59%; }
-            .image-3 { width: 64%; }
-            .image-4 { width: 60%; }
-            .image-5 { width: 60%; }
-            .image-6 { width: 60%; }
-            .image-7 { width: 25%; top: 10px; }
-            
-
-
-          
-
-        }
-
-
-        /* Eliminar el borde azul al hacer foco en enlaces e imágenes */
-        a:focus, img:focus {
-            outline: none;
-        }
-
-        /* Evitar resaltado al hacer clic en imágenes y enlaces en dispositivos móviles */
-        img, a {
-            -webkit-tap-highlight-color: transparent;
-        }
-
-
 
 /* Versión tablet */
   @media (min-width: 481px) and (max-width: 768px) {
@@ -540,12 +478,6 @@
     }
   }
 
-
-
- /* --- ESTILOS PARA LA NUEVA IMAGEN FLOTANTE --- */
-
-
-
 #imagen-flotante {
 
   position: absolute; /* O 'fixed' si quieres que flote sobre el scroll */
@@ -553,8 +485,8 @@
   /* --- ↓↓↓ EDITA ESTOS VALORES PARA POSICIONARLA ↓↓↓ --- */
 
   top: 59px;       /* Distancia desde la parte de arriba */
-  left: 1340px;        /* Distancia desde la izquierda */
-  width:89px;     /* Ancho de la imagen */
+  left: 1356px;        /* Distancia desde la izquierda */
+  width:  56px;     /* Ancho de la imagen */
   z-index: 999;     /* Para asegurarnos de que esté por encima de la mayoría de las cosas */
 
   /* Opcional: añade efectos si quieres */
@@ -563,21 +495,9 @@
 }
 
 
-
-/* Opcional: un pequeño efecto al pasar el mouse */
-
-/*
-
-#imagen-flotante:hover {
-
-  transform: scale(1.1);
-
-}
-
-*/
-
- /* 💻 Ajustes SÓLO para tablets */
+       /* 💻 Ajustes SÓLO para tablets */
 @media (min-width: 769px) and (max-width: 1024px) {
+
     body {
         padding-top: 100px !important; /* Ajusta este valor (ej. 150px) para bajar todo el contenido */
     }
@@ -591,11 +511,12 @@
         /* ⬆️ AUMENTA ESTE VALOR para la distancia uniforme (ej. 50px) ⬆️ */
         gap: 50px; 
     }
-    
-    .footer-image {
-        width: 260px !important; /* Añade !important aquí */
-    }
-   .logo-container {
+      /* Evitar resaltado al hacer clic en imágenes y enlaces en dispositivos móviles */
+        img, a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .logo-container {
       position: fixed;
       top: 60px;
       left: 30px;
@@ -604,6 +525,11 @@
       gap: 20px;
       z-index: 1000;
     }
+    
+    .footer-image {
+        width: 260px !important; /* Añade !important aquí */
+    }
+
     
     #soto-launcher {
         width: 100px !important;  
@@ -624,6 +550,29 @@
         text-align: center !important; /* 2. Centra horizontalmente */
         line-height: 30px !important; /* 3. Ajusta la altura de línea */
     }
+
+     #soto-chat {
+  position: fixed;
+  bottom: 162px !important; /* Ajusta este valor (más alto = más arriba) */
+  right: 33px; 
+  width: 430px !important;
+  height:520px !important;
+
+}
+
+.bot-message,
+.user-message {
+  background: #e0e0e0; /* Fondo para ambos mensajes */
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 24px !important;
+  font-family: "Lexend", sans-serif;
+  line-height: 1.5;
+  width: fit-content; /* Ajusta el tamaño del mensaje */
+  max-width: 80%; /* Limita el ancho de los mensajes */
+  margin-bottom: 1px;
+  text-align:  left; /* Alinea ambos mensajes a la izquierda */
+}
 
     /* --- AÑADE ESTAS REGLAS PARA LAS IMÁGENES --- */
     .image-1 { 
@@ -661,21 +610,23 @@
         /* Puede que necesites ajustar la alineación si no se centra bien: */
         /* line-height: 45px; */ /* (Usa el mismo valor que la altura del banner para centrar verticalmente) */
     }
-
-    #imagen-flotante {
+        #imagen-flotante {
   /* --- ↓↓↓ EDITA ESTOS VALORES PARA POSICIONARLA ↓↓↓ --- */
 
   top: 90px;       /* Distancia desde la parte de arriba */
-  left: 885px;        /* Distancia desde la izquierda */
-  width:119px;     /* Ancho de la imagen */
+  left: 905px;        /* Distancia desde la izquierda */
+  width:75px;     /* Ancho de la imagen */
   z-index: 999;     /* Para asegurarnos de que esté por encima de la mayoría de las cosas */
 
   /* Opcional: añade efectos si quieres */
   /* filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.3)); */
   /* transition: transform 0.3s ease; */
 }
-
 }
+
+
+
+
 /* Hover solo en desktop */
 @media (min-width: 769px) {
   .gallery img:hover {
@@ -701,6 +652,8 @@
     z-index: 9999;
   }
 }
+
+
 @media (max-width: 820px) and (min-height: 1024px) {
     /* Aquí se copian EXACTOS los estilos móviles */
     .container { width: 100%; }
@@ -762,7 +715,7 @@
 
   top: 5px !important;       /* Distancia desde la parte de arriba */
   left: 1356px;        /* Distancia desde la izquierda */
-  width:  90px !important;     /* Ancho de la imagen */
+  width:  60px !important;     /* Ancho de la imagen */
   z-index: 999;     /* Para asegurarnos de que esté por encima de la mayoría de las cosas */
 
   /* Opcional: añade efectos si quieres */
@@ -846,13 +799,11 @@
 
 
 
-
-
-
     </style>
 
 
- <!-- Botón hamburguesa solo visible en móvil -->
+
+<!-- Botón hamburguesa solo visible en móvil -->
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
 <!-- Menú hamburguesa móvil -->
@@ -860,27 +811,32 @@
   <a href="../">
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
   </a>
-  <a href="../patio/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759490897/patio_menu_m0399x.png" alt="Logo 3">
+   
+  <a href="../oficina/">
+    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 3">
   </a>
   
   
 </div>
 
-<!-- Menú clásico en escritorio -->
-<div class="logo-container">
- <a href="../">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5" class="logo-5">
-  </a>
-  <a href="../patio/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1759490897/patio_menu_m0399x.png" alt="Logo 3">
-  </a>
 
-  
+
+
+
+
+
+
+  <div class="logo-container">
+    <a href="../">   
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 4">
+    </a>
+
+<a href="../oficina/">   
+<img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 3">
+</a>
+
+ 
 </div>
-
-
-
 
     <!-- Script para deshabilitar clic derecho -->
     <script>
@@ -902,21 +858,21 @@
           
 
             
-  <div class="container">
+   <div class="container">
     <div class="gallery">
         
-        <a href="../acerca-de-oficina/">
+        <a href="../acerca-de-patio/">
             <img 
-                src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1759496422/oficina_iluc5l.png" 
-                srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1759496422/oficina_iluc5l.png 400w,
-                        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1759496422/oficina_iluc5l.png 800w,
-                        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200,c_scale/v1759496422/oficina_iluc5l.png 1200w"
+                src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1759492595/patio_rpiuex.png" 
+                srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1759492595/patio_rpiuex.png 400w,
+                        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1759492595/patio_rpiuex.png 800w,
+                        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200,c_scale/v1759492595/patio_rpiuex.png 1200w"
                 alt="Imagen 1" 
                 class="image-1"
                 loading="lazy">
         </a>
 
-        <a href="../proyectos-oficina/">
+        <a href="../proyectos-patio/">
             <img 
                 src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1751477542/proyectos_final2-01_z6dlrt.png" 
                 srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1751477542/proyectos_final2-01_z6dlrt.png 400w,
@@ -927,7 +883,7 @@
                 loading="lazy">
         </a>
 
-        <a href="../acerca-de-oficina/">
+        <a href="../acerca-de-patio/">
             <img 
                 src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" 
                 srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1751477744/acerca_1111_finaaalll-01_ufdeje.png 400w,
@@ -937,8 +893,19 @@
                 class="image-4"
                 loading="lazy">
         </a>
-        
-        <a href="../contacto-diseño/">
+
+        <a href="../archivo-en-venta/">
+            <img 
+                src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1751477916/tienda-01_ntkqad.png" 
+                srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1751477916/tienda-01_ntkqad.png 400w,
+                        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751477916/tienda-01_ntkqad.png 800w,
+                        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200,c_scale/v1751477916/tienda-01_ntkqad.png 1200w"
+                alt="Imagen 5" 
+                class="image-5"
+                loading="lazy">
+        </a>
+
+        <a href="../contacto/">
             <img 
                 src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1751477949/contac-01_adnyif.png" 
                 srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1751477949/contac-01_adnyif.png 400w,
@@ -948,19 +915,20 @@
                 class="image-6"
                 loading="lazy">
         </a>
-
+        
+    </div>
+</div>
+           
     
-
+        
         
       
         
     </div>
-</div>
-
-
-  <a href="../chiskey/">
-  <img id="imagen-flotante" src="https://res.cloudinary.com/dqg78jtie/image/upload/v1760993028/chiskeylogocolaboracion_qt31wb.png" alt="chiskey logo">
+<a href="../chat/" target="_blank">
+  <img id="imagen-flotante" src="https://res.cloudinary.com/dqg78jtie/image/upload/v1763684982/soto_chat_mmgwqv.png" alt="soto logo">
 </a>
+
 
     <footer>
         <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760111670/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
@@ -1028,6 +996,40 @@
     const menu = document.getElementById('mobileMenu');
     menu.classList.toggle('active');
   }
+</script>
+
+<script>
+window.addEventListener("load", function () {
+    
+    const launcher = document.getElementById("soto-launcher");
+    const notification = document.getElementById("soto-notification");
+    const launcherImage = launcher ? launcher.querySelector("img") : null;
+
+    if (launcherImage && notification) {
+        
+        notification.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Lista de eventos a simular
+            const eventsToFire = ['mousedown', 'mouseup', 'click'];
+            
+            eventsToFire.forEach(function(eventName) {
+                const clickEvent = new MouseEvent(eventName, {
+                    bubbles: true,
+                    cancelable: true,
+                    view: window
+                });
+                
+                // Dispara el evento en LA IMAGEN (lo más probable)
+                launcherImage.dispatchEvent(clickEvent);
+                
+                // Dispara el evento en EL DIV PADRE (por si acaso)
+                launcher.dispatchEvent(clickEvent);
+            });
+        });
+    }
+});
 </script>
 
 
