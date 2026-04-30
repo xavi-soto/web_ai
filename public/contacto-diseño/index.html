@@ -101,23 +101,31 @@ margin-top: 0px;
 
 
     footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #f3f3f3;
-      text-align: center;
-      padding: 5px 0;
-      z-index: 1000;
-    }
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f3f3f3;
+    text-align: center;
+    padding: 10px 0; /* Un poco más de aire para el texto */
+    z-index: 1000;
+}
 
-    .footer-image {
-      width: 150px;
-      height: auto;
-      padding-top: 10px;
-      margin-top: -4px;
-      animation: mostrarImagenes 3s ease forwards;
+.footer-text {
+    font-family: "Lexend", sans-serif; /* Usamos tu tipografía principal */
+    font-size: 10px; /* Tamaño discreto y elegante */
+    letter-spacing: 0.00em;
+    color: #333;
+    margin: 0;
+    opacity: 0.8; /* Un poco de transparencia para que no distraiga del contenido */
+}
+
+/* Ajuste para que en tablets el texto también se vea bien */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .footer-text {
+        font-size: 13px;
     }
+}
 
 
     .galeria {
@@ -580,7 +588,7 @@ a, button, .tus-elementos-clickeables {
 
   </a>
 
-   <a href="../proyectos-oficina/">
+   <a href="../proyectos-diseño/">
 
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 2">
 
@@ -628,7 +636,7 @@ a, button, .tus-elementos-clickeables {
 
      </a>
 
-   <a href="../proyectos-oficina/">
+   <a href="../proyectos-diseño/">
 
     <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 2">
 

@@ -145,7 +145,7 @@ document.getElementById("user-input").addEventListener("keypress", function (e) 
         scrollToBottom(); 
 
         const coldStartTimer = setTimeout(() => {
-            sotoLoadingMessage.innerHTML = `<span>Soto está dormido, tardará unos 30-50 segundos en despertar. Mientras, puedes revisar su trabajo en <a href="https://sotosotosoto.com/proyectos-patio" target="_blank">patio trasero</a>.</span>`;
+            sotoLoadingMessage.innerHTML = `<span>Soto está dormido, tardará unos 30-50 segundos en despertar. Mientras, puedes revisar su trabajo en <a href="https://sotosotosoto.com/proyectos-artísticos" target="_blank">patio trasero</a>.</span>`;
             sotoLoadingMessage.classList.remove("loading");
             // No hacemos scroll aquí para no mover la vista si el usuario está leyendo
         }, 5000);

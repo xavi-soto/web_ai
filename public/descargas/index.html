@@ -18,200 +18,714 @@
   
   
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: rgb(243, 243, 243);
-      text-align: center;
-      opacity: 0;
-      animation: fadeIn 1s ease-in-out forwards;
-    }
+      /* =====================================================
+   RESET / BASE
+===================================================== */
 
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
 
-    .logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0px 0px;
-      padding-top: 100px;
-    }
-
-    .logo-container {
-      position: fixed;
-      top: 60px;
-      left: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 1000;
-    }
-
-    .logo-container img {
-      width: 90px;
-      height: auto;
-    }
-
-
-    .descripcion {
-      text-align: justify;
-      padding: 140px;
-      padding-top: 70px;
-      font-size: 14px;
-      color: rgb(51, 51, 51);
-      font-family: "Lexend", sans-serif;
-    }
-
-
-    .descripcion2 {
-      padding: 140px;
-      padding-top: 35px;
-      font-size: 14px;
-      color: #333;
-      font-family: "Lexend", sans-serif;
-    }
-
-   footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #f3f3f3;
-      text-align: center;
-      padding: 5px 0;
-      z-index: 1000;
-    }
-
-    .footer-image {
-      width: 150px;
-      height: auto;
-      padding-top: 10px;
-      margin-top: -4px;
-      animation: mostrarImagenes 3s ease forwards;
-    }
-
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-      padding: 20px;
-      padding-top: 0px;
-      padding-bottom: 168px;
-      max-width: 1000px;
-      margin: 0 auto;
-      margin-top: -80px;
+body {
     
-    }
-
-    .imagen-hover {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .imagen-hover img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: opacity 0.8s ease;
-    }
-
-    /* REGLAS GLOBALES (APLICAN POR DEFECTO: OCULTAS EN ESCRITORIO, A ESPERA DE MOSTRARSE CON HOVER) */
-
-/* REGLAS GLOBALES (Escritorio: Efecto Hover) */
-
-.imagen-hover img.img-hover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* Inicia oculta */
-    opacity: 0; 
-    transition: opacity 0.8s ease; 
+     font-family: "Lexend", sans-serif;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+     background-color: #f3f3f3;
+     opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
-.imagen-hover:hover img.img-hover {
-    /* CLAVE 1: Muestra la imagen de hover */
-    opacity: 1; 
-}
-
-.imagen-hover img.img-original {
-    /* La imagen original se mantiene visible por defecto (opacity: 1) */
+@keyframes fadeIn {
+  to {
     opacity: 1;
-    transition: opacity 0.8s ease;
+  }
 }
 
-.imagen-hover:hover img.img-original {
-    /* 🛑 CLAVE 2: Oculta o reduce la opacidad de la imagen ORIGINAL al hacer HOVER 🛑 */
-    /* Usamos '0' para que desaparezca totalmente y solo se vea el img-hover */
-    opacity: 1; 
+.descripcion,
+.descripcion2,
+.footer-text,
+.menu-body,
+.menu-body a {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
 }
 
-    @media (max-width: 768px) {
-      .galeria {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+/* =====================================================
+   LAYOUT BASE
+===================================================== */
 
-    @media (max-width: 480px) {
-      .galeria {
-        grid-template-columns: 1fr;
-      }
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  padding-top: clamp(120px, 8vw, 100px);
+}
+
+.logo img {
+  max-width: clamp(120px, 18vw, 180px);
+  height: auto;
+}
+
+/* Logo fijo escritorio */
+.logo-container {
+  position: fixed;
+  top: 60px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.logo-container img {
+  width: 90px;
+}
+
+/* =====================================================
+   TEXTO — FLUIDO PROFESIONAL
+===================================================== */
+
+.descripcion,
+.descripcion2 {
+  font-family: "Lexend", sans-serif;
+  color: #333;
+
+  /* 🔑 CONTENEDOR FLUIDO */
+  max-width: 1250px;
+  margin: 0 auto;
+
+  /* padding inteligente */
+  padding-inline: clamp(40px, 1vw, 180px);
+  font-size: clamp(14px, 1.2vw, 15px);
+  line-height: 1.65;
+  position: relative;
+ 
+}
+
+.descripcion {
+  padding-top: clamp(30px, 6vw, 50px);
+  text-align: justify;
+}
+
+.descripcion2 {
+  padding-top: clamp(40px, 6vw, 70px);
+  text-align: center;
+}
+
+/* =====================================================
+   GALERÍA
+===================================================== */
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(32px, 6vw, 80px) 25px;
+  padding: clamp(16px, 4vw, 30px);
+  max-width: 1200px;
+   margin: clamp(50px, -8vw, -60px) auto 40px;
+   position: relative;
+    margin-bottom: 105px !important;
+
+}
+
+.imagen-hover {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.imagen-hover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.6s ease;
+}
+
+/* Hover SOLO escritorio */
+.imagen-hover img.img-hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .imagen-hover:hover img.img-hover {
+    opacity: 1;
+  }
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+      footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f3f3f3;
+    text-align: center;
+    padding: 7.9px 0; /* Un poco más de aire para el texto */
+    z-index: 1000;
+}
+
+.footer-text {
+    font-family: "Lexend", sans-serif; /* Usamos tu tipografía principal */
+    font-size: 10px; /* Tamaño discreto y elegante */
+    letter-spacing: 0.00em;
+    color: #333;
+    margin: 0;
+    opacity: 0.8; /* Un poco de transparencia para que no distraiga del contenido */
+}
+
+
+/* BANNER -------------------------------- */  
+.top-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: #dcdcdc;
+  overflow: hidden;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content; /* IMPORTANTE: Permite que el track crezca según el texto */
+  animation: scroll-left 140s linear infinite; /* Ajusta los segundos para la velocidad */
+}
+
+.item {
+  padding-right: 50px; /* Espacio entre cada frase */
+  font-weight: bold;
+  font-size: 12px;
+  color: #000;
+  white-space: nowrap; /* Evita que el texto salte de línea */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Se mueve exactamente el 50% porque duplicamos el contenido abajo */
+    transform: translateX(-50%);
+  }
+}
+
+   /*  OCULTAR SCROL EN EL MENU-------------------------------- */  
+html {
+  scrollbar-gutter: stable;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+    
+
+/* MENU HAMBURGUESA GENERAL-------------------------------- */   
+.menu-toggle {
+  display: block; /* ⬅️ importante: visible también en desktop */
+  position: fixed;
+  top: 45px;
+  left: 16px; /* ⬅️ 13 ANTES*/
+  z-index: 3000;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.icon-hamburger {
+  display: inline-block;
+}
+/* Por defecto */
+.icon-back {
+  display: none;
+ 
+  margin-bottom: -5px;
+  height: 20px;
+  border-left: 3px solid #000;
+  border-bottom: 3px solid #000;
+  transform: rotate(45deg);
+}
+body.menu-open .icon-hamburger {
+  display: none;
+}
+
+body.menu-open .icon-back {
+  display: inline-block;
+  transform: translateX(1px);
+}
+
+/* Contenedor principal del menú */
+#side-menu {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column; /* 👈 Permite separar contenido de redes */
+  background-color: #ffffff;
+  transform: translateX(-100%);
+  transition: transform 0.6s cubic-bezier(0.77,0,0.175,1);
+  z-index: 2000;
+  font-family: "Lexend", sans-serif;
+ 
+}
+#side-menu a {
+  line-height: 0.6;      /* ← valor estable */
+  white-space: nowrap;  /* ← evita que "Habla con Soto" se parta */
+   
+}
+
+#side-menu.active {
+  transform: translateX(0);
+  
+}
+
+/* 👈 El cuerpo que permite el scroll sin mover las redes */
+.menu-body {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: row; /* Desktop: Columnas al lado */
+  
+ 
+}
+
+/* TUS COLUMNAS (Estilo intacto) */
+.menu-left,
+.menu-right {
+  flex: 1;
+  padding: 130px 82px 120px!important; 
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  max-width: 300px;
+  
+}
+
+
+
+/* TUS GRUPOS Y TÍTULOS */
+.menu-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.menu-title {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.55;
+  margin-bottom: 6px;
+}
+
+/* TUS LINKS */
+
+/* TU LÍNEA ANIMADA */
+/* LINKS PRINCIPALES DEL MENÚ (solo menu-body) */
+.menu-body a {
+  font-size: 25px;
+  line-height: 0.6;
+  font-weight: 400;
+  color: #111;
+  text-decoration: none;
+  transition: color 0.25s ease;
+  display: table;
+  width: fit-content;
+  position: relative;
+  margin-bottom: 9px;
+}
+
+/* LÍNEA ANIMADA */
+.menu-body a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1.6px;
+  bottom: -11px;
+  left: 0;
+  background-color: #000;
+  transition: width 0.20s ease;
+}
+
+.menu-body a:hover::after {
+  width: 100%;
+}
+
+
+/* TUS REDES SOCIALES (Corregido: sin pisar texto) */
+.menu-socials {
+  position: relative; /* 👈 Cambiado de absolute a relative */
+  padding: 30px 82px; /* 👈 Usamos padding en lugar de bottom/left */
+  display: flex;
+  gap: 20px;
+  font-size: 10px;
+  opacity: 0.7;
+  z-index: 2200;
+  background-color: #ffffff; /* Asegura que tape links si hay scroll */
+  margin-top: auto; /* 👈 Esto las empuja siempre al final del menú */
+}
+
+.menu-socials a {
+  color: #111 !important;
+  text-decoration: none !important;
+  font-size: inherit !important;
+  line-height: 1;
+  display: inline-block;
+  transition: color 0.3s ease; /* 👈 Suaviza el cambio de color */
+}
+
+/* Hover en Ordenador y toque en Móvil */
+.menu-socials a:hover,
+.menu-socials a:active {
+    color: #f26100 !important; /* 👈 Tu naranja */
+}
+
+/* ADAPTACIÓN INTELIGENTE */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .menu-left, .menu-right {
+    padding: 130px 82px 120px!important;
+    gap: 64px;
+  }
+  .menu-socials {
+    padding: 30px 82px; /* Ajuste para tablets */
+  }
+
+}
+
+/* Móvil (El cambio real) */
+@media (max-width: 768px) {
+  /* Evitamos que el menú tenga scroll propio */
+  #side-menu {
+    overflow: hidden; 
+  }
+
+  .menu-body {
+    flex-direction: column;
+    display: flex;
+    overflow: hidden; /* Quitamos el scroll aquí también */
+    justify-content: center; /* Centramos el contenido verticalmente para que no sobre espacio */
+  }
+
+  .menu-left {
+    /* Reducimos el padding superior drásticamente */
+    padding: 80px 58px 0px !important; 
+    max-width: 100%;
+    gap: 30px; /* Reducimos el espacio entre grupos */
+    flex: none;
+  }
+
+  .menu-right {
+    /* Reducimos el padding y gap */
+    padding: 20px 58px 40px !important; 
+    max-width: 100%;
+    gap: 30px;
+    flex: none;
+  }
+
+  .menu-socials {
+    padding: 15px 22px; /* Reducimos un poco el padding de las redes */
+    margin-top: auto; 
+    position: relative;
+    width: 100%;
+    background: white;
+    box-sizing: border-box;
+  }
+
+  /* Reducimos el gap entre los links del menú */
+  .menu-group {
+    gap: 18px !important;
+  }
+
+  #side-menu a:not(.menu-socials a) {
+    font-size: 21px;
+    line-height: 1.1;
+    margin-bottom: 5px; /* Menos margen inferior para ganar espacio */
+  }
+}
+
+
+
+/* --- BARRA NEGRA DEFINIDA --- */
+
+/* 1. Definimos el ancho del carril */
+.menu-body::-webkit-scrollbar {
+  width: 10px; /* Ancho total del área de scroll */
+}
+
+/* 2. El fondo del carril (transparente) */
+.menu-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 3. La barrita (Thumb) */
+.menu-body::-webkit-scrollbar-thumb {
+  background-color: #000000; /* Negro sólido */
+  border-radius: 0px;       /* Bordes redondeados estilo píldora */
+  
+  /* ESTO ES LO QUE CREA EL EFECTO:
+     Añadimos un borde transparente lateral para que la barra 
+     se vea más delgada y centrada dentro de sus 12px de ancho */
+  border: 4px solid transparent; 
+  background-clip: padding-box;
+}
+
+.menu-body::-webkit-scrollbar-thumb:hover {
+  background-color: #333333;
+}
+
+/* BARRA DE FONDO FIJA (HEADER) */
+.header-bg {
+    position: fixed;
+    top: 30px; /* Ajustado para que empiece justo debajo del banner de 30px */
+    left: 0;
+    width: 100%;
+    height: 58px; 
+    background-color: #f3f3f3; 
+    z-index: 1500; 
+    /* Opcional: una sombra muy sutil para separar del contenido al hacer scroll */
+    box-shadow: 0 3px 0 rgba(0,0,0,0.03); 
+}
+
+/* BOTÓN DE MENÚ (HAMBURGUESA) */
+
+
+/* LOGO SUPERIOR DERECHA */
+.top-right-logo {
+    position: fixed;
+    top: 57px;    /* Tu posición exacta */
+    right: 20px;  /* Tu posición exacta */
+    z-index: 2500;
+    pointer-events: auto;
+   /* Preparamos la transición para que el crecimiento sea suave */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.top-right-logo img {
+    width: 70px;  
+    height: auto;
+    display: block;
+}
+
+
+
+/* EFECTO AL HACER CLIC (Opcional pero recomendado) */
+.top-right-logo:active {
+    /* Se encoge un poquito al presionarlo para dar feedback de botón */
+    transform: scale(0.95);
+}
+
+
+
+
+
+/* --- ADAPTACIÓN MÓVIL --- */
+@media (max-width: 768px) {
+    .header-bg {
+        height: 60px;
     }
 
     .menu-toggle {
-      display: none;
-      position: fixed;
-      top: 49px;
-      left: 13px;
-      z-index: 1100;
-      background-color: transparent;
-      border: none;
-      font-size: 30px;
-      cursor: pointer;
+        /* Si quieres que el menú tampoco se mueva, asegúrate de que este top 
+           sea igual al que tienes fuera de la media query */
+        top: 45px; 
     }
 
-    .menu-mobile {
-      display: none;
-      flex-direction: column;
-      gap: 20px;
-      position: fixed;
-      top: 100px;
-      left: 20px;
-      background-color: #e2e2e2f0;
-      border: rgb(118 118, 118) 1px;
-      padding: 10px;
-      z-index: 1100;
+    .top-right-logo {
+        /* CAMBIO AQUÍ: Ahora es 57px, igual que en desktop */
+        top: 57px; 
+        /* Si quieres mantener la distancia lateral de desktop (30px), cámbialo aquí también: */
+        right: 20px; 
     }
 
-    .menu-mobile a img {
-      width: 90px;
-      height: auto;
+    .top-right-logo img {
+        width: 70px;
     }
+
     
-/* 🛑 ANULA EL RESALTE SOLO PARA LAS IMÁGENES DE LA GALERÍA 🛑 */
-.imagen-hover {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
 }
-    /* En escritorio se muestra el menú clásico y se oculta el hamburguesa */
-@media (max-width: 768px) {
+/* --- X DEL MENU --- */
+@media (min-width: 769px) {
+  .menu-overlay-close {
+    display: block;
+     position: absolute;
+  inset: 0;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><line x1='6' y1='6' x2='26' y2='26' stroke='black' stroke-width='2'/><line x1='26' y1='6' x2='6' y2='26' stroke='black' stroke-width='2'/></svg>") 16 16, auto;
+  z-index: 0;
+  }
+}
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+
+#modal {
+  z-index: 5000;
+  /* Versión ultra-compatible: codificada carácter por carácter */
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M8 8 L24 24 M24 8 L8 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") 16 16, pointer !important;
+}
+
+
+/* =====================================================
+   TABLET & MÓVIL
+===================================================== */
+
+@media (max-width: 1024px) {
+
   .logo-container {
     display: none;
   }
 
-  .menu-toggle {
-    display: block;
+  .galeria {
+    grid-template-columns: 1fr;
+    max-width: 560px;
   }
 
-  .menu-mobile {
-    display: none;
+  /* 🔒 Hover desactivado correctamente */
+  .imagen-hover img.img-hover {
+    opacity: 1;
+    pointer-events: none;
+  }
+   /* 1. Ocultamos por completo la imagen de información en móvil y tablet */
+  .imagen-hover img.img-hover {
+    display: none !important;
   }
 
-  .menu-mobile.active {
-    display: flex;
+  /* 2. Nos aseguramos de que la imagen original sea visible */
+  .imagen-hover img.img-original {
+    opacity: 1 !important;
+    position: relative !important;
+  }
+
+  /* 3. Mantenemos el tamaño de la columna limpio */
+  .imagen-hover {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* =====================================================
+   MÓVIL
+===================================================== */
+
+@media (max-width: 768px) {
+
+  body {
+    padding-top: 40px;
+  }
+
+  .galeria {
+    padding: 37px;
+    gap: 32px;
+  }
+  .descripcion {
+    padding-inline: 14px;
+  }
+   .descripcion2 {
+    padding-inline: 36px; /* o 12px si lo quieres aún más ancho */
+  }
+
+  #modal-content {
+transform: none !important;
+    margin: 0 auto !important;
+
+    display: flex !important;
+    flex-direction: column;
+    gap: 40px; /* 🔑 esto agrega separación entre carrusel y formulario */
+
+    width: 100%;
+    max-width: 100%;
+
+    left: auto !important;
+    right: auto !important;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    padding-bottom: 140px; /* para que el botón final no quede pegado */
+    padding-top: 20px;
+    
+}
+
+  .carousel-container,
+  #modal-info-container {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+  }
+
+  /* Activamos gap controlado en el flex para que haya separación consistente */
+  #modal-content {
+      gap: 8px; /* ajusta este valor a tu gusto */
+  }
+
+
+#modal-close:active {
+  transform: scale(0.9); /* feedback al tocar */
+}
+
+}
+/* =====================================================
+   MÓVIL PEQUEÑO
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .galeria {
+    gap: 28px;
+    margin-bottom: 70px;
+  }
+}
+
+/* =====================================================
+   MODAL EXTRA PEQUEÑO
+===================================================== */
+
+@media (max-width: 640px) {
+  #modal-img {
+    width: 130vw;
+    max-width: none;
   }
 }
 
@@ -219,471 +733,384 @@
 
 
 
-  .menu-toggle,
-  .menu-mobile a,
-  .menu-mobile a img {
-    -webkit-tap-highlight-color: rgba(117, 117, 117, 0.4) !important;
-  }
 
-    
-  
 
-    @media (max-width: 480px) {
-      body {
-        /* Reduce el espacio superior. Por ejemplo, quita 10px de padding/margen superior. */
-        margin-top: -5px; /* Ajusta el valor según cuánto quieras subir */
-        padding-bottom:-10px;
-    }
-      .descripcion2 { padding: 23px 45px; font-size: 13px; text-align: center; }
-      .descripcion{ padding: 30px 5px; font-size: 13px; text-align: justify; }
-      .galeria { 
-        grid-template-columns: 1fr; 
-        
-        /* 💡 AJUSTE DE MARGEN Y RELLENO PARA CONTROLAR EL ESPACIO INFERIOR 💡 */
-        /* Tenías un padding y gap en una sola línea. Lo separamos para anular el padding-bottom grande: */
-        padding-top: 10px; /* Ya lo tenías ajustado */
-        padding-bottom: 40px; /* ⬅️ CLAVE: Reducir el gran padding global (168px) */
-        padding-left: 1px; /* Ya lo tenías ajustado */
-        padding-right: 1px; /* Ya lo tenías ajustado */
-        gap: 40px; /* Ya lo tenías ajustado */
 
-        margin-top: 10px; 
-        margin-bottom: 100px; /* Puedes dejar este en 0 o ajustarlo con el padding-bottom */
-    }
 
-    /* 🛑 CLAVE 1: Aplicamos el ancho y centrado al ENLACE (<a>) 🛑 */
-    .galeria > a {
-        /* Aseguramos que se comporte como un bloque para centrar y aplicar ancho */
-        display: block; 
-        
-        /* Reducimos el área de clic al 82% de la columna */
-        max-width: 82% !important; 
-        width: 82% !important;
-        
-        /* Centramos el enlace (el área de clic) */
-        margin: 0 auto; 
-    }
-    
-    /* 🛑 CLAVE 2: Quitamos el centrado que habías puesto en el .imagen-hover 🛑 */
-    .imagen-hover {
-        /* Ahora el contenedor debe ser 100% del <a> reducido */
-        width: 100% !important; 
-        max-width: 100% !important;
-        margin: 0 !important; /* Aseguramos que no haya margen extra */
-        display: block !important;
-    }
-    
-    .imagen-hover img {
-        /* La imagen usa todo el 100% del .imagen-hover (que ahora es 82% de la columna) */
-        max-width: 100%; 
-        width: 100%; 
-        height: auto;
-        margin: 0; 
-    }
-   
-    .imagen-hover img.img-hover {
-        opacity: 0 !important; /* Fuerza la ocultación */
-        pointer-events: none; 
-    }
 
-    /* 🛑 ANULACIÓN CLAVE 4: Anular el efecto HOVER en móvil 🛑 */
-    .imagen-hover:hover img.img-hover {
-        opacity: 0 !important; 
-    }
-    
-    /* ... (asegúrate de que la original SÍ se vea si no quieres el hover) ... */
-    .imagen-hover img.img-original {
-        opacity: 1 !important; /* La original siempre visible en móvil */
-    }
- }
-    
-    @media (min-width: 481px) and (max-width: 768px) {
-      .galeria { grid-template-columns: 1fr; gap: 20px; padding: 10px 0px; margin-top: 0; margin-bottom: 70px; }
-      .descripcion { padding: 30px 0px; font-size: 14px; text-align: justify; }
-      .descripcion2 { padding: 30px 35px; font-size: 14px; text-align: center; }
-      .imagen-hover { width: 100%; }
-      .logo img { max-width: 120px; }
-      .menu-toggle { display: block; position: fixed; top: 49px; left: 13px; z-index: 1100; background-color: transparent; border: none; font-size: 30px; cursor: pointer; opacity: 0.7; }
-      .menu-mobile { display: none; flex-direction: column; gap: 20px; position: fixed; top: 85px; left: 20px; background-color: rgba(226, 226, 226, 0.95); border: rgb(118, 118, 118) 1px; padding: 10px; z-index: 1100; }
-      .menu-mobile.active { display: flex; }
-      .menu-toggle { opacity: 0.8; }
-      
-    }
-    
-    /* --- INICIO DE ESTILOS PARA EL MODAL Y FORMULARIO --- */
-    #modal-content {
+
+
+
+
+
+
+#modal-close {
+  display: none;
+}
+ 
+
+
+#modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(243, 243, 243, 1);
+  display: none;
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 👈 no centrar vertical */
+}
+
+#modal-content {
+  margin-top: 100px !important; /* 👈 espacio superior */
+  margin: auto;
   display: grid;
   grid-template-columns: minmax(0, 600px) 320px;
-  align-items: center; /* <-- CORRECCIÓN 1 */
   gap: 30px;
   max-width: 95%;
-  max-height: 90%;
-}
-
-#modal-img {
-  width: 100%;
-  height: auto;
   max-height: 90vh;
-  display: block;
-  object-fit: contain; /* <-- CORRECCIÓN 2 */
+  transform: translateX(-40px);
 }
 
-    #modal-info-container {
-        display: flex;
-        flex-direction: column;
-        max-width: 320px;
-        width: 100%;
-        min-width: 0;
-    }
+#modal-info-container {
+  margin-top: 45px;
+  font-family: "Lexend", sans-serif;
+  display: flex;
+  flex-direction: column;
+  max-width: 330px;
+  width: 100%;
+}
+#modal-text {
+  font-size: 12px;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
 
-    #modal-text {
-      font-family: "Lexend", sans-serif;
-      font-size: 14px;
-      color: #333;
-      text-align: left;
-      line-height: 1.5;
-      margin-bottom: 20px; /* Espacio entre el texto y el formulario */
-      overflow-wrap: break-word;
-    }
+.modal-form label {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
 
-    .modal-form label {
-      display: block;
-      text-align: left;
-      font-size: 13px;
-      color: #555;
-      margin-bottom: 5px;
-    }
+.modal-form input,
+.modal-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 12px;
+}
 
-    .modal-form input,
-    .modal-form select {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      font-family: "Lexend", sans-serif;
-      font-size: 14px;
-    }
+.modal-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+.carousel-container {
+  position: relative;
+  width: 600px;
+  max-width: 100%;
+}
 
-    .modal-form button {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 4px;
-      background-color: #333;
-      color: white;
-      font-family: "Lexend", sans-serif;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    
-    .modal-form button:hover {
-      background-color: #555;
-    }
+.carousel-slide {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
 
-    #form-message {
-      display: none;
-      color: #28a745;
-      font-weight: bold;
-      text-align: center;
-    }
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
 
-    /* Versión móvil para el modal */
-    @media (max-width: 768px) {
-      #modal-content {
-        flex-direction: column;
-        text-align: center;
-        overflow-y: auto;
-        padding: 40px 10px;
-      }
-      #modal-img { max-width: 80%; }
-      #modal-info-container { text-align: center; margin-top: 15px; max-width: 90%; }
-      #modal-text { text-align: center; }
-      .modal-form label { text-align: center; }
-    }
-    /* --- FIN DE ESTILOS --- */
+.carousel-img.active {
+  opacity: 1;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  background: transparent;
+  border: none;
+  font-size: 21px;
+  cursor: pointer;
+    z-index: 20;
+  pointer-events: auto;
+}
 
+.carousel-btn.prev { left: 40px; }
+.carousel-btn.next { right: 40px; }
+@media (max-width: 768px) {
 
-         /* 💻 Ajustes SÓLO para tablets */
+   #modal {
+    display: flex;
+    align-items: center;   /* 👈 vuelve a centrar */
+    justify-content: center;
+  }
+
+  #modal-content {
+    width: 100%;
+    max-width: 100%;
+    height: 100dvh;        /* 👈 ocupa viewport real */
+    max-height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    margin: 0;
+  }
+
+  .carousel-slide {
+    height: 60vh;
+  }
+
+  #modal-info-container {
+    max-width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  #modal-text,
+  .modal-form label {
+    text-align: center;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .carousel-container {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 0 auto;        /* 👈 CLAVE */
+    align-self: center;    /* 👈 CLAVE EXTRA */
+  }
+
+  .carousel-slide {
+    margin: 0 auto;
+  }
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
 
-    .icono-regreso-menu {
-        display: none !important;
-    }
-.logo-container {
-      display: none;
-    }
-     .logo {
-  padding-top: 180px; /* <--- Ajusta este valor como quieras */
-}
-    .menu-toggle {
-      display: block;
-      font-size: 70px; /* Hamburguesa MÁS GRANDE */
-      top: 49px;
-      left: 19px;
-      opacity: 0.8;
-      position: fixed;
-      z-index: 1100;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-    }
-     .menu-mobile {
-      top: 150px; /* Ajusta posición de menú */
-      left: 30px;
-       gap: 30px;
-      background-color: rgba(226, 226, 226, 0.95);
-      border: rgb(118, 118, 118) 1px;
-    }
-    .menu-mobile a img {
-        width: 180px; /* Logos del menú MÁS GRANDES */
-    }
-    .menu-mobile.active {
-        display: flex !important; /* Muestra el menú cuando está activo */
-        
-        /* Aseguramos que la posición y z-index sean correctos para que se vea bien */
-        position: fixed; 
-        z-index: 1200 !important; /* Debe estar por encima del menu-toggle (1100) */
-      
-        
-        /* Los estilos de .menu-mobile que definiste antes se heredarán, 
-           pero es bueno repetirlos aquí si el display era 'none'. */
-        top: 150px; 
-        left: 30px;
-        gap: 30px;
-        flex-direction: column; /* Asumiendo que quieres los logos apilados */
-    }
+  #modal-content {
+    display: flex;          /* 👈 CAMBIO CLAVE */
+    flex-direction: column; /* 👈 NO GRID */
+    gap: 40px;
 
-    /* 2. Logo principal MÁS GRANDE */
-    .logo img {
-      max-width: 250px !important; /* Ajuste del logo (más grande que móvil) */
-    }
-    .logo-img-unica { /* Si existe esta clase específica */
-        max-width: 250px !important; 
-        height: auto !important;
-        position: relative;
-        top: 68px; 
-    }
-   
-  .descripcion {
-      padding: 15px 0px; /* Padding de tableta */
-      font-size: 25px;     /* Texto MÁS GRANDE */
-      text-align: justify;
-    }
-    .descripcion2 {
-      padding: 90px 230px;
-      font-size: 25px; /* Mantiene 14px */
-      text-align: center;
-      margin-bottom: -175px; /* Margen de tableta */
-    }
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    margin: auto;
 
-    /* 4. Galería (1 columna, proporciones de tableta) */
-    .galeria {
-      grid-template-columns: 1fr;
-      gap: 65px;
-      padding: 0px;
-      padding-top: 110px;
-      padding-bottom: 340px;
-      max-width: 560px;
-      margin: 0 auto;
-      margin-top: 40px;
-      margin-bottom: -40px;
-    }
-    .imagen-hover {
-      width: 100%;
-    }
-    .mover-derecha {
-      transform: none;
-    }
-
-    /* 5. Video (proporciones de tableta) */
-    .video-galeria {
-      grid-column: auto;
-      width: 100%;
-      margin-top: -30px;
-      margin-left: 0;
-      padding-top: 226.25%; /* 16:9 ratio */
-    }
-    .video-galeria iframe {
-      width: 100%;
-      height: 100%;
-    }
+    overflow-y: auto;
     
-
-    /* 6. Hover fijo (igual que en móvil) */
-    .imagen-hover img.img-hover {
-      opacity: 1 !important;
-      pointer-events: none;
-    }
-    .imagen-hover:hover img.img-hover {
-      opacity: 1 !important;
-    }
-    .imagen-hover:hover img.img-original {
-      opacity: 1 !important;
-    }
-    
-    /* 7. Footer de tableta */
-    .footer-image {
-        width: 260px !important;
-    }
-    
-    /* 8. Texto solo tableta (si lo necesitas) */
-    .texto-solo-tablet {
-        display: block;
-        font-size: 18px;
-        color: #333;
-        padding: 20px;
-        text-align: center;
-        margin-top: 20px;
-    }
-    
-    /* 9. Estilos de Chat (si existen) */
-    #soto-launcher {
-        width: 100px !important; 
-        height: 80px !important;
-        bottom: 80px !important;
-    }
-    #soto-notification {
-        width: 45px !important; 
-        height: 35px !important;
-        font-size: 20px !important;
-        top: -38px !important;
-        right: 28px !important;
-        padding: 0 !important;
-        text-align: center !important;
-        line-height: 30px !important;
-    }
-    #soto-chat {
-      position: fixed;
-      bottom: 162px !important;
-      right: 33px;
-      width: 430px !important;
-      height: 520px !important;
-    }
-    .bot-message,
-    .user-message {
-      font-size: 24px !important;
-    }
-    #soto-chat #user-input,
-  #user-input {
-    border: none !important;
-    padding: 10px !important;
-    font-size: 24px !important;
-    background-color: white !important;
   }
- #modal-content { 
-        /* Corregir valores excesivos a un tamaño lógico para Tablet */
-        width: 90% !important; 
-        max-width: 1000px !important; /* Limite el ancho a un valor grande, por ejemplo, 800px */
-        max-height: 95vh !important; /* Limite la altura */
-        
-        /* Mantenemos el centrado */
-        margin: 2vh auto !important; 
-    }
-    
-    /* 2. Ajuste del Carrusel (el contenedor de la imagen grande) */
-    .carousel-container { 
-        width: 100% !important; /* Ocupa todo el ancho disponible en #modal-content */
-        max-width: 500px !important; /* Aumenta el ancho máximo de la imagen */
-    }
-    .carousel-slide { 
-        height: 700px !important; /* AUMENTAR la altura visible del carrusel */
-    }
 
-     .carousel-btn.prev {
-    /* Mueve la flecha "prev" más hacia el centro (más a la derecha) */
-    left: -15px !important; /* Ajusta este valor. 20px es el margen desde el borde izquierdo del carrusel. */
-    top: 50%; /* Mantener centrado verticalmente (si es el estilo predeterminado) */
+  .carousel-container {
+    max-width: 100%;
+  }
+
+  .carousel-slide {
+    height: 60vh;
+    max-height: 600px;
+  }
+
+  #modal-info-container {
+    max-width: 100%;
+    padding: 20px;
+  }
 }
-
-/* Flecha de Navegación Derecha (Siguiente) */
-.carousel-btn.next {
-    /* Mueve la flecha "next" más hacia el centro (más a la izquierda) */
-    right: -15px !important; /* Ajusta este valor. 20px es el margen desde el borde derecho del carrusel. */
-    top: 50%; /* Mantener centrado verticalmente */
+body.modal-open {
+  overflow: hidden;
+}
+/* El scroll sigue funcionando, pero NO se ve */
+#modal-content {
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* Edge */
 }
 
-/* Estilo general del botón (si lo necesitas más grande o con más padding) */
-.carousel-btn {
-    padding: 15px !important; /* Haz que el área de clic sea más grande */
-    font-size: 30px !important; /* Si usas texto o iconos de fuente */
+#modal-content::-webkit-scrollbar {
+  display: none;                  /* Chrome / Safari */
 }
 
-#modal-info-container { 
-    max-width: 100% !important; 
-    padding: 0px;
-    
-    /* 💡 CLAVE: Mover a la derecha usando un margen izquierdo 💡 */
-    /* El valor positivo empuja el contenedor y su contenido hacia la derecha. */
-    margin-left: -50px !important; /* Ajusta 20px al valor que desees */
+/* ===== BOTÓN CERRAR MODAL ===== */
+#modal-close {
+  display: none; /* oculto por defecto */
 }
-    
-    /* 4. Ajuste del Texto */
-    #modal-text, 
-    .modal-form label,
-    .modal-form input,
-    .modal-form select,
-    .modal-form button {
-        font-size: 25px !important; /* Aumenta el tamaño de la fuente para que el modal se vea más grande */
-    }
-    .modal-close-btn {
-    font-size: 30px; /* Aumenta este valor (ej. de 20px a 30px) */
-    font-weight: bold; /* Opcional: Para hacerla más gruesa */
-    padding: 10px; /* Opcional: Hace el área de click más grande */
+
+/* Tablet + móvil */
+@media (max-width: 1024px) {
+  #modal-close {
+    display: flex;
+    position: fixed;
+    top: 120px;           /* debajo del banner */
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    color: #000;
+    border-radius: 50%;
+    border: none;
+    font-size: 22px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10001;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    line-height: 1;
+  }
+
+  #modal-close:active {
+    transform: scale(0.9);
+  }
 }
-  /* Mantenemos tus estilos específicos de chat y otros de tablet grande si los necesitas */
-    /* ... (Tus estilos de chat de 769px a 1024px) ... */
-    .imagen-hover img.img-hover {
-    /* Mantenemos la opacidad y el manejo de eventos que ya tienes */
+
+/* Escritorio: JAMÁS visible */
+@media (hover: hover) and (pointer: fine) {
+  #modal-close {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  /* Elimina el resaltado azul al tocar cualquier elemento interactivo */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+   /* 1. Ocultamos por completo la imagen de información en móvil y tablet */
+  .imagen-hover img.img-hover {
+    display: none !important;
+  }
+
+  /* 2. Nos aseguramos de que la imagen original sea visible */
+  .imagen-hover img.img-original {
     opacity: 1 !important;
-    pointer-events: none;
-    
-    /* 🚨 CLAVE: REDUCIR EL TAMAÑO 🚨 */
-    width: 90% !important; /* Haz que ocupe el 60% del contenedor padre */
-    max-width: 470px !important; /* Opcional: Establece un límite de píxeles */
-    height: auto !important; /* Mantiene la proporción */
-    
-
-    top: 194px; /* Ejemplo: Mueve la imagen 250px desde arriba */
-    left: 6px; /* Ejemplo: Mueve la imagen 200px desde la izquierda */
-}
-    /* Mantenemos tus estilos específicos de chat y otros de tablet grande si los necesitas */
-    /* ... (Tus estilos de chat de 769px a 1024px) ... */
-}
-
-.boton-regreso-al-final {
-    display: none; 
-}
-
-
-@media (min-width: 769px) {
-
-  /* Chrome, Edge, Safari */
-  ::-webkit-scrollbar {
-    width: 8px;      /* tamaño normal */
-    background: transparent;
+    position: relative !important;
   }
 
-  ::-webkit-scrollbar-thumb {
-    background: transparent; /* el “agarre” se hace invisible */
-  }
-
-  ::-webkit-scrollbar-track {
-    background: transparent; /* el riel se hace invisible */
-  }
-
-  /* Firefox */
-  body {
-    scrollbar-width: thin;         /* no recomendado: smooth */
-    scrollbar-color: transparent transparent;
+  /* 3. Mantenemos el tamaño de la columna limpio */
+  .imagen-hover {
+    width: 100%;
+    margin: 0 auto;
   }
 }
 
+
+
+
+
+
+/* Evita el parpadeo inicial del chat */
+#soto-launcher {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none; /* No se puede tocar mientras es invisible */
+}
+
+/* Cuando la página esté lista, le daremos esta clase con JS */
+#soto-launcher.reveal {
+  opacity: 1;
+  pointer-events: auto;
+}
   </style>
 </head>
+
+<nav id="side-menu">
+    <div class="menu-overlay-close"></div>
+  <div class="menu-body"> 
+    
+    <div class="menu-left">
+      <div class="menu-group">
+        <span class="menu-title"></span>
+        <a href="../proyectos-artísticos/">Proyectos</a>
+        <a href="../chat/">Habla con soto</a>
+        <a href="../proyectos-diseño/">Diseño</a> 
+      </div>
+         
+      
+      <div class="menu-group">
+        <span class="menu-title">Acerca de</span>
+        <a href="../soto-artista-virtual/">soto artista</a>
+        <a href="../acerca-de-soto/">soto³ estudio</a>
+        <a href="../chiskey/">chiskey estudio</a>
+      </div>
+    </div>
+
+    <div class="menu-right"> 
+      <div class="menu-group">
+        <span class="menu-title"></span>
+        <a href="../contacto/" class="menu-extra">Contacto</a>
+        <a href="../archivo-en-venta/" class="menu-extra">Archivo en venta</a>
+        <a href="../descargas/" class="menu-extra">Descargas</a>
+       
+      </div>
+    </div>
+    
+  </div> <div class="menu-socials">
+    <a href="https://www.instagram.com/sotosolo_" target="_blank">Instagram @sotosolo_</a>
+    <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">LinkedIn</a>
+    <a href="https://www.behance.net/xaviersoto" target="_blank">Behance</a>
+  
+  </div>
+  <!-- X fija solo móvil/tablet -->
+
+
+</nav>
 <body>
+
+    
+<div class="top-right-logo">
+    <a href="../index.html">
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1766964956/s3_logo_bj7vjz.png" alt="Logo Soto">
+    </a>
+</div>
+
+
+   <main id="main-content">
+        <div class="header-bg"></div>
+
+
+<button class="menu-toggle" aria-label="Abrir menú">
+    <span class="icon-hamburger">☰</span>
+    <span class="icon-back"></span>
+</button>
+        <a href="https://www.instagram.com/sotosolo_?igsh=MXJha3o2dmVpNHRodA==" target="_blank" class="banner-link">
+    <div class="top-banner">
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="marquee-group" style="display: flex;">
+        <span class="item">El trabajo de soto se organiza como un sistema de tres capas: Archivo, Dispositivo e Intervención.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Archivo: registra experiencias, memorias y objetos.&nbsp;&nbsp;&nbsp;&nbsp;Dispositivo: traduce ese archivo en soportes, interfaces y lenguajes.&nbsp;&nbsp;&nbsp;&nbsp;Intervención: activa la obra en el espacio o con el público.</span>
+        <span class="item">El trabajo de soto se organiza como un sistema de tres capas: Archivo, Dispositivo e Intervención.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Archivo: registra experiencias, memorias y objetos.&nbsp;&nbsp;&nbsp;&nbsp;Dispositivo: traduce ese archivo en soportes, interfaces y lenguajes.&nbsp;&nbsp;&nbsp;&nbsp;Intervención: activa la obra en el espacio o con el público.</span>
+        <span class="item">El trabajo de soto se organiza como un sistema de tres capas: Archivo, Dispositivo e Intervención.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Archivo: registra experiencias, memorias y objetos.&nbsp;&nbsp;&nbsp;&nbsp;Dispositivo: traduce ese archivo en soportes, interfaces y lenguajes.&nbsp;&nbsp;&nbsp;&nbsp;Intervención: activa la obra en el espacio o con el público.</span>
+      </div>
+       
+      <div class="marquee-group" aria-hidden="true" style="display: flex;">
+        <span class="item">El trabajo de soto se organiza como un sistema de tres capas: Archivo, Dispositivo e Intervención.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Archivo: registra experiencias, memorias y objetos.&nbsp;&nbsp;&nbsp;&nbsp;Dispositivo: traduce ese archivo en soportes, interfaces y lenguajes.&nbsp;&nbsp;&nbsp;&nbsp;Intervención: activa la obra en el espacio o con el público.</span>
+        <span class="item">El trabajo de soto se organiza como un sistema de tres capas: Archivo, Dispositivo e Intervención.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Archivo: registra experiencias, memorias y objetos.&nbsp;&nbsp;&nbsp;&nbsp;Dispositivo: traduce ese archivo en soportes, interfaces y lenguajes.&nbsp;&nbsp;&nbsp;&nbsp;Intervención: activa la obra en el espacio o con el público.</span>
+        <span class="item">El trabajo de soto se organiza como un sistema de tres capas: Archivo, Dispositivo e Intervención.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Archivo: registra experiencias, memorias y objetos.&nbsp;&nbsp;&nbsp;&nbsp;Dispositivo: traduce ese archivo en soportes, interfaces y lenguajes.&nbsp;&nbsp;&nbsp;&nbsp;Intervención: activa la obra en el espacio o con el público.</span>
+      </div>
+    </div>
+  </div>
+</div>
+  </a>
+
+
  <!-- Aquí va el contenido de tu página web... -->
 
   <!-- BURBUJA DEL CHAT DE SOTO -->
@@ -712,62 +1139,9 @@
 
 
 
- <!-- Botón hamburguesa solo visible en móvil -->
-<button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-<!-- Menú hamburguesa móvil -->
-<div class="menu-mobile" id="mobileMenu"> 
- <a href="../">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
-  </a>
-
-   <a href="../proyectos-patio/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_800/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 2">
-  </a>
-  
- <a href="../acerca-de-patio/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
-  </a>
-   <a href="../archivo-en-venta/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477916/tienda-01_ntkqad.png" alt="Logo 3">
-  </a>
-  <a href="../contacto/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 3">
-  </a>
-  <a href="../oficina/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 5">
-  </a>
-  
- 
-</div>
 
 
 
-
-
-
-
-
-  <div class="logo-container">
-    <a href="../">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
-     </a>
-
-      <a href="../proyectos-patio/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751540253/proyectos_final2-01_auk6qh.png" alt="Logo 2">
-  </a>
-  <a href="../acerca-de-patio/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" alt="Logo 2">
-  </a>
-  <a href="../archivo-en-venta/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477916/tienda-01_ntkqad.png" alt="Logo 3">
-  </a>
-  <a href="../contacto/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,dpr_auto,w_1600/v1751477949/contac-01_adnyif.png" alt="Logo 3">
-  </a>
-  <a href="../oficina/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 5">
-  </a>
 
 
 
@@ -777,18 +1151,18 @@
 
    </div>
   <div class="logo">
-    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759845871/archivo_gratis_apnfr6.png" alt="logo archivo en venta, oficina soto" style="max-width: 165px; height: auto;">
+    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759845871/archivo_gratis_apnfr6.png" alt="logo archivo en venta, oficina soto" style="max-width: 135px; height: auto;">
   </div>
 
   <div class="descripcion2">
     <p>
-      <h3>Descargas gratuitas<br><br></h3>
-      Puedes descargar fondos de pantalla y archivos de texto disponibles.<br>Solo da click sobre la imagen para descargar.<br><i>Nota: el uso comercial de estos archivos está prohibido.<i><br>
-    </p>
+      <strong>Descargas gratuitas<br><br></strong>
+      <br>Puedes descargar fondos de pantalla y archivos de texto disponibles.<br>Solo da click sobre la imagen para descargar.<br><i>Nota: el uso comercial de estos archivos está prohibido.</i><br></p>
   </div>
+    
   
   <div class="galeria">
-    <a href="https://fromsmash.com/soto1" target="_blank">
+    <a href="https://www.dropbox.com/scl/fi/m9ufx3mj28ciz0igaa8j0/Fondo1.png?rlkey=d6pyi3e3tuy571zu4ql4y7n23&st=g9u98nwd&dl=1" target="_blank">
 
     <div class="imagen-hover">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847562/fondodepantallaweb_mj4ywo.png" class="img-original" alt="fondo de pantalla 1">
@@ -796,45 +1170,45 @@
     </div>
 </a>
 
- <a href="https://fromsmash.com/soto2" target="_blank">
+ <a href="https://www.dropbox.com/scl/fi/fazacjrk1oeg8dotoc9kg/Fondo2.png?rlkey=pkbj7ziertaqj59cqmutgcy1y&st=3ds0gd9x&dl=1" target="_blank">
     <div class="imagen-hover">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847562/fondodepantalla2web_tczdsv.png" class="img-original" alt="fondo de pantalla 2">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover las escondidas n1, oficina soto">
     </div>
 </a>
-     <a href="https://fromsmash.com/soto3" target="_blank">
+     <a href="https://www.dropbox.com/scl/fi/hjq90zpikb5nh5bpg0qy1/Fondo3.png?rlkey=39be9knmn1pe4rw227wf9v8ah&st=vdfsk18m&dl=1" target="_blank">
     <div class="imagen-hover">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847562/fondodepantalla3web_e5lvus.png" class="img-original" alt="fondo de pantalla 3">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover las escondidas n2, oficina soto"> 
     </div>
 </a>
-     <a href="https://fromsmash.com/soto4" target="_blank">
+     <a href="https://www.dropbox.com/scl/fi/w8d1puv0v6arqval1ggkh/Fondo4.png?rlkey=wcxzldk592ofe0p8plnxey53u&st=nrybovyb&dl=1" target="_blank">
     <div class="imagen-hover">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847562/fondodepantalla4web_sggjgz.png" class="img-original" alt="fondo de pantalla 4">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover El techo se ve raro, oficina soto"> 
     </div>
 </a>
-     <a href="https://fromsmash.com/soto5" target="_blank">
+     <a href="https://www.dropbox.com/scl/fi/xo9q3yfx27coeu3iqesw4/Fondo5.png?rlkey=mtmc1qycfdy1z5c7sfqs8793b&st=e0rvass5&dl=1" target="_blank">
     <div class="imagen-hover">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847561/fondodepantalla5web_taxx5x.png" class="img-original" alt="fondo de pantalla 5">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover Palomas, oficina soto"> 
     </div>
 </a>
- <a href="https://fromsmash.com/soto6I" target="_blank">
+ <a href="https://www.dropbox.com/scl/fi/6ydp8ofmx2zce9aigijpy/Fondo6.png?rlkey=caw0n41cdk51o1f2isvu3w6x2&st=zcmy0l97&dl=1" target="_blank">
     <div class="imagen-hover">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847561/fondodepantalla6web_ygfyic.png" class="img-original" alt="fondo de pantalla 6">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover Ojalá ser una mariposa, oficina soto"> 
     </div>
 </a>
 
- <a href="https://fromsmash.com/soto7" target="_blank">
+ <a href="https://www.dropbox.com/scl/fi/ds2bxpfyurr53bm6cl6eb/Fondo7.png?rlkey=fpsm2r3wl6dxt2y2dnnoo6ds2&st=m3gczz2e&dl=1" target="_blank">
     <div class="imagen-hover">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847561/fondodepantalla7web_louvv8.png" class="img-original" alt="fondo de pantalla 7">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover Chisme de vecinos, oficina soto"> 
     </div>
 </a>
 
- <a href="https://fromsmash.com/soto8" target="_blank">
+ <a href="https://www.dropbox.com/scl/fi/r66jvcv3hiazncmep37tu/fondo2-01-01.png?rlkey=hdyb9g8x84rkjsfqnnrkiocu4&st=dt0wtf4m&dl=1" target="_blank">
      <div class="imagen-hover">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847561/fondodepantalla8web_wonzzi.png" class="img-original" alt="fondo de pantalla 8">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover Chisme de vecinos, oficina soto"> 
@@ -845,8 +1219,8 @@
     
   
   <footer>
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760111670/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
-  </footer>
+    <p class="footer-text">©2026 código y diseño x soto³</p>
+</footer>
   
   <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgba(243, 243, 243, 1); justify-content:center; align-items:center; cursor:pointer;">
     <span id="cerrar-modal" style="position:absolute; top:20px; right:30px; color:rgb(0, 0, 0); font-size:40px; cursor:pointer;">&times;</span>
@@ -1025,6 +1399,204 @@ window.addEventListener("load", function () {
             });
         });
     }
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  const cerrarModal = document.getElementById('cerrar-modal');
+
+  let modalScrollY = 0; // 👈 guarda posición de scroll
+
+  document.querySelectorAll('.img-hover[data-full]').forEach(img => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+
+      // 🔒 BLOQUEAR SCROLL FONDO
+      modalScrollY = window.scrollY;
+      document.body.style.top = `-${modalScrollY}px`;
+      document.body.classList.add('modal-open');
+
+      const imgGrande = img.getAttribute('data-full');
+      modalImg.src = imgGrande;
+      modal.style.display = 'flex';
+     
+    });
+  });
+
+  function closeModal() {
+    modal.style.display = 'none';
+    modalImg.src = '';
+    modal.style.cursor = '';
+
+    // 🔓 RESTAURAR SCROLL
+    document.body.classList.remove('modal-open');
+    document.body.style.top = '';
+    window.scrollTo(0, modalScrollY);
+  }
+
+  cerrarModal.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+});
+
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  menu.classList.toggle('active');
+}
+
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+}, false);
+</script>
+
+<script>
+window.addEventListener("load", function () {
+
+  const launcher = document.getElementById("soto-launcher");
+  const notification = document.getElementById("soto-notification");
+  const launcherImage = launcher ? launcher.querySelector("img") : null;
+
+  if (launcherImage && notification) {
+    notification.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const eventsToFire = ['mousedown', 'mouseup', 'click'];
+
+      eventsToFire.forEach(function(eventName) {
+        const clickEvent = new MouseEvent(eventName, {
+          bubbles: true,
+          cancelable: true,
+          view: window
+        });
+
+        launcherImage.dispatchEvent(clickEvent);
+        launcher.dispatchEvent(clickEvent);
+      });
+    });
+  }
+});
+</script>
+
+<script>
+window.addEventListener("load", function () {
+
+  /* =====================================================
+      INTRO OVERLAY
+  ===================================================== */
+  const overlay = document.getElementById("intro-overlay");
+  const mainContent = document.getElementById("main-content");
+
+  if (overlay && mainContent) {
+    overlay.addEventListener("animationend", (e) => {
+      if (e.animationName === "fadeOutOverlay") {
+        overlay.style.display = "none";
+        mainContent.classList.add("visible");
+      }
+    });
+  }
+
+  /* =====================================================
+      MENU & SOCIAL LINKS (MOBILE DELAY)
+  ===================================================== */
+  const allMenuLinks = document.querySelectorAll("#side-menu a");
+
+  allMenuLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+      if (window.innerWidth <= 768) {
+        const targetUrl = this.href;
+        const isExternal = this.target === "_blank";
+        const isSocial = this.closest('.menu-socials');
+
+        e.preventDefault();
+
+        if (isSocial) {
+          this.style.setProperty("color", "#f26100", "important");
+        }
+
+        setTimeout(() => {
+          if (isExternal) {
+            window.open(targetUrl, '_blank');
+          } else {
+            window.location.href = targetUrl;
+          }
+        }, 200);
+      }
+    });
+  });
+
+  /* =====================================================
+      MENÚ / HAMBURGUESA / SWIPE
+  ===================================================== */
+  const toggle = document.querySelector(".menu-toggle");
+  const sideMenu = document.getElementById("side-menu");
+  const body = document.body;
+
+  if (!toggle || !sideMenu) return;
+
+  function openMenu() {
+    sideMenu.classList.add("active");
+    body.classList.add("menu-open");
+    body.classList.add("no-scroll");
+  }
+
+  function closeMenu() {
+    sideMenu.classList.remove("active");
+    body.classList.remove("menu-open");
+    body.classList.remove("no-scroll");
+  }
+
+  toggle.addEventListener("click", function (e) {
+    e.stopPropagation();
+    sideMenu.classList.contains("active") ? closeMenu() : openMenu();
+  });
+
+  document.addEventListener("click", function (event) {
+    if (!sideMenu.classList.contains("active")) return;
+
+    const insideMenu = sideMenu.contains(event.target);
+    const onToggle = toggle.contains(event.target);
+    const onLink = event.target.closest("a");
+
+    if (!insideMenu && !onToggle) closeMenu();
+    else if (insideMenu && !onLink && !onToggle) closeMenu();
+  });
+
+  /* =====================================================
+      SWIPE MOBILE
+  ===================================================== */
+  let startX = 0;
+
+  document.addEventListener("touchstart", function (e) {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  document.addEventListener("touchend", function (e) {
+    const endX = e.changedTouches[0].clientX;
+    const diff = endX - startX;
+
+    if (diff > 90 && !sideMenu.classList.contains("active")) openMenu();
+    if (diff < -90 && sideMenu.classList.contains("active")) closeMenu();
+  }, { passive: true });
+
+});
+</script>
+<script>
+window.addEventListener('load', function() {
+  // Añadimos un pequeño retraso de 300ms para asegurar que el renderizado terminó
+  setTimeout(function() {
+    const launcher = document.getElementById('soto-launcher');
+    if (launcher) {
+      launcher.classList.add('reveal');
+    }
+  }, 300);
 });
 </script>
 </body>

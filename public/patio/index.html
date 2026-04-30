@@ -67,23 +67,31 @@
 
        
     footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #f3f3f3;
-      text-align: center;
-      padding: 5px 0;
-      z-index: 1000;
-    }
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f3f3f3;
+    text-align: center;
+    padding: 10px 0; /* Un poco más de aire para el texto */
+    z-index: 1000;
+}
 
-    .footer-image {
-      width: 150px;
-      height: auto;
-      padding-top: 10px;
-      margin-top: -4px;
-      animation: mostrarImagenes 3s ease forwards;
+.footer-text {
+    font-family: "Lexend", sans-serif; /* Usamos tu tipografía principal */
+    font-size: 10px; /* Tamaño discreto y elegante */
+    letter-spacing: 0.00em;
+    color: #333;
+    margin: 0;
+    opacity: 0.8; /* Un poco de transparencia para que no distraiga del contenido */
+}
+
+/* Ajuste para que en tablets el texto también se vea bien */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .footer-text {
+        font-size: 13px;
     }
+}
 
 
 .logo-container {
@@ -104,41 +112,52 @@
 
 
         .top-banner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgb(242, 98, 0); 
-    z-index: 9999;
-    overflow: hidden;
-    height: 30px;
-    display: flex;
-    align-items: center;
-}
-.top-banner .scroll-text {
-    font-family: "Lexend", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: rgb(242, 98, 0);
+  overflow: hidden;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
 }
 
-
-.scroll-text {
-    white-space: nowrap;
-    padding-left: 100%;
-    animation: scrollLeft 21s linear infinite;
-    font-weight: bold;
-    font-size: 12px;
-    color: rgb(0, 0, 0); 
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
 }
 
-@keyframes scrollLeft {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+.marquee-track {
+  display: flex;
+  width: max-content; /* IMPORTANTE: Permite que el track crezca según el texto */
+  animation: scroll-left 60s linear infinite; /* Ajusta los segundos para la velocidad */
 }
 
+.item {
+  padding-right: 50px; /* Espacio entre cada frase */
+  font-weight: bold;
+  font-size: 12px;
+  color: #000;
+  white-space: nowrap; /* Evita que el texto salte de línea */
+}
 
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Se mueve exactamente el 50% porque duplicamos el contenido abajo */
+    transform: translateX(-50%);
+  }
+}
+
+/* Pausar al pasar el ratón (opcional pero recomendado) */
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
 
 
 
@@ -148,12 +167,14 @@
 
 
         .container {
-            width: 45%;
-            max-width: 800px;
-            text-align: center;
-            position: relative;
-        }
-
+    width: 75%; /* Ajustado para dar más aire */
+    max-width: 800px;
+    margin: 0 auto; /* Centra el contenedor en la pantalla */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
         /* Galería de imágenes */
         .gallery {
             display: flex;
@@ -797,43 +818,148 @@
 }
 
 
+/* ===== HAMBURGUESA ===== */
+.menu-toggle {
+  display: block; /* ⬅️ importante: visible también en desktop */
+  position: fixed;
+  top: 49px;
+  left: 16px; /* ⬅️ 13 ANTES*/
+  z-index: 1100;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#side-menu {
+  position: fixed;
+  top: 0;
+  left: -120%;
+  width: 350px;
+  height: 100vh;
+  background: #f3f3f3;
+  padding: 120px 24px 40px;
+  transition: left 0.5s ease;
+  z-index: 1090;
+  overflow-y: auto;
+  font-family: "Lexend", sans-serif;
+}
+
+#side-menu.active {
+  left: 0;
+}
+
+/* contenido */
+.menu-group {
+  margin-bottom: 18px;
+}
+
+.menu-title {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  opacity: 0.6;
+}
+
+#side-menu a {
+    display: table;
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 400;
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 2px;
+    position: relative; /* Necesario para la línea animada */
+}
+#side-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1.5px; 
+    bottom: 0;  
+    left: 0; 
+    background-color: #000;
+    transition: width 0.3s ease; /* Aquí ocurre la magia del crecimiento */
+}
+#side-menu a:hover::after {
+    width: 100%; /* La línea se expande al ancho total del texto */
+}
+
+#side-menu a:hover {
+    color: #000;
+}
+
+.menu-extra {
+  margin-top: 0px;
+  font-size: 15px;
+}
+
+/* Esto indica al usuario que puede hacer clic fuera para cerrar */
+body:has(#side-menu.active) {
+    cursor: pointer;
+}
+
+
+
+/* ===== TEXTO CENTRAL ===== */
+.text-links {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.text-links a {
+  font-family: "Lexend", sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+}
+
+/* línea sutil al hover (desktop) */
+@media (hover: hover) {
+  .text-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 3.0px;
+    background: #000;
+    transition: width 0.3s ease;
+  }
+
+  .text-links a:hover::after {
+    width: 100%;
+  }
+}
+
+.text-links a {
+  pointer-events: auto;
+}
+
+
+/* 📱 móvil */
+@media (max-width: 768px) {
+  .text-links a {
+    font-size: 20px;
+  }
+}
+
 
 
     </style>
 
 
 
-<!-- Botón hamburguesa solo visible en móvil -->
-<button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-<!-- Menú hamburguesa móvil -->
-<div class="menu-mobile" id="mobileMenu">
-  <a href="../">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 5">
-  </a>
-   
-  <a href="../oficina/">
-    <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 3">
-  </a>
-  
-  
-</div>
-
-
-
-
-
-
-
-
-  <div class="logo-container">
-    <a href="../">   
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760962905/soto_icono_ny0lp9.png" alt="Logo 4">
-    </a>
-
-<a href="../oficina/">   
-<img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760113072/oficina1_xds5wg.png" alt="Logo 3">
-</a>
 
  
 </div>
@@ -845,193 +971,200 @@
         }, false);
     </script>
 </head>
-<body>
+<nav id="side-menu">
+  <div class="menu-group">
+    <span class="menu-title">Proyectos</span>
+    <a href="../patio/">Artísticos</a>
+    <a href="../oficina/">Diseño</a>
+    <a href="../chat/" target="_blank">Habla con soto</a>
+  </div>
+
+  <div class="menu-group">
+    <span class="menu-title">Acerca de</span>
+    <a href="../soto-artista-virtual/">soto artista</a>
+    <a href="../acerca-de-soto/">soto³</a>
+    <a href="../patio/">patio</a>
+    <a href="../oficina/">oficina</a>
+  </div>
+
+  <div class="menu-group">
+    <span class="menu-title">Contacto</span>
+    <a href="../contacto/arte/">Arte</a>
+    <a href="../contacto/diseno/">Diseño</a>
+  </div>
+
+  <a href="../archivo-en-venta/" class="menu-extra">Archivo en venta</a>
+  <a href="../descargas/" class="menu-extra">Descargas</a>
+  <a href="archivo-en-venta/" class="menu-extra">Política de privacidad</a>
+  <a href="descargas/" class="menu-extra">Aviso Legal</a>
+</nav>
+
+
     <body>
 
+        
+    <main id="main-content">
+        <button class="menu-toggle" aria-label="Abrir menú">☰</button>
         <a href="https://www.instagram.com/sotosolo_?igsh=MXJha3o2dmVpNHRodA==" target="_blank" class="banner-link">
-            <div class="top-banner">
-              <div class="scroll-text">
-                Haz clic aquí para las últimas novedades y actualizaciones
-              </div>
-            </div>
+    <div class="top-banner">
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="marquee-group" style="display: flex;">
+        <span class="item">El trabajo de soto se organiza como un sistema de tres capas: Archivo, Dispositivo e Intervención.</span>
+        <span class="item">El trabajo de soto se organiza como un sistema de tres capas: Archivo, Dispositivo e Intervención.</span>
+        <span class="item">El trabajo de soto se organiza como un sistema de tres capas: Archivo, Dispositivo e Intervención.</span>
+      </div>
+      
+      <div class="marquee-group" aria-hidden="true" style="display: flex;">
+        <span class="item">El trabajo de soto se organiza como un sistema de tres capas: Archivo, Dispositivo e Intervención.</span>
+        <span class="item">El trabajo de soto se organiza como un sistema de tres capas: Archivo, Dispositivo e Intervención.</span>
+        <span class="item">El trabajo de soto se organiza como un sistema de tres capas: Archivo, Dispositivo e Intervención.</span>
+      </div>
+    </div>
+  </div>
+</div>
           </a>
           
+          
+
+        
+
+        <div id="soto-launcher">
+
+    <img
+
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_100,c_scale/v1755968841/soto_logo.0010_xh9icu.png"
+
+        srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_100,c_scale/v1755968841/soto_logo.0010_xh9icu.png 100w,
+
+                https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_200,c_scale/v1755968841/soto_logo.0010_xh9icu.png 200w"
+
+        alt="soto cara">
+ <div id="soto-notification">¿?</div>
+</div>
+
+        <div id="soto-chat" style="display: none;"><div id="chat-window"><button id="close-chat" class="close-chat-btn">X</button><div id="chat-messages"></div><input type="text" id="user-input" placeholder="Escribe tus dudas..." /></div></div>  
+
+       
+
+        <link rel="stylesheet" href="../chat.css">
+
+        <script src="../chat.js"></script>
 
             
    <div class="container">
-    <div class="gallery">
-        
-        <a href="../acerca-de-patio/">
-            <img 
-                src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1759492595/patio_rpiuex.png" 
-                srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1759492595/patio_rpiuex.png 400w,
-                        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1759492595/patio_rpiuex.png 800w,
-                        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200,c_scale/v1759492595/patio_rpiuex.png 1200w"
-                alt="Imagen 1" 
-                class="image-1"
-                loading="lazy">
-        </a>
+   <div class="gallery">
 
-        <a href="../proyectos-patio/">
-            <img 
-                src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1751477542/proyectos_final2-01_z6dlrt.png" 
-                srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1751477542/proyectos_final2-01_z6dlrt.png 400w,
-                        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751477542/proyectos_final2-01_z6dlrt.png 800w,
-                        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200,c_scale/v1751477542/proyectos_final2-01_z6dlrt.png 1200w"
-                alt="Imagen 2" 
-                class="image-2"
-                loading="lazy">
-        </a>
+  <!-- ✅ Imagen que se conserva -->
+  <a href="../acerca-de-patio/">
+    <img 
+      src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1759492595/patio_rpiuex.png" 
+      srcset="
+        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1759492595/patio_rpiuex.png 400w,
+        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1759492595/patio_rpiuex.png 800w,
+        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200,c_scale/v1759492595/patio_rpiuex.png 1200w"
+      alt="patio"
+      class="image-1"
+      loading="lazy">
+  </a>
 
-        <a href="../acerca-de-patio/">
-            <img 
-                src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1751477744/acerca_1111_finaaalll-01_ufdeje.png" 
-                srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1751477744/acerca_1111_finaaalll-01_ufdeje.png 400w,
-                        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751477744/acerca_1111_finaaalll-01_ufdeje.png 800w,
-                        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200,c_scale/v1751477744/acerca_1111_finaaalll-01_ufdeje.png 1200w"
-                alt="Imagen 4" 
-                class="image-4"
-                loading="lazy">
-        </a>
+  <!-- 🔤 TEXTO -->
+ <div class="text-links">
+    <a href="../archivo/" class="clic-directo">Archivo</a>
+    <a href="../dispositivos/" class="clic-directo">Dispositivos</a>
+    <a href="../intervencion/" class="clic-directo">Intervención</a>
+    <a href="../proyectos-artísticos/" class="clic-directo">Ver todo</a>
+</div>
 
-        <a href="../archivo-en-venta/">
-            <img 
-                src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1751477916/tienda-01_ntkqad.png" 
-                srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1751477916/tienda-01_ntkqad.png 400w,
-                        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751477916/tienda-01_ntkqad.png 800w,
-                        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200,c_scale/v1751477916/tienda-01_ntkqad.png 1200w"
-                alt="Imagen 5" 
-                class="image-5"
-                loading="lazy">
-        </a>
-
-        <a href="../contacto/">
-            <img 
-                src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1751477949/contac-01_adnyif.png" 
-                srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_400,c_scale/v1751477949/contac-01_adnyif.png 400w,
-                        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_800,c_scale/v1751477949/contac-01_adnyif.png 800w,
-                        https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200,c_scale/v1751477949/contac-01_adnyif.png 1200w"
-                alt="Imagen 6" 
-                class="image-6"
-                loading="lazy">
-        </a>
-        
-    </div>
+</div>
 </div>
            
     
         
         
       
-        
-    </div>
-<a href="../chat/" target="_blank">
-  <img id="imagen-flotante" src="https://res.cloudinary.com/dqg78jtie/image/upload/v1763684982/soto_chat_mmgwqv.png" alt="soto logo">
-</a>
 
 
     <footer>
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1760111670/derechos_pie_de_pagina-01_re9gh9_kpgp0e.png" alt="Imagen de pie de página" class="footer-image">
-    </footer>
+    <p class="footer-text">©2026 código y diseño x soto³</p>
+</footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const links = document.querySelectorAll(".gallery a");
-
-            links.forEach(link => {
-                const img = link.querySelector("img");
-
-                img.addEventListener("mouseenter", () => {
-                    link.style.pointerEvents = "auto";
-                });
-
-                img.addEventListener("mouseleave", () => {
-                    link.style.pointerEvents = "none";
-                });
-
-                // Asegurar que al inicio los enlaces no sean clickeables
-                link.style.pointerEvents = "none";
-            });
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+    // 1. LÓGICA DE OVERLAY
+    const overlay = document.getElementById('intro-overlay');
+    if (overlay) {
+        overlay.addEventListener('animationend', (e) => {
+            if (e.animationName === 'fadeOutOverlay') {
+                overlay.style.display = 'none';
+            }
         });
-    </script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-    const links = document.querySelectorAll(".gallery a");
-    const images = document.querySelectorAll(".gallery img");
+    }
 
-    // Solo habilitar los clics en móvil cuando se hace clic en la imagen
-    if (window.innerWidth <= 768) {
-        images.forEach(img => {
-            img.addEventListener("click", function() {
-                const link = img.parentElement; // Obtener el enlace padre
-                link.classList.add("active"); // Activar el enlace al hacer clic en la imagen
-            });
-        });
-    } else {
-        // En escritorio, el comportamiento sigue siendo como antes (hover para habilitar clic)
-        links.forEach(link => {
+    // 2. LÓGICA DE GALERÍA (CORREGIDA)
+    const allLinks = document.querySelectorAll(".gallery a");
+
+    allLinks.forEach(link => {
+        // Si el enlace tiene la clase 'clic-directo', lo dejamos libre
+        if (link.classList.contains('clic-directo')) {
+            link.style.pointerEvents = "auto";
+        } 
+        // Si es el enlace de la IMAGEN, aplicamos tu lógica especial
+        else {
             const img = link.querySelector("img");
-
-            img.addEventListener("mouseenter", () => {
-                link.style.pointerEvents = "auto";
-            });
-
-            img.addEventListener("mouseleave", () => {
-                link.style.pointerEvents = "none";
-            });
-
-            // Inicialmente desactivar los enlaces en escritorio
-            link.style.pointerEvents = "none";
-            });
+            if (img) {
+                link.style.pointerEvents = "none"; // Bloqueado por defecto
+                
+                img.addEventListener("mouseenter", () => link.style.pointerEvents = "auto");
+                img.addEventListener("mouseleave", () => link.style.pointerEvents = "none");
+                img.addEventListener("touchstart", () => link.style.pointerEvents = "auto", { passive: true });
+            }
         }
-
-        // Agregar la animación a las imágenes en móviles
-        images.forEach(img => {
-         // Aplica la animación en móviles
-        });
     });
 
+    // 3. MENÚ LATERAL
+    const toggle = document.querySelector(".menu-toggle");
+    const sideMenu = document.getElementById("side-menu");
 
-    function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('active');
-  }
-</script>
+    if (toggle && sideMenu) {
+        toggle.addEventListener("click", (e) => {
+            e.stopPropagation();
+            sideMenu.classList.toggle("active");
+        });
 
-<script>
+        document.addEventListener("click", (event) => {
+            if (sideMenu.classList.contains("active")) {
+                const isClickInside = sideMenu.contains(event.target);
+                const isClickToggle = toggle.contains(event.target);
+                const isLink = event.target.tagName === 'A' || event.target.closest('a');
+
+                if (!isClickInside && !isClickToggle) {
+                    sideMenu.classList.remove("active");
+                } else if (isClickInside && !isLink && !isClickToggle) {
+                    sideMenu.classList.remove("active");
+                }
+            }
+        });
+    }
+});
+
+// 4. SOTO LAUNCHER
 window.addEventListener("load", function () {
-    
     const launcher = document.getElementById("soto-launcher");
     const notification = document.getElementById("soto-notification");
-    const launcherImage = launcher ? launcher.querySelector("img") : null;
-
-    if (launcherImage && notification) {
-        
+    if (launcher && notification) {
         notification.addEventListener("click", function (e) {
             e.preventDefault();
             e.stopPropagation();
-            
-            // Lista de eventos a simular
-            const eventsToFire = ['mousedown', 'mouseup', 'click'];
-            
-            eventsToFire.forEach(function(eventName) {
-                const clickEvent = new MouseEvent(eventName, {
-                    bubbles: true,
-                    cancelable: true,
-                    view: window
-                });
-                
-                // Dispara el evento en LA IMAGEN (lo más probable)
-                launcherImage.dispatchEvent(clickEvent);
-                
-                // Dispara el evento en EL DIV PADRE (por si acaso)
-                launcher.dispatchEvent(clickEvent);
+            const img = launcher.querySelector("img");
+            ['mousedown', 'mouseup', 'click'].forEach(ev => {
+                const clickEv = new MouseEvent(ev, { bubbles: true, view: window });
+                if(img) img.dispatchEvent(clickEv);
             });
         });
     }
 });
 </script>
-
 
 
 </body>
