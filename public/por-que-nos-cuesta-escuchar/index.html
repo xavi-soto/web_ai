@@ -893,7 +893,7 @@ body.menu-open .icon-back {
  <div id="soto-notification">¿?</div>
 </div>
 
-        <div id="soto-chat" style="display: none;"><div id="chat-window"><button id="close-chat" class="close-chat-btn">X</button><div id="chat-messages"></div><input type="text" id="user-input" placeholder="Escribe tus dudas..." /></div></div>  
+        <div id="soto-chat" style="display: none;"><div id="chat-window"><button id="close-chat" class="close-chat-btn">X</button><div id="chat-messages"><div class="bot-message"><strong>Hola, soy soto, estas en mi estudio ¿En qué te ayudo?</strong></div></div><input type="text" id="user-input" placeholder="Escribe tus dudas..." /></div></div> 
 
        
 
@@ -919,12 +919,13 @@ body.menu-open .icon-back {
       
 
        <br>
-          Consulta repositorio de sonidos en peligro de extinción 
+           Consulta la
 <a href="https://fonotecanacional.cultura.gob.mx/index.php/escucha/sonidos-en-peligro-de-extincion" 
    target="_blank" 
    style="color: #f26100; text-decoration: none;">
-   Fonoteca Nacional de México
-</a><br></strong>
+   Fonoteca Nacional de México 
+</a><br> escucha el repositorio que inspiró este proyecto
+   </strong> </p>
 
     
   <div class="descripcion">
@@ -1357,7 +1358,7 @@ window.addEventListener("load", function () {
   /* =====================================================
       SWIPE MOBILE
   ===================================================== */
-  let startX = 0;
+let startX = 0;
 
   document.addEventListener("touchstart", function (e) {
     startX = e.touches[0].clientX;
@@ -1367,9 +1368,13 @@ window.addEventListener("load", function () {
     const endX = e.changedTouches[0].clientX;
     const diff = endX - startX;
 
-    if (diff > 90 && !sideMenu.classList.contains("active")) openMenu();
-    if (diff < -90 && sideMenu.classList.contains("active")) closeMenu();
+    // Eliminamos la condición de "diff > 90" (abrir)
+    // Solo mantenemos la de cerrar cuando el menú está ACTIVO
+    if (diff < -90 && sideMenu.classList.contains("active")) {
+      closeMenu();
+    }
   }, { passive: true });
+
 
 });
 </script>

@@ -856,7 +856,7 @@ body.menu-open .icon-back {
  <div id="soto-notification">¿?</div>
 </div>
 
-        <div id="soto-chat" style="display: none;"><div id="chat-window"><button id="close-chat" class="close-chat-btn">X</button><div id="chat-messages"></div><input type="text" id="user-input" placeholder="Escribe tus dudas..." /></div></div>  
+        <div id="soto-chat" style="display: none;"><div id="chat-window"><button id="close-chat" class="close-chat-btn">X</button><div id="chat-messages"><div class="bot-message"><strong>Hola, soy soto, estas en mi estudio ¿En qué te ayudo?</strong></div></div><input type="text" id="user-input" placeholder="Escribe tus dudas..." /></div></div> 
 
        
 
@@ -878,7 +878,7 @@ body.menu-open .icon-back {
         <strong>Archivo | Ilustración digital<br>
           <br>
 
-      2021 Ganador del segundo premio a la ilustración 
+      2021 Ganador del segundo premio de ilustración por
 <a href="https://www.instagram.com/p/CMzsZWQjDF4/?igsh=MWVyZXVzemNrMmZqYw==" 
    target="_blank" 
    style="color: #f26100; text-decoration: none;">
@@ -888,7 +888,7 @@ body.menu-open .icon-back {
 
 
  <div class="descripcion">
-      <p>Imágenes creadas en Ps (Adobe Photoshop). </p>
+      <p>Imágenes creadas en Ps (Photoshop). </p>
       <p>La base gráfica de la misma surge de las más de treinta especies florales que el propio soto tiene plantadas en su patio. Es, por tanto, una interpretación artística del tiempo pausado y de cómo una nueva vida puede abrirse paso siempre, obligando, con ello, a dialogar acerca de nuestras realidades y de nuestro tiempo. </p>
       <p><strong>Texto de sala.</strong></p>
       </p>
@@ -1431,7 +1431,7 @@ window.addEventListener("load", function () {
   /* =====================================================
       SWIPE MOBILE
   ===================================================== */
-  let startX = 0;
+let startX = 0;
 
   document.addEventListener("touchstart", function (e) {
     startX = e.touches[0].clientX;
@@ -1441,9 +1441,13 @@ window.addEventListener("load", function () {
     const endX = e.changedTouches[0].clientX;
     const diff = endX - startX;
 
-    if (diff > 90 && !sideMenu.classList.contains("active")) openMenu();
-    if (diff < -90 && sideMenu.classList.contains("active")) closeMenu();
+    // Eliminamos la condición de "diff > 90" (abrir)
+    // Solo mantenemos la de cerrar cuando el menú está ACTIVO
+    if (diff < -90 && sideMenu.classList.contains("active")) {
+      closeMenu();
+    }
   }, { passive: true });
+
 
 });
 </script>

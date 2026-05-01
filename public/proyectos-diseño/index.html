@@ -842,7 +842,7 @@ function closeMenu() {
   /* =====================================================
       SWIPE MOBILE
   ===================================================== */
-  let startX = 0;
+let startX = 0;
 
   document.addEventListener("touchstart", function (e) {
     startX = e.touches[0].clientX;
@@ -852,14 +852,13 @@ function closeMenu() {
     const endX = e.changedTouches[0].clientX;
     const diff = endX - startX;
 
-    if (diff > 90 && !sideMenu.classList.contains("active")) {
-      openMenu();
-    }
-
+    // Eliminamos la condición de "diff > 90" (abrir)
+    // Solo mantenemos la de cerrar cuando el menú está ACTIVO
     if (diff < -90 && sideMenu.classList.contains("active")) {
       closeMenu();
     }
   }, { passive: true });
+
 
 });
 </script>

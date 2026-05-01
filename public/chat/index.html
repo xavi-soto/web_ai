@@ -564,9 +564,8 @@ body.menu-open .icon-back {
       </div>
       <div class="chat-header">soto responde</div>
       <div id="chat-messages">
-        <div class="bot-message">
-          <strong>Hola, gracias por interesarte en mi trabajo. ¿En qué te ayudo?</strong>
-        </div>
+        <div class="bot-message"><strong>Hola, soy soto, ¿En qué te ayudo?</strong></div>
+       
       </div>
       <input type="text" id="user-input" placeholder="Escribe lo que quieras..." />
     </div>
@@ -734,7 +733,7 @@ window.addEventListener("load", function () {
   /* =====================================================
       SWIPE MOBILE
   ===================================================== */
-  let startX = 0;
+let startX = 0;
 
   document.addEventListener("touchstart", function (e) {
     startX = e.touches[0].clientX;
@@ -744,14 +743,13 @@ window.addEventListener("load", function () {
     const endX = e.changedTouches[0].clientX;
     const diff = endX - startX;
 
-    if (diff > 90 && !sideMenu.classList.contains("active")) {
-      openMenu();
-    }
-
+    // Eliminamos la condición de "diff > 90" (abrir)
+    // Solo mantenemos la de cerrar cuando el menú está ACTIVO
     if (diff < -90 && sideMenu.classList.contains("active")) {
       closeMenu();
     }
   }, { passive: true });
+
 
 });
 </script>
