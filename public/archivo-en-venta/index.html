@@ -1049,6 +1049,7 @@ body.modal-open {
     margin: 0 auto;
   }
 }
+
   </style>
 </head>
 <nav id="side-menu">
@@ -1554,19 +1555,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- SWIPE MOBILE ---
-    let startX = 0;
+let touchStartX = 0;
+let touchEndX = 0;
 
-    document.addEventListener("touchstart", function (e) {
-        startX = e.touches[0].clientX;
-    }, { passive: true });
+document.addEventListener("touchstart", function (e) {
+    if (!sideMenu.classList.contains("active")) return;
 
-    document.addEventListener("touchend", function (e) {
-        const endX = e.changedTouches[0].clientX;
-        const diff = endX - startX;
+    touchStartX = e.touches[0].clientX;
+}, { passive: true });
 
-        if (diff > 90 && !sideMenu.classList.contains("active")) openMenu();
-        if (diff < -90 && sideMenu.classList.contains("active")) closeSideMenu();
-    }, { passive: true });
+document.addEventListener("touchend", function (e) {
+    if (!sideMenu.classList.contains("active")) return;
+
+    touchEndX = e.changedTouches[0].clientX;
+    const diff = touchEndX - touchStartX;
+
+    /* swipe hacia la izquierda */
+    if (diff < -80) {
+        closeSideMenu();
+    }
+}, { passive: true });
+
 
 });
 
