@@ -90,7 +90,7 @@ body {
   color: #333;
 
   /* 🔑 CONTENEDOR FLUIDO */
-  max-width: 1250px;
+  max-width: 1170px;
   margin: 0 auto;
 
   /* padding inteligente */
@@ -108,7 +108,7 @@ body {
 }
 
 .descripcion2 {
-  padding-top: clamp(40px, 6vw, 10px);
+  padding-top: clamp(40px, 6vw, 70px);
   text-align: center;
 }
 
@@ -468,7 +468,7 @@ body.menu-open .icon-back {
 /* LOGO SUPERIOR DERECHA */
 .top-right-logo {
     position: fixed;
-    top: 57px;    /* Tu posición exacta */
+    top: 54px;    /* Tu posición exacta */
     right: 20px;  /* Tu posición exacta */
     z-index: 2500;
     pointer-events: auto;
@@ -553,7 +553,7 @@ body.menu-open .icon-back {
 
     .top-right-logo {
         /* CAMBIO AQUÍ: Ahora es 57px, igual que en desktop */
-        top: 57px; 
+        top: 54px; 
         /* Si quieres mantener la distancia lateral de desktop (30px), cámbialo aquí también: */
         right: 20px; 
     }
@@ -598,10 +598,12 @@ body.menu-open .icon-back {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M8 8 L24 24 M24 8 L8 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") 16 16, pointer !important;
 }
 #modal img {
-  /* Esto hace que la imagen no "atrape" el ratón, dejando que la X del fondo se vea siempre */
-  pointer-events: none; 
-  max-width: 90%;
-  max-height: 90%;
+  pointer-events: none;
+  max-width: 80vw;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 
@@ -716,28 +718,86 @@ body.menu-open .icon-back {
   opacity: 1;
   pointer-events: auto;
 }
-  </style>
-</head>
+
+
+
+
+
+.cv {
+  margin-top: 3rem;
+}
+
+.cv-section {
+  margin-bottom: 2.5rem;
+}
+
+.cv-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cv-section li {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.5rem 0;
+  align-items: flex-start;
+}
+
+.cv-meta {
+  font-size: 0.8rem;
+  color: #919191;
+  font-style: italic;
+  white-space: nowrap;
+  min-width: 10rem;
+  padding-top: 0.1rem;
+}
+
+.cv-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.cv-title {
+  font-size: 0.95rem;
+}
+
+.cv-institution {
+  font-size: 0.82rem;
+  opacity: 0.6;
+}
+  #modal {
+  cursor: wait; /* cursor de carga mientras la imagen carga */
+}
+
+#modal img {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#modal img.loaded {
+  opacity: 1;
+}
+</style>
 
 </head>
 <nav id="side-menu">
-    <div class="menu-overlay-close"></div>
+  <div class="menu-overlay-close"></div>
+
   <div class="menu-body"> 
     
     <div class="menu-left">
       <div class="menu-group">
         <span class="menu-title"></span>
-        <a href="../proyectos-artísticos/">Proyectos</a>
+        <a href="../trabajos/">Trabajos</a>
         <a href="../chat/">Habla con soto</a>
-        <a href="../proyectos-diseño/">Diseño</a>
       </div>
-         
       
       <div class="menu-group">
         <span class="menu-title">Acerca de</span>
-        <a href="../soto-artista-virtual/">soto artista</a>
-        <a href="../acerca-de-soto/">soto³ estudio</a>
-        <a href="../chiskey/">chiskey estudio</a>
+        <a href="../acerca-de-soto/">soto</a>
+        <a href="../soto-artista-virtual/">soto IA</a>
       </div>
     </div>
 
@@ -745,16 +805,15 @@ body.menu-open .icon-back {
       <div class="menu-group">
         <span class="menu-title"></span>
         <a href="../contacto/" class="menu-extra">Contacto</a>
-        <a href="../archivo-en-venta/" class="menu-extra">Archivo en venta</a>
-        <a href="../descargas/" class="menu-extra">Descargas</a>
+        <a href="../ediciones/" class="menu-extra">Ediciones</a>
+        
        
       </div>
     </div>
     
   </div> <div class="menu-socials">
     <a href="https://www.instagram.com/sotosolo_" target="_blank">Instagram @sotosolo_</a>
-    <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">LinkedIn</a>
-    <a href="https://www.behance.net/xaviersoto" target="_blank">Behance</a>
+    <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">Cv</a>
   
   </div>
 </nav>
@@ -764,7 +823,7 @@ body.menu-open .icon-back {
    
 <div class="top-right-logo">
     <a href="../index.html">
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1766964956/s3_logo_bj7vjz.png" alt="Logo Soto">
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1778793687/soto_logoarte-01_ce99cv.png" alt="Logo Soto">
     </a>
 </div>
 
@@ -842,50 +901,189 @@ body.menu-open .icon-back {
 
 
            <p class="wave">
-  <h1>sotosotosoto</h1>
+  <h1>soto</h1>
 </p>
-</p>soto, es Xavier, es el artista y es el estudio. soto³.</p>
-</p>soto³ es un estudio de experimentación artística donde disciplinas, medios y procesos colisionan para crear proyectos con profundidad y concepto. Sin limitaciones de medio: digital, analógico, diseño, código, AI. Todo es válido si sirve a la idea.</p>
+<h3>Statement</h3> 
+<p>La práctica de soto parte de una pregunta que parece simple: <strong>qué queda de algo cuando ya no está</strong>. No en el sentido abstracto, sino en el más concreto y menor. El sonido que nadie grabó porque era demasiado cotidiano para merecer registro. La hoja donde se escribe lo que se va a decir antes de una llamada, y que la mano va cubriendo de dibujo mientras la conversación avanza. La prenda que cruzó fronteras y ahora sirve de soporte a otro gesto. El artista que se presenta en un país sin cuerpo verificable, solo como datos.</p>
+<p>El trabajo opera entre dos impulsos que se sostienen mutuamente. Uno es archivístico: la atención sostenida a lo infraordinario —lo que sucede cuando parece que no sucede nada—, aplicada al registro de lo que el desplazamiento erosiona sin aviso. El otro es satírico: la ironía como método para decir lo que el archivo no puede decir de frente. La inteligencia artificial que ocupa el lugar del artista. El juego que reconstruye sonidos extintos a partir de descripciones. El fantasma que habita objetos ajenos porque no tiene dónde estar. </p>
+<p><strong>Los dos gestos comparten una convicción: que lo trivial y lo absurdo no son el opuesto de lo serio. Son su forma más honesta.</p></strong>
 
-       <h3>¿Por qué³?</h3>    
-       </p>Porque soto es una decisión tomada en capas: primero fue el apellido que Xavier eligió como nombre artístico, el gesto de soltar el nombre propio y quedarse solo con lo heredado. Desde ahí se desplegaron tres entidades que comparten el mismo nombre porque son, en el fondo, la misma cosa: una sola, vista desde tres ángulos.</p>
- <p><h3 class="wave">
-  <span>s</span><span>o</span><span>t</span><span>o</span> 
-  <span>X</span><span>a</span><span>v</span><span>i</span><span>e</span><span>r¹</span>
-</h3></p>
-</p>La persona. Xavier Soto es quien dirige, decide y responde. Su mirada es la garantía de que el arte y el diseño converjan en una sola pieza coherente, transformando cada trabajo en una declaración de intenciones.
- <a href="https://drive.google.com/file/d/1v2LUtZB6JY33qnT-Qt_oFQA7FhEYlYQT/view?usp=sharing"target="_blank"style="color: #f26100; text-decoration: none; font-style: italic;">
-    soto Xavier¹ — CV
-  </a>
-</p>
- 
- 
 
-<p><h3 class="wave">
-  <span>s</span><span>o</span><span>t</span><span>o</span> 
-  <span>a</span><span>r</span><span>t</span><span>i</span><span>s</span><span>t</span><span>a²</span>
-</h3></p>
-</p><strong><a href="../soto-artista-virtual/" style="color: #f26100; text-decoration: none;">
-    soto
-  </a></strong> el artista y el personaje. A lo largo de su práctica, Xavier Soto adoptó soto como nombre artístico —un gesto de sustracción— y desde ahí ha trabajado la fricción entre lo digital y lo físico, entre la memoria y su pérdida, entre el dibujo y el código. Dentro de ese recorrido, y como extensión natural de sus preguntas sobre identidad y desplazamiento, desarrolla también un ente de inteligencia artificial autónomo: soto existe como figura independiente que responde, actúa y genera por sí mismo, siempre bajo su dirección conceptual.
+
+
+<section class="cv">
+
+  <div class="cv-section">
+    <h3>Formación</h3>
+    <ul>
+      <li>
+        <span class="cv-body">
+          <span class="cv-title">Máster Oficial en Artes Visuales y Multimedia</span>
+          <span class="cv-institution">Universitat Politècnica de València | 2024 Valencia, España</span>
+        </span>
+      </li>
+      <li>
+      
+        <span class="cv-body">
+          <span class="cv-title">Licenciatura en Artes Visuales para la Expresión Plástica</span>
+          <span class="cv-institution">Universidad de Guadalajara | 2018 Guadalajara, México</span>
+        </span>
+      </li>
+      <li>
+       
+        <span class="cv-body">
+          <span class="cv-title">Grado en Bellas Artes — semestre de intercambio</span>
+          <span class="cv-institution">Universidad de Murcia | 2017 Murcia, España</span>
+        </span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="cv-section">
+    <h3>Exposiciones individuales</h3>
+    <ul>
+      <li>
+       
+        <span class="cv-body">
+          <span class="cv-title">De hoy para mañana</span>
+          <span class="cv-institution">Centro Comarcal de Humanidades Sierra Norte | 2024 Madrid, España</span>
+        </span>
+      </li>
+      <li>
+   
+        <span class="cv-body">
+          <span class="cv-title">De hoy para mañana</span>
+          <span class="cv-institution">Galería Arte XXI | 2024 Valencia, España</span>
+        </span>
+      </li>
+      <li>
+        
+        <span class="cv-body">
+          <span class="cv-title">No solo tiempo</span>
+          <span class="cv-institution">Centro Negra | 2020 Blanca, España</span>
+        </span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="cv-section">
+    <h3>Exposiciones colectivas y presentaciones</h3>
+    <ul>
+      <li>
+      
+        <span class="cv-body">
+          <span class="cv-title">Instintos — Festival Volumens en colaboración con Juliana Rojas</span>
+          <span class="cv-institution">Fábrica de Hielo | 2023 Valencia, España</span>
+        </span>
+      </li>
+      <li>
+       
+        <span class="cv-body">
+          <span class="cv-title">Ciutat Glitch — video mapping</span>
+          <span class="cv-institution">CCCC Centre del Carme Cultura Contemporània Màster AVM, UPV  | 2023 Valencia, España</span>
+        </span>
+      </li>
+      <li>
+     
+        <span class="cv-body">
+          <span class="cv-title">Paisaje Sonoro — performance sonoro</span>
+          <span class="cv-institution">Sporting Club Russafa AVM, UPV  | 2023 Valencia, España</span>
+        </span>
+      </li>
+      <li>
+     
+        <span class="cv-body">
+          <span class="cv-title">¿Ya soy artista? — intervención urbana</span>
+          <span class="cv-institution">2020 Guadalajara, México</span>
+        </span>
+      </li>
+      <li>
+     
+        <span class="cv-body">
+          <span class="cv-title">Silueta de olvido</span>
+          <span class="cv-institution">Museo do Mar de Galicia | 2019 Vigo, España</span>
+        </span>
+      </li>
+      <li>
+     
+        <span class="cv-body">
+          <span class="cv-title">Ciudad persona</span>
+          <span class="cv-institution">Madrid Gráfica | 2018 Madrid, España</span>
+        </span>
+      </li>
+      <li>
+      
+        <span class="cv-body">
+          <span class="cv-title">Indiferencia — IMAJ</span>
+          <span class="cv-institution">Estación Rayuela y Centro Histórico | 2018 Guadalajara, México</span>
+        </span>
+      </li>
+      <li>
+    
+        <span class="cv-body">
+          <span class="cv-title">Sin título — Certamen Jóvenes Pintores de Jalisco</span>
+          <span class="cv-institution">Hospicio Cultural Cabañas | 2018 Guadalajara, México</span>
+        </span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="cv-section">
+    <h3>Residencias</h3>
+    <ul>
+      <li>
+
+        <span class="cv-body">
+          <span class="cv-title">Centro Negra — AADK Spain</span>
+          <span class="cv-institution">2019 Blanca, España</span>
+        </span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="cv-section">
+    <h3>Becas y estímulos</h3>
+    <ul>
+      <li>
+       
+        <span class="cv-body">
+          <span class="cv-title">Beneficiario SumArte en Casa</span>
+          <span class="cv-institution">Secretaría de Cultura Jalisco | 2020 Guadalajara, México</span>
+        </span>
+      </li>
+      <li>
+     
+        <span class="cv-body">
+          <span class="cv-title">Mención del jurado — XIV edición Premio a la Ilustración Latinoamericana</span>
+          <span class="cv-institution">Universidad de Palermo | 2020 Buenos Aires, Argentina</span>
+        </span>
+      </li>
+      <li>
+    
+        <span class="cv-body">
+          <span class="cv-title">Estímulo Proyecta Traslados</span>
+          <span class="cv-institution">Secretaría de Cultura Jalisco | 2019 Guadalajara, México</span>
+        </span>
+      </li>
+      <li>
+       
+        <span class="cv-body">
+          <span class="cv-title">Estímulo para estudios en el extranjero</span>
+          <span class="cv-institution">Universidad de Guadalajara | 2017 Guadalajara, México</span>
+        </span>
+      </li>
+    </ul>
+  </div>
+
+</section>
+
  <a href="https://drive.google.com/file/d/1JYhZGcLMA1NzSyyoD_C98w8CfZXFzjCy/view?usp=sharing"target="_blank"style="color: #f26100; text-decoration: none; font-style: italic;">
-    soto artista² — CV
+    Descargar — CV
   </a>
 </p>
 
-</p>
-<p><h3 class="wave">
-  <span>s</span><span>o</span><span>t</span><span>o</span> 
-  <span>e</span><span>s</span><span>t</span><span>u</span><span>d</span><span>i</span><span>o³</span>
-</h3></p>
-</p>El marco. soto³ es la entidad que lo contiene todo: el estudio, la marca, la estructura. Donde la persona, el personaje y el trabajo se vuelven una sola cosa.</p>
 
-<a href="https://drive.google.com/file/d/1bCs5-qwRGAJ618ISamBGXWVyH3all_Ff/view?usp=sharing" 
-   target="_blank" 
-   rel="noopener noreferrer" 
-   style="color: #969696; text-decoration: none; font-style: italic;">
-    Consulta las políticas de privacidad y términos de uso
-</a>
+
   <!--      
 <p><i>Xavier Soto está detrás de todo.</i></p>
        <a href="https://drive.google.com/file/d/1JYhZGcLMA1NzSyyoD_C98w8CfZXFzjCy/view?usp=sharing" target="_blank"><strong>Descarga su CV</strong></a><br><br>
@@ -902,7 +1100,7 @@ body.menu-open .icon-back {
   
       
       <footer>
-    <p class="footer-text">©2026 código y diseño x soto³</p>
+    <p class="footer-text">©2026 soto</p>
 </footer>
            
 
@@ -927,7 +1125,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.img-hover[data-full]').forEach(img => {
     img.style.cursor = 'pointer';
-    img.addEventListener('click', (e) => {
+       img.addEventListener('click', (e) => {
+
+      // 🔴 NO abrir modal en móvil
+      if (window.innerWidth <= 1024) return;
+
       e.stopPropagation();
 
       // 🔒 BLOQUEAR SCROLL FONDO
@@ -938,7 +1140,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const imgGrande = img.getAttribute('data-full');
       modalImg.src = imgGrande;
       modal.style.display = 'flex';
-     
+
+modalImg.src = '';  // limpia imagen anterior
+modal.style.display = 'flex';
+modalImg.src = imgGrande;  // carga la nueva
+
+modalImg.classList.remove('loaded');
+modalImg.onload = () => modalImg.classList.add('loaded');
+
     });
   });
 

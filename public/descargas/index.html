@@ -529,7 +529,7 @@ body.menu-open .icon-back {
 /* LOGO SUPERIOR DERECHA */
 .top-right-logo {
     position: fixed;
-    top: 57px;    /* Tu posición exacta */
+    top: 54px;    /* Tu posición exacta */
     right: 20px;  /* Tu posición exacta */
     z-index: 2500;
     pointer-events: auto;
@@ -569,7 +569,7 @@ body.menu-open .icon-back {
 
     .top-right-logo {
         /* CAMBIO AQUÍ: Ahora es 57px, igual que en desktop */
-        top: 57px; 
+        top: 54px; 
         /* Si quieres mantener la distancia lateral de desktop (30px), cámbialo aquí también: */
         right: 20px; 
     }
@@ -1028,7 +1028,19 @@ body.modal-open {
   opacity: 1;
   pointer-events: auto;
 }
-  </style>
+  #modal {
+  cursor: wait; /* cursor de carga mientras la imagen carga */
+}
+
+#modal img {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#modal img.loaded {
+  opacity: 1;
+}
+</style>
 </head>
 
 <nav id="side-menu">
@@ -1038,7 +1050,7 @@ body.modal-open {
     <div class="menu-left">
       <div class="menu-group">
         <span class="menu-title"></span>
-        <a href="../proyectos-artísticos/">Proyectos</a>
+        <a href="../trabajos/">Trabajos</a>
         <a href="../chat/">Habla con soto</a>
         <a href="../proyectos-diseño/">Diseño</a> 
       </div>
@@ -1056,7 +1068,7 @@ body.modal-open {
       <div class="menu-group">
         <span class="menu-title"></span>
         <a href="../contacto/" class="menu-extra">Contacto</a>
-        <a href="../archivo-en-venta/" class="menu-extra">Archivo en venta</a>
+        <a href="../ediciones/" class="menu-extra">Archivo en venta</a>
         <a href="../descargas/" class="menu-extra">Descargas</a>
        
       </div>
@@ -1077,7 +1089,7 @@ body.modal-open {
     
 <div class="top-right-logo">
     <a href="../index.html">
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1766964956/s3_logo_bj7vjz.png" alt="Logo Soto">
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1778793687/soto_logoarte-01_ce99cv.png" alt="Logo Soto">
     </a>
 </div>
 
@@ -1151,7 +1163,7 @@ body.modal-open {
 
    </div>
   <div class="logo">
-    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759845871/archivo_gratis_apnfr6.png" alt="logo archivo en venta, oficina soto" style="max-width: 135px; height: auto;">
+    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759845871/archivo_gratis_apnfr6.png" alt="logo archivo en venta, trabajo soto" style="max-width: 135px; height: auto;">
   </div>
 
   <div class="descripcion2">
@@ -1166,52 +1178,52 @@ body.modal-open {
 
     <div class="imagen-hover">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847562/fondodepantallaweb_mj4ywo.png" class="img-original" alt="fondo de pantalla 1">
-      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover color sol, oficina soto">
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover color sol, trabajo soto">
     </div>
 </a>
 
  <a href="https://www.dropbox.com/scl/fi/fazacjrk1oeg8dotoc9kg/Fondo2.png?rlkey=pkbj7ziertaqj59cqmutgcy1y&st=3ds0gd9x&dl=1" target="_blank">
     <div class="imagen-hover">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847562/fondodepantalla2web_tczdsv.png" class="img-original" alt="fondo de pantalla 2">
-      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover las escondidas n1, oficina soto">
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover las escondidas n1, trabajo soto">
     </div>
 </a>
      <a href="https://www.dropbox.com/scl/fi/hjq90zpikb5nh5bpg0qy1/Fondo3.png?rlkey=39be9knmn1pe4rw227wf9v8ah&st=vdfsk18m&dl=1" target="_blank">
     <div class="imagen-hover">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847562/fondodepantalla3web_e5lvus.png" class="img-original" alt="fondo de pantalla 3">
-      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover las escondidas n2, oficina soto"> 
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover las escondidas n2, trabajo soto"> 
     </div>
 </a>
      <a href="https://www.dropbox.com/scl/fi/w8d1puv0v6arqval1ggkh/Fondo4.png?rlkey=wcxzldk592ofe0p8plnxey53u&st=nrybovyb&dl=1" target="_blank">
     <div class="imagen-hover">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847562/fondodepantalla4web_sggjgz.png" class="img-original" alt="fondo de pantalla 4">
-      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover El techo se ve raro, oficina soto"> 
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover El techo se ve raro, trabajo soto"> 
     </div>
 </a>
      <a href="https://www.dropbox.com/scl/fi/xo9q3yfx27coeu3iqesw4/Fondo5.png?rlkey=mtmc1qycfdy1z5c7sfqs8793b&st=e0rvass5&dl=1" target="_blank">
     <div class="imagen-hover">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847561/fondodepantalla5web_taxx5x.png" class="img-original" alt="fondo de pantalla 5">
-      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover Palomas, oficina soto"> 
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover Palomas, trabajo soto"> 
     </div>
 </a>
  <a href="https://www.dropbox.com/scl/fi/6ydp8ofmx2zce9aigijpy/Fondo6.png?rlkey=caw0n41cdk51o1f2isvu3w6x2&st=zcmy0l97&dl=1" target="_blank">
     <div class="imagen-hover">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847561/fondodepantalla6web_ygfyic.png" class="img-original" alt="fondo de pantalla 6">
-      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover Ojalá ser una mariposa, oficina soto"> 
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover Ojalá ser una mariposa, trabajo soto"> 
     </div>
 </a>
 
  <a href="https://www.dropbox.com/scl/fi/ds2bxpfyurr53bm6cl6eb/Fondo7.png?rlkey=fpsm2r3wl6dxt2y2dnnoo6ds2&st=m3gczz2e&dl=1" target="_blank">
     <div class="imagen-hover">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847561/fondodepantalla7web_louvv8.png" class="img-original" alt="fondo de pantalla 7">
-      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover Chisme de vecinos, oficina soto"> 
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover Chisme de vecinos, trabajo soto"> 
     </div>
 </a>
 
  <a href="https://www.dropbox.com/scl/fi/r66jvcv3hiazncmep37tu/fondo2-01-01.png?rlkey=hdyb9g8x84rkjsfqnnrkiocu4&st=dt0wtf4m&dl=1" target="_blank">
      <div class="imagen-hover">
       <img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1759847561/fondodepantalla8web_wonzzi.png" class="img-original" alt="fondo de pantalla 8">
-      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover Chisme de vecinos, oficina soto"> 
+      <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1759849384/descarga-01_off6ct.png" class="img-hover" alt="Hover Chisme de vecinos, trabajo soto"> 
    </div>
     </a>
      </div>
@@ -1219,10 +1231,10 @@ body.modal-open {
     
   
   <footer>
-    <p class="footer-text">©2026 código y diseño x soto³</p>
+    <p class="footer-text">©2026 soto</p>
 </footer>
   
-  <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgba(243, 243, 243, 1); justify-content:center; align-items:center; cursor:pointer;">
+  <div id="modal" style="display:none; position:fixed; top:20px; left:0; width:100vw; height:100vh; background: rgba(243, 243, 243, 1); justify-content:center; align-items:center; cursor:pointer;">
     <span id="cerrar-modal" style="position:absolute; top:20px; right:30px; color:rgb(0, 0, 0); font-size:40px; cursor:pointer;">&times;</span>
     
     <div id="modal-content" style="cursor: default;">
@@ -1411,7 +1423,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.img-hover[data-full]').forEach(img => {
     img.style.cursor = 'pointer';
-    img.addEventListener('click', (e) => {
+       img.addEventListener('click', (e) => {
+
+      // 🔴 NO abrir modal en móvil
+      if (window.innerWidth <= 1024) return;
+
       e.stopPropagation();
 
       // 🔒 BLOQUEAR SCROLL FONDO
@@ -1422,7 +1438,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const imgGrande = img.getAttribute('data-full');
       modalImg.src = imgGrande;
       modal.style.display = 'flex';
-     
+
+modalImg.src = '';  // limpia imagen anterior
+modal.style.display = 'flex';
+modalImg.src = imgGrande;  // carga la nueva
+
+modalImg.classList.remove('loaded');
+modalImg.onload = () => modalImg.classList.add('loaded');
+
     });
   });
 

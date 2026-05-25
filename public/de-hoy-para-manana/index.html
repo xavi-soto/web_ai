@@ -136,6 +136,12 @@ body {
   text-align: center;
 }
 
+/* FIX 1: padding-bottom al último bloque de texto para no quedar tapado por el footer fijo */
+.descripcion:last-of-type {
+  padding-bottom: 70px;
+}
+
+
 /* =====================================================
    GALERÍA
 ===================================================== */
@@ -149,8 +155,17 @@ body {
    margin: clamp(50px, -8vw, -60px) auto 40px;
    position: relative;
 
-    margin-bottom: 105px !important;
+    margin-bottom: 0 !important; /* FIX 2: era 105px, causaba espacio de más */
 
+}
+
+.descripcion2 + .galeria {
+    margin-top: -20px !important;
+}
+.galeria-4col {
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 30px !important;
+    margin-bottom: 105px !important;
 }
 
 .imagen-hover {
@@ -534,7 +549,7 @@ body.menu-open .icon-back {
 /* LOGO SUPERIOR DERECHA */
 .top-right-logo {
     position: fixed;
-    top: 57px;    /* Tu posición exacta */
+    top: 54px;    /* Tu posición exacta */
     right: 20px;  /* Tu posición exacta */
     z-index: 2500;
     pointer-events: auto;
@@ -619,7 +634,7 @@ body.menu-open .icon-back {
 
     .top-right-logo {
         /* CAMBIO AQUÍ: Ahora es 57px, igual que en desktop */
-        top: 57px; 
+        top: 54px; 
         /* Si quieres mantener la distancia lateral de desktop (30px), cámbialo aquí también: */
         right: 20px; 
     }
@@ -664,10 +679,12 @@ body.menu-open .icon-back {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M8 8 L24 24 M24 8 L8 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") 16 16, pointer !important;
 }
 #modal img {
-  /* Esto hace que la imagen no "atrape" el ratón, dejando que la X del fondo se vea siempre */
-  pointer-events: none; 
-  max-width: 90%;
-  max-height: 90%;
+  pointer-events: none;
+  max-width: 80vw;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 
@@ -756,27 +773,51 @@ body.menu-open .icon-back {
   opacity: 1;
   pointer-events: auto;
 }
+
+
+
+.fade-in-scroll {
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.fade-in-scroll.visible {
+  opacity: 1;
+}
+
+
+
+
+#modal img {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+#modal img.loaded {
+  opacity: 1;
+}
+
+#modal {
+  cursor: wait;
+}
 </style>
 
 </head>
 <nav id="side-menu">
-    <div class="menu-overlay-close"></div>
+  <div class="menu-overlay-close"></div>
+
   <div class="menu-body"> 
     
     <div class="menu-left">
       <div class="menu-group">
         <span class="menu-title"></span>
-        <a href="../proyectos-artísticos/">Proyectos</a>
+        <a href="../trabajos/">Trabajos</a>
         <a href="../chat/">Habla con soto</a>
-        <a href="../proyectos-diseño/">Diseño</a>
       </div>
-         
       
       <div class="menu-group">
         <span class="menu-title">Acerca de</span>
-        <a href="../soto-artista-virtual/">soto artista</a>
-        <a href="../acerca-de-soto/">soto³ estudio</a>
-        <a href="../chiskey/">chiskey estudio</a>
+        <a href="../acerca-de-soto/">soto</a>
+        <a href="../soto-artista-virtual/">soto IA</a>
       </div>
     </div>
 
@@ -784,16 +825,15 @@ body.menu-open .icon-back {
       <div class="menu-group">
         <span class="menu-title"></span>
         <a href="../contacto/" class="menu-extra">Contacto</a>
-        <a href="../archivo-en-venta/" class="menu-extra">Archivo en venta</a>
-        <a href="../descargas/" class="menu-extra">Descargas</a>
+        <a href="../ediciones/" class="menu-extra">Ediciones</a>
+        
        
       </div>
     </div>
     
   </div> <div class="menu-socials">
     <a href="https://www.instagram.com/sotosolo_" target="_blank">Instagram @sotosolo_</a>
-    <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">LinkedIn</a>
-    <a href="https://www.behance.net/xaviersoto" target="_blank">Behance</a>
+    <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">Cv</a>
   
   </div>
 </nav>
@@ -803,7 +843,7 @@ body.menu-open .icon-back {
    
 <div class="top-right-logo">
     <a href="../index.html">
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1766964956/s3_logo_bj7vjz.png" alt="Logo Soto">
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1778793687/soto_logoarte-01_ce99cv.png" alt="Logo Soto">
     </a>
 </div>
 
@@ -811,12 +851,9 @@ body.menu-open .icon-back {
         <div class="header-bg"></div>
 
         <div class="top-controls">
-    
- 
-
   <div class="nav-controls">
     <button class="btn-prev" onclick="history.back()">| Regresar</button>
-    <a href="../chingaderas-en-la-ventana/" class="btn-next">Siguiente |</a>
+    <a href="../ya-soy-artista/" class="btn-next">Siguiente |</a>
   </div>
 </div>
 
@@ -844,52 +881,36 @@ body.menu-open .icon-back {
   </div>
 </div>
   </a>
- <!-- Aquí va el contenido de tu página web... -->
 
   <!-- BURBUJA DEL CHAT DE SOTO -->
   <div id="soto-launcher">
-
     <img
-
         src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_100,c_scale/v1755968841/soto_logo.0010_xh9icu.png"
-
         srcset="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_100,c_scale/v1755968841/soto_logo.0010_xh9icu.png 100w,
-
                 https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_200,c_scale/v1755968841/soto_logo.0010_xh9icu.png 200w"
-
         alt="soto cara">
- <div id="soto-notification">¿?</div>
-</div>
-
-        <div id="soto-chat" style="display: none;"><div id="chat-window"><button id="close-chat" class="close-chat-btn">X</button><div id="chat-messages"><div class="bot-message"><strong>Estás en mi estudio. Cuéntame. ¿En qué te ayudo?</strong></div></div><input type="text" id="user-input" placeholder="Escribe tus dudas..." /></div></div> 
-
-       
-
-        <link rel="stylesheet" href="../chat.css">
-
-        <script src="../chat.js"></script>
-
-
-   </div>
-  <div class="logo">
-    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1751714152/dehoy_logo_expo_venyiq.png" alt="logo de hoy para mañana, patio soto" style="max-width: 130px; height: auto;">
-  
+    <div id="soto-notification">¿?</div>
   </div>
 
+  <div id="soto-chat" style="display: none;"><div id="chat-window"><button id="close-chat" class="close-chat-btn">X</button><div id="chat-messages"><div class="bot-message"><strong>Estás en mi estudio. Cuéntame. ¿En qué te ayudo?</strong></div></div><input type="text" id="user-input" placeholder="Escribe tus dudas..." /></div></div> 
+
+  <link rel="stylesheet" href="../chat.css">
+  <script src="../chat.js"></script>
+
+  <div class="logo">
+    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1751714152/dehoy_logo_expo_venyiq.png" alt="logo de hoy para mañana, trabajo soto" style="max-width: 130px; height: auto;">
+  </div>
 
   <div class="descripcion2">
     <p>
-
        <strong>Archivo | Dibujo sobre papel<br>
-       <br>
-             
+       2022 — 2024 </br> <br>
       2024 <a href="https://www.academiaarte21.com/Espacio-expositivo/" target="_blank" style="color: #f26100; text-decoration: none;">Galería Arte XXl</a> Valencia, España<br>
 2024 <a href="https://www.comunidad.madrid/centros/centro-comarcal-humanidades-sierra-norte" target="_blank" style="color: #f26100; text-decoration: none;">Centro de Humanidades Sierra Norte</a> Madrid, España<br></strong>
 
-
-
        <div class="descripcion">
       <p>16 piezas, carboncillo, grafito y hollín sobre papel. </p>
+       <p>Lo que sigue es el texto de sala que acompañó la exposición en ambos espacios. Forma parte de la obra.</p>
       <p>Hace algunos años leí un libro llamado <i>Cómo viajar con un salmón de Umberto Eco</i> una recopilación de ensayos que cuentan historias comunes, nada de mundos fantásticos ni grandes epopeyas. Así que de ahí nace esta exposición. Aquí no encontrarás grandilocuentes discursos sobre salvar el mundo o erradicar el hambre. No, esta exhibición es un reflejo de lo simple, de lo común, de las complejidades personales que se enfrentan día a día. es un escaparate de los actos absurdos pero esenciales que dan forma a nuestra existencia, una celebración de la trivialidad que a menudo pasa desapercibida. </p>
       <p> Comenzaré por hacer esta hoja parte de la obra porque es igual de absurda como importante. Primero, he de decir que intentar narrar un acto cotidiano requiere suma observación y perspicacia para que este no sea aburrido. Prepárense para aburrirse, aunque seré breve. </p>
       <p>¿Cómo montar una exposición de arte? primero, armemos el elenco: curadores, artistas y críticos. Es como juntar gatos hambrientos en un saco y esperar que salga música en lugar de arañazos. La selección de obras... ¿la clave? hacer creer al público que la manta manchada es una obra de arte conceptual y que el inodoro es una alegoría sobre el consumismo contemporáneo. </p>
@@ -897,10 +918,16 @@ body.menu-open .icon-back {
       
       Entonces, ¿cómo montar una exposición de arte? con paciencia, ironía y una buena dosis de cinismo.<p><strong>Texto de sala.</strong></p>
       </p>
-  </div>
+
+      <a style="color: #969696; text-decoration: none; font-style: italic;">
+        Comisariado: Pablo Navarro Payá. Logística: Miriam Blasco y Ernesto Blasco | Galeria Arte XXI, Valencia. 
+        <br>Comisariado: Sara Fuentes Yáñez | Centro de Humanidades Sierra Norte.</br>
+      </a>
+    </div>
+ 
 
     
- <div class="galeria">
+  <div class="galeria">
     
     <div class="imagen-hover">
         <img 
@@ -912,14 +939,13 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751714925/d21-01_fmatrs.png"
             class="img-original"
-            alt="de hoy para mañana exposición valencia 2024, patio soto"
+            alt="de hoy para mañana exposición valencia 2024, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751714953/dt16-01_qrhcst.png"
             class="img-hover"
-            alt="Hover de hoy para mañana exposición valencia 2024, patio soto"
+            alt="Hover de hoy para mañana exposición valencia 2024, trabajo soto"
             loading="lazy"
         >
     </div>
@@ -934,14 +960,13 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751714993/d22-01_wyrsfo.png"
             class="img-original"
-            alt="de hoy para mañana exposición valencia 2024, patio soto"
+            alt="de hoy para mañana exposición valencia 2024, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751715022/dt16-01_hpv87t.png"
             class="img-hover"
-            alt="Hover de hoy para mañana exposición valencia 2024, patio soto"
+            alt="Hover de hoy para mañana exposición valencia 2024, trabajo soto"
             loading="lazy"
         >
     </div>
@@ -956,14 +981,13 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751715057/d20-01_kebcmf.png"
             class="img-original"
-            alt="de hoy para mañana exposición valencia 2024, patio soto"
+            alt="de hoy para mañana exposición valencia 2024, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751715068/dt16-01_e64xwq.png"
             class="img-hover"
-            alt="Hover de hoy para mañana exposición valencia 2024, patio soto"
+            alt="Hover de hoy para mañana exposición valencia 2024, trabajo soto"
             loading="lazy"
         >
     </div>
@@ -978,14 +1002,13 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751715565/d16-0122_q3dxyz.png"
             class="img-original"
-            alt="de hoy para mañana pieza 1, patio soto"
+            alt="de hoy para mañana pieza 1, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751715664/dt1-01_sspvw5.png"
             class="img-hover"
-            alt="Hover de hoy para mañana pieza 1, patio soto"
+            alt="Hover de hoy para mañana pieza 1, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751716959/dehoy1-01_doepqo.png"
             loading="lazy"
         >
@@ -1001,14 +1024,13 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751717083/d1-01_zejhc3.png"
             class="img-original"
-            alt="de hoy para mañana pieza 2, patio soto"
+            alt="de hoy para mañana pieza 2, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751717119/dt2-01_klgdna.png"
             class="img-hover"
-            alt="Hover de hoy para mañana pieza 2, patio soto"
+            alt="Hover de hoy para mañana pieza 2, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751717181/G19-01_z8ch2v.png"
             loading="lazy"
         >
@@ -1024,14 +1046,13 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751717565/d9-01_q30cqy.png"
             class="img-original"
-            alt="de hoy para mañana pieza 3, patio soto"
+            alt="de hoy para mañana pieza 3, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751717599/dt3-01_fjp5iq.png"
             class="img-hover"
-            alt="Hover de hoy para mañana pieza 3, patio soto"
+            alt="Hover de hoy para mañana pieza 3, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751717757/G13-01_fdubxp.png"
             loading="lazy"
         >
@@ -1047,14 +1068,13 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751717940/d14-01_oukuyc.png"
             class="img-original"
-            alt="de hoy para mañana pieza 4, patio soto"
+            alt="de hoy para mañana pieza 4, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751717958/dt4-01_ixtmrq.png"
             class="img-hover"
-            alt="Hover de hoy para mañana pieza 4, patio soto"
+            alt="Hover de hoy para mañana pieza 4, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751717993/G1-01_nyhgre.png"
             loading="lazy"
         >
@@ -1070,14 +1090,13 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751718204/d15-01_niw3ci.png"
             class="img-original"
-            alt="de hoy para mañana pieza 5, patio soto"
+            alt="de hoy para mañana pieza 5, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751718209/dt5-01_pajgkb.png"
             class="img-hover"
-            alt="Hover de hoy para mañana pieza 5, patio soto"
+            alt="Hover de hoy para mañana pieza 5, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751718263/G17-01_neykp8.png"
             loading="lazy"
         >
@@ -1093,14 +1112,13 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751718332/d12-01_s45zao.png"
             class="img-original"
-            alt="de hoy para mañana pieza 6, patio soto"
+            alt="de hoy para mañana pieza 6, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751718368/dt6-01_u2h08w.png"
             class="img-hover"
-            alt="Hover de hoy para mañana pieza 6, patio soto"
+            alt="Hover de hoy para mañana pieza 6, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751718387/G23-01_v6tuui.png"
             loading="lazy"
         >
@@ -1116,14 +1134,13 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751722185/d8-01_o6oxzp.png"
             class="img-original"
-            alt="de hoy para mañana pieza 7, patio soto"
+            alt="de hoy para mañana pieza 7, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751722230/dt7-01_yavlag.png"
             class="img-hover"
-            alt="Hover de hoy para mañana pieza 7, patio soto"
+            alt="Hover de hoy para mañana pieza 7, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751722323/G11-01_baqhrl.png"
             loading="lazy"
         >
@@ -1139,14 +1156,13 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751722572/d13-01_yf94vp.png"
             class="img-original"
-            alt="de hoy para mañana pieza 8, patio soto"
+            alt="de hoy para mañana pieza 8, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751722632/dt7.1-01_nd0rwm.png"
             class="img-hover"
-            alt="Hover de hoy para mañana pieza 8, patio soto"
+            alt="Hover de hoy para mañana pieza 8, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751722761/G22-01_voyvou.png"
             loading="lazy"
         >
@@ -1162,14 +1178,13 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751722981/d11-01_gbzbjf.png"
             class="img-original"
-            alt="de hoy para mañana pieza 9, patio soto"
+            alt="de hoy para mañana pieza 9, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751723033/dt8-01_uxqtxz.png"
             class="img-hover"
-            alt="Hover de hoy para mañana pieza 9, patio soto"
+            alt="Hover de hoy para mañana pieza 9, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751723231/G9-01_gmjngh.png"
             loading="lazy"
         >
@@ -1185,14 +1200,13 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751725854/d2-01_ahqyjd.png"
             class="img-original"
-            alt="de hoy para mañana pieza 10, patio soto"
+            alt="de hoy para mañana pieza 10, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751725938/dt9-01_uz1wr7.png"
             class="img-hover"
-            alt="Hover de hoy para mañana pieza 10, patio soto"
+            alt="Hover de hoy para mañana pieza 10, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751725996/G8-01_gzfj58.png"
             loading="lazy"
         >
@@ -1208,14 +1222,13 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751723773/d10-01_lndmfe.png"
             class="img-original"
-            alt="de hoy para mañana pieza 11, patio soto"
+            alt="de hoy para mañana pieza 11, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751723881/dt10-01_jsp1sl.png"
             class="img-hover"
-            alt="Hover de hoy para mañana pieza 11, patio soto"
+            alt="Hover de hoy para mañana pieza 11, trabajo soto"
             data-full="https://res.cloudinary.com/dsfjgsclq/image/upload/f_webp,q_auto/v1758905528/G7-01_iimzxt.png"
             loading="lazy"
         >
@@ -1231,14 +1244,13 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751724121/d5-01_egvqxs.png"
             class="img-original"
-            alt="de hoy para mañana pieza 12, patio soto"
+            alt="de hoy para mañana pieza 12, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751724158/dt11-01_by7rfl.png"
             class="img-hover"
-            alt="Hover de hoy para mañana pieza 12, patio soto"
+            alt="Hover de hoy para mañana pieza 12, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/v1767615300/G20-01_gr9iok.png"
             loading="lazy"
         >
@@ -1254,14 +1266,13 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751724310/d7-01_ck7eof.png"
             class="img-original"
-            alt="de hoy para mañana pieza 13, patio soto"
+            alt="de hoy para mañana pieza 13, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751724362/dt12-01_tmy5nc.png"
             class="img-hover"
-            alt="Hover de hoy para mañana pieza 13, patio soto"
+            alt="Hover de hoy para mañana pieza 13, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751724452/G21-01_trvqzp.png"
             loading="lazy"
         >
@@ -1277,14 +1288,13 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751724738/d4-01_fo9lyc.png"
             class="img-original"
-            alt="de hoy para mañana pieza 14, patio soto"
+            alt="de hoy para mañana pieza 14, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751724808/dt13-01_tjehwm.png"
             class="img-hover"
-            alt="Hover de hoy para mañana pieza 14, patio soto"
+            alt="Hover de hoy para mañana pieza 14, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751724999/G4-01_yqh5hp.png"
             loading="lazy"
         >
@@ -1300,14 +1310,13 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751725219/d6-01_zuitjm.png"
             class="img-original"
-            alt="de hoy para mañana pieza 15, patio soto"
+            alt="de hoy para mañana pieza 15, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751725269/dt14-01_erlxgm.png"
             class="img-hover"
-            alt="Hover de hoy para mañana pieza 15, patio soto"
+            alt="Hover de hoy para mañana pieza 15, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751725395/G3-01_no7i2v.png"
             loading="lazy"
         >
@@ -1323,58 +1332,119 @@ body.menu-open .icon-back {
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1200/v1751725562/d3-01_v1iihm.png"
             class="img-original"
-            alt="de hoy para mañana pieza 16, patio soto"
+            alt="de hoy para mañana pieza 16, trabajo soto"
             loading="lazy"
         >
-
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto,w_1600/v1751725616/dt15-01_fepxnm.png"
             class="img-hover"
-            alt="Hover de hoy para mañana pieza 16, patio soto"
+            alt="Hover de hoy para mañana pieza 16, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_webp,q_auto/v1751725690/G2-01_cp3yqa.png"
             loading="lazy"
         >
     </div>
 
+  </div> <!-- FIX 3: cierra .galeria AQUÍ, antes del texto nuevo -->
 
-
-
-
-
-      <footer>
-    <p class="footer-text">©2026 código y diseño x soto³</p>
-</footer>
-
-
-           
-
-    <!-- Repetí esto hasta Imagen 16 -->
-    <!-- Puedes reemplazar los links de ejemplo por los tuyos -->
+  <div class="descripcion">
+     <p><strong>Espacios comunes</strong></p>
+    <p>4 piezas, carboncillo y grafito sobre papel.</p>
+      <p>Serie de dibujos realizados en directo frente a espacios. La primera de estas piezas se convirtió en la imagen principal de De hoy para mañana y circuló posteriormente como edición en papel.</p>
+     
   </div>
 
 
+<div class="galeria galeria-4col">
+    
+    <div class="imagen-hover">
+        <img 
+            srcset=" 
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751894547/20250602_182254jjjj_uoi9dn.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751894547/20250602_182254jjjj_uoi9dn.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751894547/20250602_182254jjjj_uoi9dn.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751894547/20250602_182254jjjj_uoi9dn.png"
+            class="img-original"
+            alt="espacios comunes, dibujo 1, trabajo soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751894548/gd1-01_yl5i0f.png"
+            loading="lazy"
+        >
+        </div>
 
+    <div class="imagen-hover">
+        <img 
+            srcset=" 
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751894218/esapcios3-01_y8nlas.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751894218/esapcios3-01_y8nlas.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751894218/esapcios3-01_y8nlas.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751894218/esapcios3-01_y8nlas.png"
+            class="img-original"
+            alt="espacios comunes, dibujo 2, trabajo soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751894554/gd11-01_cwlgxn.png"
+            loading="lazy"
+        >
+        </div>
 
-<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">
+    <div class="imagen-hover">
+        <img 
+            srcset=" 
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751894250/esapcios2-01_won9tc.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751894250/esapcios2-01_won9tc.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751894250/esapcios2-01_won9tc.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751894250/esapcios2-01_won9tc.png"
+            class="img-original"
+            alt="espacios comunes, dibujo 3, trabajo soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751894531/gd111-01_z1sa5x.png"
+            loading="lazy"
+        >
+        </div>
+
+    <div class="imagen-hover">
+        <img 
+            srcset=" 
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751894256/esapcios4-01_hqbgle.png 600w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751894256/esapcios4-01_hqbgle.png 1200w,
+                https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600/v1751894256/esapcios4-01_hqbgle.png 1600w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
+            src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751894256/esapcios4-01_hqbgle.png"
+            class="img-original"
+            alt="espacios comunes, dibujo 4, trabajo soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751894539/gd1111-01_ooesw3.png"
+            loading="lazy"
+        >
+        </div>
+ </div>
+
+  <footer>
+    <p class="footer-text">©2026 soto</p>
+  </footer>
+
+</div> <!-- cierra #modal -->
+
+<div id="modal" style="display:none; position:fixed; top:20px; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243); justify-content:center; align-items:center; cursor:pointer;">
   <div class="modal-close-x"></div>
-  <span id="cerrar-modal" style="position:absolute; top:30px; right:40px; color:rgba(0, 0, 0, 0); font-size:40px; cursor:pointer;">&times;</span>
-   <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="max-width:38%; max-height:auto; border: 1px solid rgba(255, 255, 255, 0); box-shadow: 0 0 20px rgba(0, 0, 0, 0);" />
+  <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="pointer-events: none;" />
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('modal');
   const modalImg = document.getElementById('modal-img');
-  const cerrarModal = document.getElementById('cerrar-modal');
 
-  let modalScrollY = 0; // 👈 guarda posición de scroll
 
-  document.querySelectorAll('.img-hover[data-full]').forEach(img => {
+  let modalScrollY = 0;
+
+  document.querySelectorAll('.img-hover[data-full], .img-original[data-full]').forEach(img => {
     img.style.cursor = 'pointer';
     img.addEventListener('click', (e) => {
       e.stopPropagation();
 
-      // 🔒 BLOQUEAR SCROLL FONDO
       modalScrollY = window.scrollY;
       document.body.style.top = `-${modalScrollY}px`;
       document.body.classList.add('modal-open');
@@ -1382,22 +1452,30 @@ document.addEventListener('DOMContentLoaded', () => {
       const imgGrande = img.getAttribute('data-full');
       modalImg.src = imgGrande;
       modal.style.display = 'flex';
-     
+
+
+      modalImg.src = '';  // limpia imagen anterior
+modal.style.display = 'flex';
+modalImg.src = imgGrande;  // carga la nueva
+
+modalImg.classList.remove('loaded');
+modalImg.onload = () => modalImg.classList.add('loaded');
     });
   });
+
+
+
 
   function closeModal() {
     modal.style.display = 'none';
     modalImg.src = '';
     modal.style.cursor = '';
 
-    // 🔓 RESTAURAR SCROLL
     document.body.classList.remove('modal-open');
     document.body.style.top = '';
     window.scrollTo(0, modalScrollY);
   }
 
-  cerrarModal.addEventListener('click', closeModal);
 
   modal.addEventListener('click', (e) => {
     if (e.target === modal) {
@@ -1448,9 +1526,6 @@ window.addEventListener("load", function () {
 <script>
 window.addEventListener("load", function () {
 
-  /* =====================================================
-      INTRO OVERLAY
-  ===================================================== */
   const overlay = document.getElementById("intro-overlay");
   const mainContent = document.getElementById("main-content");
 
@@ -1463,9 +1538,6 @@ window.addEventListener("load", function () {
     });
   }
 
-  /* =====================================================
-      MENU & SOCIAL LINKS (MOBILE DELAY)
-  ===================================================== */
   const allMenuLinks = document.querySelectorAll("#side-menu a");
 
   allMenuLinks.forEach(link => {
@@ -1492,9 +1564,6 @@ window.addEventListener("load", function () {
     });
   });
 
-  /* =====================================================
-      MENÚ / HAMBURGUESA / SWIPE
-  ===================================================== */
   const toggle = document.querySelector(".menu-toggle");
   const sideMenu = document.getElementById("side-menu");
   const body = document.body;
@@ -1529,10 +1598,7 @@ window.addEventListener("load", function () {
     else if (insideMenu && !onLink && !onToggle) closeMenu();
   });
 
-  /* =====================================================
-      SWIPE MOBILE
-  ===================================================== */
-let startX = 0;
+  let startX = 0;
 
   document.addEventListener("touchstart", function (e) {
     startX = e.touches[0].clientX;
@@ -1542,22 +1608,16 @@ let startX = 0;
     const endX = e.changedTouches[0].clientX;
     const diff = endX - startX;
 
-    // Eliminamos la condición de "diff > 90" (abrir)
-    // Solo mantenemos la de cerrar cuando el menú está ACTIVO
     if (diff < -90 && sideMenu.classList.contains("active")) {
       closeMenu();
     }
   }, { passive: true });
 
-
 });
 </script>
 
-
-
 <script>
 window.addEventListener('load', function() {
-  // Añadimos un pequeño retraso de 300ms para asegurar que el renderizado terminó
   setTimeout(function() {
     const launcher = document.getElementById('soto-launcher');
     if (launcher) {
@@ -1565,10 +1625,25 @@ window.addEventListener('load', function() {
     }
   }, 300);
 });
+
+
+
+window.addEventListener('load', function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+document.querySelectorAll('.imagen-hover, .imagen-grande').forEach(el => {
+  el.classList.add('fade-in-scroll');
+  observer.observe(el);
+});
+});
+
+
 </script>
-
-
-
 
 </body>
 </html>

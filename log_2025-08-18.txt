@@ -14,13 +14,13 @@
 [20:34:27] Soto: Hago dibujo, ilustración, y otras chingaderas más, usando distintas técnicas y herramientas.
 
 [20:38:02] Usuario: ddf
-[20:38:02] Soto: Puedes escribirme directamente desde la página web. Aquí puedes consultar lo que esta a la venta: <a href="https://sotosotosoto.com/archivo-en-venta">archivo en venta</a>
+[20:38:02] Soto: Puedes escribirme directamente desde la página web. Aquí puedes consultar lo que esta a la venta: <a href="https://sotosotosoto.com/ediciones">archivo en venta</a>
 
 [20:38:29] Usuario: dffd
-[20:38:29] Soto: Puedes escribirme directamente desde la página web. Aquí puedes consultar lo que esta a la venta: <a href="https://sotosotosoto.com/archivo-en-venta">archivo en venta</a>
+[20:38:29] Soto: Puedes escribirme directamente desde la página web. Aquí puedes consultar lo que esta a la venta: <a href="https://sotosotosoto.com/ediciones">archivo en venta</a>
 
 [20:38:32] Usuario: df
-[20:38:32] Soto: Puedes escribirme directamente desde la página web. Aquí puedes consultar lo que esta a la venta: <a href="https://sotosotosoto.com/archivo-en-venta">archivo en venta</a>
+[20:38:32] Soto: Puedes escribirme directamente desde la página web. Aquí puedes consultar lo que esta a la venta: <a href="https://sotosotosoto.com/ediciones">archivo en venta</a>
 
 [20:42:14] Usuario: hola
 [20:42:14] Soto: ¡Buenos!
@@ -53,7 +53,7 @@
 [20:49:18] Soto: Hago dibujo, ilustración, y otras chingaderas más, usando distintas técnicas y herramientas.
 
 [20:49:20] Usuario: dgf
-[20:49:20] Soto: Puedes escribirme directamente desde la página web. Aquí puedes consultar lo que esta a la venta: <a href="https://sotosotosoto.com/archivo-en-venta">archivo en venta</a>
+[20:49:20] Soto: Puedes escribirme directamente desde la página web. Aquí puedes consultar lo que esta a la venta: <a href="https://sotosotosoto.com/ediciones">archivo en venta</a>
 
 [20:49:41] Usuario: hola
 [20:49:41] Soto: Hola, ¿qué quieres charlar?

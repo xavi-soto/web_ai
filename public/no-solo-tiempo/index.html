@@ -543,7 +543,7 @@ body.menu-open .icon-back {
 /* LOGO SUPERIOR DERECHA */
 .top-right-logo {
     position: fixed;
-    top: 57px;    /* Tu posición exacta */
+    top: 54px;    /* Tu posición exacta */
     right: 20px;  /* Tu posición exacta */
     z-index: 2500;
     pointer-events: auto;
@@ -628,7 +628,7 @@ body.menu-open .icon-back {
 
     .top-right-logo {
         /* CAMBIO AQUÍ: Ahora es 57px, igual que en desktop */
-        top: 57px; 
+        top: 54px; 
         /* Si quieres mantener la distancia lateral de desktop (30px), cámbialo aquí también: */
         right: 20px; 
     }
@@ -673,10 +673,12 @@ body.menu-open .icon-back {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M8 8 L24 24 M24 8 L8 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") 16 16, pointer !important;
 }
 #modal img {
-  /* Esto hace que la imagen no "atrape" el ratón, dejando que la X del fondo se vea siempre */
-  pointer-events: none; 
-  max-width: 90%;
-  max-height: 90%;
+  pointer-events: none;
+  max-width: 80vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 
@@ -772,26 +774,46 @@ body.menu-open .icon-back {
   opacity: 1;
   pointer-events: auto;
 }
+#modal {
+  cursor: wait; /* cursor de carga mientras la imagen carga */
+}
+
+#modal img {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#modal img.loaded {
+  opacity: 1;
+}
+
+.fade-in-scroll {
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.fade-in-scroll.visible {
+  opacity: 1;
+}
+
 </style>
 </head>
 <nav id="side-menu">
-    <div class="menu-overlay-close"></div>
+  <div class="menu-overlay-close"></div>
+
   <div class="menu-body"> 
     
     <div class="menu-left">
       <div class="menu-group">
         <span class="menu-title"></span>
-        <a href="./proyectos-artísticos/">Proyectos</a>
-        <a href="./chat/">Habla con soto</a>
-        <a href="./proyectos-diseño/">Diseño</a>
+        <a href="../trabajos/">Trabajos</a>
+        <a href="../chat/">Habla con soto</a>
       </div>
-         
       
       <div class="menu-group">
         <span class="menu-title">Acerca de</span>
-        <a href="../soto-artista-virtual/">soto artista</a>
-        <a href="../acerca-de-soto/">soto³ estudio</a>
-        <a href="../chiskey/">chiskey estudio</a>
+        <a href="../acerca-de-soto/">soto</a>
+        <a href="../soto-artista-virtual/">soto IA</a>
       </div>
     </div>
 
@@ -799,16 +821,15 @@ body.menu-open .icon-back {
       <div class="menu-group">
         <span class="menu-title"></span>
         <a href="../contacto/" class="menu-extra">Contacto</a>
-        <a href="../archivo-en-venta/" class="menu-extra">Archivo en venta</a>
-        <a href="../descargas/" class="menu-extra">Descargas</a>
+        <a href="../ediciones/" class="menu-extra">Ediciones</a>
+        
        
       </div>
     </div>
     
   </div> <div class="menu-socials">
     <a href="https://www.instagram.com/sotosolo_" target="_blank">Instagram @sotosolo_</a>
-    <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">LinkedIn</a>
-    <a href="https://www.behance.net/xaviersoto" target="_blank">Behance</a>
+    <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">Cv</a>
   
   </div>
 </nav>
@@ -816,7 +837,7 @@ body.menu-open .icon-back {
    
   <div class="top-right-logo">
     <a href="../index.html">
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1766964956/s3_logo_bj7vjz.png" alt="Logo Soto">
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1778793687/soto_logoarte-01_ce99cv.png" alt="Logo Soto">
     </a>
 </div>
 
@@ -829,7 +850,7 @@ body.menu-open .icon-back {
 
   <div class="nav-controls">
     <button class="btn-prev" onclick="history.back()">| Regresar</button>
-    <a href="../apariencias/" class="btn-next">Siguiente |</a>
+    <a href="../de-hoy-para-manana/" class="btn-next">Siguiente |</a>
   </div>
 </div>
 
@@ -890,7 +911,7 @@ body.menu-open .icon-back {
 
     </div>
   <div class="logo">
-    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1751917578/no_solo_t_mpwopd.png" alt="logo no solo tiempo, patio soto" style="max-width: 100px; height: auto;">
+    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1751917578/no_solo_t_mpwopd.png" alt="logo no solo tiempo, trabajo soto" style="max-width: 100px; height: auto;">
   </div>
 
 
@@ -899,23 +920,23 @@ body.menu-open .icon-back {
     <p>
  
         <strong>Intervención | Pintura<br>
+          2019 — 2020 </br> <br>
 
-          <br>
-
+          
       
-            2020 Proyecto realizado con el apoyo de 
-<a href="https://sc.jalisco.gob.mx/inicio" 
+            2020
+<a href="https://aadk.es/?s=centro+negra" 
    target="_blank" 
    style="color: #f26100; text-decoration: none;">
-   Cultura Jalisco
-</a> México.<br>
+   Centro Negra,
+</a> Blanca, España.<br>
 
-2020 Residencia 
+2019 Residencia 
 <a href="https://aadk.es/" 
    target="_blank" 
    style="color: #f26100; text-decoration: none;">
    AADK
-</a> Blanca, España.<br></strong>
+</a><br></strong>
 
       <div class="descripcion">
             <p>10 piezas, pintura/mixta sobre tela. </p>
@@ -924,14 +945,20 @@ body.menu-open .icon-back {
         <p> Con este gesto soto no representa la memoria a través de la reproducción pictórica, sino que presenta la materialidad que conforma la piel de estos edificios. Los lugares son testigo del tiempo en ellos se van acumulando la historia, la personal, la social, la política, las superficies son fronteras permeadas de la vida que sucede, y este trabajo da un giro a los canones de representatividad así como da paso a una nueva forma de generar narrativas.</p>
      
       <p>Al final se presenta una instalación. Es esta, trae sus recorridos por el casco histórico, así como su materialidad. Los dibujos en el suelo están configurados con una tiza realizada por el con los elementos orgánicos que ha encontrado en su caminar (piedras, tierra, hojas), con las que traza un mapa en el que instala elementos del proceso. De este modo, plantea a los asistentes reproducir su recorrido físico y mental de manera simbólica, una forma de compartir el proceso creativo del artista.  </p><p><strong>Texto de sala.</strong></p>
-       <p> Fotos de <a href="https://www.instagram.com/wielkiepiekno_com?utm_source=ig_web_button_share_sheet&igsh=NWphNW82Y2hpMDZm" target="_blank">Maria Klara Łuc</a><br> </p>
+      
+                           <a 
+   style="color: #969696; text-decoration: none; font-style: italic;">
+    Comisariado: Elena Azzedin.
+    <br>Fotos de Maria Klara Łuc.
+     <br>Proyecto realizado con el apoyo de Cultura Jalisco.</br>
+</a>
   </div>
 
 
 
 
   <div class="imagen-grande">
-  <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1751917802/10ff8794261501.5e7a6ef2821be_dsuif4.jpg" alt="piezas completas del proyecto no solo tiempo, patio soto">
+  <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1751917802/10ff8794261501.5e7a6ef2821be_dsuif4.jpg" alt="piezas completas del proyecto no solo tiempo, trabajo soto">
 </div>
 <div class="galeria">
     
@@ -939,7 +966,7 @@ body.menu-open .icon-back {
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751917932/no_solo3-01_dagavz.png"
             class="img-original"
-            alt="no solo tiempo pieza 1, patio soto"
+            alt="no solo tiempo pieza 1, trabajo soto"
             srcset="
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751917932/no_solo3-01_dagavz.png 600w,
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751917932/no_solo3-01_dagavz.png 1200w,
@@ -954,7 +981,7 @@ body.menu-open .icon-back {
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751918063/no_solo4-01_y81z6p.png"
             class="img-original"
-            alt="no solo tiempo pieza 6, patio soto"
+            alt="no solo tiempo pieza 6, trabajo soto"
             srcset="
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751918063/no_solo4-01_y81z6p.png 600w,
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751918063/no_solo4-01_y81z6p.png 1200w,
@@ -970,7 +997,7 @@ body.menu-open .icon-back {
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751917996/no_solo6-01_qlyqtc.png"
             class="img-original"
-            alt="no solo tiempo pieza 3, patio soto"
+            alt="no solo tiempo pieza 3, trabajo soto"
             srcset="
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751917996/no_solo6-01_qlyqtc.png 600w,
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751917996/no_solo6-01_qlyqtc.png 1200w,
@@ -986,7 +1013,7 @@ body.menu-open .icon-back {
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751918099/by_Maria_%C5%81uc_5858_etiad0.jpg"
             class="img-original"
-            alt="no solo tiempo pieza 9, patio soto"
+            alt="no solo tiempo pieza 9, trabajo soto"
             srcset="
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751918099/by_Maria_%C5%81uc_5858_etiad0.jpg 600w,
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751918099/by_Maria_%C5%81uc_5858_etiad0.jpg 1200w,
@@ -1001,7 +1028,7 @@ body.menu-open .icon-back {
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751917970/by_Maria_%C5%81uc_5864_uhzypu.jpg"
             class="img-original"
-            alt="no solo tiempo pieza 2, patio soto"
+            alt="no solo tiempo pieza 2, trabajo soto"
             srcset="
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751917970/by_Maria_%C5%81uc_5864_uhzypu.jpg 600w,
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751917970/by_Maria_%C5%81uc_5864_uhzypu.jpg 1200w,
@@ -1017,7 +1044,7 @@ body.menu-open .icon-back {
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751918050/by_Maria_%C5%81uc_5865_jlwdrw.jpg"
             class="img-original"
-            alt="no solo tiempo pieza 5, patio soto"
+            alt="no solo tiempo pieza 5, trabajo soto"
             srcset="
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751918050/by_Maria_%C5%81uc_5865_jlwdrw.jpg 600w,
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751918050/by_Maria_%C5%81uc_5865_jlwdrw.jpg 1200w,
@@ -1033,7 +1060,7 @@ body.menu-open .icon-back {
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751918036/NO_SOLO_TIEMPO_FINLA-01_fegzap.png"
             class="img-original"
-            alt="no solo tiempo pieza 4, patio soto"
+            alt="no solo tiempo pieza 4, trabajo soto"
             srcset="
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751918036/NO_SOLO_TIEMPO_FINLA-01_fegzap.png 600w,
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751918036/NO_SOLO_TIEMPO_FINLA-01_fegzap.png 1200w,
@@ -1055,7 +1082,7 @@ body.menu-open .icon-back {
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1767646858/nosolo1-01_kmwy1r.png"
             class="img-original"
-            alt="no solo tiempo pieza 7, patio soto"
+            alt="no solo tiempo pieza 7, trabajo soto"
             srcset="
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1767646858/nosolo1-01_kmwy1r.png 600w,
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1767646858/nosolo1-01_kmwy1r.png 1200w,
@@ -1071,7 +1098,7 @@ body.menu-open .icon-back {
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1767646718/nosolo2-01_egcnhn.png"
             class="img-original"
-            alt="no solo tiempo pieza 8, patio soto"
+            alt="no solo tiempo pieza 8, trabajo soto"
             srcset="
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1767646718/nosolo2-01_egcnhn.png 600w,
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1767646718/nosolo2-01_egcnhn.png 1200w,
@@ -1093,7 +1120,7 @@ body.menu-open .icon-back {
       
  
       <footer>
-    <p class="footer-text">©2026 código y diseño x soto³</p>
+    <p class="footer-text">©2026 soto</p>
 </footer>
 
      
@@ -1102,17 +1129,16 @@ body.menu-open .icon-back {
 
     <!-- Repetí esto hasta Imagen 16 -->
     <!-- Puedes reemplazar los links de ejemplo por los tuyos -->
- <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">
+ <div id="modal" style="display:none; position:fixed; top:20px; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">
   <div class="modal-close-x"></div>
-  <span id="cerrar-modal" style="position:absolute; top:30px; right:40px; color:rgba(0, 0, 0, 0); font-size:40px; cursor:pointer;">&times;</span>
-   <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="max-width:38%; max-height:auto; border: 1px solid rgba(255, 255, 255, 0); box-shadow: 0 0 20px rgba(0, 0, 0, 0);" />
+   <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="pointer-events: none;" />
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('modal');
   const modalImg = document.getElementById('modal-img');
-  const cerrarModal = document.getElementById('cerrar-modal');
+
 
   let modalScrollY = 0; // 👈 guarda posición de scroll
 
@@ -1140,6 +1166,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const imgGrande = img.getAttribute('data-full');
       modalImg.src = imgGrande;
       modal.style.display = 'flex';
+
+modalImg.src = '';  // limpia imagen anterior
+modal.style.display = 'flex';
+modalImg.src = imgGrande;  // carga la nueva
+
+modalImg.classList.remove('loaded');
+modalImg.onload = () => modalImg.classList.add('loaded');
+
     });
   });
 
@@ -1154,7 +1188,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo(0, modalScrollY);
   }
 
-  cerrarModal.addEventListener('click', closeModal);
 
   modal.addEventListener('click', (e) => {
     if (e.target === modal) {
@@ -1318,6 +1351,23 @@ window.addEventListener('load', function() {
     }
   }, 300);
 });
+
+
+
+window.addEventListener('load', function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+document.querySelectorAll('.imagen-hover, .imagen-grande').forEach(el => {
+  el.classList.add('fade-in-scroll');
+  observer.observe(el);
+});
+});
+
 </script>
 </body>
 </html>

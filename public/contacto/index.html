@@ -127,7 +127,7 @@ body {
   color: #333;
 
   /* 🔑 CONTENEDOR FLUIDO */
-  max-width: 1250px;
+  max-width: 1170px;
   margin: 0 auto;
 
   /* padding inteligente */
@@ -141,12 +141,13 @@ body {
 .descripcion {
   padding-top: clamp(30px, 6vw, 50px);
   text-align: justify;
-  margin-bottom: 70px;
+  margin-bottom: 110px;
 }
 
 .descripcion2 {
-  padding-top: clamp(40px, 6vw, 10px);
+  padding-top: clamp(40px, 6vw, 70px);
   text-align: center;
+
 }
 
 /* =====================================================
@@ -547,7 +548,7 @@ body.menu-open .icon-back {
 /* LOGO SUPERIOR DERECHA */
 .top-right-logo {
     position: fixed;
-    top: 57px;    /* Tu posición exacta */
+    top: 54px;    /* Tu posición exacta */
     right: 20px;  /* Tu posición exacta */
     z-index: 2500;
     pointer-events: auto;
@@ -586,7 +587,7 @@ body.menu-open .icon-back {
 
     .top-right-logo {
         /* CAMBIO AQUÍ: Ahora es 57px, igual que en desktop */
-        top: 57px; 
+        top: 54px; 
         /* Si quieres mantener la distancia lateral de desktop (30px), cámbialo aquí también: */
         right: 20px; 
     }
@@ -631,10 +632,12 @@ body.menu-open .icon-back {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M8 8 L24 24 M24 8 L8 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") 16 16, pointer !important;
 }
 #modal img {
-  /* Esto hace que la imagen no "atrape" el ratón, dejando que la X del fondo se vea siempre */
-  pointer-events: none; 
-  max-width: 90%;
-  max-height: 90%;
+  pointer-events: none;
+  max-width: 80vw;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 
@@ -773,23 +776,21 @@ body.menu-open .icon-back {
 </head>
 
 <nav id="side-menu">
-    <div class="menu-overlay-close"></div>
+  <div class="menu-overlay-close"></div>
+
   <div class="menu-body"> 
     
     <div class="menu-left">
       <div class="menu-group">
         <span class="menu-title"></span>
-        <a href="../proyectos-artísticos/">Proyectos</a>
+        <a href="../trabajos/">Trabajos</a>
         <a href="../chat/">Habla con soto</a>
-        <a href="../proyectos-diseño/">Diseño</a>
       </div>
-         
       
       <div class="menu-group">
         <span class="menu-title">Acerca de</span>
-        <a href="../soto-artista-virtual/">soto artista</a>
-        <a href="../acerca-de-soto/">soto³ estudio</a>
-        <a href="../chiskey/">chiskey estudio</a>
+        <a href="../acerca-de-soto/">soto</a>
+        <a href="../soto-artista-virtual/">soto IA</a>
       </div>
     </div>
 
@@ -797,23 +798,22 @@ body.menu-open .icon-back {
       <div class="menu-group">
         <span class="menu-title"></span>
         <a href="../contacto/" class="menu-extra">Contacto</a>
-        <a href="../archivo-en-venta/" class="menu-extra">Archivo en venta</a>
-        <a href="../descargas/" class="menu-extra">Descargas</a>
+        <a href="../ediciones/" class="menu-extra">Ediciones</a>
+        
        
       </div>
     </div>
     
   </div> <div class="menu-socials">
     <a href="https://www.instagram.com/sotosolo_" target="_blank">Instagram @sotosolo_</a>
-    <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">LinkedIn</a>
-    <a href="https://www.behance.net/xaviersoto" target="_blank">Behance</a>
+    <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">Cv</a>
   
   </div>
 </nav>
 <body>
    <div class="top-right-logo">
     <a href="../index.html">
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1766964956/s3_logo_bj7vjz.png" alt="Logo Soto">
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1778793687/soto_logoarte-01_ce99cv.png" alt="Logo Soto">
     </a>
 </div>
 
@@ -900,8 +900,8 @@ body.menu-open .icon-back {
 <div class="contactos">
 
   <p>
-    <a href="mailto:sotoyestudio@gmail.com">
-      sotoyestudio@gmail.com
+    <a href="mailto:xsotoartista@gmail.com">
+      xsotoartista@gmail.com
     </a>
   </p>
 
@@ -911,17 +911,7 @@ body.menu-open .icon-back {
     </a>
   </p>
 
-  <p>
-    <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank" rel="noopener">
-      LinkedIn | sotosotosoto
-    </a>
-  </p>
-
-  <p> 
-    <a href="https://www.behance.net/xaviersoto" target="_blank" rel="noopener">
-      Behance | soto
-    </a>
-  </p>
+  
 
   <p class="contacto-base">
     <i>Con base en <br> Valencia, España |<br>Guadalajara, México</i>
@@ -935,7 +925,7 @@ body.menu-open .icon-back {
 
     
       <footer>
-    <p class="footer-text">©2026 código y diseño x soto³</p>
+    <p class="footer-text">©2026 soto</p>
 </footer>
            
 
@@ -967,7 +957,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.img-hover[data-full]').forEach(img => {
     img.style.cursor = 'pointer';
-    img.addEventListener('click', (e) => {
+       img.addEventListener('click', (e) => {
+
+      // 🔴 NO abrir modal en móvil
+      if (window.innerWidth <= 1024) return;
+
       e.stopPropagation();
 
       // 🔒 BLOQUEAR SCROLL FONDO
@@ -978,7 +972,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const imgGrande = img.getAttribute('data-full');
       modalImg.src = imgGrande;
       modal.style.display = 'flex';
-     
+
+modalImg.src = '';  // limpia imagen anterior
+modal.style.display = 'flex';
+modalImg.src = imgGrande;  // carga la nueva
+
+modalImg.classList.remove('loaded');
+modalImg.onload = () => modalImg.classList.add('loaded');
+
     });
   });
 

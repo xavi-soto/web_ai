@@ -528,7 +528,7 @@ body.menu-open .icon-back {
 /* LOGO SUPERIOR DERECHA */
 .top-right-logo {
     position: fixed;
-    top: 57px;    /* Tu posición exacta */
+    top: 54px;    /* Tu posición exacta */
     right: 20px;  /* Tu posición exacta */
     z-index: 2500;
     pointer-events: auto;
@@ -613,7 +613,7 @@ body.menu-open .icon-back {
 
     .top-right-logo {
         /* CAMBIO AQUÍ: Ahora es 57px, igual que en desktop */
-        top: 57px; 
+        top: 54px; 
         /* Si quieres mantener la distancia lateral de desktop (30px), cámbialo aquí también: */
         right: 20px; 
     }
@@ -658,10 +658,12 @@ body.menu-open .icon-back {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M8 8 L24 24 M24 8 L8 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") 16 16, pointer !important;
 }
 #modal img {
-  /* Esto hace que la imagen no "atrape" el ratón, dejando que la X del fondo se vea siempre */
-  pointer-events: none; 
-  max-width: 90%;
-  max-height: 90%;
+  pointer-events: none;
+  max-width: 80vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 
@@ -753,27 +755,46 @@ body.menu-open .icon-back {
   opacity: 1;
   pointer-events: auto;
 }
+#modal {
+  cursor: wait; /* cursor de carga mientras la imagen carga */
+}
+
+#modal img {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#modal img.loaded {
+  opacity: 1;
+}
+
+.fade-in-scroll {
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.fade-in-scroll.visible {
+  opacity: 1;
+}
 </style>
 </head>
 
 <nav id="side-menu">
-    <div class="menu-overlay-close"></div>
+  <div class="menu-overlay-close"></div>
+
   <div class="menu-body"> 
     
     <div class="menu-left">
       <div class="menu-group">
         <span class="menu-title"></span>
-        <a href="../proyectos-artísticos/">Proyectos</a>
+        <a href="../trabajos/">Trabajos</a>
         <a href="../chat/">Habla con soto</a>
-        <a href="../proyectos-diseño/">Diseño</a>
       </div>
-         
       
       <div class="menu-group">
         <span class="menu-title">Acerca de</span>
-        <a href="../soto-artista-virtual/">soto artista</a>
-        <a href="../acerca-de-soto/">soto³ estudio</a>
-        <a href="../chiskey/">chiskey estudio</a>
+        <a href="../acerca-de-soto/">soto</a>
+        <a href="../soto-artista-virtual/">soto IA</a>
       </div>
     </div>
 
@@ -781,16 +802,15 @@ body.menu-open .icon-back {
       <div class="menu-group">
         <span class="menu-title"></span>
         <a href="../contacto/" class="menu-extra">Contacto</a>
-        <a href="../archivo-en-venta/" class="menu-extra">Archivo en venta</a>
-        <a href="../descargas/" class="menu-extra">Descargas</a>
+        <a href="../ediciones/" class="menu-extra">Ediciones</a>
+        
        
       </div>
     </div>
     
   </div> <div class="menu-socials">
     <a href="https://www.instagram.com/sotosolo_" target="_blank">Instagram @sotosolo_</a>
-    <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">LinkedIn</a>
-    <a href="https://www.behance.net/xaviersoto" target="_blank">Behance</a>
+    <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">Cv</a>
   
   </div>
 </nav>
@@ -799,7 +819,7 @@ body.menu-open .icon-back {
     
 <div class="top-right-logo">
     <a href="../index.html">
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1766964956/s3_logo_bj7vjz.png" alt="Logo Soto">
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1778793687/soto_logoarte-01_ce99cv.png" alt="Logo Soto">
     </a>
 </div>
 
@@ -812,7 +832,7 @@ body.menu-open .icon-back {
 
   <div class="nav-controls">
     <button class="btn-prev" onclick="history.back()">| Regresar</button>
-    <a href="../espacios-comunes/" class="btn-next">Siguiente |</a>
+    <a href="../soto-artista-virtual/" class="btn-next">Siguiente |</a>
   </div>
 </div>
 
@@ -875,28 +895,27 @@ body.menu-open .icon-back {
     
    </div>
   <div class="logo">
-    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1751890789/objetos_logo-01_hntxzi.png" alt="logo estudio de objetos no identificados, patio soto" style="max-width: 170px; height: auto;">
+    <img src="https://res.cloudinary.com/dqg78jtie/image/upload/v1751890789/objetos_logo-01_hntxzi.png" alt="logo estudio de objetos no identificados, trabajo soto" style="max-width: 170px; height: auto;">
   </div>
 
   <div class="descripcion2">
     <p>
 
       <strong>Dispositivo | Modelado 3d<br>
-
+2023 </br> <br>
     </strong>
 
       <div class="descripcion">
 <p>Modelos y texturas creadas en Blender.</p>
-      <p>Proyecto basado en <i>La psicología de los objetos cotidianos de Donald A. Norman y la obra de Jacques Carelman.</i> Ambos cuestionan el diseño de los objetos y su impacto en cómo actuamos frente a ellos. </p>
-      <p> Objetos no identificados explora el diseño desde el espacio y la cultura. Lo que un objeto “es” no está solo en su forma, sino en el contexto donde vive. Si lo sacas de ahí, pierde sentido. O se transforma en otra cosa. Acá el diseño no busca ser útil, sino provocar.</p>
+      <p>Donald A. Norman estudia por qué los objetos nos confunden. Jacques Carelman diseña objetos que no pueden funcionar. Los dos parten de la misma pregunta: qué dice un objeto sobre el contexto que lo hizo posible.</p>
+      <p> Este proyecto trabaja esa pregunta desde el desplazamiento. Un objeto no es solo su forma —es el entorno donde adquirió sentido. Sacado de ahí, se vuelve otra cosa. Críptico. Ajeno. Irreconocible para quien no comparte su código.</p>
        <strong><p>1ra parte. No son chuches</p></strong>
- <p>Una selección de objetos típicos mexicanos, puestos bajo lupa. A simple vista pueden parecer inofensivos, incluso decorativos. Pero solo quien los conoce sabe realmente lo que significan o para qué sirven. Ese desfase obliga a pensar en la memoria y la identidad como filtros del entendimiento. Lo cotidiano se vuelve críptico. Y eso incomoda, como debe ser. </p>
+ <p>Una selección de objetos típicos mexicanos puestos bajo lupa. A simple vista pueden parecer decorativos, incluso inofensivos. Solo quien los conoce sabe lo que significan o para qué sirven. Ese desfase —entre lo que el objeto parece y lo que hace— convierte lo cotidiano en extraño. La memoria y la identidad como filtros del entendimiento.</p>
      
      <strong><p>2da parte. La tragedia: Escena de un crimen</p></strong>
-Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja una partida a medias sin motivo. Nadie abandona una caguama. Ni churritos. Ni unas flores en un balde sin dueño.
-¿Qué pasó aquí? La instalación no da respuestas. Solo objetos que insinúan una historia que ya ocurrió —o está por ocurrir. Quizás una tragedia. Quizás solo olvido. Quizás un crimen.</p>
-      
-
+<P>Una escena interrumpida. Un juego de lotería empezado o abandonado. Nadie deja una partida a medias sin motivo. Nadie abandona una caguama. Ni churritos. Ni unas flores en un balde sin dueño.</p>
+      <P>La instalación no da respuestas. Solo objetos que insinúan una historia que ya ocurrió —o está por ocurrir.</p>
+        
   </div>
 
 <div class="galeria">
@@ -911,7 +930,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/v1767626388/obje1-01_qfjhfq.png"
             class="img-original"
-            alt="estudio de objetos no identificados, no son chuches pieza 1, patio soto"
+            alt="estudio de objetos no identificados, no son chuches pieza 1, trabajo soto"
             loading="lazy"
         >
 
@@ -924,7 +943,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/v1767626388/obje1-01_qfjhfq.png"
             class="img-hover"
-            alt="Hover estudio de objetos no identificados, no son chuches pieza 1, patio soto"
+            alt="Hover estudio de objetos no identificados, no son chuches pieza 1, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751890976/balero1-01_pio6if.png"
             loading="lazy"
         >
@@ -940,7 +959,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751891189/balero4-01_vjiibk.png"
             class="img-original"
-            alt="estudio de objetos no identificados, no son chuches pieza 1, patio soto"
+            alt="estudio de objetos no identificados, no son chuches pieza 1, trabajo soto"
             loading="lazy"
         >
 
@@ -953,7 +972,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751891420/obje1-01_qfjhfq.png"
             class="img-hover"
-            alt="Hover estudio de objetos no identificados, no son chuches pieza 1, patio soto"
+            alt="Hover estudio de objetos no identificados, no son chuches pieza 1, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751891189/balero4-01_vjiibk.png"
             loading="lazy"
         >
@@ -969,7 +988,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751891233/balero3-01_j3bza7.png"
             class="img-original"
-            alt="estudio de objetos no identificados, no son chuches pieza 1, patio soto"
+            alt="estudio de objetos no identificados, no son chuches pieza 1, trabajo soto"
             loading="lazy"
         >
 
@@ -982,7 +1001,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751891420/obje1-01_qfjhfq.png"
             class="img-hover"
-            alt="Hover estudio de objetos no identificados, no son chuches pieza 1, patio soto"
+            alt="Hover estudio de objetos no identificados, no son chuches pieza 1, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751891233/balero3-01_j3bza7.png"
             loading="lazy"
         >
@@ -998,7 +1017,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751891514/trompo_apbkcz.png"
             class="img-original"
-            alt="estudio de objetos no identificados, no son chuches pieza 2, patio soto"
+            alt="estudio de objetos no identificados, no son chuches pieza 2, trabajo soto"
             loading="lazy"
         >
 
@@ -1011,7 +1030,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751891583/obj11111-01_mqarvl.png"
             class="img-hover"
-            alt="Hover estudio de objetos no identificados, no son chuches pieza 2, patio soto"
+            alt="Hover estudio de objetos no identificados, no son chuches pieza 2, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751891514/trompo_apbkcz.png"
             loading="lazy"
         >
@@ -1027,7 +1046,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751891697/trompo2_mdarn3.png"
             class="img-original"
-            alt="estudio de objetos no identificados, no son chuches pieza 2, patio soto"
+            alt="estudio de objetos no identificados, no son chuches pieza 2, trabajo soto"
             loading="lazy"
         >
 
@@ -1040,7 +1059,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751891583/obj11111-01_mqarvl.png"
             class="img-hover"
-            alt="Hover estudio de objetos no identificados, no son chuches pieza 2, patio soto"
+            alt="Hover estudio de objetos no identificados, no son chuches pieza 2, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751891697/trompo2_mdarn3.png"
             loading="lazy"
         >
@@ -1056,7 +1075,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751891877/trompo3_clovlp.png"
             class="img-original"
-            alt="estudio de objetos no identificados, no son chuches pieza 2, patio soto"
+            alt="estudio de objetos no identificados, no son chuches pieza 2, trabajo soto"
             loading="lazy"
         >
 
@@ -1069,7 +1088,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751891583/obj11111-01_mqarvl.png"
             class="img-hover"
-            alt="Hover estudio de objetos no identificados, no son chuches pieza 2, patio soto"
+            alt="Hover estudio de objetos no identificados, no son chuches pieza 2, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751891877/trompo3_clovlp.png"
             loading="lazy"
         >
@@ -1085,7 +1104,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892027/pirinola_fmetoe.png"
             class="img-original"
-            alt="estudio de objetos no identificados, no son chuches pieza 3, patio soto"
+            alt="estudio de objetos no identificados, no son chuches pieza 3, trabajo soto"
             loading="lazy"
         >
 
@@ -1098,7 +1117,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892043/obj111111-01_ixwej1.png"
             class="img-hover"
-            alt="Hover estudio de objetos no identificados, no son chuches pieza 3, patio soto"
+            alt="Hover estudio de objetos no identificados, no son chuches pieza 3, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892027/pirinola_fmetoe.png"
             loading="lazy"
         >
@@ -1114,7 +1133,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892212/pirinola2_ht7d6v.png"
             class="img-original"
-            alt="estudio de objetos no identificados, no son chuches pieza 3, patio soto"
+            alt="estudio de objetos no identificados, no son chuches pieza 3, trabajo soto"
             loading="lazy"
         >
 
@@ -1127,7 +1146,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892043/obj111111-01_ixwej1.png"
             class="img-hover"
-            alt="Hover estudio de objetos no identificados, no son chuches pieza 3, patio soto"
+            alt="Hover estudio de objetos no identificados, no son chuches pieza 3, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892212/pirinola2_ht7d6v.png"
             loading="lazy"
         >
@@ -1143,7 +1162,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892270/pirinola3_l7uwbd.png"
             class="img-original"
-            alt="estudio de objetos no identificados, no son chuches pieza 3, patio soto"
+            alt="estudio de objetos no identificados, no son chuches pieza 3, trabajo soto"
             loading="lazy"
         >
 
@@ -1156,7 +1175,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892043/obj111111-01_ixwej1.png"
             class="img-hover"
-            alt="Hover estudio de objetos no identificados, no son chuches pieza 3, patio soto"
+            alt="Hover estudio de objetos no identificados, no son chuches pieza 3, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892270/pirinola3_l7uwbd.png"
             loading="lazy"
         >
@@ -1172,7 +1191,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892381/3d2-01_ewe6lo.png"
             class="img-original"
-            alt="detalles en blender, patio soto"
+            alt="detalles en blender, trabajo soto"
             loading="lazy"
         >
         </div>
@@ -1187,7 +1206,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892409/3d3-01_gwooym.png"
             class="img-original"
-            alt="detalles en blender, patio soto"
+            alt="detalles en blender, trabajo soto"
             loading="lazy"
         >
         </div>
@@ -1202,7 +1221,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892427/3d_1-01_qflapb.png"
             class="img-original"
-            alt="detalles en blender, patio soto"
+            alt="detalles en blender, trabajo soto" 
             loading="lazy"
         >
         </div>
@@ -1217,14 +1236,14 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892494/3d4-01_exmelv.png"
             class="img-original"
-            alt="estudio de objetos no identificados, la tragerdia: escena de un crimen, patio soto"
+            alt="estudio de objetos no identificados, la tragedia: escena de un crimen, trabajo soto"
             loading="lazy"
         >
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892668/obj1111111-01_xjbb5h.png" 
             class="img-hover" 
-            alt="Hover estudio de objetos no identificados, la tragerdia: escena de un crimen, patio soto"
-            data-full="https://res.cloudinary.com/dbwezmju6/image/upload/f_auto,q_auto/v1745403897/3d4-01_g3ijjy.png"
+            alt="Hover estudio de objetos no identificados, la tragedia: escena de un crimen, trabajo soto"
+            data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892494/3d4-01_exmelv.png"
             loading="lazy"
         >
         </div>
@@ -1239,13 +1258,13 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892760/3d9-01_hpsxu7.png"
             class="img-original"
-            alt="estudio de objetos no identificados, la tragerdia: escena de un crimen, patio soto"
+            alt="estudio de objetos no identificados, la tragedia: escena de un crimen, trabajo soto"
             loading="lazy"
         >
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892668/obj1111111-01_xjbb5h.png" 
             class="img-hover" 
-            alt="Hover estudio de objetos no identificados, la tragerdia: escena de un crimen, patio soto"
+            alt="Hover estudio de objetos no identificados, la tragedia: escena de un crimen, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892760/3d9-01_hpsxu7.png"
             loading="lazy"
         >
@@ -1261,13 +1280,13 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, 800px"
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892808/3d8-01_picaav.png"
             class="img-original"
-            alt="estudio de objetos no identificados, la tragerdia: escena de un crimen, patio soto"
+            alt="estudio de objetos no identificados, la tragedia: escena de un crimen, trabajo soto"
             loading="lazy"
         >
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892668/obj1111111-01_xjbb5h.png" 
             class="img-hover" 
-            alt="Hover estudio de objetos no identificados, la tragerdia: escena de un crimen, patio soto"
+            alt="Hover estudio de objetos no identificados, la tragedia: escena de un crimen, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892808/3d8-01_picaav.png"
             loading="lazy"
         >
@@ -1277,7 +1296,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892855/3d5-01_aiodlp.png"
             class="img-original"
-            alt="estudio de objetos no identificados, la tragerdia: escena de un crimen, patio soto"
+            alt="estudio de objetos no identificados, la tragedia: escena de un crimen, trabajo soto"
             srcset="
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751892855/3d5-01_aiodlp.png 600w,
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892855/3d5-01_aiodlp.png 1200w,
@@ -1289,7 +1308,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892668/obj1111111-01_xjbb5h.png" 
             class="img-hover" 
-            alt="Hover estudio de objetos no identificados, la tragerdia: escena de un crimen, patio soto"
+            alt="Hover estudio de objetos no identificados, la tragedia: escena de un crimen, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892855/3d5-01_aiodlp.png"
             loading="lazy"
         >
@@ -1299,7 +1318,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892907/3d6-01_kywkav.png"
             class="img-original"
-            alt="estudio de objetos no identificados, la tragerdia: escena de un crimen, patio soto"
+            alt="estudio de objetos no identificados, la tragedia: escena de un crimen, trabajo soto"
             srcset="
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751892907/3d6-01_kywkav.png 600w,
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892907/3d6-01_kywkav.png 1200w,
@@ -1311,7 +1330,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892668/obj1111111-01_xjbb5h.png" 
             class="img-hover" 
-            alt="Hover estudio de objetos no identificados, la tragerdia: escena de un crimen, patio soto"
+            alt="Hover estudio de objetos no identificados, la tragedia: escena de un crimen, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892907/3d6-01_kywkav.png"
             loading="lazy"
         >
@@ -1321,7 +1340,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892946/3d7-01_ge34cc.png"
             class="img-original"
-            alt="estudio de objetos no identificados, la tragerdia: escena de un crimen, patio soto"
+            alt="estudio de objetos no identificados, la tragedia: escena de un crimen, trabajo soto"
             srcset="
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751892946/3d7-01_ge34cc.png 600w,
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892946/3d7-01_ge34cc.png 1200w,
@@ -1333,7 +1352,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892668/obj1111111-01_xjbb5h.png" 
             class="img-hover" 
-            alt="Hover estudio de objetos no identificados, la tragerdia: escena de un crimen, patio soto"
+            alt="Hover estudio de objetos no identificados, la tragedia: escena de un crimen, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892946/3d7-01_ge34cc.png"
             loading="lazy"
         >
@@ -1343,7 +1362,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892995/3d12-01_c5yt8m.png"
             class="img-original"
-            alt="estudio de objetos no identificados, la tragerdia: escena de un crimen, patio soto"
+            alt="estudio de objetos no identificados, la tragedia: escena de un crimen, trabajo soto"
             srcset="
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751892995/3d12-01_c5yt8m.png 600w,
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751892995/3d12-01_c5yt8m.png 1200w,
@@ -1355,7 +1374,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892668/obj1111111-01_xjbb5h.png" 
             class="img-hover" 
-            alt="Hover estudio de objetos no identificados, la tragerdia: escena de un crimen, patio soto"
+            alt="Hover estudio de objetos no identificados, la tragedia: escena de un crimen, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892995/3d12-01_c5yt8m.png"
             loading="lazy"
         >
@@ -1365,7 +1384,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751893036/3d11-01_vg2ral.png"
             class="img-original"
-            alt="estudio de objetos no identificados, la tragerdia: escena de un crimen, patio soto"
+            alt="estudio de objetos no identificados, la tragedia: escena de un crimen, trabajo soto"
             srcset="
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751893036/3d11-01_vg2ral.png 600w,
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751893036/3d11-01_vg2ral.png 1200w,
@@ -1377,7 +1396,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892668/obj1111111-01_xjbb5h.png" 
             class="img-hover" 
-            alt="Hover estudio de objetos no identificados, la tragerdia: escena de un crimen, patio soto"
+            alt="Hover estudio de objetos no identificados, la tragedia: escena de un crimen, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751893036/3d11-01_vg2ral.png"
             loading="lazy"
         >
@@ -1387,7 +1406,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751893080/3d10-01_kcazan.png"
             class="img-original"
-            alt="estudio de objetos no identificados, la tragerdia: escena de un crimen, patio soto"
+            alt="estudio de objetos no identificados, la tragedia: escena de un crimen, trabajo soto"
             srcset="
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751893080/3d10-01_kcazan.png 600w,
                 https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1200/v1751893080/3d10-01_kcazan.png 1200w,
@@ -1399,7 +1418,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
         <img 
             src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751892668/obj1111111-01_xjbb5h.png" 
             class="img-hover" 
-            alt="Hover estudio de objetos no identificados, la tragerdia: escena de un crimen, patio soto"
+            alt="Hover estudio de objetos no identificados, la tragedia: escena de un crimen, trabajo soto"
             data-full="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto/v1751893080/3d10-01_kcazan.png"
             loading="lazy"
         >
@@ -1408,7 +1427,7 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
 
        
       <footer>
-    <p class="footer-text">©2026 código y diseño x soto³</p>
+    <p class="footer-text">©2026 soto</p>
 </footer>
            
 
@@ -1417,23 +1436,25 @@ Una escena interrumpida: un juego de lotería empezado o abandonado. Nadie deja 
   </div>
 
 
-<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">
+<div id="modal" style="display:none; position:fixed; top:20px; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">
   <div class="modal-close-x"></div>
-  <span id="cerrar-modal" style="position:absolute; top:30px; right:40px; color:rgba(0, 0, 0, 0); font-size:40px; cursor:pointer;">&times;</span>
-   <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="max-width:38%; max-height:auto; border: 1px solid rgba(255, 255, 255, 0); box-shadow: 0 0 20px rgba(0, 0, 0, 0);" />
+   <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="pointer-events: none;" />
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('modal');
   const modalImg = document.getElementById('modal-img');
-  const cerrarModal = document.getElementById('cerrar-modal');
 
   let modalScrollY = 0; // 👈 guarda posición de scroll
 
   document.querySelectorAll('.img-hover[data-full]').forEach(img => {
     img.style.cursor = 'pointer';
-    img.addEventListener('click', (e) => {
+       img.addEventListener('click', (e) => {
+
+      // 🔴 NO abrir modal en móvil
+      if (window.innerWidth <= 1024) return;
+
       e.stopPropagation();
 
       // 🔒 BLOQUEAR SCROLL FONDO
@@ -1444,7 +1465,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const imgGrande = img.getAttribute('data-full');
       modalImg.src = imgGrande;
       modal.style.display = 'flex';
-     
+
+modalImg.src = '';  // limpia imagen anterior
+modal.style.display = 'flex';
+modalImg.src = imgGrande;  // carga la nueva
+
+modalImg.classList.remove('loaded');
+modalImg.onload = () => modalImg.classList.add('loaded');
+
     });
   });
 
@@ -1459,7 +1487,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo(0, modalScrollY);
   }
 
-  cerrarModal.addEventListener('click', closeModal);
+
 
   modal.addEventListener('click', (e) => {
     if (e.target === modal) {
@@ -1626,6 +1654,21 @@ window.addEventListener('load', function() {
       launcher.classList.add('reveal');
     }
   }, 300);
+});
+
+
+window.addEventListener('load', function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+document.querySelectorAll('.imagen-hover, .imagen-grande').forEach(el => {
+  el.classList.add('fade-in-scroll');
+  observer.observe(el);
+});
 });
 </script>
 

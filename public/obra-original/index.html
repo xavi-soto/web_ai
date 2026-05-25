@@ -525,7 +525,7 @@ body.menu-open .icon-back {
 /* LOGO SUPERIOR DERECHA */
 .top-right-logo {
     position: fixed;
-    top: 57px;    /* Tu posición exacta */
+    top: 54px;    /* Tu posición exacta */
     right: 20px;  /* Tu posición exacta */
     z-index: 2500;
     pointer-events: auto;
@@ -565,7 +565,7 @@ body.menu-open .icon-back {
 
     .top-right-logo {
         /* CAMBIO AQUÍ: Ahora es 57px, igual que en desktop */
-        top: 57px; 
+        top: 54px; 
         /* Si quieres mantener la distancia lateral de desktop (30px), cámbialo aquí también: */
         right: 20px; 
     }
@@ -1049,7 +1049,19 @@ body.modal-open {
     margin: 0 auto;
   }
 }
-  </style>
+  #modal {
+  cursor: wait; /* cursor de carga mientras la imagen carga */
+}
+
+#modal img {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#modal img.loaded {
+  opacity: 1;
+}
+</style>
 </head>
 <nav id="side-menu">
     <div class="menu-overlay-close"></div>
@@ -1058,7 +1070,7 @@ body.modal-open {
     <div class="menu-left">
       <div class="menu-group">
         <span class="menu-title"></span>
-        <a href="../proyectos-artísticos/">Proyectos</a>
+        <a href="../trabajos/">Trabajos</a>
         <a href="../chat/">Habla con soto</a>
         <a href="../proyectos-diseño/">Diseño</a> 
       </div>
@@ -1076,7 +1088,7 @@ body.modal-open {
       <div class="menu-group">
         <span class="menu-title"></span>
         <a href="../contacto/" class="menu-extra">Contacto</a>
-        <a href="../archivo-en-venta/" class="menu-extra">Archivo en venta</a>
+        <a href="../ediciones/" class="menu-extra">Archivo en venta</a>
         <a href="../descargas/" class="menu-extra">Descargas</a>
        
       </div>
@@ -1096,7 +1108,7 @@ body.modal-open {
 
  <div class="top-right-logo">
     <a href="../index.html">
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1766964956/s3_logo_bj7vjz.png" alt="Logo Soto">
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1778793687/soto_logoarte-01_ce99cv.png" alt="Logo Soto">
     </a>
 </div>
 
@@ -1182,16 +1194,16 @@ body.modal-open {
     <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751725690/G2-01_cp3yqa.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544938/n21-01_gcrwha.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760544941/n22-01_qegvcf.png" data-text="<p><strong>Se acabó la primavera</strong></p><p>Grafito sobre papel de algodón<br>50cm x 35cm<br>2023</p>"><img src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751725562/d3-01_v1iihm.png" class="img-original" alt="Se acabó la primavera"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Se acabó la primavera"></div>
     <div class="imagen-hover" data-img1="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_600/v1758895058/obra_original_grande2-01_khlexo.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760545014/n24-01_owpibf.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760545015/n23-01_aytb2s.png" data-text="<p><strong>Busca un ovni</strong></p><p>Grafito sobre papel de algodón<br>30cm x 21cm<br>2022</p>"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_600/v1758979131/DIBUJO_VENTA_NUEVO_heulch.png" class="img-original" alt="Busca un ovni"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Busca un ovni"></div>
     <div class="imagen-hover" data-img1="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_600/v1758895114/obra_original_grande-01_i8bvre.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760563451/dh29-01_la3s0p.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760563466/dh30-01_ncamnh.png" data-text="<p><strong>Mira las flores hasta que te miren a ti</strong></p><p>Grafito sobre papel de algodón<br>43cm x 22cm<br>2023</p>"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_600/v1758979248/r7_itrvbc.png" class="img-original" alt="Mira las flores hasta que te miren a ti"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Mira las flores hasta que te miren a ti"></div>
-    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_600/v1758895386/orginal_obra_4-01_spvgyj.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760562115/dh31-01_c10hdb.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760562132/dh32-01_jq8th4.png" data-text="<p><strong>Suena a mi patio, pero más grande</strong></p><p>Grafito sobre papel<br>35cm x 28cm<br>2023</p>"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_600/v1758979300/obra_original_grande3-01_pr2py2.png" class="img-original" alt="Suena a mi patio, pero más grande"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Suena a mi patio, pero más grande"></div>
+    <div class="imagen-hover" data-img1="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_600/v1758895386/orginal_obra_4-01_spvgyj.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760562115/dh31-01_c10hdb.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760562132/dh32-01_jq8th4.png" data-text="<p><strong>Suena a mi trabajo, pero más grande</strong></p><p>Grafito sobre papel<br>35cm x 28cm<br>2023</p>"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_600/v1758979300/obra_original_grande3-01_pr2py2.png" class="img-original" alt="Suena a mi trabajo, pero más grande"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover Suena a mi trabajo, pero más grande"></div>
     <div class="imagen-hover" data-img1="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_600/v1751894554/gd11-01_cwlgxn.png" data-img2="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760563826/n25-01_mdhwsb.png"data-img3="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1200/v1760563793/n26-01_fzj8j8.png" data-text="<p><strong>La escalera</strong></p><p>Grafito sobre cartón ilustración<br>23cm x 17cm<br>2022</p>"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_600/v1758979343/obra_orignal_3-01_zmhuyf.png" class="img-original" alt="La escalera"><img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1758900850/INFO-01_zxlswm.png" class="img-hover" alt="Hover La escalera"></div>
 
   </div>
   
   <footer>
-    <p class="footer-text">©2026 código y diseño x soto³</p>
+    <p class="footer-text">©2026 soto</p>
 </footer>
    
-<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgba(243, 243, 243, 1); justify-content:center; align-items:center; z-index: 9999;">
+<div id="modal" style="display:none; position:fixed; top:20px; left:0; width:100vw; height:100vh; background: rgba(243, 243, 243, 1); justify-content:center; align-items:center; z-index: 9999;">
 
   
 

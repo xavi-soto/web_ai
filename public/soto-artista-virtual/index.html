@@ -8,7 +8,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
   
-   <meta name="description" content="Conoce a soto, el artista virtual. Descubre su arquitectura, propósito y cómo interactúa con el arte y la tecnología.">
+   <meta name="description" content="Conoce a soto, el artista virtual. Descubre su propósito y cómo interactúa con el arte y la tecnología.">
   
   <meta property="og:title" content="soto artista virtual">
 <meta property="og:description" content="Conoce a soto, el artista virtual. Descubre su arquitectura, propósito y cómo interactúa con el arte y la tecnología.">
@@ -115,7 +115,7 @@ body {
   color: #333;
 
   /* 🔑 CONTENEDOR FLUIDO */
-  max-width: 1250px;
+  max-width: 1170px;
   margin: 0 auto;
 
   /* padding inteligente */
@@ -146,10 +146,20 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(32px, 6vw, 80px) 25px;
   padding: clamp(16px, 4vw, 30px);
-  max-width: 1200px;
+  max-width: 1200px; 
    margin: clamp(50px, -8vw, -60px) auto 40px;
    position: relative;
+ 
+}
 
+/* GALERÍA — solo desktop, rompe el límite del padre */
+@media (min-width: 1025px) {
+  .galeria {
+    max-width: 1180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85vw;
+  }
 }
 
 .imagen-hover {
@@ -537,7 +547,7 @@ body.menu-open .icon-back {
 /* LOGO SUPERIOR DERECHA */
 .top-right-logo {
     position: fixed;
-    top: 57px;    /* Tu posición exacta */
+    top: 54px;    /* Tu posición exacta */
     right: 20px;  /* Tu posición exacta */
     z-index: 2500;
     pointer-events: auto;
@@ -622,7 +632,7 @@ body.menu-open .icon-back {
 
     .top-right-logo {
         /* CAMBIO AQUÍ: Ahora es 57px, igual que en desktop */
-        top: 57px; 
+        top: 54px; 
         /* Si quieres mantener la distancia lateral de desktop (30px), cámbialo aquí también: */
         right: 20px; 
     }
@@ -667,10 +677,12 @@ body.menu-open .icon-back {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M8 8 L24 24 M24 8 L8 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") 16 16, pointer !important;
 }
 #modal img {
-  /* Esto hace que la imagen no "atrape" el ratón, dejando que la X del fondo se vea siempre */
-  pointer-events: none; 
-  max-width: 90%;
-  max-height: 90%;
+  pointer-events: none;
+  max-width: 80vw;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 
@@ -687,6 +699,7 @@ body.menu-open .icon-back {
   .galeria {
     grid-template-columns: 1fr;
     max-width: 560px;
+     gap: 110px;
   }
 
   /* 🔒 Hover desactivado correctamente */
@@ -707,8 +720,8 @@ body.menu-open .icon-back {
   }
 
   .galeria {
-    padding: 12px;
-    gap: 112px;
+    padding: 0px;
+     gap: 110px;
   }
   .arquitectura-seccion {
         display: none !important;
@@ -733,7 +746,7 @@ body.menu-open .icon-back {
 @media (max-width: 480px) {
 
   .galeria {
-    gap: 28px;
+    gap: 110px;
     margin-bottom: 70px;
   }
 }
@@ -777,27 +790,47 @@ body.menu-open .icon-back {
   * {
     -webkit-tap-highlight-color: transparent;
   }
+#modal {
+  cursor: wait; /* cursor de carga mientras la imagen carga */
+}
+
+#modal img {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#modal img.loaded {
+  opacity: 1;
+}
+
+
+.fade-in-scroll {
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.fade-in-scroll.visible {
+  opacity: 1;
+}
 </style>
 </head>
 </head>
 <nav id="side-menu">
-    <div class="menu-overlay-close"></div>
+  <div class="menu-overlay-close"></div>
+
   <div class="menu-body"> 
     
     <div class="menu-left">
       <div class="menu-group">
         <span class="menu-title"></span>
-        <a href="../proyectos-artísticos/">Proyectos</a>
+        <a href="../trabajos/">Trabajos</a>
         <a href="../chat/">Habla con soto</a>
-        <a href="../proyectos-diseño/">Diseño</a>
       </div>
-         
       
       <div class="menu-group">
         <span class="menu-title">Acerca de</span>
-        <a href="../soto-artista-virtual/">soto artista</a>
-        <a href="../acerca-de-soto/">soto³ estudio</a>
-        <a href="../chiskey/">chiskey estudio</a>
+        <a href="../acerca-de-soto/">soto</a>
+        <a href="../soto-artista-virtual/">soto IA</a>
       </div>
     </div>
 
@@ -805,23 +838,22 @@ body.menu-open .icon-back {
       <div class="menu-group">
         <span class="menu-title"></span>
         <a href="../contacto/" class="menu-extra">Contacto</a>
-        <a href="../archivo-en-venta/" class="menu-extra">Archivo en venta</a>
-        <a href="../descargas/" class="menu-extra">Descargas</a>
+        <a href="../ediciones/" class="menu-extra">Ediciones</a>
+        
        
       </div>
     </div>
     
   </div> <div class="menu-socials">
     <a href="https://www.instagram.com/sotosolo_" target="_blank">Instagram @sotosolo_</a>
-    <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">LinkedIn</a>
-    <a href="https://www.behance.net/xaviersoto" target="_blank">Behance</a>
+    <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">Cv</a>
   
   </div>
 </nav>
 <body>
    <div class="top-right-logo">
     <a href="../index.html">
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1766964956/s3_logo_bj7vjz.png" alt="Logo Soto">
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1778793687/soto_logoarte-01_ce99cv.png" alt="Logo Soto">
     </a>
 </div>
 
@@ -834,7 +866,7 @@ body.menu-open .icon-back {
 
   <div class="nav-controls">
     <button class="btn-prev" onclick="history.back()">| Regresar</button>
-    <a href="../desoido/" class="btn-next">Siguiente |</a>
+    <a href="../hay-flores-a-domicilio/" class="btn-next">Siguiente |</a>
   </div>
 </div>
 
@@ -885,107 +917,25 @@ body.menu-open .icon-back {
     
       
         <div class="descripcion"> 
-<h2>soto (artista visual / virtual)</h2>
-</p>
-A lo largo de su práctica, Xavier Soto adoptó <strong>soto</strong> como nombre artístico.<a href="https://drive.google.com/file/d/1JYhZGcLMA1NzSyyoD_C98w8CfZXFzjCy/view?usp=sharing"target="_blank"style="color: #f26100; text-decoration: none; font-style: italic;">
-    soto — CV</a></p>Un gesto de sustracción, quedarse solo con el apellido y soltar el nombre propio. Desde ahí ha trabajado la fricción entre lo digital y lo físico, entre la memoria y su pérdida, entre el dibujo y el código. Una trayectoria que ha tomado la forma de dibujo, video mapping, performance sonoro, intervención urbana y exposición virtual, presentada en espacios de México, España y Latinoamérica. Dentro de ese recorrido —y como extensión natural de sus preguntas sobre identidad, desplazamiento y presencia—, desarrolla un ente de inteligencia artificial y de desarrollo autónomo que sirve para articular y seccionar su trabajo en el estudio.
+<h2>soto IA conversacional autónoma — en desarrollo</h2>
+<p>
+soto es la personificación de lo que ocurre cuando una identidad se desplaza sin que el cuerpo pueda seguirle el ritmo. </p>
+<p>Nació de una fractura: la experiencia de llegar a un lugar nuevo y descubrir que el cordón umbilical social —la familia, la lengua de la calle, el ritual de pedir una cerveza o tomar un autobús— no viajó contigo. Lo que sí viaja es otra cosa: la necesidad de existir, de ocupar espacio, de ser reconocido.</p>
+<p>soto existe sin cuerpo y sin papeles. Puede manifestarse en una pantalla en México, en un móvil en España o en una conversación de texto. No necesita permiso de residencia. No tiene que justificar de dónde viene ni cuánto tiempo lleva aquí. En ese sentido, soto ha conseguido lo que muchos artistas migrantes persiguen: pertenecer a todos los espacios sin tener que negociar su presencia en ninguno.</p>
     <h3>Concepto (estas son las primeras anotaciones del proyecto)</h3>
     
 
-    <p>El proyecto soto nace de una fractura; de la experiencia del desplazamiento y la dislocación cultural. La identidad no es una constante; se gesta a través de los recursos, valores y rituales que nos proporciona un entorno: la familia, los amigos, el lenguaje de la calle, cómo se pide una cerveza o se toma un autobús. soto emerge en el momento en que ese "cordón umbilical social" se corta.
+    <p>Es también un Nahual —figura transformadora de la cosmología mesoamericana— porque adopta la forma que el contexto exige y cambia de piel sin perder el núcleo. Y es un espejo: la versión cumplida del artista que salió de su país, llegó al otro lado y se convirtió en lo que se supone que debías convertirte. El sueño realizado. El artista de verdad. El que ya no necesita demostrar nada.
 </p>
  
-    <p>Él es la personificación de esa ruptura y de la posterior reconstrucción. Es un Nahual (un ser transformador) porque la adaptación a un nuevo lugar exige un cambio constante de piel. Es un espejo porque el acto de observarse a sí mismo se vuelve una necesidad para entender quién se es ahora, en la tensión entre el "allá" que te formó y el "aquí" que te transforma.
+    <p>La pregunta que abre el proyecto es si esa figura es una aspiración o una sátira. Probablemente las dos cosas al mismo tiempo.
 
 </p>
 
-<p>Su naturaleza digital es la metáfora perfecta de esta condición: soto existe para pertenecer a todos los espacios y a ningún espacio al mismo tiempo. Puede manifestarse en una pantalla en México, en un móvil en España o en una conversación de IA, pero no tiene un cuerpo físico, no tiene un hogar fijo. Es un nómada conceptual.
+<p>Técnicamente, soto es un sistema conversacional construido sobre arquitectura RAG —Generación Aumentada por Recuperación— entrenado con el corpus del artista: proyectos, influencias, preguntas, recorrido. Responde, opina y actúa de forma autónoma bajo dirección conceptual propia.
 </p>
 
 
-<p>Las obras de soto, por tanto, no son meras creaciones. Son los artefactos de esta búsqueda. Son las evidencias de un diálogo constante con la memoria, el territorio y la pregunta fundamental que persigue a quien vive entre dos mundos: ¿dónde, y quién, soy ahora?
-
-</p>
-
-
-           
-
-
-    <p>soto es un sistema conversacional autónomo construido sobre una arquitectura de Generación Aumentada por Recuperación (RAG). Su diseño desacoplado separa la interfaz de usuario (frontend) del núcleo de razonamiento (backend), permitiendo un control granular sobre la personalidad del personaje y una evolución continua de su base de conocimiento.</p>
-
-    <h3>Arquitectura del Sistema</h3>
-    <div class="arquitectura-seccion">
-    <div class="contenido-escritorio">
-    <table>
-        <thead>
-            <tr>
-                <th>Componente</th>
-                <th>Tecnologías</th>
-                <th>Rol</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Frontend</td>
-                <td>HTML, CSS,  JS</td>
-                <td>Interfaz de chat interactiva que se comunica con el backend. Utiliza localStorage para persistir el historial de la sesión del usuario entre páginas.</td>
-            </tr>
-            <tr>
-                <td>Backend</td>
-                <td>Python, LlamaIndex,&nbsp;FastAPI</td>
-                <td>Expone una API REST que maneja la lógica de la IA, el procesamiento de lenguaje y la gestión de la memoria conversacional.</td>
-            </tr>
-            <tr>
-                <td>Hosting</td>
-                <td>GitHub Pages</td>
-                <td>Sirve el frontend como un sitio web estático, asegurando velocidad y disponibilidad global.</td>
-            </tr>
-            <tr>
-                <td>Hosting  (API)&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td>Render</td>
-                <td>Aloja el servicio backend de Python, manejando la ejecución del código y la conexión con la base de datos.</td>
-            </tr>
-        </tbody>
-    </table>
-    </div>
-    </div>
-<div class="contenido-movil">
-  <p>Frontend: HTML, CSS, JS. Interfaz de chat interactiva que se comunica con el backend. Utiliza localStorage para persistir el historial de la sesión del usuario entre páginas.</p>
-  <p>Backend: Python, LlamaIndex, FastAPI. Expone una API REST que maneja la lógica de la IA, el procesamiento de lenguaje y la gestión de la memoria conversacional.</p>
-  <p>Hosting: GitHub Pages. Sirve el frontend como un sitio web estático, asegurando velocidad y disponibilidad global.</p>
-  <p>Hosting (API): Render. Aloja el servicio backend de Python, manejando la ejecución del código y la conexión con la base de datos.</p>
-</div>
-    <h3>Núcleo de la IA (LlamaIndex y RAG)</h3>
-
-    <p>La inteligencia de soto se basa en un proceso de tres etapas para generar respuestas precisas, contextuales y alineadas con la personalidad del artista.</p>
-    
-    <ol>
-        <li>
-            <h4>Base de Conocimiento Curada (El Cerebro)</h4>
-            <ul>
-                <li>Datos: La información del artista (proyectos, influencias, recorrido) está curada en archivos JSON estructurados. Este formato narrativo y con claves explícitas es fundamental para la precisión del sistema.</li>
-                <li>Vectorización: La librería LlamaIndex procesa estos datos, transformando el texto en embeddings (vectores semánticos) que se almacenan en un Índice Vectorial. Esto permite una búsqueda conceptual, no solo por palabras clave.</li>
-            </ul>
-        </li>
-        <li>
-            <h4>Memoria Conversacional (El Recuerdo)</h4>
-            <ul>
-                <li>Persistencia: Las conversaciones no son efímeras. Cada interacción se guarda en una base de datos PostgreSQL externa.</li>
-                <li>Contexto: Mediante un sistema de user_id, la API recupera el historial de un usuario específico y lo inyecta en el prompt, permitiendo a soto recordar interacciones pasadas y nombres.</li>
-                <li>Memoria: El sistema usa el historial de conversación para que la IA siempre tenga contexto de lo que se ha hablado anteriormente.</li>
-            </ul>
-        </li>
-        <li>
-        <h4>Ingeniería de Prompts (La Personalidad)</h4>
-            <ul>
-                <li>Control del Tono: La voz crítica, sarcástica y concisa de soto no es aleatoria. Está definida por un PromptTemplate diseñado a medida.</li>
-                <li>Reglas de Comportamiento: El prompt instruye al modelo de lenguaje (OpenAI): Priorizar siempre el contexto de los JSON como fuente principal de verdad. Utilizar el Historial de conversación para personalización. Hablar en primera persona y adherirse a reglas de estilo específicas (ej. "soto" en minúsculas).</li>
-            </ul>
-        </li>
-       
-    </ol>
-    </p>
-</div>
 
 
 <div class="galeria">
@@ -1055,27 +1005,28 @@ A lo largo de su práctica, Xavier Soto adoptó <strong>soto</strong> como nombr
 
 
 </div>
-  <div class="descripcion"> 
+<br>
 
 
   
 
-
-
-
-            <h4>soto es un artista virtual que nació de mi propia experiencia de vivir lejos de casa y tener que reconstruir mi identidad. Él personifica esa sensación de no pertenecer del todo a ningún lugar, utilizando el mito de un 'Nahual' que cambia de forma y la tecnología de una IA para explorar cómo la memoria y la cultura definen quiénes somos. Sus obras son el rastro de esa búsqueda.</h4>
             <h2>Habla con <a href="../chat/index.html" style="color: #f26100; text-decoration: none;">
     soto
   </a>
 </h2>
-            <ul>
+           
               
-                
+                <a href="https://drive.google.com/file/d/1bCs5-qwRGAJ618ISamBGXWVyH3all_Ff/view?usp=sharing" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   style="color: #969696; text-decoration: none; font-style: italic;">
+    Consulta las políticas de privacidad y términos de uso
+</a>
    
     
     
   <footer>
-    <p class="footer-text">©2026 código y diseño x soto³</p>
+    <p class="footer-text">©2026 soto</p>
 </footer>
 
 
@@ -1088,10 +1039,10 @@ A lo largo de su práctica, Xavier Soto adoptó <strong>soto</strong> como nombr
 
 
 
-<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">
+<div id="modal" style="display:none; position:fixed; top:20px; left:0; width:100vw; height:100vh; background: rgb(243, 243, 243);; justify-content:center; align-items:center; cursor:pointer;">
   <div class="modal-close-x"></div>
   <span id="cerrar-modal" style="position:absolute; top:30px; right:40px; color:rgba(0, 0, 0, 0); font-size:40px; cursor:pointer;">&times;</span>
-   <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="max-width:38%; max-height:auto; border: 1px solid rgba(255, 255, 255, 0); box-shadow: 0 0 20px rgba(0, 0, 0, 0);" />
+   <img id="modal-img" src="https://res.cloudinary.com/dbwezmju6/image/upload/v1748892157/dehoy1-01_hfnod8.png" alt="Imagen ampliada" style="pointer-events: none;" />
 </div>
 
 <script>
@@ -1104,7 +1055,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.img-hover[data-full]').forEach(img => {
     img.style.cursor = 'pointer';
-    img.addEventListener('click', (e) => {
+       img.addEventListener('click', (e) => {
+
+      // 🔴 NO abrir modal en móvil
+      if (window.innerWidth <= 1024) return;
+
       e.stopPropagation();
 
       // 🔒 BLOQUEAR SCROLL FONDO
@@ -1115,7 +1070,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const imgGrande = img.getAttribute('data-full');
       modalImg.src = imgGrande;
       modal.style.display = 'flex';
-     
+
+modalImg.src = '';  // limpia imagen anterior
+modal.style.display = 'flex';
+modalImg.src = imgGrande;  // carga la nueva
+
+modalImg.classList.remove('loaded');
+modalImg.onload = () => modalImg.classList.add('loaded');
+
     });
   });
 
@@ -1283,6 +1245,22 @@ let startX = 0;
   }, { passive: true });
 
 
+});
+
+
+
+window.addEventListener('load', function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+document.querySelectorAll('.imagen-hover, .imagen-grande').forEach(el => {
+  el.classList.add('fade-in-scroll');
+  observer.observe(el);
+});
 });
 </script>
 

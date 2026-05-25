@@ -12,7 +12,7 @@
   <meta property="og:title" content="proyectos soto">
 <meta property="og:description" content="Proyectos experimentales, artísticos y de valor conceptual.">
 <meta property="og:image" content="https://res.cloudinary.com/dbwezmju6/image/upload/v1750854058/soto_previa_redes-01_uzidyd.png">
-<meta property="og:url" content="https://sotosotosoto.com../proyectos-artísticos/">
+<meta property="og:url" content="https://sotosotosoto.com../trabajos/">
 <meta property="og:type" content="website">
   
   <style>
@@ -137,7 +137,7 @@
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       grid-gap: 20px;
-      max-width: 1200px;
+      max-width: 1110px;
       width: 100%;
       margin-bottom: 55px;
       
@@ -167,6 +167,7 @@
     @media (max-width: 768px) {
       .gallery {
         grid-template-columns: repeat(2, 1fr);
+       
       }
     }
 
@@ -174,6 +175,7 @@
       .gallery {
         grid-template-columns: 1fr;
       }
+  
     }
 
     
@@ -464,7 +466,7 @@ body.menu-open .icon-back {
 /* LOGO SUPERIOR DERECHA */
 .top-right-logo {
     position: fixed;
-    top: 57px;    /* Tu posición exacta */
+    top: 54px;    /* Tu posición exacta */
     right: 20px;  /* Tu posición exacta */
     z-index: 2500;
     pointer-events: auto;
@@ -492,13 +494,22 @@ body.menu-open .icon-back {
 
 /* GALERÍA */
 .gallery {
-    margin-top: 45px !important;
+    margin-top: 70px !important;
 }
 /* --- ADAPTACIÓN MÓVIL --- */
 @media (max-width: 768px) {
     .header-bg {
         height: 60px;
     }
+
+    body {
+    padding: 38px;
+  }
+
+ .gallery {
+    margin-top: 80px !important;   /* espacio con el header */
+    margin-bottom: 80px !important; /* espacio con el footer */
+  }
 
     .menu-toggle {
         /* Si quieres que el menú tampoco se mueva, asegúrate de que este top 
@@ -508,7 +519,7 @@ body.menu-open .icon-back {
 
     .top-right-logo {
         /* CAMBIO AQUÍ: Ahora es 57px, igual que en desktop */
-        top: 57px; 
+        top: 54px; 
         /* Si quieres mantener la distancia lateral de desktop (30px), cámbialo aquí también: */
         right: 20px; 
     }
@@ -518,7 +529,7 @@ body.menu-open .icon-back {
     }
 
     .gallery {
-        margin-top: 50px !important;
+        margin-top: 80px !important;
     }
 }
 /* --- X DEL MENU --- */
@@ -536,27 +547,38 @@ body.menu-open .icon-back {
     -webkit-tap-highlight-color: transparent;
   }
 
-  </style>
+  #modal {
+  cursor: wait; /* cursor de carga mientras la imagen carga */
+}
+
+#modal img {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#modal img.loaded {
+  opacity: 1;
+}
+</style>
 </head>
 
 
 <nav id="side-menu">
-    <div class="menu-overlay-close"></div>
+  <div class="menu-overlay-close"></div>
+
   <div class="menu-body"> 
     
     <div class="menu-left">
       <div class="menu-group">
         <span class="menu-title"></span>
-        <a href="../proyectos-artísticos/">Proyectos</a>
+        <a href="../trabajos/">Trabajos</a>
         <a href="../chat/">Habla con soto</a>
-        <a href="../proyectos-diseño/">Diseño</a>
       </div>
       
       <div class="menu-group">
         <span class="menu-title">Acerca de</span>
-        <a href="../soto-artista-virtual/">soto artista</a>
-        <a href="../acerca-de-soto/">soto³ estudio</a>
-        <a href="../chiskey/">chiskey estudio</a>
+        <a href="../acerca-de-soto/">soto</a>
+        <a href="../soto-artista-virtual/">soto IA</a>
       </div>
     </div>
 
@@ -564,16 +586,15 @@ body.menu-open .icon-back {
       <div class="menu-group">
         <span class="menu-title"></span>
         <a href="../contacto/" class="menu-extra">Contacto</a>
-        <a href="../archivo-en-venta/" class="menu-extra">Archivo en venta</a>
-        <a href="../descargas/" class="menu-extra">Descargas</a>
+        <a href="../ediciones/" class="menu-extra">Ediciones</a>
+        
        
       </div>
     </div>
     
   </div> <div class="menu-socials">
     <a href="https://www.instagram.com/sotosolo_" target="_blank">Instagram @sotosolo_</a>
-    <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">LinkedIn</a>
-    <a href="https://www.behance.net/xaviersoto" target="_blank">Behance</a>
+    <a href="https://www.linkedin.com/in/sotosotosoto/" target="_blank">Cv</a>
   
   </div>
 </nav>
@@ -583,7 +604,7 @@ body.menu-open .icon-back {
   
 <div class="top-right-logo">
     <a href="../index.html">
-        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1766964956/s3_logo_bj7vjz.png" alt="Logo Soto">
+        <img src="https://res.cloudinary.com/dsfjgsclq/image/upload/v1778793687/soto_logoarte-01_ce99cv.png" alt="Logo Soto">
     </a>
 </div>
 
@@ -644,27 +665,17 @@ body.menu-open .icon-back {
 
 
 
-    <div class="gallery">
-    <a href="../soto-artista-virtual/">
+    <div class="gallery">  
+      <a href="../no-solo-tiempo/">
       <img 
-        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1600,c_scale/v1761836279/soto_portada-01_gjmmgd.png" 
-        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1600,c_scale/v1767034890/soto_portadaa-01_xm0pg6.png"
-        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1600,c_scale/v1761836279/soto_portada-01_gjmmgd.png"
-        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1767138862/webmovil_ipjn0b.png"
-        alt="Imagen 14"
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561233/11PP_wvglkl.png" 
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1767033115/no_solo_portada-01_potmhj.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561233/11PP_wvglkl.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1767136827/no_solo_tiempo_movil_fksug4.png"
+        alt="Imagen 11"
         loading="lazy">
     </a>
-<a href="../desoido/">
-      <img 
-        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751560810/1PP_vhi2d6.png"
-        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1767031864/desoido_portada_final2-01_yqxnkb.png"
-        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751560810/1PP_vhi2d6.png"
-        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1767136865/desoidoapp_movil_rf7az4.png"
-        alt="Imagen 1"
-        loading="lazy">
-    </a>
-    
-    <a href="../de-hoy-para-mañana/">
+     <a href="../de-hoy-para-manana/">
       <img 
         src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561065/2PP_nvvb5q.png" 
         data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1767033262/de_hoy_portada-01_k3xe5j.png"
@@ -672,18 +683,36 @@ body.menu-open .icon-back {
         data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1767138921/dehoy_movil_o54fri.png"
         alt="Imagen 2"
         loading="lazy">
-    </a>
-
-    <a href="../chingaderas-en-la-ventana/">
+    </a> 
+    <a href="../ya-soy-artista/">
       <img 
-        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561113/3PP_vpy7qx.png" 
-        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1767033284/chingaderas_portada-01_zg8wjj.png"
-        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561113/3PP_vpy7qx.png"
-        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1767136948/chingaderas_movil_ctx4vt.png"
-        alt="Imagen 3"
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561199/8PP_lrbkru.png" 
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751562333/yasoy_portada-01_necpuf.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561199/8PP_lrbkru.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1767139808/ya_soy_movil_fbmzjs.png"
+        alt="Imagen 8"
         loading="lazy">
     </a>
+    <a href="../desoido/">
+      <img 
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751560810/1PP_vhi2d6.png"
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1767031864/desoido_portada_final2-01_yqxnkb.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751560810/1PP_vhi2d6.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1767136865/desoidoapp_movil_rf7az4.png"
+        alt="Imagen 1"
+        loading="lazy">
+    </a>  
+     
 
+    <a href="../silueta-de-olvido/">
+      <img 
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561254/14PP_wimk0h.png" 
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1767033157/siluerta_portada-01_kgliwk.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561254/14PP_wimk0h.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1767137155/silueta_de_olvido_movil_zsoext.png"
+        alt="Imagen 13"
+        loading="lazy">
+    </a>
     <a href="../por-que-nos-cuesta-escuchar/">
       <img 
         src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561084/4PP_hk8du3.png" 
@@ -693,7 +722,15 @@ body.menu-open .icon-back {
         alt="Imagen 4" 
         loading="lazy"> 
     </a>
-
+    <a href="../chingaderas-en-la-ventana/">
+      <img 
+        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561113/3PP_vpy7qx.png" 
+        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1767033284/chingaderas_portada-01_zg8wjj.png"
+        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561113/3PP_vpy7qx.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1767136948/chingaderas_movil_ctx4vt.png"
+        alt="Imagen 3"
+        loading="lazy">
+    </a>  
     <a href="../estudio-de-objetos-no-identificados/">
       <img 
         src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561130/5PP_fuiqex.png" 
@@ -703,17 +740,18 @@ body.menu-open .icon-back {
         alt="Imagen 5"
         loading="lazy">
     </a>
-
-    <a href="../espacios-comunes/">
+    <a href="../soto-artista-virtual/">
       <img 
-        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561176/6PP_zizxhj.png" 
-        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1767033329/espacios_comunes_portada-01_nkgbh9.png"
-        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561176/6PP_zizxhj.png"
-        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1767139860/espacios_movil_sn0eyq.png"
-        alt="Imagen 6"
+        src="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1600,c_scale/v1761836279/soto_portada-01_gjmmgd.png" 
+        data-hover="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1600,c_scale/v1767034890/soto_portadaa-01_xm0pg6.png"
+        data-desktop="https://res.cloudinary.com/dsfjgsclq/image/upload/f_auto,q_auto,w_1600,c_scale/v1761836279/soto_portada-01_gjmmgd.png"
+        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1767138862/webmovil_ipjn0b.png"
+        alt="Imagen 14"
         loading="lazy">
-    </a>
+    </a> 
+  
 
+    
     <a href="../hay-flores-a-domicilio/">
       <img 
         src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561183/7PP_shw8gv.png" 
@@ -724,15 +762,14 @@ body.menu-open .icon-back {
         loading="lazy">
     </a>
 
-    <a href="../ya-soy-artista/">
-      <img 
-        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561199/8PP_lrbkru.png" 
-        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751562333/yasoy_portada-01_necpuf.png"
-        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561199/8PP_lrbkru.png"
-        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1767139808/ya_soy_movil_fbmzjs.png"
-        alt="Imagen 8"
-        loading="lazy">
-    </a>
+
+    
+
+   
+  
+
+   
+   
 
     <a href="../inmenso/">
       <img 
@@ -744,61 +781,19 @@ body.menu-open .icon-back {
         loading="lazy">
     </a>
 
-    <a href="../algunas-cosas/">
-      <img 
-        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561212/10PP_qbn47v.png" 
-        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1767033093/algunas_portada-01_zbu9s4.png"
-        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561212/10PP_qbn47v.png"
-        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1767136847/algunas_movil_k33ojm.png"
-        alt="Imagen 10"
-        loading="lazy">
-    </a>
 
-    <a href="../no-solo-tiempo/">
-      <img 
-        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561233/11PP_wvglkl.png" 
-        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1767033115/no_solo_portada-01_potmhj.png"
-        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561233/11PP_wvglkl.png"
-        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1767136827/no_solo_tiempo_movil_fksug4.png"
-        alt="Imagen 11"
-        loading="lazy">
-    </a>
+   
 
-    <a href="../apariencias/">
-      <img 
-        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561241/12PP_bwgiy8.png" 
-        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1767033137/apariencias_portada-01_uwty6r.png"
-        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561241/12PP_bwgiy8.png"
-        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1767136807/apariencias_movil_pdjkos.png"
-        alt="Imagen 12"
-        loading="lazy">
-    </a>
 
-    <a href="../silueta-de-olvido/">
-      <img 
-        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561254/14PP_wimk0h.png" 
-        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1767033157/siluerta_portada-01_kgliwk.png"
-        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561254/14PP_wimk0h.png"
-        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1767137155/silueta_de_olvido_movil_zsoext.png"
-        alt="Imagen 13"
-        loading="lazy">
-    </a>
+  
 
-    <a href="../descripcion-de-mi-pais/">
-      <img 
-        src="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561277/13PP_w0pin2.png" 
-        data-hover="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1767033180/descripcion_portada-01_kznaiz.png"
-        data-desktop="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_1600,c_scale/v1751561277/13PP_w0pin2.png"
-        data-mobile="https://res.cloudinary.com/dqg78jtie/image/upload/f_auto,q_auto,w_800,c_scale/v1767137080/descripcion_movil_fjrry8.png"
-        alt="Imagen 14"
-        loading="lazy">
-    </a>
+  
     
   </div>
    </div>
 
   <footer>
-    <p class="footer-text">©2026 código y diseño x soto³</p>
+    <p class="footer-text">©2026 soto</p>
 </footer>
 
 
