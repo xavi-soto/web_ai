@@ -65,7 +65,7 @@ document.getElementById("user-input").addEventListener("keypress", function (e) 
 
         // 🌟 Temporizador para cold start
         const coldStartTimer = setTimeout(() => {
-            sotoLoadingMessage.innerHTML = `<span>soto está dormido, tardará unos 30-50 segundos en despertar. Mientras, puedes revisar más sobre este proyecto <a href="https://sotosotosoto.com/soto-artista-virtual" target="_blank" style="color:#f26100;text-decoration:none;">soto artista virtual</a></span>`;
+            sotoLoadingMessage.innerHTML = `<span>soto está dormido, tardará unos 30-50 segundos en despertar. Mientras, puedes revisar más sobre este proyecto <a href="https://xsoto.com/soto-artista-virtual" target="_blank" style="color:#f26100;text-decoration:none;">soto artista virtual</a></span>`;
         }, 5000);
 
         // 🌟 Llamada al backend con userId dinámico
