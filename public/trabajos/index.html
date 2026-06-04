@@ -801,6 +801,12 @@ body.menu-open .icon-back {
 <script>
 window.addEventListener("load", function () {
 
+
+
+document.querySelectorAll('.gallery img[data-hover]').forEach(img => {
+    const pre = new Image();
+    pre.src = img.dataset.hover;
+});
   /* =====================================================
       INTRO OVERLAY
   ===================================================== */

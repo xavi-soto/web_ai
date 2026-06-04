@@ -537,6 +537,49 @@ footer {
   * {
     -webkit-tap-highlight-color: transparent;
   }
+
+
+
+#cookie-notice {
+    position: fixed;
+    bottom: 44px;
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    z-index: 2000;
+    background: #111;
+    color: rgba(255,255,255,0.55);
+    font-family: "Lexend", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.6;
+    padding: 10px 14px;
+    max-width: 260px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+#cookie-notice.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+#cookie-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: "Lexend", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+    padding: 0;
+    transition: color 0.2s;
+    flex-shrink: 0;
+}
+#cookie-btn:hover { color: #f26100; }
     </style>
 
     <script>
@@ -585,7 +628,10 @@ footer {
 
 
 <body>
-    
+    <div id="cookie-notice">
+    <span>Este sitio usa cookies básicas de funcionamiento.</span>
+    <button id="cookie-btn">Ok</button>
+</div>
 
     <main id="main-content">
         <button class="menu-toggle" aria-label="Abrir menú">
@@ -670,6 +716,19 @@ footer {
 
 <script>
 window.addEventListener("load", function () {
+
+
+  // Cookie notice
+if (!localStorage.getItem('cookies-ok')) {
+    setTimeout(() => {
+        const notice = document.getElementById('cookie-notice');
+        notice.classList.add('visible');
+        document.getElementById('cookie-btn').addEventListener('click', () => {
+            notice.classList.remove('visible');
+            localStorage.setItem('cookies-ok', '1');
+        });
+    }, 2000);
+}
 
   /* =====================================================
       INTRO OVERLAY
