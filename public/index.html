@@ -580,6 +580,12 @@ footer {
     flex-shrink: 0;
 }
 #cookie-btn:hover { color: #f26100; }
+
+@media(min-width:769px){
+    #cookie-notice {
+        max-width: 340px;
+    }
+}
     </style>
 
     <script>
@@ -723,10 +729,14 @@ if (!localStorage.getItem('cookies-ok')) {
     setTimeout(() => {
         const notice = document.getElementById('cookie-notice');
         notice.classList.add('visible');
-        document.getElementById('cookie-btn').addEventListener('click', () => {
+
+        const cerrarCookie = () => {
             notice.classList.remove('visible');
             localStorage.setItem('cookies-ok', '1');
-        });
+        };
+
+        document.getElementById('cookie-btn').addEventListener('click', cerrarCookie);
+        setTimeout(cerrarCookie, 6000);
     }, 2000);
 }
 
